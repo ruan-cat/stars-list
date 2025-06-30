@@ -80,6 +80,7 @@
 
 ## JavaScript 
 
+- [Deepractice/PromptX](https://github.com/Deepractice/PromptX) - PromptX · 领先的AI上下文工程平台 ｜ PromptX · The Leading AI Context Engineering Platform
 - [z2586300277/three-cesium-examples](https://github.com/z2586300277/three-cesium-examples) - WebGL Three.js Cesium.js Examples And Demo - WebGL 的 Three.js 和 Cesium.js 案例 --- Star ---点星星
 - [gloriasoft/veaury](https://github.com/gloriasoft/veaury) - Use React in Vue3 and Vue3 in React, And as perfect as possible!
 - [lin-123/javascript](https://github.com/lin-123/javascript) - eslint-config-airbnb 中文版
@@ -294,6 +295,7 @@
 
 ## TypeScript 
 
+- [w3cj/hono-open-api-starter](https://github.com/w3cj/hono-open-api-starter) - A starter template for building fully documented type-safe JSON APIs with Hono and Open API
 - [sankeyangshu/lemon-template-vue](https://github.com/sankeyangshu/lemon-template-vue) - An mobile web apps template based on the Vue 3 ecosystem. 🎉 一个基于 Vue 3 生态系统的移动 web 应用模板。
 - [sankeyangshu/lemon-template-uniapp](https://github.com/sankeyangshu/lemon-template-uniapp) - An mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
 - [zh-lx/code-inspector](https://github.com/zh-lx/code-inspector) - 🚀 Click the dom to open your IDE and position the cursor at dom's source code location! 点击页面 dom 来打开 IDE 并将光标自动定位到源代码位置!
@@ -463,7 +465,7 @@
 - [vbenjs/vite-plugin-mock](https://github.com/vbenjs/vite-plugin-mock) - A mock plugin for vite.use mockjs.
 - [uni-helper/vite-plugin-uni-pages](https://github.com/uni-helper/vite-plugin-uni-pages) - 为 Vite 下的 uni-app 提供基于文件系统的路由
 - [Dunqing/resume](https://github.com/Dunqing/resume) - Writing Resume with Markdown, Supports deploy to Vercel, Netlify, Cloudflare. 使用 Markdown 编写简历，支持部署到 Vercel、Netlify 和 Cloudflare。
-- [biaogebusy/web-builder](https://github.com/biaogebusy/web-builder) - AI 驱动 UI 生成和发布平台，基于TailwindCss，通过拖拽可视化快速构建现代化响应式UI、动态自定义组件、多主题、多语言的网站应用。AI-powered UI generation and publishing platform, built on TailwindCSS, enabling rapid drag-and-drop visual creation of modern r
+- [biaogebusy/web-builder](https://github.com/biaogebusy/web-builder) - AI 驱动 UI 生成和发布的低代码平台，基于TailwindCss，通过拖拽可视化快速构建现代化响应式UI、动态自定义组件、多主题、多语言的网站应用。AI-powered UI generation and publishing low code platform, built on TailwindCSS, enabling rapid drag-and-drop visual creatio
 - [pengzhanbo/vite-plugin-mock-dev-server](https://github.com/pengzhanbo/vite-plugin-mock-dev-server) - 🚀mock-dev-server is injected into the vite development environment to simulate requests and data responses.在vite 开发环境中注入 mock-dev-server, 模拟请求和数据响应
 - [DarkNeos/neos-ts](https://github.com/DarkNeos/neos-ts) - Web version of Yu-Gi-Oh! Game
 - [Tonel/typescript-monorepo](https://github.com/Tonel/typescript-monorepo) - 
