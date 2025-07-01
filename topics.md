@@ -1419,6 +1419,7 @@
 
 ## vue 
 
+- [xaboy/form-create](https://github.com/xaboy/form-create) - :fire::fire::fire: 强大的低代码动态表单组件，通过JSON数据驱动表单渲染，适配移动端，支持可视化设计。提高开发者对表单的开发效率。目前在政务系统、OA系统、ERP系统、电商系统、流程管理等系统中已稳定应用。
 - [sankeyangshu/lemon-template-vue](https://github.com/sankeyangshu/lemon-template-vue) - An mobile web apps template based on the Vue 3 ecosystem. 🎉 一个基于 Vue 3 生态系统的移动 web 应用模板。
 - [sankeyangshu/lemon-template-uniapp](https://github.com/sankeyangshu/lemon-template-uniapp) - An mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
 - [zh-lx/code-inspector](https://github.com/zh-lx/code-inspector) - 🚀 Click the dom to open your IDE and position the cursor at dom's source code location! 点击页面 dom 来打开 IDE 并将光标自动定位到源代码位置!
