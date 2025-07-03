@@ -951,7 +951,7 @@
 - [godbasin/front-end-playground](https://github.com/godbasin/front-end-playground) - 被删和阿猪的前端游乐场！！快来一起撸猫一起学习前端吧~
 - [NewRPGProject/MZMV_Plugin](https://github.com/NewRPGProject/MZMV_Plugin) - ＲＰＧツクールＭＺおよびＭＶ用のプラグインです。
 - [ddean2009/blog-auto-publishing-tools](https://github.com/ddean2009/blog-auto-publishing-tools) - 博客自动发布工具，一键把你的博客发到CSDN,掘金,知乎,头条,51blog,腾讯云,公众号等等，支持GPT重写！
-- [rhinobase/hono-openapi](https://github.com/rhinobase/hono-openapi) - A plugin for Hono to generate OpenAPI Swagger documentation
+- [rhinobase/hono-openapi](https://github.com/rhinobase/hono-openapi) - Hono middleware to generate OpenAPI Swagger documentation
 - [L33Z22L11/blog-v3](https://github.com/L33Z22L11/blog-v3) - My blog, powered by Nuxt Content v2.
 - [lnbiuc/blog-next-view](https://github.com/lnbiuc/blog-next-view) - Nuxt full-stack blog.
 - [magne4000/vite-plugin-vercel](https://github.com/magne4000/vite-plugin-vercel) - Vercel adapter for vite
