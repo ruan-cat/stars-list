@@ -296,6 +296,7 @@
 
 ## TypeScript 
 
+- [refined-github/refined-github](https://github.com/refined-github/refined-github) - :octocat: Browser extension that simplifies the GitHub interface and adds useful features
 - [alibaba/formily](https://github.com/alibaba/formily) - 📱🚀 🧩 Cross Device & High Performance Normal Form/Dynamic(JSON Schema) Form/Form Builder -- Support React/React Native/Vue 2/Vue 3
 - [w3cj/hono-open-api-starter](https://github.com/w3cj/hono-open-api-starter) - A starter template for building fully documented type-safe JSON APIs with Hono and Open API
 - [sankeyangshu/lemon-template-vue](https://github.com/sankeyangshu/lemon-template-vue) - An mobile web apps template based on the Vue 3 ecosystem. 🎉 一个基于 Vue 3 生态系统的移动 web 应用模板。
