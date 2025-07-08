@@ -549,7 +549,6 @@
 - [Rominwolf/the-wandering-earth-2-countdown-meme-generator.github.io](https://github.com/Rominwolf/the-wandering-earth-2-countdown-meme-generator.github.io) - 流浪地球2的倒计时梗图生成器。
 - [dianprata/nuxt-shadcn-dashboard](https://github.com/dianprata/nuxt-shadcn-dashboard) - Template Dashboard with Nuxt 3 + Shadcn + UnoCSS
 - [classfang/AIHub](https://github.com/classfang/AIHub) - 一款集合多家大模型能力的客户端。拥有丰富的个性化功能。现已支持：OpenAI，Ollama，谷歌 Gemini，讯飞星火，百度文心，阿里通义，天工，月之暗面，智谱，阶跃星辰，DeepSeek 🎉🎉🎉。A collection of large model capabilities of the client. Has a wealth of personalized functions. Engl
-- [shaobeichen/moten-template](https://github.com/shaobeichen/moten-template) - 🪑 Moten 的 打卡模版  [WIP] 榫卯低代码平台. Mortise and tenon low code platform.
 - [antfu/releases.antfu.me](https://github.com/antfu/releases.antfu.me) - Page for Anthony's Recent Releases
 - [antfu/100](https://github.com/antfu/100) - My 100-day project of exploring design, compform, and new things.
 - [dingyong0214/ThorUI-uniapp](https://github.com/dingyong0214/ThorUI-uniapp) - ThorUI组件库，轻量、简洁的移动端组件库。组件文档地址：https://thorui.cn/doc
