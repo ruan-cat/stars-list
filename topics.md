@@ -909,7 +909,6 @@
 - [cji3bp62000/hello-world](https://github.com/cji3bp62000/hello-world) - hello world!!
 - [mwilliamson/mammoth.js](https://github.com/mwilliamson/mammoth.js) - Convert Word documents (.docx files) to HTML
 - [languine-ai/languine](https://github.com/languine-ai/languine) - Translate your application with Languine CLI powered by AI.
-- [shaobeichen/moten-template](https://github.com/shaobeichen/moten-template) - 🪑 Moten 的 打卡模版  [WIP] 榫卯低代码平台. Mortise and tenon low code platform.
 - [antfu/releases.antfu.me](https://github.com/antfu/releases.antfu.me) - Page for Anthony's Recent Releases
 - [katai5plate/RPGMV-CoreScript-Reference](https://github.com/katai5plate/RPGMV-CoreScript-Reference) - https://katai5plate.github.io/RPGMV-CoreScript-Reference/
 - [antfu/100](https://github.com/antfu/100) - My 100-day project of exploring design, compform, and new things.
