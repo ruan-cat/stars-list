@@ -103,7 +103,7 @@
 - [mwilliamson/mammoth.js](https://github.com/mwilliamson/mammoth.js) - Convert Word documents (.docx files) to HTML
 - [katai5plate/RPGMV-CoreScript-Reference](https://github.com/katai5plate/RPGMV-CoreScript-Reference) - https://katai5plate.github.io/RPGMV-CoreScript-Reference/
 - [TyruswooStudio/Tyruswoo_FollowerControl-MV](https://github.com/TyruswooStudio/Tyruswoo_FollowerControl-MV) - Tyruswoo Follower Control plugin for RPG Maker MV
-- [wanglin2/mind-map](https://github.com/wanglin2/mind-map) - 一个还算强大的Web思维导图。A relatively powerful web mind map.
+- [wanglin2/mind-map](https://github.com/wanglin2/mind-map) - SimpleMindMap（思绪思维导图）：一个强大的Web思维导图。A powerful web mind map.
 - [microapp-store/linjiashop](https://github.com/microapp-store/linjiashop) - 邻家小铺，轻量，简洁的商城系统,包括后台管理，手机h5，小程序，app版
 - [nwutils/nw-vue3-boilerplate](https://github.com/nwutils/nw-vue3-boilerplate) - NW.js + Vue 3 + Vite + Pinia + Vue-Router + Vitest
 - [jordienr/whatamesh](https://github.com/jordienr/whatamesh) - tool to create mesh gradients
