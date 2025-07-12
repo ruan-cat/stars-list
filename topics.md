@@ -372,7 +372,7 @@
 
 ## docker 
 
-- [labring/sealos](https://github.com/labring/sealos) - Sealos is a production-ready Kubernetes distribution that makes deployment simple and efficient. Instantly set up development environments for any programming language or framework, deploy high-availa
+- [labring/sealos](https://github.com/labring/sealos) - Sealos is an AI native super application platform, Application-centric Intelligent Cloud Operating System. Set up development environments for any programming language or framework, deploy high-availa
 - [Dokploy/dokploy](https://github.com/Dokploy/dokploy) - Open Source Alternative to Vercel, Netlify and Heroku.
 - [DhivinX/turbo-starter](https://github.com/DhivinX/turbo-starter) - Monorepo starter with advanced technologies and frameworks such as TurboRepo, NestJS, Vue 3 with Vite, TypeScript and Nuxt.js to facilitate seamless and efficient software development.
 - [louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) - A fancy self-hosted monitoring tool
@@ -499,7 +499,7 @@
 ## golang 
 
 - [go-shiori/shiori](https://github.com/go-shiori/shiori) - Simple bookmark manager built with Go
-- [labring/sealos](https://github.com/labring/sealos) - Sealos is a production-ready Kubernetes distribution that makes deployment simple and efficient. Instantly set up development environments for any programming language or framework, deploy high-availa
+- [labring/sealos](https://github.com/labring/sealos) - Sealos is an AI native super application platform, Application-centric Intelligent Cloud Operating System. Set up development environments for any programming language or framework, deploy high-availa
 - [xiaolincoder/CS-Base](https://github.com/xiaolincoder/CS-Base) - 图解计算机网络、操作系统、计算机组成、数据库，共 1000 张图 + 50 万字，破除晦涩难懂的计算机基础知识，让天下没有难懂的八股文！🚀 在线阅读：https://xiaolincoding.com
 - [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) - Curated list of project-based tutorials
 
@@ -646,7 +646,7 @@
 
 ## kubernetes 
 
-- [labring/sealos](https://github.com/labring/sealos) - Sealos is a production-ready Kubernetes distribution that makes deployment simple and efficient. Instantly set up development environments for any programming language or framework, deploy high-availa
+- [labring/sealos](https://github.com/labring/sealos) - Sealos is an AI native super application platform, Application-centric Intelligent Cloud Operating System. Set up development environments for any programming language or framework, deploy high-availa
 - [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio) - A lightweight Node.js private proxy registry
 
 ## linux 
@@ -858,7 +858,7 @@
 - [Easy-Editor/EasyEditor](https://github.com/Easy-Editor/EasyEditor) - Plugin-based cross-framework low-code engine for building visual application platforms  |  用于构建可视化应用平台的插件化跨框架低代码引擎
 - [BluePointLilac/ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager) - 🖱️ 纯粹的Windows右键菜单管理程序
 - [CHTK001/vue-support-parent-starter](https://github.com/CHTK001/vue-support-parent-starter) - 
-- [easy-temps/nuxt-vant-mobile](https://github.com/easy-temps/nuxt-vant-mobile) - An mobile web apps template based on the Nuxt ⁴ ecosystem。 一个基于 Nuxt ⁴  生态系统的移动 web 应用模板，帮助你快速完成业务开发。
+- [vue-zone/nuxt-vant-mobile](https://github.com/vue-zone/nuxt-vant-mobile) - An mobile web apps template based on the Nuxt ⁴ ecosystem。 一个基于 Nuxt ⁴  生态系统的移动 web 应用模板，帮助你快速完成业务开发。
 - [plus-pro-components/plus-pro-components](https://github.com/plus-pro-components/plus-pro-components) - 🔥Page level components developed based on Element Plus.  ProComponents in vue.
 - [imsyy/DailyHot](https://github.com/imsyy/DailyHot) - DailyHot 今日热榜前端页面 | API：https://github.com/imsyy/DailyHotApi
 - [imsyy/site-status](https://github.com/imsyy/site-status) - 📺 一个基于 UptimeRobot API 的在线状态面板 | 站点监测 | 状态检测 | An online status panel based on the UptimeRobot API | UptimeRobot, status, site
