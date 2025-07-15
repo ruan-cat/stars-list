@@ -1007,7 +1007,6 @@
 - [sunpm/unisave](https://github.com/sunpm/unisave) - 拥抱 web 开发，拯救 uniapp。👋👋👋 基于Uniapp、Vue 3、pinia(且持久化保存)、Typescript、UnoCSS等主流技术开发的开箱即用模版，适配所有(app、mp、web)平台！！！
 - [ruan-cat/learn-postgres-drizzle-by-vercel-tmpl](https://github.com/ruan-cat/learn-postgres-drizzle-by-vercel-tmpl) - 
 - [bfanger/pixi-inspector](https://github.com/bfanger/pixi-inspector) - Devtools for PixiJS
-- [prazdevs/praz.garden](https://github.com/prazdevs/praz.garden) - 🌻 My digital garden.
 - [LecodeMV/leTBS](https://github.com/LecodeMV/leTBS) - A tactical battle system for the game engine RPG Maker MV
 - [ruan-cat/learn-starter-by-nuxthub-tmpl](https://github.com/ruan-cat/learn-starter-by-nuxthub-tmpl) - starter，复制于nuxthub的模板。旨在于学习cloudflare D1等云基础设置的使用。
 - [ruan-cat/register](https://github.com/ruan-cat/register) - Grab your own sweet-looking '.is-a.dev' subdomain.
