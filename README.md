@@ -5,7 +5,6 @@
 
 ## Contents
 
-- [Astro](#astro)
 - [C#](#c#)
 - [C++](#c++)
 - [CSS](#css)
@@ -27,10 +26,6 @@
 - [Shell](#shell)
 - [TypeScript](#typescript)
 - [Vue](#vue)
-
-## Astro 
-
-- [prazdevs/praz.garden](https://github.com/prazdevs/praz.garden) - 🌻 My digital garden.
 
 ## C# # 
 
