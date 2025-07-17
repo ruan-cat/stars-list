@@ -515,6 +515,7 @@
 
 ## Vue 
 
+- [kirodotdev/spirit-of-kiro](https://github.com/kirodotdev/spirit-of-kiro) - Spirit of Kiro is built with and powered by generative AI. Play the game, or help build it!
 - [dreamhunter2333/cloudflare_temp_email](https://github.com/dreamhunter2333/cloudflare_temp_email) - CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot
 - [jackchen0120/vueDataV](https://github.com/jackchen0120/vueDataV) - 基于Vue + Echarts 构建的数据可视化平台，酷炫大屏展示模板和组件库，持续更新各行各业实用模板和炫酷小组件。
 - [shfshanyue/Daily-Question](https://github.com/shfshanyue/Daily-Question) - 互联网大厂内推及大厂面经整理，并且每天一道面试题推送。每天五分钟，半年大厂中
@@ -551,7 +552,7 @@
 - [xiaomaogame/catctor](https://github.com/xiaomaogame/catctor) - 
 - [arhaanb/arhaanb.com](https://github.com/arhaanb/arhaanb.com) - 🌴 My personal website built using Nuxt 3 and Vite, deployed to Vercel.
 - [insub/shadcn-nuxt-starter](https://github.com/insub/shadcn-nuxt-starter) - ⚡️ Starter built with Nuxt 3 + Shadcn-ui + UnoCSS + TypeScript.
-- [NicolaSpadari/nuxtor](https://github.com/NicolaSpadari/nuxtor) - Build tiny desktop apps with Tauri, Nuxt 3 and NuxtUI
+- [NicolaSpadari/nuxtor](https://github.com/NicolaSpadari/nuxtor) - Build tiny desktop apps with Tauri, Nuxt 4 and NuxtUI
 - [kingyue737/vitify-nuxt](https://github.com/kingyue737/vitify-nuxt) - 🔽🏔 Vuetify 3 + Nuxt 3 Starter Template
 - [xiaoluoboding/nuxt3-starter](https://github.com/xiaoluoboding/nuxt3-starter) - 💚 A Better Nuxt 3 Starter Template，generate by nuxi.
 - [leotabosa/wordlezin](https://github.com/leotabosa/wordlezin) - wordle game built with nuxt.js
@@ -563,7 +564,6 @@
 - [wobsoriano/vuetify-sonner](https://github.com/wobsoriano/vuetify-sonner) - Stackable toast component for Vuetify.
 - [unovue/shadcn-vue](https://github.com/unovue/shadcn-vue) - Vue port of shadcn-ui
 - [compiiile/compiiile](https://github.com/compiiile/compiiile) - The most convenient way to render and deploy a folder containing markdown files. Previewing and searching markdown files has never been that easy. Your alternative to Notion and Obsidian.
-- [jsxiaosi/vue-xs-admin](https://github.com/jsxiaosi/vue-xs-admin) - Vue3+TypeScript+Vite搭建的开箱即用后台模板
 - [wurencaideli/dumogu-admin](https://github.com/wurencaideli/dumogu-admin) - 最基础的管理端架子 - 毒蘑菇管理
 - [shilohooo/vuetify-unplugin-vue-router-example](https://github.com/shilohooo/vuetify-unplugin-vue-router-example) - a vue3 + vuetify + unplugin-vue-router example
 - [yue1123/vue3-baidu-map-gl](https://github.com/yue1123/vue3-baidu-map-gl) - 🎉百度地图 GL版 Vue3 组件库，baidu map gl components libary based on Vue3.0
@@ -588,7 +588,7 @@
 - [jzfai/vue3-admin-plus](https://github.com/jzfai/vue3-admin-plus) - 👏 An amazing admin framework of vue3
 - [kailong321200875/vue-element-plus-admin](https://github.com/kailong321200875/vue-element-plus-admin) - A backend management system based on vue3, typescript, element-plus, and vite
 - [view-design/ViewUIPlus](https://github.com/view-design/ViewUIPlus) - An enterprise-level UI component library and front-end solution based on Vue.js 3
-- [pdsuwwz/vue-boilerplate-i18n](https://github.com/pdsuwwz/vue-boilerplate-i18n) - 🌏 基于 Vue3 + Vite 6 + Pinia 2 + TypeScript + Element-Plus + Vue Router 4 + UnoCSS + Unplugin + ESLint(v9) + Vitest 的原型 Web 端模板框架, 支持路由切换国际化语言, 自动导入  🚀🚀🚀 适合快速开发 B 端模块化产品的中小型后台管理系统，基于 vue-i18n-next 💪 Sta
+- [pdsuwwz/vue-boilerplate-i18n](https://github.com/pdsuwwz/vue-boilerplate-i18n) - 🌏 基于 Vue3 + Vite 7 + Pinia 2 + TypeScript + Element-Plus + Vue Router 4 + UnoCSS + Unplugin + ESLint(v9) + Vitest 的原型 Web 端模板框架, 支持路由切换国际化语言, 自动导入  🚀🚀🚀 适合快速开发 B 端模块化产品的中小型后台管理系统，基于 vue-i18n-next 💪 Sta
 - [luoyangC/vue-mall-template](https://github.com/luoyangC/vue-mall-template) - vue商城项目模板
 - [hai-27/vue-store](https://github.com/hai-27/vue-store) - 基于Vue+Vue-Router+Vuex+Element-ui+axios，参考小米商城，实现的电商项目。
 - [wocwin/wocwin-admin](https://github.com/wocwin/wocwin-admin) - wocwin-admin，基于 Vue3.3、TypeScript、Vite4.3、Pinia、Element-Plus、qiankun 开源的一套后台管理模板。
@@ -596,7 +596,7 @@
 - [youlaitech/mall-app](https://github.com/youlaitech/mall-app) - youlai-mall 微信小程序/H5/Android/iOS 移动应用端，uni-app终极跨平台前端框架。
 - [youlaitech/mall-admin](https://github.com/youlaitech/mall-admin) - youlai-mall 管理前端，基于vue-element-admin升级的Vue3版本，技术栈：Vue3 + Vite5+ TypeScript  + Element-Plus +Pinia。
 - [vbenjs/vue-vben-admin](https://github.com/vbenjs/vue-vben-admin) - A modern vue admin panel built with Vue3, Shadcn UI, Vite, TypeScript, and Monorepo. It's fast!
-- [pdsuwwz/vite-ts-starter](https://github.com/pdsuwwz/vite-ts-starter) - 🐬 一个轻量级、开箱即用、快速开发 Vue3 (setup)  全家桶 + Vite6 + i18n 路由级国际化 + Element-Plus + UnoCSS + TypeScript + Vuex + Unplugin + ESLint (v9) + Vitest + Scss + StyleLint + Husky + lint-staged 中小型 B 端中后台管理系统的现代开发基础模板
+- [pdsuwwz/vite-ts-starter](https://github.com/pdsuwwz/vite-ts-starter) - 🐬 一个轻量级、开箱即用、快速开发 Vue3 (setup)  全家桶 + Vite7 + i18n 路由级国际化 + Element-Plus + UnoCSS + TypeScript + Vuex + Unplugin + ESLint (v9) + Vitest + Scss + StyleLint + Husky + lint-staged 中小型 B 端中后台管理系统的现代开发基础模板
 - [wocwin/t-ui](https://github.com/wocwin/t-ui) - Vue 项目中基于Element-ui 二次封装基础组件文档；Vue基础组件文档
 - [Couy69/vue-idle-game](https://github.com/Couy69/vue-idle-game) - 一个全随机的刷装备小游戏
 - [XiaofengdiZhu/vue-idle-game-mod](https://github.com/XiaofengdiZhu/vue-idle-game-mod) - 一个全随机的刷装备小游戏
