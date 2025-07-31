@@ -301,6 +301,7 @@
 
 ## TypeScript 
 
+- [barbajs/barba](https://github.com/barbajs/barba) - Create badass, fluid and smooth transitions between your website’s pages
 - [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - A Beautiful & Animated Chart UI Website built on top of shadcn & recharts.
 - [coze-dev/coze-studio](https://github.com/coze-dev/coze-studio) - An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation.
 - [ConardLi/easy-llm-cli](https://github.com/ConardLi/easy-llm-cli) - An open-source AI agent that is compatible with multiple LLM models
@@ -576,7 +577,7 @@
 - [xiaoluoboding/nuxt3-starter](https://github.com/xiaoluoboding/nuxt3-starter) - 💚 A Better Nuxt 3 Starter Template，generate by nuxi.
 - [leotabosa/wordlezin](https://github.com/leotabosa/wordlezin) - wordle game built with nuxt.js
 - [zhou-tao/vue-power-admin](https://github.com/zhou-tao/vue-power-admin) - 💪 A powerful admin based on Vue3.
-- [lnbiuc/blog-next-view](https://github.com/lnbiuc/blog-next-view) - Nuxt full-stack blog.
+- [xkdvSrPD/blog-next-view](https://github.com/xkdvSrPD/blog-next-view) - Nuxt full-stack blog.
 - [themesberg/flowbite-vue](https://github.com/themesberg/flowbite-vue) - Official Vue 3 components built for Flowbite and Tailwind CSS
 - [pinky-pig/starter-vue-lib](https://github.com/pinky-pig/starter-vue-lib) - 
 - [pinky-pig/v3-bento](https://github.com/pinky-pig/v3-bento) - 拖拽方块布局
