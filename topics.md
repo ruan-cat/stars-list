@@ -149,6 +149,7 @@
 - [website](#website)
 - [windows](#windows)
 - [wordpress](#wordpress)
+- [zsh](#zsh)
 
 ## 3d 
 
@@ -1009,7 +1010,7 @@
 - [NewRPGProject/MZMV_Plugin](https://github.com/NewRPGProject/MZMV_Plugin) - ＲＰＧツクールＭＺおよびＭＶ用のプラグインです。
 - [ddean2009/blog-auto-publishing-tools](https://github.com/ddean2009/blog-auto-publishing-tools) - 博客自动发布工具，一键把你的博客发到CSDN,掘金,知乎,头条,51blog,腾讯云,公众号等等，支持GPT重写！
 - [rhinobase/hono-openapi](https://github.com/rhinobase/hono-openapi) - Hono middleware to generate OpenAPI Swagger documentation
-- [L33Z22L11/blog-v3](https://github.com/L33Z22L11/blog-v3) - My blog, powered by Nuxt Content v2.
+- [L33Z22L11/blog-v3](https://github.com/L33Z22L11/blog-v3) - My blog, powered by Nuxt Content v3.
 - [xkdvSrPD/blog-next-view](https://github.com/xkdvSrPD/blog-next-view) - Nuxt full-stack blog.
 - [magne4000/vite-plugin-vercel](https://github.com/magne4000/vite-plugin-vercel) - Vercel adapter for vite
 - [course-dasheng/fullstack](https://github.com/course-dasheng/fullstack) - 全栈项目开发文档
@@ -1495,6 +1496,7 @@
 
 ## vue 
 
+- [posva/pinia-colada](https://github.com/posva/pinia-colada) - 🍹 The smart data fetching layer for Vue.js
 - [DavidHDev/vue-bits](https://github.com/DavidHDev/vue-bits) - An open source collection of animated, interactive & fully customizable Vue components for building stunning, memorable websites.
 - [zyronon/douyin](https://github.com/zyronon/douyin) - Vue3 + Pinia 仿抖音，Vue 在移动端的最佳实践 .  Imitate TikTok ，Vue Best practices on Mobile
 - [xiaowang1314/uniapp-plugin-collections](https://github.com/xiaowang1314/uniapp-plugin-collections) - uni-app项目插件功能集合https://github.com/xiaowang1314/uniapp-plugin-collections
@@ -1668,6 +1670,10 @@
 ## wordpress 
 
 - [terwer/siyuan-plugin-publisher](https://github.com/terwer/siyuan-plugin-publisher) - ✈️ Publish articles from siyuan-note to platforms such as Yuque, etc.Free and open source. 将思源笔记的文章发布到语雀等平台，开源免费。
+
+## zsh 
+
+- [withfig/autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell
 
 
 ## License
