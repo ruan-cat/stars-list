@@ -893,6 +893,7 @@
 
 ## others 
 
+- [viarotel-org/vite-uniapp-template](https://github.com/viarotel-org/vite-uniapp-template) - 🚀 以实用为先的 uni-app 起手模板。
 - [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年收集整理几十套棋牌源码(带小白搭建教程)，严禁商用，否则后果自负！！！
 - [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - A Beautiful & Animated Chart UI Website built on top of shadcn & recharts.
 - [openai/codex](https://github.com/openai/codex) - Lightweight coding agent that runs in your terminal
