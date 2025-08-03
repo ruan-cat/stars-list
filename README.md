@@ -302,6 +302,7 @@
 
 ## TypeScript 
 
+- [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.
 - [posva/pinia-colada](https://github.com/posva/pinia-colada) - 🍹 The smart data fetching layer for Vue.js
 - [barbajs/barba](https://github.com/barbajs/barba) - Create badass, fluid and smooth transitions between your website’s pages
 - [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - A Beautiful & Animated Chart UI Website built on top of shadcn & recharts.
@@ -535,7 +536,7 @@
 
 - [DavidHDev/vue-bits](https://github.com/DavidHDev/vue-bits) - An open source collection of animated, interactive & fully customizable Vue components for building stunning, memorable websites.
 - [zyronon/douyin](https://github.com/zyronon/douyin) - Vue3 + Pinia 仿抖音，Vue 在移动端的最佳实践 .  Imitate TikTok ，Vue Best practices on Mobile
-- [Moonofweisheng/wot-demo](https://github.com/Moonofweisheng/wot-demo) - 🍀 基于 vitesse-uni-app 深度整合 Wot UI 组件库的 uni-app 快速起手项目
+- [wot-ui/wot-demo](https://github.com/wot-ui/wot-demo) - 🍀 基于 vitesse-uni-app 深度整合 Wot UI 组件库的 uni-app 快速起手项目
 - [xiaowang1314/uniapp-plugin-collections](https://github.com/xiaowang1314/uniapp-plugin-collections) - uni-app项目插件功能集合https://github.com/xiaowang1314/uniapp-plugin-collections
 - [kirodotdev/spirit-of-kiro](https://github.com/kirodotdev/spirit-of-kiro) - Spirit of Kiro is built with and powered by generative AI. Play the game, or help build it!
 - [dreamhunter2333/cloudflare_temp_email](https://github.com/dreamhunter2333/cloudflare_temp_email) - CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot
