@@ -160,7 +160,7 @@
 - [ruan-cat/Lagomoro-Mission-MV](https://github.com/ruan-cat/Lagomoro-Mission-MV) - Mission System for RPG Maker MV
 - [louislam/uptime-kuma](https://github.com/louislam/uptime-kuma) - A fancy self-hosted monitoring tool
 - [SortableJS/Sortable](https://github.com/SortableJS/Sortable) - Reorderable drag-and-drop lists for modern browsers and touch devices. No jQuery or framework required.
-- [grasplabs/aircode](https://github.com/grasplabs/aircode) - Build and ship Node.js serverless functions in a coffee break.
+- [aircodelab/aircode](https://github.com/aircodelab/aircode) - Build and ship Node.js serverless functions in a coffee break.
 - [chinshou/HCView-H5](https://github.com/chinshou/HCView-H5) - 
 - [KilledByAPixel/LittleJS](https://github.com/KilledByAPixel/LittleJS) - LittleJS is the tiny fast HTML5 game engine with many features and no dependencies. 🚂 Choo-Choo!
 - [bakeruk/modern-typescript-monorepo-example](https://github.com/bakeruk/modern-typescript-monorepo-example) - A modern monorepo example using Typescript, PNPM and Turborepo.
@@ -421,7 +421,7 @@
 - [motiondivision/motion](https://github.com/motiondivision/motion) - A modern animation library for React and JavaScript
 - [toss/es-toolkit](https://github.com/toss/es-toolkit) - A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller—a major upgrade to lodash.
 - [langgenius/dify](https://github.com/langgenius/dify) - Production-ready platform for agentic workflow development.
-- [antfu/vitesse-nuxt](https://github.com/antfu/vitesse-nuxt) - Vitesse for Nuxt 3 🏔💚⚡️
+- [antfu/vitesse-nuxt](https://github.com/antfu/vitesse-nuxt) - Vitesse for Nuxt 4 🏔💚⚡️
 - [zhe-qi/uniez-template](https://github.com/zhe-qi/uniez-template) - uniez-template，一个“功能”和“开发体验”优先的 uniapp 模板
 - [motiondivision/motion-vue](https://github.com/motiondivision/motion-vue) - Motion for Vue
 - [misskey-dev/misskey](https://github.com/misskey-dev/misskey) - 🌎 A completely free and open interplanetary microblogging platform 🚀
