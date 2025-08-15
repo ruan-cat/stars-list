@@ -918,6 +918,7 @@
 
 ## others 
 
+- [ryoppippi/ccusage](https://github.com/ryoppippi/ccusage) - A CLI tool for analyzing Claude Code usage from local JSONL files.
 - [mendableai/open-lovable](https://github.com/mendableai/open-lovable) - 🔥 Clone and recreate any website as a modern React app in seconds
 - [kingparks/cursor-vip](https://github.com/kingparks/cursor-vip) - cursor IDE enjoy VIP
 - [anthropics/claude-code](https://github.com/anthropics/claude-code) - Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows 
@@ -1026,7 +1027,7 @@
 - [anvaka/city-roads](https://github.com/anvaka/city-roads) - Visualization of all roads within any city
 - [ct-js/ct-js](https://github.com/ct-js/ct-js) - Ct.js is a desktop game engine that makes learning programming fun and game development easy by its visual editors and well-documented code library
 - [thieleju/5minutechess](https://github.com/thieleju/5minutechess) - 5 Minute Chess - Made with Nuxt 3, Vite, Vue 3 and Vuetify 3
-- [kingyue737/vitify-nuxt](https://github.com/kingyue737/vitify-nuxt) - 🔽🏔 Vuetify 3 + Nuxt 3 Starter Template
+- [kingyue737/vitify-nuxt](https://github.com/kingyue737/vitify-nuxt) - 🔽🏔 Vuetify + Nuxt Starter Template
 - [xiaoluoboding/nuxt3-starter](https://github.com/xiaoluoboding/nuxt3-starter) - 💚 A Better Nuxt 3 Starter Template，generate by nuxi.
 - [rutan/rpgmaker-plugin-annotation](https://github.com/rutan/rpgmaker-plugin-annotation) - 
 - [rutan/torigoya-rpg-maker-plugin](https://github.com/rutan/torigoya-rpg-maker-plugin) - RPGツクールMV/MZ用のプラグイン
