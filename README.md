@@ -216,6 +216,7 @@
 
 ## Less 
 
+- [opentiny/tiny-vue](https://github.com/opentiny/tiny-vue) - TinyVue is an enterprise-class UI component library of OpenTiny community, support both Vue.js 2 and Vue.js 3, as well as PC and mobile.
 - [MadMaxChow/VLOOK](https://github.com/MadMaxChow/VLOOK) - VLOOK™ 是优雅好用的 Typora/Markdown 主题包和增强插件。  VLOOK™ is an elegant and practical THEME PACKAGE × ENHANCEMENT PLUGIN for Typora/Markdown.
 
 ## MDX 
@@ -321,6 +322,8 @@
 
 ## TypeScript 
 
+- [Barbapapazes/vue-library](https://github.com/Barbapapazes/vue-library) - 
+- [interface-ui/interface-ui](https://github.com/interface-ui/interface-ui) - 🦉 刚起步基于TypeScript Vue3的前端Ui组件库
 - [Kele-Bingtang/vitepress-theme-teek](https://github.com/Kele-Bingtang/vitepress-theme-teek) - ✨一个轻量、简洁高效、灵活配置、易于扩展的 VitePress 主题
 - [ryoppippi/ccusage](https://github.com/ryoppippi/ccusage) - A CLI tool for analyzing Claude Code usage from local JSONL files.
 - [c15t/c15t](https://github.com/c15t/c15t) - The Developer-First Cookie Banner
