@@ -78,6 +78,7 @@
 
 ## JavaScript 
 
+- [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) - An open source collection of animated, interactive & fully customizable React components for building stunning, memorable websites.
 - [Wei-Shaw/claude-relay-service](https://github.com/Wei-Shaw/claude-relay-service) - 自建Claude-code镜像服务，同时支持Gemini-cli、Codex-cli中转，支持多账户切换、自定义API密钥、Claude API、OPENAI兼容格式、能有效规避封号，OAuth集成可快捷添加账号池。
 - [jiawanlong/Cesium-Examples](https://github.com/jiawanlong/Cesium-Examples) - CesiumJS2025年最新Examples，200多个原生示例：自定义纹理、地形开挖、可视域分析、洪水淹没、缓冲分析、日照分析、方量分析、通透分析、剖面、单体化、视频融合、视频投射、雨雪雾、天空盒、场景出图、体积云、闪电、视锥体、雷达扫描、水波纹、动态扩散点、电子围栏、粒子效果、物理引擎、克里金、海流、大数据可视化、坐标转换、相机、飞行漫游、瓦片加载、xyz、tms、wms、wmts、天地图、
 - [PublicAffairs/openai-gemini](https://github.com/PublicAffairs/openai-gemini) - Gemini ➜ OpenAI API proxy. Serverless!
