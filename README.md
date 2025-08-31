@@ -91,7 +91,7 @@
 - [viarotel-org/vite-uniapp-template](https://github.com/viarotel-org/vite-uniapp-template) - 🚀 以实用为先的 uni-app 起手模板。
 - [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年收集整理几十套棋牌源码(带小白搭建教程)，严禁商用，否则后果自负！！！
 - [xaboy/form-create](https://github.com/xaboy/form-create) - :fire::fire::fire: 强大的低代码动态表单组件，通过JSON数据驱动表单渲染，适配移动端，支持可视化设计。提高开发者对表单的开发效率。目前在政务系统、OA系统、ERP系统、电商系统、流程管理等系统中已稳定应用。
-- [Deepractice/PromptX](https://github.com/Deepractice/PromptX) - PromptX · 领先的AI上下文工程平台 ｜ PromptX · The Leading AI Context Engineering Platform
+- [Deepractice/PromptX](https://github.com/Deepractice/PromptX) - PromptX · 领先的AI 智能体上下文平台 ｜ PromptX · Leading AI Agent Context Platform
 - [z2586300277/three-cesium-examples](https://github.com/z2586300277/three-cesium-examples) - WebGL Three.js Cesium.js Examples And Demo - WebGL 的 Three.js 和 Cesium.js 案例 --- Star ---点星星
 - [gloriasoft/veaury](https://github.com/gloriasoft/veaury) - Use React in Vue3 and Vue3 in React, And as perfect as possible!
 - [lin-123/javascript](https://github.com/lin-123/javascript) - eslint-config-airbnb 中文版
@@ -228,7 +228,6 @@
 ## MDX 
 
 - [PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) - 📄  Configuration files that enhance Cursor AI editor experience with custom rules and behaviors
-- [thedaviddias/llms-txt-hub](https://github.com/thedaviddias/llms-txt-hub) - 🤖 The largest directory for AI-ready documentation and tools implementing the proposed llms.txt standard
 
 ## Markdown 
 
@@ -241,6 +240,7 @@
 
 ## Others 
 
+- [Zainking/LearningPixi](https://github.com/Zainking/LearningPixi) - ⚡️Pixi教程中文版
 - [iannuttall/claude-agents](https://github.com/iannuttall/claude-agents) - Custom subagents to use with Claude Code.
 - [vijaythecoder/awesome-claude-agents](https://github.com/vijaythecoder/awesome-claude-agents) - An orchestrated sub agent dev team powered by claude code
 - [wshobson/agents](https://github.com/wshobson/agents) - A collection of production-ready subagents for Claude Code
@@ -343,7 +343,7 @@
 - [tokenizin-agency/mcp-npx-fetch](https://github.com/tokenizin-agency/mcp-npx-fetch) - A powerful MCP server for fetching and transforming web content into various formats (HTML, JSON, Markdown, Plain Text) with ease.
 - [Haleclipse/Claudiatron](https://github.com/Haleclipse/Claudiatron) - 
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) - Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!
-- [getAsterisk/gooey](https://github.com/getAsterisk/gooey) - A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.
+- [getAsterisk/opcode](https://github.com/getAsterisk/opcode) - A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.
 - [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.
 - [posva/pinia-colada](https://github.com/posva/pinia-colada) - 🍹 The smart data fetching layer for Vue
 - [barbajs/barba](https://github.com/barbajs/barba) - Create badass, fluid and smooth transitions between your website’s pages
@@ -393,6 +393,7 @@
 - [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Free, simple, fast interactive diagrams for any GitHub repository
 - [hongfaqiu/cesium-extends](https://github.com/hongfaqiu/cesium-extends) - CesiumJS 的扩展库，提供事件订阅、大数据geojson加载、geojson样式、tooltip、popup、缩放控制、绘图工具、测量工具、双屏联动、指南针、热力图等功能
 - [zengm-games/facesjs](https://github.com/zengm-games/facesjs) - A JavaScript library for generating vector-based cartoon faces
+- [thedaviddias/llms-txt-hub](https://github.com/thedaviddias/llms-txt-hub) - 🤖 The largest directory for AI-ready documentation and tools implementing the proposed llms.txt standard
 - [chodocs/chodocs](https://github.com/chodocs/chodocs) - 一站式前端内容网站，包括学习路线、知识体系。用专栏形式更新，原创不易，Give a ⭐️ if this project helped you!
 - [Open-Yami-Community/awesome-yami](https://github.com/Open-Yami-Community/awesome-yami) - 优秀的Yami游戏合集
 - [flingyp/vitepress-demo-preview](https://github.com/flingyp/vitepress-demo-preview) - ⚙️⚙️⚙️ Vue component demo preview and source code show of vitepress
@@ -575,6 +576,7 @@
 
 ## Vue 
 
+- [admin8756/vitepress-ext](https://github.com/admin8756/vitepress-ext) - 将 VitePress 变成的更强大，只需几分钟
 - [doocs/md](https://github.com/doocs/md) - ✍ WeChat Markdown Editor | 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、自定义主题样式、内容管理、多图床、AI 助手等特性
 - [sudoriaa/BOCCHI-THE-ROCK](https://github.com/sudoriaa/BOCCHI-THE-ROCK) - 孤独摇滚同人网页
 - [wangzmgit/alnitak](https://github.com/wangzmgit/alnitak) - Alnitak是一个基于nuxt和go开发的前后端分离的弹幕视频网站。 项目实现了视频、专栏、弹幕、评论、点赞、收藏等功能。
