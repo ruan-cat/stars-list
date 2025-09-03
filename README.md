@@ -582,6 +582,7 @@
 
 ## Vue 
 
+- [vangleer/es-big-screen](https://github.com/vangleer/es-big-screen) - 基于 vue3 + echarts + amap(高德地图) + pinia 开发的大屏可视化项目，支持拖拽布局
 - [admin8756/vitepress-ext](https://github.com/admin8756/vitepress-ext) - 将 VitePress 变成的更强大，只需几分钟
 - [doocs/md](https://github.com/doocs/md) - ✍ WeChat Markdown Editor | 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、自定义主题样式、内容管理、多图床、AI 助手等特性
 - [sudoriaa/BOCCHI-THE-ROCK](https://github.com/sudoriaa/BOCCHI-THE-ROCK) - 孤独摇滚同人网页
