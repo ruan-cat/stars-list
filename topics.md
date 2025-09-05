@@ -968,6 +968,9 @@
 
 ## others 
 
+- [lin-97/gi-components](https://github.com/lin-97/gi-components) - 基于element plus二次封装的通用组件
+- [timqian/bambot](https://github.com/timqian/bambot) - Play with open source, low-cost AI robots with ease 🤖
+- [vangleer/es-big-screen](https://github.com/vangleer/es-big-screen) - 基于 vue3 + echarts + amap(高德地图) + pinia 开发的大屏可视化项目，支持拖拽布局
 - [condorheroblog/vitepress-export-pdf](https://github.com/condorheroblog/vitepress-export-pdf) - VitePress export PDF
 - [zakirullin/cognitive-load](https://github.com/zakirullin/cognitive-load) - 🧠 Cognitive Load is what matters
 - [sxzz/npm-top-provenance](https://github.com/sxzz/npm-top-provenance) - Provenance of High Impact on npm
