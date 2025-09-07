@@ -5,15 +5,20 @@
   "description": "GitHub stars list",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "git:fetch": "git fetch -p",
+    "git:dev-2-master": "git rebase dev master && git push --follow-tags",
+    "git:master-2-dev": "git rebase master dev"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@ruan-cat/commitlint-config": "^2.0.0",
+    "@ruan-cat/vitepress-preset-config": "^2.1.0",
     "commitizen": "^4.3.1",
     "cz-git": "^1.12.0",
-    "vitepress": "^1.6.4"
+    "vitepress": "^1.6.4",
+    "vitepress-demo-plugin": "^1.4.7",
+    "vue": "^3.5.21"
   }
 }
