@@ -4,17 +4,19 @@
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@10.15.1",
+  "author": "ruan-cat",
   "description": "阮喵喵的github star列表，是一个基于工作流自动更新的文档项目。",
+  "homepage": "https://ruan-cat.github.io/stars-list",
   "main": "index.js",
   "scripts": {
     "git:fetch": "git fetch -p",
     "git:dev-2-master": "git rebase dev master && git push --follow-tags",
     "git:master-2-dev": "git rebase master dev",
-    "up-taze": "pnpm up @ruan-cat/taze-config -L && npx taze -r"
+    "up-taze": "pnpm up @ruan-cat/taze-config -L && npx taze -r",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "@ruan-cat/commitlint-config": "^2.0.0",
     "@ruan-cat/taze-config": "^0.2.0",
@@ -25,5 +27,12 @@
     "vitepress": "^1.6.4",
     "vitepress-demo-plugin": "^1.4.7",
     "vue": "^3.5.21"
-  }
+  },
+  "keywords": [
+    "ruan-cat",
+    "github",
+    "stars",
+    "list"
+  ],
+  "license": "MIT"
 }
