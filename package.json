@@ -1,5 +1,7 @@
 {
-  "name": "stars-list(ruan-cat)",
+  "name": "@ruan-cat-docs/stars-list",
+  "private": true,
+  "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@10.15.1",
   "description": "GitHub stars list",
