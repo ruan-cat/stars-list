@@ -4,7 +4,7 @@
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@10.15.1",
-  "description": "GitHub stars list",
+  "description": "阮喵喵的github star列表，是一个基于工作流自动更新的文档项目。",
   "main": "index.js",
   "scripts": {
     "git:fetch": "git fetch -p",
