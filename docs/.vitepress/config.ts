@@ -27,6 +27,12 @@ const userConfig = setUserConfig(
 	{
 		title: "阮喵喵的github star列表",
 		description,
+		/**
+		 * 设置base路径，用于部署到github pages时，设置正确的访问路径
+		 * TODO: 在 @ruan-cat/vitepress-preset-config/config 内，实现自动设置base路径。根据包名来实现拆分设置。
+		 * 判断当前环境是否在github actions内，如果是，则设置为 /stars-list/ 。
+		 */
+		base: "/stars-list/",
 		themeConfig: {},
 	},
 	{
