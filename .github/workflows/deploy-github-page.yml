@@ -40,7 +40,10 @@ jobs:
       - name: 安装pnpm
         uses: pnpm/action-setup@v4
         with:
-          run_install: false
+          run_install: true
+
+      - name: 安装依赖（尝试生成lockfile）
+        run: pnpm install --frozen-lockfile
 
       - name: 安装node
         uses: actions/setup-node@v4
