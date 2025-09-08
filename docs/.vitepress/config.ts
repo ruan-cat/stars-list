@@ -33,7 +33,9 @@ const userConfig = setUserConfig(
 		 * 判断当前环境是否在github actions内，如果是，则设置为 /stars-list/ 。
 		 */
 		base: "/stars-list/",
-		themeConfig: {},
+		themeConfig: {
+			socialLinks: [{ icon: "github", link: "https://github.com/ruan-cat/stars-list" }],
+		},
 	},
 	{
 		plugins: {
