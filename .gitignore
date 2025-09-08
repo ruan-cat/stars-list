@@ -3,3 +3,6 @@ pnpm-lock.yaml
 
 docs/.vitepress/dist
 docs/.vitepress/cache
+
+# 首页是复制粘贴的README.md 内容 所以需要忽略
+docs/index.md

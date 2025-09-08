@@ -1,4 +1,9 @@
-import { setUserConfig, setGenerateSidebar, addChangelog2doc } from "@ruan-cat/vitepress-preset-config/config";
+import {
+	setUserConfig,
+	setGenerateSidebar,
+	addChangelog2doc,
+	copyReadmeMd,
+} from "@ruan-cat/vitepress-preset-config/config";
 
 import { description } from "../../package.json";
 
@@ -14,6 +19,9 @@ addChangelog2doc({
 		},
 	},
 });
+
+// 将 README.md 文件移动到指定要求的位置内，并重命名为 index.md
+copyReadmeMd("./docs");
 
 const userConfig = setUserConfig({
 	title: "阮喵喵的github star列表",
