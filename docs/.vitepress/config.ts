@@ -23,11 +23,21 @@ addChangelog2doc({
 // 将 README.md 文件移动到指定要求的位置内，并重命名为 index.md
 copyReadmeMd("./docs");
 
-const userConfig = setUserConfig({
-	title: "阮喵喵的github star列表",
-	description,
-	themeConfig: {},
-});
+const userConfig = setUserConfig(
+	{
+		title: "阮喵喵的github star列表",
+		description,
+		themeConfig: {},
+	},
+	{
+		plugins: {
+			llmstxt: {
+				// 忽略首页复制粘贴的 README.md 内容
+				ignoreFiles: ["index.md"],
+			},
+		},
+	},
+);
 
 // @ts-ignore
 userConfig.themeConfig.sidebar = setGenerateSidebar({
