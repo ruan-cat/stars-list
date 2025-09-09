@@ -21,6 +21,7 @@
 - [babel](#babel)
 - [backend](#backend)
 - [bash](#bash)
+- [beginner-project](#beginner-project)
 - [bot](#bot)
 - [c](#c)
 - [c-plus-plus](#c-plus-plus)
@@ -273,6 +274,10 @@
 ## bash 
 
 - [withfig/autocomplete](https://github.com/withfig/autocomplete) - IDE-style autocomplete for your existing terminal & shell
+
+## beginner-project 
+
+- [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) - Curated list of project-based tutorials
 
 ## bot 
 
@@ -1148,7 +1153,7 @@
 - [Lunatlazur/rpgmaker](https://github.com/Lunatlazur/rpgmaker) - 
 - [keldaanCommunity/pokemonAutoChess](https://github.com/keldaanCommunity/pokemonAutoChess) - Pokemon Auto Chess Game. Made by fans for fans. Open source, non profit. All rights to the Pokemon Company.
 - [moonyoulove/rpgmaker-plugin-conflict-finder](https://github.com/moonyoulove/rpgmaker-plugin-conflict-finder) - Find conflicts between RPG Maker MV/MZ plugins.
-- [nuxtlabs/docus](https://github.com/nuxtlabs/docus) - Write beautiful documentations with Nuxt and Markdown.
+- [nuxt-content/docus](https://github.com/nuxt-content/docus) - Write beautiful documentations with Nuxt and Markdown.
 - [o2oa/o2oa](https://github.com/o2oa/o2oa) - 开源OA系统 - 码云GVP|Java开源oa|企业OA办公平台|企业OA|协同办公OA|流程平台OA|O2OA|OA，支持国产麒麟操作系统和国产数据库（达梦、人大金仓），政务OA，军工信息化OA
 - [imba97/eslint-config](https://github.com/imba97/eslint-config) - ESLint Config
 - [qddidi/easyest](https://github.com/qddidi/easyest) - 基于Vite6+TypeScript的Vue3组件库开发框架
