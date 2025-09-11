@@ -334,6 +334,7 @@
 
 ## TypeScript 
 
+- [seeksdream/relation-graph](https://github.com/seeksdream/relation-graph) - relation-graph is a relationship graph display component that supports Vue2, Vue3, React. Allowing you to fully customize the graphical elements using HTML/CSS and Vue or React components through slot
 - [AkiraBit/PicSharp](https://github.com/AkiraBit/PicSharp) - A modern, full-featured, high-performance, cross-platform image compression application  具有现代化UI、功能齐全、高性能、跨平台的图像压缩工具
 - [alibaba/ChatUI](https://github.com/alibaba/ChatUI) - The UI design language and React library for Conversational UI
 - [tauri-apps/tauri-action](https://github.com/tauri-apps/tauri-action) - Build your Web application as a Tauri binary for macOS, Linux and Windows
