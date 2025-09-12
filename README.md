@@ -176,6 +176,7 @@
 - [alex8088/quick-start](https://github.com/alex8088/quick-start) - An easy way to start a front-end project.
 - [zenorocha/clipboard.js](https://github.com/zenorocha/clipboard.js) - :scissors: Modern copy to clipboard. No Flash. Just 3kb gzipped :clipboard:
 - [qqlcx5/nutils-js](https://github.com/qqlcx5/nutils-js) - :rocket: nutils-js是一个模块化、高性能的 JavaScript 实用工具库。
+- [stylelint-scss/stylelint-config-recommended-scss](https://github.com/stylelint-scss/stylelint-config-recommended-scss) - The recommended shareable SCSS config for Stylelint
 - [markdown-it/markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) - Emoji syntax plugin for markdown-it markdown parser
 - [twikoojs/twikoo](https://github.com/twikoojs/twikoo) - 💬 一个简洁、安全、免费的静态网站评论系统 | A simple, safe, free comment system.
 - [posva/focus-trap-vue](https://github.com/posva/focus-trap-vue) - Vue component to trap the focus within a DOM element
@@ -316,7 +317,6 @@
 
 - [Ares-Chang/vite-plugin-uni-polyfill](https://github.com/Ares-Chang/vite-plugin-uni-polyfill) - 解决 UniApp 依赖版本与 Vue 主版本库差异导致其它库不可使用问题.
 - [popo-fishes/umy-ui](https://github.com/popo-fishes/umy-ui) - A desktop component library based on Vue 2.0 prepared for developers
-- [stylelint-scss/stylelint-config-recommended-scss](https://github.com/stylelint-scss/stylelint-config-recommended-scss) - The recommended shareable SCSS config for Stylelint
 - [Melody-of-Oblivion/Melody-of-Oblivion.github.io](https://github.com/Melody-of-Oblivion/Melody-of-Oblivion.github.io) - 简单小博客。
 
 ## Shell 
@@ -334,6 +334,9 @@
 
 ## TypeScript 
 
+- [antdv-pro/antdv-pro](https://github.com/antdv-pro/antdv-pro) - An antdv-based middle and background management system
+- [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) - Virtual whiteboard for sketching hand-drawn like diagrams
+- [unibest-tech/unibest](https://github.com/unibest-tech/unibest) - 【这是新仓库，codercup那个进不去不维护了。】unibest - 最好用的 uniapp 开发框架。unibest 是由 uniapp + Vue3 + Ts + Vite5 + UnoCss + WotUI 驱动的跨端快速启动模板，使用 VS Code 开发，具有代码提示、自动格式化、统一配置、代码片段等功能，同时内置了大量平时开发常用的基本组件，开箱即用，让你编写 uniapp 拥有 b
 - [seeksdream/relation-graph](https://github.com/seeksdream/relation-graph) - relation-graph is a relationship graph display component that supports Vue2, Vue3, React. Allowing you to fully customize the graphical elements using HTML/CSS and Vue or React components through slot
 - [AkiraBit/PicSharp](https://github.com/AkiraBit/PicSharp) - A modern, full-featured, high-performance, cross-platform image compression application  具有现代化UI、功能齐全、高性能、跨平台的图像压缩工具
 - [alibaba/ChatUI](https://github.com/alibaba/ChatUI) - The UI design language and React library for Conversational UI
@@ -591,7 +594,7 @@
 
 ## Vue 
 
-- [lin-97/gi-components](https://github.com/lin-97/gi-components) - 基于element plus二次封装的通用组件
+- [lin-97/gi-components](https://github.com/lin-97/gi-components) - 该仓库已经不在维护，请转移gi-component
 - [vangleer/es-big-screen](https://github.com/vangleer/es-big-screen) - 基于 vue3 + echarts + amap(高德地图) + pinia 开发的大屏可视化项目，支持拖拽布局
 - [admin8756/vitepress-ext](https://github.com/admin8756/vitepress-ext) - 将 VitePress 变成的更强大，只需几分钟
 - [doocs/md](https://github.com/doocs/md) - ✍ WeChat Markdown Editor | 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、自定义主题样式、内容管理、多图床、AI 助手等特性
