@@ -334,6 +334,8 @@
 
 ## TypeScript 
 
+- [Hyk260/PureChat](https://github.com/Hyk260/PureChat) - PureChat 是一款全面的聊天应用程序，它将传统的即时消息与高级 AI 功能集成在一起。其模块化架构、可扩展的 AI 集成系统和灵活的配置选项使其成为强大的应用程序，也是 AI 增强通信应用程序的坚实基础。支持OpenAI，Ollama，DeepSeek等大语言模型，Markdown 渲染，聊天记录生成截图，主题切换，助力开发者快速掌握现代技术。
+- [slopus/happy](https://github.com/slopus/happy) - Mobile and Web client for Claude Code, with realtime voice, encryption and fully featured
 - [antdv-pro/antdv-pro](https://github.com/antdv-pro/antdv-pro) - An antdv-based middle and background management system
 - [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) - Virtual whiteboard for sketching hand-drawn like diagrams
 - [unibest-tech/unibest](https://github.com/unibest-tech/unibest) - 【这是新仓库，codercup那个进不去不维护了。】unibest - 最好用的 uniapp 开发框架。unibest 是由 uniapp + Vue3 + Ts + Vite5 + UnoCss + WotUI 驱动的跨端快速启动模板，使用 VS Code 开发，具有代码提示、自动格式化、统一配置、代码片段等功能，同时内置了大量平时开发常用的基本组件，开箱即用，让你编写 uniapp 拥有 b
@@ -668,7 +670,6 @@
 - [leamsigc/nuxt-monorepo-layers](https://github.com/leamsigc/nuxt-monorepo-layers) - 
 - [atinux/my-pull-requests](https://github.com/atinux/my-pull-requests) - Showcase your Open Source Contributions (pull requests).
 - [xiaoluoboding/vue-sonner](https://github.com/xiaoluoboding/vue-sonner) - 🔔 An opinionated toast component for Vue & Nuxt.
-- [ruan-cat/learn-postgres-nuxt-with-vercel](https://github.com/ruan-cat/learn-postgres-nuxt-with-vercel) - 
 - [ruan-cat/learn-nuxt-edge-functions-by-vercel-tmpl](https://github.com/ruan-cat/learn-nuxt-edge-functions-by-vercel-tmpl) - 
 - [ruan-cat/learn-nuxt-with-nuxthub-cloudflare-D1](https://github.com/ruan-cat/learn-nuxt-with-nuxthub-cloudflare-D1) - 在nuxthub内，使用 nuxt-todos-edge 创建模板，学习cloudflare D1的云数据库和nuxt接口开发。
 - [ruan-cat/leaen-hello-edge-by-nuxthub-tmpl](https://github.com/ruan-cat/leaen-hello-edge-by-nuxthub-tmpl) - 从nuxthub初始化的，最小化边缘服务器项目，用于学习nuxt预设，cloudflare，和边缘服务。
