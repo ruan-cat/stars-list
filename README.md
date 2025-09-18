@@ -248,6 +248,7 @@
 
 ## Others 
 
+- [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) - A complete computer science study plan to become a software engineer.
 - [zijie0/HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization) - 健康学习到150岁 - 人体系统调优不完全指南
 - [zakirullin/cognitive-load](https://github.com/zakirullin/cognitive-load) - 🧠 Cognitive Load is what matters
 - [Zainking/LearningPixi](https://github.com/Zainking/LearningPixi) - ⚡️Pixi教程中文版
@@ -698,7 +699,7 @@
 - [luoyangC/vue-mall-template](https://github.com/luoyangC/vue-mall-template) - vue商城项目模板
 - [hai-27/vue-store](https://github.com/hai-27/vue-store) - 基于Vue+Vue-Router+Vuex+Element-ui+axios，参考小米商城，实现的电商项目。
 - [wocwin/wocwin-admin](https://github.com/wocwin/wocwin-admin) - wocwin-admin，基于 Vue3.3、TypeScript、Vite4.3、Pinia、Element-Plus、qiankun 开源的一套后台管理模板。
-- [youlaitech/vue3-element-admin](https://github.com/youlaitech/vue3-element-admin) - 🔥基于 vue 3 + vite 6+ typescript + element-plus 构建的后台管理前端模板（配套后端源码），vue-element-admin 的 vue3 版本。
+- [youlaitech/vue3-element-admin](https://github.com/youlaitech/vue3-element-admin) - 🔥基于 Vue 3 + Vite 7+ TypeScript + element-plus 构建的后台管理前端模板（配套后端源码），vue-element-admin 的 vue3 版本。
 - [youlaitech/mall-app](https://github.com/youlaitech/mall-app) - youlai-mall 微信小程序/H5/Android/iOS 移动应用端，uni-app终极跨平台前端框架。
 - [youlaitech/mall-admin](https://github.com/youlaitech/mall-admin) - youlai-mall 管理前端，基于vue-element-admin升级的Vue3版本，技术栈：Vue3 + Vite5+ TypeScript  + Element-Plus +Pinia。
 - [vbenjs/vue-vben-admin](https://github.com/vbenjs/vue-vben-admin) - A modern vue admin panel built with Vue3, Shadcn UI, Vite, TypeScript, and Monorepo. It's fast!
