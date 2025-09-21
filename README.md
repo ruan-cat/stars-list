@@ -87,12 +87,14 @@
 
 ## JavaScript 
 
+- [eyaltoledano/claude-task-master](https://github.com/eyaltoledano/claude-task-master) - An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others.
+- [Gar-b-age/CookLikeHOC](https://github.com/Gar-b-age/CookLikeHOC) - 🥢像老乡鸡🐔那样做饭。主要部分于2024年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.
 - [greensock/GSAP](https://github.com/greensock/GSAP) - GSAP (GreenSock Animation Platform), a JavaScript animation library for the modern web
 - [matthias-research/pages](https://github.com/matthias-research/pages) - My web page containing all the demos from my youtube channel "Ten Minute Physics" www.youtube.com/c/TenMinutePhysics
 - [mankindGames/RPGTkool](https://github.com/mankindGames/RPGTkool) - RPGツクールMV公開用
 - [mankindGames/RPGTkoolMZ](https://github.com/mankindGames/RPGTkoolMZ) - RPGツクールMZ用
 - [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) - An open source collection of animated, interactive & fully customizable React components for building memorable websites.
-- [Wei-Shaw/claude-relay-service](https://github.com/Wei-Shaw/claude-relay-service) - 自建Claude Code镜像，支持Claude Code、Gemini CLI、Codex CLI，支持Claude Console接入。集成OAuth认   证、多账号池切换、自定义API密钥、OpenAI兼容格式、代理支持和智能防封机制。
+- [Wei-Shaw/claude-relay-service](https://github.com/Wei-Shaw/claude-relay-service) - 自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。
 - [jiawanlong/Cesium-Examples](https://github.com/jiawanlong/Cesium-Examples) - CesiumJS2025年最新Examples，200多个原生示例：自定义纹理、地形开挖、可视域分析、洪水淹没、缓冲分析、日照分析、方量分析、通透分析、剖面、单体化、视频融合、视频投射、雨雪雾、天空盒、场景出图、体积云、闪电、视锥体、雷达扫描、水波纹、动态扩散点、电子围栏、粒子效果、物理引擎、克里金、海流、大数据可视化、坐标转换、相机、飞行漫游、瓦片加载、xyz、tms、wms、wmts、天地图、
 - [PublicAffairs/openai-gemini](https://github.com/PublicAffairs/openai-gemini) - Gemini ➜ OpenAI API proxy. Serverless!
 - [tech-shrimp/gemini-balance-lite](https://github.com/tech-shrimp/gemini-balance-lite) - Gemini API 代理, 把Gemini API免费中转到国内。还可以聚合多个Gemini API Key，随机选取API Key的使用实现负载均衡，使得Gemini API免费成倍增加。
@@ -614,6 +616,7 @@
 
 ## Vue 
 
+- [ddiu8081/ChartFun](https://github.com/ddiu8081/ChartFun) - 🎲 数据大屏可视化编辑器
 - [anyup/colorful-uni](https://github.com/anyup/colorful-uni) - uniapp ui components
 - [lin-97/gi-components](https://github.com/lin-97/gi-components) - 该仓库已经不在维护，请转移gi-component
 - [vangleer/es-big-screen](https://github.com/vangleer/es-big-screen) - 基于 vue3 + echarts + amap(高德地图) + pinia 开发的大屏可视化项目，支持拖拽布局
