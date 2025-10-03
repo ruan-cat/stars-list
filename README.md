@@ -136,7 +136,7 @@
 - [ImaginaryVillain/community_lights](https://github.com/ImaginaryVillain/community_lights) - A community driven lighting plugin for RPG Maker MV and MZ
 - [pota-gon/RPGMakerMZ](https://github.com/pota-gon/RPGMakerMZ) - RPGツクールMZのプラグイン
 - [kuroudo119/RPGMZ-Plugin](https://github.com/kuroudo119/RPGMZ-Plugin) - RPGツクールMZ用プラグイン置き場。
-- [Sigureya/RmmzPluginSchema](https://github.com/Sigureya/RmmzPluginSchema) - 
+- [Sigureya/RmmzPluginSchemaOld](https://github.com/Sigureya/RmmzPluginSchemaOld) - 
 - [niokasgami/Rpg-Maker-MZ-Typescript](https://github.com/niokasgami/Rpg-Maker-MZ-Typescript) - The typescript definitions files for MZ
 - [Sigureya/RPGmakerMV](https://github.com/Sigureya/RPGmakerMV) - ツクールＭＶ用プラグイン
 - [munokura/MNKR-MZ-plugins](https://github.com/munokura/MNKR-MZ-plugins) - 
@@ -344,6 +344,8 @@
 
 ## TypeScript 
 
+- [yuyinws/vitepress-plugin-group-icons](https://github.com/yuyinws/vitepress-plugin-group-icons) - Enhance code blocks features for VitePress.
+- [unplugin/unplugin-turbo-console](https://github.com/unplugin/unplugin-turbo-console) - 🚀  Improve the Developer Experience of console
 - [colasama/MahoShojo-Generator](https://github.com/colasama/MahoShojo-Generator) - 基于 AI 结构化生成的个性化魔法少女角色生成器。
 - [AmanShakya0018/forgeui](https://github.com/AmanShakya0018/forgeui) - ForgeUI is a customizable, developer-friendly React component library, enabling rapid UI development with modern design, seamless integration, and reusable components tailored for modern web projects.
 - [paper-design/shaders](https://github.com/paper-design/shaders) - Zero-dependency canvas shaders that can be installed from npm or designed in Paper
