@@ -47,7 +47,7 @@
 
 ## CSS 
 
-- [tw93/weekly](https://github.com/tw93/weekly) - 🩴 潮流技术周刊，记录我的不枯燥生活，每周一早发布~
+- [tw93/Weekly](https://github.com/tw93/Weekly) - 🩴 潮流技术周刊，记录我的不枯燥生活，每周一早发布~
 - [Aikoyori/ProgrammingVTuberLogos](https://github.com/Aikoyori/ProgrammingVTuberLogos) - High-quality PNGs for logos I made for fun
 - [chokcoco/CSS-Inspiration](https://github.com/chokcoco/CSS-Inspiration) - CSS Inspiration，在这里找到写 CSS 的灵感！
 - [lgc2333/stream-cover](https://github.com/lgc2333/stream-cover) - 
@@ -305,7 +305,7 @@
 
 - [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) - Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.
 - [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - A curated list of awesome commands, files, and workflows for Claude Code
-- [BeehiveInnovations/zen-mcp-server](https://github.com/BeehiveInnovations/zen-mcp-server) - The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / Grok / OpenRouter / Ollama / Custom Model / All Of The Above] working as one.
+- [BeehiveInnovations/zen-mcp-server](https://github.com/BeehiveInnovations/zen-mcp-server) - The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / Custom Model / All Of The Above] working as one.
 - [bytedance/trae-agent](https://github.com/bytedance/trae-agent) - Trae Agent is an LLM-based agent for general purpose software engineering tasks.
 - [snailyp/gemini-balance](https://github.com/snailyp/gemini-balance) - Gemini polling proxy service （gemini轮询代理服务）
 - [maguowei/starred](https://github.com/maguowei/starred) - creating your own Awesome List by GitHub stars!
