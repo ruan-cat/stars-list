@@ -47,7 +47,7 @@
 
 ## CSS 
 
-- [tw93/Weekly](https://github.com/tw93/Weekly) - 🩴 潮流技术周刊，记录我的不枯燥生活，每周一早发布~
+- [tw93/Weekly](https://github.com/tw93/Weekly) - 🩴 Trendy Weekly Weekly records my non-boring life. 潮流周刊记录我的不枯燥生活
 - [Aikoyori/ProgrammingVTuberLogos](https://github.com/Aikoyori/ProgrammingVTuberLogos) - High-quality PNGs for logos I made for fun
 - [chokcoco/CSS-Inspiration](https://github.com/chokcoco/CSS-Inspiration) - CSS Inspiration，在这里找到写 CSS 的灵感！
 - [lgc2333/stream-cover](https://github.com/lgc2333/stream-cover) - 
