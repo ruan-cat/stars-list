@@ -642,7 +642,6 @@
 - [floating-ui/floating-ui](https://github.com/floating-ui/floating-ui) - A JavaScript library to position floating elements and create interactions for them.
 - [discordjs/discord.js](https://github.com/discordjs/discord.js) - A powerful JavaScript library for interacting with the Discord API
 - [strapi/strapi](https://github.com/strapi/strapi) - 🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.
-- [drawdb-io/drawdb](https://github.com/drawdb-io/drawdb) - Free, simple, and intuitive online database diagram editor and SQL generator.
 - [Frodo45127/rpfm](https://github.com/Frodo45127/rpfm) - Rusted PackFile Manager (RPFM) is a... reimplementation in Rust and Qt5 of PackFile Manager (PFM), one of the best modding tools for Total War Games.
 - [axios/axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
 
