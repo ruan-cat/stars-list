@@ -35,6 +35,7 @@
 
 ## C# # 
 
+- [DearVa/Everywhere](https://github.com/DearVa/Everywhere) - A context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integrating multiple LLMs and MCP tools.
 - [PixiEditor/PixiEditor](https://github.com/PixiEditor/PixiEditor) - PixiEditor is a Universal Editor for all your 2D needs
 - [BluePointLilac/ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager) - 🖱️ 纯粹的Windows右键菜单管理程序
 
@@ -259,7 +260,7 @@
 - [Zainking/LearningPixi](https://github.com/Zainking/LearningPixi) - ⚡️Pixi教程中文版
 - [iannuttall/claude-agents](https://github.com/iannuttall/claude-agents) - Custom subagents to use with Claude Code.
 - [vijaythecoder/awesome-claude-agents](https://github.com/vijaythecoder/awesome-claude-agents) - An orchestrated sub agent dev team powered by claude code
-- [wshobson/agents](https://github.com/wshobson/agents) - A collection of production-ready subagents for Claude Code
+- [wshobson/agents](https://github.com/wshobson/agents) - Claude Code Workflows & Agents
 - [poetries/FE-Interview-Questions](https://github.com/poetries/FE-Interview-Questions) - 关注公众号「前端进阶之旅」，一起学习。前端面试常考问题整理，按模块知识点分类 Front-end-Developer-Questions by Modules and knowledge
 - [febobo/web-interview](https://github.com/febobo/web-interview) - 语音打卡社群维护的前端面试题库，包含不限于Vue面试题，React面试题，JS面试题，HTTP面试题，工程化面试题，CSS面试题，算法面试题，大厂面试题，高频面试题
 - [zhsama/claude-sub-agent](https://github.com/zhsama/claude-sub-agent) - AI-driven development workflow system built on Claude Code Sub-Agents.
