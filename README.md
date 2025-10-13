@@ -244,7 +244,7 @@
 
 ## Markdown 
 
-- [L33Z22L11/blog-v3](https://github.com/L33Z22L11/blog-v3) - My blog, powered by Nuxt Content v3.
+- [L33Z22L11/blog-v3](https://github.com/L33Z22L11/blog-v3) - My blog, powered by Nuxt 4 & Nuxt Content v3. 纸鹿摸鱼处，分享技术与生活。
 - [Evavic44/portfolio-ideas](https://github.com/Evavic44/portfolio-ideas) - A curation of awesome portfolio website ideas for developers and designers to draw inspiration from. Raise a pull request to add more. 💜
 
 ## Nunjucks 
@@ -260,7 +260,7 @@
 - [Zainking/LearningPixi](https://github.com/Zainking/LearningPixi) - ⚡️Pixi教程中文版
 - [iannuttall/claude-agents](https://github.com/iannuttall/claude-agents) - Custom subagents to use with Claude Code.
 - [vijaythecoder/awesome-claude-agents](https://github.com/vijaythecoder/awesome-claude-agents) - An orchestrated sub agent dev team powered by claude code
-- [wshobson/agents](https://github.com/wshobson/agents) - Claude Code Workflows & Agents
+- [wshobson/agents](https://github.com/wshobson/agents) - Intelligent automation and multi-agent orchestration for Claude Code
 - [poetries/FE-Interview-Questions](https://github.com/poetries/FE-Interview-Questions) - 关注公众号「前端进阶之旅」，一起学习。前端面试常考问题整理，按模块知识点分类 Front-end-Developer-Questions by Modules and knowledge
 - [febobo/web-interview](https://github.com/febobo/web-interview) - 语音打卡社群维护的前端面试题库，包含不限于Vue面试题，React面试题，JS面试题，HTTP面试题，工程化面试题，CSS面试题，算法面试题，大厂面试题，高频面试题
 - [zhsama/claude-sub-agent](https://github.com/zhsama/claude-sub-agent) - AI-driven development workflow system built on Claude Code Sub-Agents.
