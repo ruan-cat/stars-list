@@ -99,7 +99,7 @@
 - [mankindGames/RPGTkool](https://github.com/mankindGames/RPGTkool) - RPGツクールMV公開用
 - [mankindGames/RPGTkoolMZ](https://github.com/mankindGames/RPGTkoolMZ) - RPGツクールMZ用
 - [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) - An open source collection of animated, interactive & fully customizable React components for building memorable websites.
-- [Wei-Shaw/claude-relay-service](https://github.com/Wei-Shaw/claude-relay-service) - 自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。
+- [Wei-Shaw/claude-relay-service](https://github.com/Wei-Shaw/claude-relay-service) - CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。
 - [jiawanlong/Cesium-Examples](https://github.com/jiawanlong/Cesium-Examples) - CesiumJS2025年最新Examples，200多个原生示例：自定义纹理、地形开挖、可视域分析、洪水淹没、缓冲分析、日照分析、方量分析、通透分析、剖面、单体化、视频融合、视频投射、雨雪雾、天空盒、场景出图、体积云、闪电、视锥体、雷达扫描、水波纹、动态扩散点、电子围栏、粒子效果、物理引擎、克里金、海流、大数据可视化、坐标转换、相机、飞行漫游、瓦片加载、xyz、tms、wms、wmts、天地图、
 - [PublicAffairs/openai-gemini](https://github.com/PublicAffairs/openai-gemini) - Gemini ➜ OpenAI API proxy. Serverless!
 - [tech-shrimp/gemini-balance-lite](https://github.com/tech-shrimp/gemini-balance-lite) - Gemini API 代理, 把Gemini API免费中转到国内。还可以聚合多个Gemini API Key，随机选取API Key的使用实现负载均衡，使得Gemini API免费成倍增加。
