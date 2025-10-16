@@ -42,6 +42,7 @@
 
 ## C++ 
 
+- [Admenri/urge](https://github.com/Admenri/urge) - The Universal Ruby Game Engine (URGE) Project
 - [neutralinojs/neutralinojs](https://github.com/neutralinojs/neutralinojs) - Portable and lightweight cross-platform desktop application development framework
 - [IppClub/Dora-SSR](https://github.com/IppClub/Dora-SSR) - A game engine for rapid development across devices, featuring a built-in Web IDE with intuitive toolchain.
 - [Yangff/mvuccu](https://github.com/Yangff/mvuccu) - A Mod System for RMMV
@@ -340,6 +341,7 @@
 
 ## Shell 
 
+- [obra/superpowers](https://github.com/obra/superpowers) - Claude Code superpowers: core skills library
 - [iflow-ai/iflow-cli](https://github.com/iflow-ai/iflow-cli) - iFlow cli is a comprehensive command-line intelligence that embeds in your terminal, analyzes your repositories, does coding tasks, interprets your needs across contexts, and boosts efficiency by perf
 - [xixu-me/Claude-Code-Toolkit](https://github.com/xixu-me/Claude-Code-Toolkit) - Cross-platform toolkit for installing and managing Claude Code, supporting the APIs of all Anthropic-compatible providers and automating the management of adding, switching, etc. | 用于安装和管理 Claude Code
 - [yuaotian/go-cursor-help](https://github.com/yuaotian/go-cursor-help) - 解决Cursor在免费订阅期间出现以下提示的问题:  Your request has been blocked as our system has detected suspicious activity / You've reached your trial request limit.  /  Too many free trial accounts used on this machine
