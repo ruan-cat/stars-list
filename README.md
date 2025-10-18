@@ -50,7 +50,7 @@
 
 ## CSS 
 
-- [tw93/Weekly](https://github.com/tw93/Weekly) - 🩴 Trendy Weekly Weekly records my non-boring life. 潮流周刊记录我的不枯燥生活
+- [tw93/Weekly](https://github.com/tw93/Weekly) - 🩴 Trendy Weekly records my non-boring life. 潮流周刊记录我的不枯燥生活
 - [Aikoyori/ProgrammingVTuberLogos](https://github.com/Aikoyori/ProgrammingVTuberLogos) - High-quality PNGs for logos I made for fun
 - [chokcoco/CSS-Inspiration](https://github.com/chokcoco/CSS-Inspiration) - CSS Inspiration，在这里找到写 CSS 的灵感！
 - [lgc2333/stream-cover](https://github.com/lgc2333/stream-cover) - 
@@ -645,7 +645,6 @@
 - [element-plus-x/ruoyi-element-ai](https://github.com/element-plus-x/ruoyi-element-ai) - 🎨🎨🎨 Vue3.5 + Element-Plus-X1.2 + ruoyiAI，推出仿豆包/通义，企业级AI-PC端应用模版，助力企业快速搭建-全栈AI项目
 - [ddiu8081/ChartFun](https://github.com/ddiu8081/ChartFun) - 🎲 数据大屏可视化编辑器
 - [anyup/colorful-uni](https://github.com/anyup/colorful-uni) - uniapp ui components
-- [lin-97/gi-components](https://github.com/lin-97/gi-components) - 该仓库已经不在维护，请转移gi-component
 - [vangleer/es-big-screen](https://github.com/vangleer/es-big-screen) - 基于 vue3 + echarts + amap(高德地图) + pinia 开发的大屏可视化项目，支持拖拽布局
 - [admin8756/vitepress-ext](https://github.com/admin8756/vitepress-ext) - 将 VitePress 变成的更强大，只需几分钟
 - [doocs/md](https://github.com/doocs/md) - ✍ WeChat Markdown Editor | 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、自定义主题样式、内容管理、多图床、AI 助手等特性
