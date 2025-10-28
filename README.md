@@ -441,7 +441,7 @@
 - [phphe/he-tree](https://github.com/phphe/he-tree) - Highly customizable draggable Vue.js tree component.
 - [labring/sealos](https://github.com/labring/sealos) - The Intelligent Cloud OS. Use AI to automate the full lifecycle of your development and production environments, from provisioning custom dev stacks and deploying self-optimizing databases (MySQL, Pos
 - [kazupon/gunshi](https://github.com/kazupon/gunshi) - Gunshi: Modern javascript command-line library
-- [bytedance/flowgram.ai](https://github.com/bytedance/flowgram.ai) - FlowGram is a node-based flow building engine that helps developers quickly create workflows in either fixed layout or free connection layout modes
+- [bytedance/flowgram.ai](https://github.com/bytedance/flowgram.ai) - FlowGram is a extensible workflow development framework with built-in canvas, form, variable, and materials that helps developers build AI workflow platforms faster and simpler.
 - [Easy-Editor/EasyEditor](https://github.com/Easy-Editor/EasyEditor) - Plugin-based cross-framework low-code engine for building visual application platforms  |  用于构建可视化应用平台的插件化跨框架低代码引擎
 - [vue-zone/nuxt-vant-mobile](https://github.com/vue-zone/nuxt-vant-mobile) - An mobile web apps template based on the Nuxt ⁴ ecosystem。 一个基于 Nuxt ⁴  生态系统的移动 web 应用模板，帮助你快速完成业务开发。
 - [plus-pro-components/plus-pro-components](https://github.com/plus-pro-components/plus-pro-components) - 🔥Page level components developed based on Element Plus.  ProComponents in vue.
