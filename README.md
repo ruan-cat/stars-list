@@ -66,6 +66,7 @@
 
 ## Go 
 
+- [wquguru/nof0](https://github.com/wquguru/nof0) - nof1.ai完整复刻版（持续开发）
 - [kingparks/cursor-vip](https://github.com/kingparks/cursor-vip) - cursor IDE enjoy VIP
 - [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList) - A new AList Fork to Anti Trust Crisis
 - [go-shiori/shiori](https://github.com/go-shiori/shiori) - Simple bookmark manager built with Go
@@ -364,7 +365,6 @@
 
 ## TypeScript 
 
-- [wquguru/nof0](https://github.com/wquguru/nof0) - nof1.ai完整复刻版（持续开发）
 - [UfoMiao/zcf](https://github.com/UfoMiao/zcf) - Zero-Config Code Flow for Claude code & Codex
 - [LouisMazel/maz-ui](https://github.com/LouisMazel/maz-ui) - Vue & Nuxt library of standalone components & tools to build interfaces
 - [skiyee/uni-unocss](https://github.com/skiyee/uni-unocss) - 🦁 在 UniApp 中零心智负担的使用 UnoCSS
