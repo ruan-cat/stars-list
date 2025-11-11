@@ -1085,6 +1085,7 @@
 
 ## others 
 
+- [antfu/starter-ts](https://github.com/antfu/starter-ts) - Starter template for TypeScript library
 - [sxzz/workflows](https://github.com/sxzz/workflows) - A collection of reusable GitHub Actions workflows for TypeScript projects.
 - [xuemk/termiClaude](https://github.com/xuemk/termiClaude) - claude CLI（cc）客户端工具，使用可视化方式进行环境和模型对话管理
 - [timtoday/mcp-windows-notify](https://github.com/timtoday/mcp-windows-notify) - 🔔 Windows notification MCP server - Get desktop notifications when AI tasks complete. Works with Claude Desktop, Cursor & other MCP-compatible tools.
