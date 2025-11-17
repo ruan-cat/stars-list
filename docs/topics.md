@@ -1393,7 +1393,6 @@
 - [u2sb/vuepress-plugin-vssue-global](https://github.com/u2sb/vuepress-plugin-vssue-global) - Vuepress的Vssue全局评论插件
 - [ruan-cat/rmmv-http](https://github.com/ruan-cat/rmmv-http) - 基于axios.js的rmmv联网插件
 - [JMWpower/xiaojiejie](https://github.com/JMWpower/xiaojiejie) - 
-- [brinsleylogic/rmmv-typescript-definitions](https://github.com/brinsleylogic/rmmv-typescript-definitions) - Typescript definition files for RPG Maker MV
 - [DrillUp/DrillPluginInformationReader](https://github.com/DrillUp/DrillPluginInformationReader) - 插件信息查看器
 - [ShiLinChenYing/RMMV-Plugins-SLCY](https://github.com/ShiLinChenYing/RMMV-Plugins-SLCY) - 石林尘影自制的RMMV插件合集。
 - [Sora-Shiro/RMMV-Learn](https://github.com/Sora-Shiro/RMMV-Learn) - RPG Maker MV Learning Note
