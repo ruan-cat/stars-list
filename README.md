@@ -220,7 +220,6 @@
 - [axios/axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
 - [bsides/rpgmakermv-modernjs](https://github.com/bsides/rpgmakermv-modernjs) - RPG Maker MV refactor to modern JavaScript ES6+
 - [DrillUp/drill_plugins](https://github.com/DrillUp/drill_plugins) - 
-- [brinsleylogic/rmmv-typescript-definitions](https://github.com/brinsleylogic/rmmv-typescript-definitions) - Typescript definition files for RPG Maker MV
 - [ShiLinChenYing/RMMV-Plugins-SLCY](https://github.com/ShiLinChenYing/RMMV-Plugins-SLCY) - 石林尘影自制的RMMV插件合集。
 - [Sora-Shiro/RMMV-Learn](https://github.com/Sora-Shiro/RMMV-Learn) - RPG Maker MV Learning Note
 - [wangwangxingao/RMMV](https://github.com/wangwangxingao/RMMV) - 
