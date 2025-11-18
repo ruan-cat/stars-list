@@ -1093,6 +1093,8 @@
 
 ## others 
 
+- [djyde/ccmate](https://github.com/djyde/ccmate) - Configure your Claude Code without pain
+- [hellodigua/code996](https://github.com/hellodigua/code996) - 统计 Git 项目的 commit 时间分布，进而推导出项目的编码工作强度。
 - [antfu/starter-ts](https://github.com/antfu/starter-ts) - Starter template for TypeScript library
 - [sxzz/workflows](https://github.com/sxzz/workflows) - A collection of reusable GitHub Actions workflows for TypeScript projects.
 - [xuemk/termiClaude](https://github.com/xuemk/termiClaude) - claude CLI（cc）客户端工具，使用可视化方式进行环境和模型对话管理
@@ -1814,6 +1816,7 @@
 
 ## ui 
 
+- [preetsuthar17/HextaUI](https://github.com/preetsuthar17/HextaUI) - Ready-to-use foundation components/blocks built on top of shadcn/ui.
 - [LouisMazel/maz-ui](https://github.com/LouisMazel/maz-ui) - Vue & Nuxt library of standalone components & tools to build interfaces
 - [alibaba/ChatUI](https://github.com/alibaba/ChatUI) - The UI design language and React library for Conversational UI
 - [keenthemes/ktui](https://github.com/keenthemes/ktui) - Open-source collection of customizable UI components for Tailwind CSS and vanilla JavaScript
@@ -1832,6 +1835,7 @@
 
 ## ui-design 
 
+- [preetsuthar17/HextaUI](https://github.com/preetsuthar17/HextaUI) - Ready-to-use foundation components/blocks built on top of shadcn/ui.
 - [saadeghi/daisyui](https://github.com/saadeghi/daisyui) - 🌼 🌼 🌼 🌼 🌼  The most popular, free and open-source Tailwind CSS component library
 
 ## visualization 
