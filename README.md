@@ -326,7 +326,7 @@
 
 ## Python 
 
-- [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) - 🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/个人微信/飞书/钉钉/Telegram/邮件/ntfy/bark 推送，30秒网页部署，1分钟手机通知，无需编
+- [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) - 🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/个人微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 推送，30秒网页部署，1分钟手机
 - [anthropics/skills](https://github.com/anthropics/skills) - Public repository for Skills
 - [CoronaEngine/CabbageEditor](https://github.com/CoronaEngine/CabbageEditor) - The editor of Corona Engine.
 - [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) - Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.
@@ -376,9 +376,10 @@
 
 ## TypeScript 
 
-- [long36708/histoire-vue3](https://github.com/long36708/histoire-vue3) - histoire-vue3
+- [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message se
+- [histoire-dev/histoire](https://github.com/histoire-dev/histoire) - ⚡ Fast and beautiful interactive component playgrounds, powered by Vite
+- [Bosh-Kuo/Bosh-Docusaurus-Dev-Notes](https://github.com/Bosh-Kuo/Bosh-Docusaurus-Dev-Notes) - Bosh 的技術探索筆記 | 這是一個使用 Docusaurus 建立的一站式筆記中心。紀錄我在軟體開發路上的技術足跡與學習旅程
 - [breaking-brake/cc-wf-studio](https://github.com/breaking-brake/cc-wf-studio) - ClaudeCode Workflow Studio
-- [miaotouy/aio-hub](https://github.com/miaotouy/aio-hub) - AI平台应用，提供多种实用的开发和日常工具，以及高可控性的LLM交互。
 - [LouisMazel/relizy](https://github.com/LouisMazel/relizy) - Seamless and automated release management with elegant changelog generation based on Conventional Commits, supporting both monorepos and single packages. Handles version bumping, changelog creation, G
 - [haydenbleasel/npm.bet](https://github.com/haydenbleasel/npm.bet) - an npm trends visualizer
 - [djyde/ccmate](https://github.com/djyde/ccmate) - Configure your Claude Code without pain
@@ -528,7 +529,7 @@
 - [ChatLunaLab/chatluna](https://github.com/ChatLunaLab/chatluna) - 多平台模型接入，可扩展，多种输出格式，提供大语言模型聊天服务的插件 | A bot plugin for LLM chat with multi-model integration, extensibility, and various output formats
 - [vaebe/blog](https://github.com/vaebe/blog) - 使用 nextjs 构建的个人博客，包含一些自己使用 nextjs 的实践，首页秒开！
 - [pdsuwwz/chatgpt-vue3-light-mvp](https://github.com/pdsuwwz/chatgpt-vue3-light-mvp) - 💭 一个可二次开发 Chat Bot 单轮对话 Web 端 MVP 原型模板, 基于 Vue 3, Vite7, TypeScript, Naive UI, Pinia(v3), UnoCSS 等主流技术构建, 🧤简单集成大模型 API, 采用单轮 AI 问答对话模式, 每次提问独立响应, 无需上下文, 支持 SSE 打字机效果流式输出, 集成 markdown-it  Mermaid/KaTex
-- [chatboxai/chatbox](https://github.com/chatboxai/chatbox) - User-friendly Desktop Client App for AI Models/LLMs (GPT, Claude, Gemini, Ollama...)
+- [chatboxai/chatbox](https://github.com/chatboxai/chatbox) - # Free AI at api.airforce https://discord.gg/AJDsM7jtbq
 - [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) - 🍒 Cherry Studio is a desktop client that supports for multiple LLM providers.
 - [languine-ai/languine](https://github.com/languine-ai/languine) - Translate your application with Languine CLI powered by AI.
 - [cline/cline](https://github.com/cline/cline) - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.
@@ -674,8 +675,9 @@
 
 ## Vue 
 
+- [miaotouy/aio-hub](https://github.com/miaotouy/aio-hub) - AI平台应用，提供多种实用的开发和日常工具，以及高可控性的LLM交互。
 - [hooray/pick-the-right-admin](https://github.com/hooray/pick-the-right-admin) - 选择合适的 Vue 后台管理框架
-- [Simon-He95/vue-markdown-renderer](https://github.com/Simon-He95/vue-markdown-renderer) - A Vue 3 renderer specifically built for AI-powered streaming Markdown: Monaco incremental, Mermaid progressive, and KaTeX formula speed, with real-time updates and no jitter, ready to use out of the b
+- [Simon-He95/markstream-vue](https://github.com/Simon-He95/markstream-vue) - A Vue 3 renderer specifically built for AI-powered streaming Markdown: Monaco incremental, Mermaid progressive, and KaTeX formula speed, with real-time updates and no jitter, ready to use out of the b
 - [ikuaitu/vue-fabric-editor](https://github.com/ikuaitu/vue-fabric-editor) - 快图设计-基于fabric.js和Vue的开源图片编辑器，可自定义字体、素材、设计模板。fabric.js and Vue based image editor, can customize fonts, materials, design templates.
 - [DaMaiCoding/uni-plus](https://github.com/DaMaiCoding/uni-plus) - 一个超超超好用的 uniapp 开发框架：uni-plus 是由 Uniapp + Vue3 + TS + Vite + Pinia + Unocss + WotUi 驱动的跨端快速启动模板，使用 VS Code 开发，具有丰富的代码提示、错误校验、类型提醒、预先插件安装、代码片段等功能，而且拥有丰富的案例 echarts 图表，表单分页，权限控制、接口请求优化等等（配备搭建教程）
 - [ChanceYu/front-end-rss](https://github.com/ChanceYu/front-end-rss) - :orange_book: 根据 RSS 订阅最新前端技术文章并自动分类
