@@ -50,6 +50,7 @@
 
 ## C++ 
 
+- [EsotericSoftware/spine-runtimes](https://github.com/EsotericSoftware/spine-runtimes) - 2D skeletal animation runtimes for Spine.
 - [Admenri/urge](https://github.com/Admenri/urge) - The Universal Ruby Game Engine (URGE) Project
 - [neutralinojs/neutralinojs](https://github.com/neutralinojs/neutralinojs) - Portable and lightweight cross-platform desktop application development framework
 - [IppClub/Dora-SSR](https://github.com/IppClub/Dora-SSR) - A game engine for rapid development across devices, featuring a built-in Web IDE with intuitive toolchain.
@@ -432,7 +433,7 @@
 - [paper-design/shaders](https://github.com/paper-design/shaders) - Zero-dependency canvas shaders that can be installed from npm or designed in Paper
 - [TencentEdgeOne/edgeone-pages-mcp](https://github.com/TencentEdgeOne/edgeone-pages-mcp) - An MCP service designed for deploying HTML content to EdgeOne Pages and obtaining an accessible public URL.
 - [chongdashu/cc-statusline](https://github.com/chongdashu/cc-statusline) - Transform your Claude Code experience with a beautiful, informative statusline
-- [wannabespace/conar](https://github.com/wannabespace/conar) - AI-powered tool for working with Postgres. (beta)
+- [wannabespace/conar](https://github.com/wannabespace/conar) - AI-powered tool for working with Postgres and MySQL. (beta)
 - [Ali-Hussein-dev/indie-ui](https://github.com/Ali-Hussein-dev/indie-ui) - Collection of UI components and free shadcn form builder
 - [yikart/AiToEarn](https://github.com/yikart/AiToEarn) - Let's use AI to Earn!
 - [anthropics/claude-code-action](https://github.com/anthropics/claude-code-action) - 
