@@ -391,6 +391,7 @@
 
 ## cli 
 
+- [privatenumber/tasuku](https://github.com/privatenumber/tasuku) - ✅ タスク — The minimal task visualizer for Node.js
 - [nexe/nexe](https://github.com/nexe/nexe) - 🎉 create a single executable out of your node.js apps
 - [UfoMiao/zcf](https://github.com/UfoMiao/zcf) - Zero-Config Code Flow for Claude code & Codex
 - [bombshell-dev/clack](https://github.com/bombshell-dev/clack) - Effortlessly build beautiful command-line apps
@@ -1012,6 +1013,7 @@
 
 ## nextjs 
 
+- [magicuidesign/magicui](https://github.com/magicuidesign/magicui) - UI Library for Design Engineers. Animated components and effects you can copy and paste into your apps. Free. Open Source.
 - [aymericzip/intlayer](https://github.com/aymericzip/intlayer) - Per-component Internationalisation solution for JS application focusing on scalability. Type-Safe. Translate with AI. Edit Visually.
 - [AmanShakya0018/forgeui](https://github.com/AmanShakya0018/forgeui) - A library of React components for smooth, fast front-end development.
 - [Ali-Hussein-dev/indie-ui](https://github.com/Ali-Hussein-dev/indie-ui) - Collection of UI components and free shadcn form builder
@@ -1141,6 +1143,8 @@
 
 ## others 
 
+- [forayconsulting/gemini_cli_skill](https://github.com/forayconsulting/gemini_cli_skill) - A Claude Code skill enabling Claude to use Gemini 3 Pro via Gemini CLI.
+- [biud436/MZ](https://github.com/biud436/MZ) - This plugin package includes helpful features to get you on your way to create your game in RPG Maker MZ.
 - [numman-ali/openskills](https://github.com/numman-ali/openskills) - Universal skills loader for AI coding agents - npm i -g openskills
 - [SmileZXLee/uni-z-paging](https://github.com/SmileZXLee/uni-z-paging) - 【uni-app下拉刷新、上拉加载】高性能，全平台兼容(ios、安卓、鸿蒙next、h5以及各家小程序)。支持vue、nvue、vue2、vue3，使用wxs+renderjs实现。支持虚拟列表，支持自定义下拉刷新、上拉加载更多，支持自动管理空数据图、点击返回顶部，支持聊天分页、本地分页，支持国际化等数百项配置，流畅渲染百万级列表数据。
 - [Daymychen/art-design-pro](https://github.com/Daymychen/art-design-pro) - A Vue 3 admin dashboard template using Vite + TypeScript + Element Plus | vue3 admin | vue-admin — focused on user experience and visual design.
@@ -1317,7 +1321,7 @@
 - [zhe-qi/uniez-template](https://github.com/zhe-qi/uniez-template) - uniez-template，一个“功能”和“开发体验”优先的 uniapp 模板
 - [jordienr/whatamesh](https://github.com/jordienr/whatamesh) - tool to create mesh gradients
 - [misskey-dev/misskey](https://github.com/misskey-dev/misskey) - 🌎 A completely free and open interplanetary-microblogging platform 🚀
-- [beilunyang/moemail](https://github.com/beilunyang/moemail) - 一个基于 NextJS + Cloudflare 技术栈构建的可爱临时邮箱服务🎉
+- [beilunyang/moemail](https://github.com/beilunyang/moemail) - 一个基于 NextJS + Cloudflare 技术栈构建的可爱临时邮箱服务🎉 | A cute temporary email service built with NextJS + Cloudflare technology stack 🎉
 - [anvaka/city-roads](https://github.com/anvaka/city-roads) - Visualization of all roads within any city
 - [ct-js/ct-js](https://github.com/ct-js/ct-js) - Ct.js is a desktop game engine that makes learning programming fun and game development easy by its visual editors and well-documented code library
 - [thieleju/5minutechess](https://github.com/thieleju/5minutechess) - 5 Minute Chess - Made with Nuxt 3, Vite, Vue 3 and Vuetify 3
@@ -1547,6 +1551,7 @@
 
 ## react 
 
+- [magicuidesign/magicui](https://github.com/magicuidesign/magicui) - UI Library for Design Engineers. Animated components and effects you can copy and paste into your apps. Free. Open Source.
 - [facebook/docusaurus](https://github.com/facebook/docusaurus) - Easy to maintain open source documentation websites.
 - [buuing/lucky-canvas](https://github.com/buuing/lucky-canvas) - 🎖🎖🎖 基于 TS + Canvas 开发的【大转盘 / 九宫格 / 老虎机】抽奖插件，🌈 一套源码适配多端框架 JS / Vue / React / Taro / UniApp / 微信小程序等，🎨 奖品 / 文字 / 图片 / 颜色 / 按钮均可配置，支持同步 / 异步抽奖，🎯 概率前 / 后端可控，🚀 自动根据 dpr 调整清晰度适配移动端
 - [tailwindlabs/headlessui](https://github.com/tailwindlabs/headlessui) - Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
@@ -1726,6 +1731,7 @@
 
 ## tailwind 
 
+- [rogden/tailwind-config-viewer](https://github.com/rogden/tailwind-config-viewer) - A local UI tool for visualizing your Tailwind CSS configuration file.
 - [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) - An open source collection of animated, interactive & fully customizable React components for building memorable websites.
 - [saadeghi/daisyui](https://github.com/saadeghi/daisyui) - 🌼 🌼 🌼 🌼 🌼  The most popular, free and open-source Tailwind CSS component library
 - [DavidHDev/vue-bits](https://github.com/DavidHDev/vue-bits) - An open source collection of animated, interactive & fully customizable Vue components for building stunning, memorable websites.
@@ -1735,6 +1741,8 @@
 
 ## tailwindcss 
 
+- [magicuidesign/magicui](https://github.com/magicuidesign/magicui) - UI Library for Design Engineers. Animated components and effects you can copy and paste into your apps. Free. Open Source.
+- [rogden/tailwind-config-viewer](https://github.com/rogden/tailwind-config-viewer) - A local UI tool for visualizing your Tailwind CSS configuration file.
 - [tailwindlabs/headlessui](https://github.com/tailwindlabs/headlessui) - Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
 - [LouisMazel/maz-ui](https://github.com/LouisMazel/maz-ui) - Vue & Nuxt library of standalone components & tools to build interfaces
 - [AmanShakya0018/forgeui](https://github.com/AmanShakya0018/forgeui) - A library of React components for smooth, fast front-end development.
@@ -1775,6 +1783,7 @@
 
 ## typescript 
 
+- [magicuidesign/magicui](https://github.com/magicuidesign/magicui) - UI Library for Design Engineers. Animated components and effects you can copy and paste into your apps. Free. Open Source.
 - [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify) - 🐉 Vue Component Framework
 - [kawayiLinLin/typescript-lodash](https://github.com/kawayiLinLin/typescript-lodash) - A typescript tools lib
 - [Orillusion/orillusion](https://github.com/Orillusion/orillusion) - Orillusion is a pure Web3D rendering engine which is fully developed based on the WebGPU standard.
@@ -1916,6 +1925,7 @@
 
 ## vue 
 
+- [rogden/tailwind-config-viewer](https://github.com/rogden/tailwind-config-viewer) - A local UI tool for visualizing your Tailwind CSS configuration file.
 - [phosphor-icons/vue](https://github.com/phosphor-icons/vue) - A flexible icon family for Vue
 - [fullcalendar/fullcalendar-vue](https://github.com/fullcalendar/fullcalendar-vue) - The official Vue 3 component for FullCalendar
 - [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify) - 🐉 Vue Component Framework
