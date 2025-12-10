@@ -64,4 +64,4 @@ jobs:
             --message "awesome-stars category by topic update by github actions cron, created by starred" \
             --topic \
             --topic_limit 500 \
-            --filename docs/topics.md
+            --filename docs/topics/index.md
