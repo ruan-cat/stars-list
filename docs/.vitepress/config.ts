@@ -21,6 +21,7 @@ const userConfig = setUserConfig(
 		title: "阮喵喵的github star列表",
 		description,
 		themeConfig: {
+			editLink: { pattern: "https://github.com/ruan-cat/stars-list/blob/dev/docs/:path" },
 			socialLinks: [{ icon: "github", link: "https://github.com/ruan-cat/stars-list" }],
 		},
 	},
