@@ -11,13 +11,6 @@ import { description } from "../../package.json";
 addChangelog2doc({
 	// 设置changelog的目标文件夹
 	target: "./docs",
-	// 设置changelog顶部的yaml数据。通常是排序
-	data: {
-		order: 1000,
-		dir: {
-			order: 1000,
-		},
-	},
 });
 
 // 将 README.md 文件移动到指定要求的位置内，并重命名为 index.md
