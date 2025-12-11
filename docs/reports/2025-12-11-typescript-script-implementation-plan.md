@@ -1,3 +1,5 @@
+<!-- 一次性提示词 已完成 -->
+
 # 2025-12-11 TypeScript 脚本实施计划
 
 ## 1. 项目概述
@@ -359,9 +361,8 @@ import { splitTopics } from "../split-topics";
 // 执行 topics 拆分
 splitTopics();
 
-const userConfig =
-	setUserConfig();
-	// ... 现有配置
+const userConfig = setUserConfig();
+// ... 现有配置
 ```
 
 #### 5.2.2 完整配置示例
