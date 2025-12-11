@@ -28,6 +28,156 @@ Keep this managed block so 'openspec update' can refresh the instructions.
 
 这是一个 VitePress 文档站点，用于自动生成和展示按编程语言和主题分类的 GitHub stars 列表。项目使用 GitHub Actions 实现自动化，并部署到 GitHub Pages。
 
+## 代码/编码格式要求
+
+### 1. markdown 文档的 table 编写格式
+
+每当你在 markdown 文档内编写表格时，表格的格式一定是**居中对齐**的，必须满足**居中对齐**的格式要求。
+
+### 2. markdown 文档的 vue 组件代码片段编写格式
+
+错误写法：
+
+1. 代码块语言用 vue，且不带有 `<template>` 标签来包裹。
+
+```vue
+<wd-popup v-model="showModal">
+  <wd-cell-group>
+    <!-- 内容 -->
+  </wd-cell-group>
+</wd-popup>
+```
+
+2. 代码块语言用 html。
+
+```html
+<wd-popup v-model="showModal">
+	<wd-cell-group>
+		<!-- 内容 -->
+	</wd-cell-group>
+</wd-popup>
+```
+
+正确写法：代码块语言用 vue ，且带有 `<template>` 标签来包裹。
+
+```vue
+<template>
+	<wd-popup v-model="showModal">
+		<wd-cell-group>
+			<!-- 内容 -->
+		</wd-cell-group>
+	</wd-popup>
+</template>
+```
+
+### 3. javascript / typescript 的代码注释写法
+
+代码注释写法应该写成 jsdoc 格式。而不是单纯的双斜杠注释。比如：
+
+不合适的双斜线注释写法如下：
+
+```ts
+// 模拟成功响应
+export function successResponse<T>(data: T, message: string = "操作成功") {
+	return {
+		success: true,
+		code: ResultEnum.Success,
+		message,
+		data,
+		timestamp: Date.now(),
+	};
+}
+```
+
+合适的，满足期望的 jsdoc 注释写法如下：
+
+```ts
+/** 模拟成功响应 */
+export function successResponse<T>(data: T, message: string = "操作成功") {
+	return {
+		success: true,
+		code: ResultEnum.Success,
+		message,
+		data,
+		timestamp: Date.now(),
+	};
+}
+```
+
+### 4. unocss 配置不应该创建过多的 shortcuts 样式类快捷方式
+
+在你做样式迁移的时候，**不允许滥用** unocss 的 shortcuts 功能。不要把那么多样式类都设计成公共全局级别的快捷方式。
+
+### 5. vue 组件编写规则
+
+1. vue 组件命名风格，使用短横杠的命名风格，而不是大驼峰命名。
+2. 先 `<script setup lang="ts">`、然后 `<template>`、最后是 `<style scoped>` 。
+3. 每个 vue 组件的最前面，提供少量的 html 注释，说明本组件是做什么的。
+
+### 6. jsdoc 注释的 `@example` 标签不要写冗长复杂的例子
+
+1. 你应该积极主动的函数编写 jsdoc 注释的 `@example` 标签。
+2. 但是 `@example` 标签不允许写复杂的例子，请写简单的单行例子。完整的函数使用例子，你应该择机在函数文件的附近编写 md 文档，在文档内给出使用例子。
+
+### 7. 页面 vue 组件必须提供注释说明本组件的`业务名`和`访问地址`
+
+比如以下的这几个例子：
+
+```html
+<!--
+  房屋申请列表页
+  功能：显示房屋申请列表，支持搜索和筛选
+
+  访问地址: http://localhost:9000/#/pages-sub/property/apply-room
+-->
+```
+
+```html
+<!--
+  房屋申请详情页
+  功能：显示房屋申请详细信息，支持验房和审核操作
+
+  访问地址: http://localhost:9000/#/pages-sub/property/apply-room-detail
+  建议携带参数: ?ardId=xxx&communityId=xxx
+
+  http://localhost:9000/#/pages-sub/property/apply-room-detail?ardId=ARD_002&communityId=COMM_001
+
+-->
+```
+
+每个页面都必须提供最顶部的文件说明，说明其业务名称，提供访问地址。
+
+### 4. markdown 的多级标题要主动提供序号
+
+对于每一份 markdown 文件的三级标题，你都应该要：
+
+1. 主动添加**数字**序号，便于我阅读文档。
+2. 主动**维护正确的数字序号顺序**。如果你处理的 markdown 文档，其手动添加的序号顺序不对，请你及时的更新序号顺序。
+
+## 报告编写规范
+
+在大多数情况下，你的更改是**不需要**编写任何说明报告的。但是每当你需要编写报告时，请你首先遵循以下要求：
+
+- 报告地址： 默认在 `docs\reports` 文件夹内编写报告。
+- 报告文件格式： `*.md` 通常是 markdown 文件格式。
+- 报告文件名称命名要求：
+  1. 前缀以日期命名。包括年月日。日期格式 `YYYY-MM-DD` 。
+  2. 用小写英文加短横杠的方式命名。
+- 报告的一级标题： 必须是日期`YYYY-MM-DD`+报告名的格式。
+  - 好的例子： `2025-12-09 修复 @ruan-cat/commitlint-config 包的 negation pattern 处理错误` 。前缀包含有 `YYYY-MM-DD` 日期。
+  - 糟糕的例子： `构建与 fdir/Vite 事件复盘报告` 。前缀缺少 `YYYY-MM-DD` 日期。
+- 报告日志信息的代码块语言： 一律用 `log` 作为日志信息的代码块语言。如下例子：
+
+  ````markdown
+  日志如下：
+
+  ```log
+  日志信息……
+  ```
+  ````
+
+- 报告语言： 默认用简体中文。
+
 ## 常用开发命令
 
 ### 文档开发
