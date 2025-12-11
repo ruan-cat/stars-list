@@ -6,6 +6,7 @@ import {
 } from "@ruan-cat/vitepress-preset-config/config";
 
 import { description } from "../../package.json";
+import { splitTopics } from "../split-topics";
 
 // 为文档添加自动生成的changelog
 addChangelog2doc({
@@ -15,6 +16,9 @@ addChangelog2doc({
 
 // 将 README.md 文件移动到指定要求的位置内，并重命名为 index.md
 copyReadmeMd("./docs");
+
+// 拆分 topics 文件
+splitTopics();
 
 const userConfig = setUserConfig(
 	{
