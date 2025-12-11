@@ -4,20 +4,27 @@
  * 用于改善 VitePress 导航结构和用户体验
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
-import { consola } from 'consola';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
+import { join, dirname } from "path";
+import { consola } from "consola";
 
-const SOURCE_FILE = './docs/topics/index.md';
-const OUTPUT_DIR = './docs/topics';
-const EXCLUDED_HEADINGS = ['Contents', 'License'];
+// 获取包信息
+import { name as packageName, version as packageVersion } from "../package.json";
+
+const logger = consola.withTag(packageName);
+
+const SOURCE_FILE = "./docs/topics/index.md";
+const OUTPUT_DIR = "./docs/topics";
+const EXCLUDED_HEADINGS = ["Contents", "License"];
 
 /**
  * 主函数：拆分 topics 文件
  * 读取源文件，提取每个二级标题并生成单独的 markdown 文件
+ * @example
+ * splitTopics();
  */
-export function splitTopics() {
-	consola.info('开始拆分 topics 文件...');
+export function splitTopics(): void {
+	logger.info(`${packageName} v${packageVersion} splitTopics is running...`);
 
 	try {
 		// 读取源文件内容
@@ -25,7 +32,7 @@ export function splitTopics() {
 
 		// 提取所有二级标题
 		const headings = extractHeadings(content);
-		consola.info(`找到 ${headings.length} 个二级标题`);
+		logger.info(`Found ${headings.length} headings in total`);
 
 		// 确保输出目录存在
 		ensureDirectory(OUTPUT_DIR);
@@ -34,14 +41,14 @@ export function splitTopics() {
 		let processedCount = 0;
 		for (const heading of headings) {
 			if (isExcluded(heading.title)) {
-				consola.debug(`跳过排除的标题: ${heading.title}`);
+				logger.debug(`Skipping excluded heading: ${heading.title}`);
 				continue;
 			}
 
 			// 提取标题下的内容
 			const sectionContent = extractContent(content, heading);
 			if (!sectionContent) {
-				consola.warn(`无法提取标题内容: ${heading.title}`);
+				logger.warn(`No content found for heading: ${heading.title}`);
 				continue;
 			}
 
@@ -57,12 +64,12 @@ export function splitTopics() {
 			writeFileSync(filepath, fileContent, 'utf-8');
 
 			processedCount++;
-			consola.success(`生成文件: ${filename}`);
+			logger.success(`Created: ${filename}`);
 		}
 
-		consola.success(`共处理 ${processedCount} 个主题文件`);
+		logger.success(`Successfully created ${processedCount} topic files`);
 	} catch (error) {
-		consola.error('拆分 topics 文件失败:', error);
+		logger.error('Failed to split topics:', error);
 		throw error;
 	}
 }
@@ -146,7 +153,7 @@ function isExcluded(title: string): boolean {
 function ensureDirectory(dirPath: string): void {
 	if (!existsSync(dirPath)) {
 		mkdirSync(dirPath, { recursive: true });
-		consola.info(`创建目录: ${dirPath}`);
+		logger.info(`Created directory: ${dirPath}`);
 	}
 }
 

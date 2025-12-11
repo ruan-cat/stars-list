@@ -12,7 +12,9 @@
 - 确保 `consola` 依赖可用，用于日志记录
 
 ## Impact
-- 影响的规范：构建自动化流程
+- 影响的规范：
+  - 构建自动化流程
+  - 开发规范指南（日志输出、TypeScript 类型、代码风格、文件位置、依赖管理）
 - 影响的代码：
   - 新建 `docs/split-topics.ts` 脚本文件
   - 修改 `docs/.vitepress/config.ts` 添加脚本调用
