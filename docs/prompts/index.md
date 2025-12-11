@@ -50,3 +50,34 @@ const logger = consola.withTag(packageName);
 // 然后无条件的开始输出包的信息
 logger.info(`${packageName} v${packageVersion} is running...`);
 ```
+
+## 003 制作一个标题数据格式调整脚本
+
+1. 制作一个 typescript 脚本。
+2. 阅读 `docs\topics\index.md` 文档。实现标题文本的重新编写。
+3. 仅仅只阅读这一小块文本，即一级标题：
+
+```markdown
+# Awesome Stars [![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome)
+```
+
+4. 将一级标题的文本格式改写，改写成如下格式：
+
+```markdown
+# Awesome Stars
+
+[![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome)
+```
+
+你只需要将 barge 徽章从一级标题内换到下面一行即可。并在中间保留一行空行。
+
+### 代码编写要求 spec
+
+1. 在 docs 内编写脚本。
+2. typescript 脚本。不是 javascript。
+3. 代码格式和风格，模仿 `docs\split-topics.ts` 。
+4. 其他的代码编写风格 spec 规格，请阅读 `openspec\changes\archive\2025-12-11-add-topic-splitting-script\specs\development-guidelines\spec.md` 文档。
+
+### 脚本使用规范要求 spec
+
+1. 在 `docs\.vitepress\config.ts` 的 `splitTopics` 函数之前，在 `copyReadmeMd` 之后调用。
