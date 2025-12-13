@@ -200,6 +200,7 @@
 
 ## ai 
 
+- [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) - Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent. #1 on OpenRouter. 750k+ Kilo Coders. 6.1 trillion tokens/month.
 - [vercel/streamdown](https://github.com/vercel/streamdown) - A drop-in replacement for react-markdown, designed for AI-powered streaming.
 - [AnandChowdhary/continuous-claude](https://github.com/AnandChowdhary/continuous-claude) - 🔂 Run Claude Code in a continuous loop, autonomously creating PRs, waiting for checks, and merging
 - [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message se
@@ -238,7 +239,7 @@
 
 ## ajax 
 
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 
 ## algorithm 
 
@@ -312,7 +313,7 @@
 
 ## awesome-list 
 
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 - [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - [FOR USERS HAVING PERFORMANCE ISSUES: USE README_BACKUP INSTEAD] A curated list of awesome commands, files, and workflows for Claude Code
 - [maguowei/starred](https://github.com/maguowei/starred) - creating your own Awesome List by GitHub stars!
 - [simonecorsi/mawesome](https://github.com/simonecorsi/mawesome) - 😎 Github action to generate your own awesome list from project you've starred ordered by languages!
@@ -366,7 +367,7 @@
 
 ## chatgpt 
 
-- [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) - Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent. #1 on OpenRouter. 750k+ Kilo Coders. 6.1 trillion tokens/month. Fol
+- [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) - Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent. #1 on OpenRouter. 750k+ Kilo Coders. 6.1 trillion tokens/month.
 - [langgptai/awesome-claude-prompts](https://github.com/langgptai/awesome-claude-prompts) - This repo includes Claude prompt curation to use Claude better.
 - [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message se
 - [Hyk260/PureChat](https://github.com/Hyk260/PureChat) - PureChat 是一款全面的聊天应用程序，它将传统的即时消息与高级 AI 功能集成在一起。其模块化架构、可扩展的 AI 集成系统和灵活的配置选项使其成为强大的应用程序，也是 AI 增强通信应用程序的坚实基础。支持OpenAI，Ollama，DeepSeek等大语言模型，Markdown 渲染，聊天记录生成截图，主题切换，助力开发者快速掌握现代技术。
@@ -396,6 +397,7 @@
 
 ## cli 
 
+- [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) - Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent. #1 on OpenRouter. 750k+ Kilo Coders. 6.1 trillion tokens/month.
 - [privatenumber/tasuku](https://github.com/privatenumber/tasuku) - ✅ タスク — The minimal task visualizer for Node.js
 - [nexe/nexe](https://github.com/nexe/nexe) - 🎉 create a single executable out of your node.js apps
 - [UfoMiao/zcf](https://github.com/UfoMiao/zcf) - Zero-Config Code Flow for Claude code & Codex
@@ -670,6 +672,7 @@
 
 ## github 
 
+- [sxzz/workflows](https://github.com/sxzz/workflows) - A collection of reusable GitHub Actions workflows for TypeScript projects.
 - [tw93/Weekly](https://github.com/tw93/Weekly) - 🩴 Trendy Weekly records my non-boring life. 潮流周刊记录我的不枯燥生活
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) - Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!
 - [refined-github/refined-github](https://github.com/refined-github/refined-github) - :octocat: Browser extension that simplifies the GitHub interface and adds useful features
@@ -1036,7 +1039,7 @@
 - [aymericzip/intlayer](https://github.com/aymericzip/intlayer) - Per-component Internationalisation solution for JS application focusing on scalability. Type-Safe. Translate with AI. Edit Visually.
 - [AmanShakya0018/forgeui](https://github.com/AmanShakya0018/forgeui) - A library of React components for smooth, fast front-end development.
 - [Ali-Hussein-dev/indie-ui](https://github.com/Ali-Hussein-dev/indie-ui) - Collection of UI components and free shadcn form builder
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) - Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!
 - [Y80/bmm](https://github.com/Y80/bmm) - BMM，你的专属书签管家 🤵
 - [thedaviddias/llms-txt-hub](https://github.com/thedaviddias/llms-txt-hub) - 🤖 The largest directory for AI-ready documentation and tools implementing the proposed llms.txt standard
@@ -1201,7 +1204,6 @@
 - [djyde/ccmate](https://github.com/djyde/ccmate) - Configure your Claude Code without pain
 - [hellodigua/code996](https://github.com/hellodigua/code996) - 统计 Git 项目的 commit 时间分布，进而推导出项目的编码工作强度。 Analyzes the commit time distribution of Git projects to infer coding work intensity.
 - [antfu/starter-ts](https://github.com/antfu/starter-ts) - Starter template for TypeScript library
-- [sxzz/workflows](https://github.com/sxzz/workflows) - A collection of reusable GitHub Actions workflows for TypeScript projects.
 - [xuemk/termiClaude](https://github.com/xuemk/termiClaude) - claude CLI（cc）客户端工具，使用可视化方式进行环境和模型对话管理
 - [timtoday/mcp-windows-notify](https://github.com/timtoday/mcp-windows-notify) - 🔔 Windows notification MCP server - Get desktop notifications when AI tasks complete. Works with Claude Desktop, Cursor & other MCP-compatible tools.
 - [diet103/claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase) - Examples of my Claude Code infrastructure with skill auto-activation, hooks, and agents
@@ -1588,7 +1590,7 @@
 - [tailwindlabs/headlessui](https://github.com/tailwindlabs/headlessui) - Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
 - [unplugin/unplugin-turbo-console](https://github.com/unplugin/unplugin-turbo-console) - 🚀  Improve the Developer Experience of console
 - [paper-design/shaders](https://github.com/paper-design/shaders) - Zero-dependency canvas shaders that can be installed from npm or designed in Paper
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 - [seeksdream/relation-graph](https://github.com/seeksdream/relation-graph) - relation-graph is a relationship graph display component that supports Vue2, Vue3, React. Allowing you to fully customize the graphical elements using HTML/CSS and Vue or React components through slot
 - [alibaba/ChatUI](https://github.com/alibaba/ChatUI) - The UI design language and React library for Conversational UI
 - [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) - An open source collection of animated, interactive & fully customizable React components for building memorable websites.
@@ -1634,7 +1636,7 @@
 
 - [aymericzip/intlayer](https://github.com/aymericzip/intlayer) - Per-component Internationalisation solution for JS application focusing on scalability. Type-Safe. Translate with AI. Edit Visually.
 - [AmanShakya0018/forgeui](https://github.com/AmanShakya0018/forgeui) - A library of React components for smooth, fast front-end development.
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 - [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) - An open source collection of animated, interactive & fully customizable React components for building memorable websites.
 - [EvanBacon/Expo-Crossy-Road](https://github.com/EvanBacon/Expo-Crossy-Road) - 🐥🚙 Crossy Road game clone made in Expo (iOS, Android, web), THREE.js, Tween, React Native. 🐔
 - [mastra-ai/mastra](https://github.com/mastra-ai/mastra) - The TypeScript AI agent framework. ⚡ Assistants, RAG, observability. Supports any LLM: GPT-4, Claude, Gemini, Llama.
@@ -1745,7 +1747,7 @@
 ## svelte 
 
 - [unplugin/unplugin-turbo-console](https://github.com/unplugin/unplugin-turbo-console) - 🚀  Improve the Developer Experience of console
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 - [saadeghi/daisyui](https://github.com/saadeghi/daisyui) - 🌼 🌼 🌼 🌼 🌼  The most popular, free and open-source Tailwind CSS component library
 - [NativeScript/NativeScript](https://github.com/NativeScript/NativeScript) - ⚡ Write Native with TypeScript ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (V
 - [matschik/component-party.dev](https://github.com/matschik/component-party.dev) - 🎉 Web component JS frameworks overview by their syntax and features
@@ -1787,7 +1789,7 @@
 - [saadeghi/daisyui](https://github.com/saadeghi/daisyui) - 🌼 🌼 🌼 🌼 🌼  The most popular, free and open-source Tailwind CSS component library
 - [keenthemes/ktui](https://github.com/keenthemes/ktui) - Open-source collection of customizable UI components for Tailwind CSS and vanilla JavaScript
 - [DavidHDev/vue-bits](https://github.com/DavidHDev/vue-bits) - An open source collection of animated, interactive & fully customizable Vue components for building stunning, memorable websites.
-- [sankeyangshu/lemon-template-uniapp](https://github.com/sankeyangshu/lemon-template-uniapp) - An mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
+- [sankeyangshu/lemon-mobile-uniapp](https://github.com/sankeyangshu/lemon-mobile-uniapp) - A mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
 - [pure-admin/vue-pure-admin](https://github.com/pure-admin/vue-pure-admin) - 全面ESM+Vue3+Vite+Element-Plus+TypeScript编写的一款后台管理系统（兼容移动端）
 - [nuxt/ui](https://github.com/nuxt/ui) - The Intuitive Vue UI Library powered by Reka UI & Tailwind CSS.
 - [stefan-karger/solid-ui](https://github.com/stefan-karger/solid-ui) - Beautifully designed components. Built with Kobalte & corvu. Styled with Tailwind CSS.
@@ -1828,7 +1830,7 @@
 - [DaMaiCoding/uni-plus](https://github.com/DaMaiCoding/uni-plus) - 一个超超超好用的 uniapp 开发框架：uni-plus 是由 Uniapp + Vue3 + TS + Vite + Pinia + Unocss + WotUi 驱动的跨端快速启动模板，使用 VS Code 开发，具有丰富的代码提示、错误校验、类型提醒、预先插件安装、代码片段等功能，而且拥有丰富的案例 echarts 图表，表单分页，权限控制、接口请求优化等等（配备搭建教程）
 - [AmanShakya0018/forgeui](https://github.com/AmanShakya0018/forgeui) - A library of React components for smooth, fast front-end development.
 - [axe-me/vite-plugin-node](https://github.com/axe-me/vite-plugin-node) - Vite plugin to run your node dev server with HMR!
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 - [ModyQyW/fabric](https://github.com/ModyQyW/fabric) - Opinionated shareable specifications for git-based JavaScript/TypeScript projects.
 - [interface-ui/interface-ui](https://github.com/interface-ui/interface-ui) - 🦉 刚起步基于TypeScript Vue3的前端Ui组件库
 - [c15t/c15t](https://github.com/c15t/c15t) - The Developer-First Cookie Banner
@@ -1839,7 +1841,7 @@
 - [DavidHDev/vue-bits](https://github.com/DavidHDev/vue-bits) - An open source collection of animated, interactive & fully customizable Vue components for building stunning, memorable websites.
 - [un-pany/mobvue](https://github.com/un-pany/mobvue) - 📱 A crafted Vue3 mobile template | Vue Mobile | Vue H5 | Vue Vant | Vue3 Mobile | Vue3 H5 | Vue3 Vant | Vue 移动端模板 | Vue3 移动端模板
 - [w3cj/hono-open-api-starter](https://github.com/w3cj/hono-open-api-starter) - A starter template for building fully documented type-safe JSON APIs with Hono and Open API
-- [sankeyangshu/lemon-template-uniapp](https://github.com/sankeyangshu/lemon-template-uniapp) - An mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
+- [sankeyangshu/lemon-mobile-uniapp](https://github.com/sankeyangshu/lemon-mobile-uniapp) - A mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
 - [NativeScript/NativeScript](https://github.com/NativeScript/NativeScript) - ⚡ Write Native with TypeScript ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (V
 - [qmhc/grid-layout-plus](https://github.com/qmhc/grid-layout-plus) - A draggable and resizable grid layout, for Vue 3.
 - [n8n-io/n8n](https://github.com/n8n-io/n8n) - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
@@ -1972,7 +1974,7 @@
 - [nativescript-vue/nativescript-vue](https://github.com/nativescript-vue/nativescript-vue) - Native mobile applications using Vue and NativeScript.
 - [unplugin/unplugin-turbo-console](https://github.com/unplugin/unplugin-turbo-console) - 🚀  Improve the Developer Experience of console
 - [vueform/vueform](https://github.com/vueform/vueform) - Open-Source Form Framework for Vue
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 - [seeksdream/relation-graph](https://github.com/seeksdream/relation-graph) - relation-graph is a relationship graph display component that supports Vue2, Vue3, React. Allowing you to fully customize the graphical elements using HTML/CSS and Vue or React components through slot
 - [doocs/md](https://github.com/doocs/md) - ✍ WeChat Markdown Editor | 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、自定义主题样式、内容管理、多图床、AI 助手等特性
 - [opentiny/tiny-vue](https://github.com/opentiny/tiny-vue) - TinyVue is an enterprise-class UI component library of OpenTiny community, support both Vue.js 2 and Vue.js 3, as well as PC and mobile.
@@ -1986,7 +1988,7 @@
 - [alibaba/formily](https://github.com/alibaba/formily) - 📱🚀 🧩 Cross Device & High Performance Normal Form/Dynamic(JSON Schema) Form/Form Builder -- Support React/React Native/Vue 2/Vue 3
 - [xaboy/form-create](https://github.com/xaboy/form-create) - :fire::fire::fire: 强大的低代码动态表单组件，通过JSON数据驱动表单渲染，适配移动端，支持可视化设计。提高开发者对表单的开发效率。目前在政务系统、OA系统、ERP系统、电商系统、流程管理等系统中已稳定应用。
 - [sankeyangshu/lemon-template-vue](https://github.com/sankeyangshu/lemon-template-vue) - An mobile web apps template based on the Vue 3 ecosystem. 🎉 一个基于 Vue 3 生态系统的移动 web 应用模板。
-- [sankeyangshu/lemon-template-uniapp](https://github.com/sankeyangshu/lemon-template-uniapp) - An mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
+- [sankeyangshu/lemon-mobile-uniapp](https://github.com/sankeyangshu/lemon-mobile-uniapp) - A mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
 - [zh-lx/code-inspector](https://github.com/zh-lx/code-inspector) - 🚀 Click the dom to open your IDE and position the cursor at dom's source code location! 点击页面 dom 来打开 IDE 并将光标自动定位到源代码位置!
 - [gloriasoft/veaury](https://github.com/gloriasoft/veaury) - Use React in Vue3 and Vue3 in React, And as perfect as possible!
 - [NativeScript/NativeScript](https://github.com/NativeScript/NativeScript) - ⚡ Write Native with TypeScript ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (V
@@ -2086,7 +2088,7 @@
 - [vuetifyjs/vuetify](https://github.com/vuetifyjs/vuetify) - 🐉 Vue Component Framework
 - [histoire-dev/histoire](https://github.com/histoire-dev/histoire) - ⚡ Fast and beautiful interactive component playgrounds, powered by Vite
 - [vueform/vueform](https://github.com/vueform/vueform) - Open-Source Form Framework for Vue
-- [alovajs/alova](https://github.com/alovajs/alova) - The Request Toolkit For Ultimate Efficiency
+- [alovajs/alova](https://github.com/alovajs/alova) - A request toolkit for ultimate efficiency
 - [DavidHDev/vue-bits](https://github.com/DavidHDev/vue-bits) - An open source collection of animated, interactive & fully customizable Vue components for building stunning, memorable websites.
 - [xiaowang1314/uniapp-plugin-collections](https://github.com/xiaowang1314/uniapp-plugin-collections) - uni-app项目插件功能集合https://github.com/xiaowang1314/uniapp-plugin-collections
 - [Sunny-117/js-challenges](https://github.com/Sunny-117/js-challenges) - ✨✨✨ Challenge your JavaScript programming limits step by step 前端手写题，一步步提升 JavaScript 编程水平
