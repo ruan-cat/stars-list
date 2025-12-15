@@ -144,7 +144,7 @@
 - [PublicAffairs/openai-gemini](https://github.com/PublicAffairs/openai-gemini) - Gemini ➜ OpenAI API proxy. Serverless!
 - [tech-shrimp/gemini-balance-lite](https://github.com/tech-shrimp/gemini-balance-lite) - Gemini API 代理, 把Gemini API免费中转到国内。还可以聚合多个Gemini API Key，随机选取API Key的使用实现负载均衡，使得Gemini API免费成倍增加。
 - [viarotel-org/vite-uniapp-template](https://github.com/viarotel-org/vite-uniapp-template) - 🚀 以实用为先的 uni-app 起手模板。
-- [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年收集整理几十套棋牌源码(带小白搭建教程)，严禁商用，否则后果自负！！！
+- [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年自研高性能golang棋牌AI框架，基于最新主流大模型LLM+多agent协同决策，实测接近真实玩家智力水平。严禁赌博，否则后果自负！！！
 - [xaboy/form-create](https://github.com/xaboy/form-create) - :fire::fire::fire: 强大的低代码动态表单组件，通过JSON数据驱动表单渲染，适配移动端，支持可视化设计。提高开发者对表单的开发效率。目前在政务系统、OA系统、ERP系统、电商系统、流程管理等系统中已稳定应用。
 - [Deepractice/PromptX](https://github.com/Deepractice/PromptX) - PromptX · 领先的AI 智能体上下文平台 ｜ PromptX · Leading AI Agent Context Platform
 - [z2586300277/three-cesium-examples](https://github.com/z2586300277/three-cesium-examples) - WebGL Three.js Cesium.js Examples And Demo - WebGL 的 Three.js 和 Cesium.js 案例 --- Star ---点星星
