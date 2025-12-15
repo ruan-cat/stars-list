@@ -1265,7 +1265,7 @@
 - [tech-shrimp/gemini-balance-lite](https://github.com/tech-shrimp/gemini-balance-lite) - Gemini API 代理, 把Gemini API免费中转到国内。还可以聚合多个Gemini API Key，随机选取API Key的使用实现负载均衡，使得Gemini API免费成倍增加。
 - [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.
 - [viarotel-org/vite-uniapp-template](https://github.com/viarotel-org/vite-uniapp-template) - 🚀 以实用为先的 uni-app 起手模板。
-- [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年收集整理几十套棋牌源码(带小白搭建教程)，严禁商用，否则后果自负！！！
+- [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年自研高性能golang棋牌AI框架，基于最新主流大模型LLM+多agent协同决策，实测接近真实玩家智力水平。严禁赌博，否则后果自负！！！
 - [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - A Beautiful & Animated Chart UI Website built on top of shadcn & recharts.
 - [openai/codex](https://github.com/openai/codex) - Lightweight coding agent that runs in your terminal
 - [ConardLi/easy-llm-cli](https://github.com/ConardLi/easy-llm-cli) - An open-source AI agent that is compatible with multiple LLM models
