@@ -413,6 +413,7 @@
 
 ## TypeScript 
 
+- [BuilderIO/mitosis](https://github.com/BuilderIO/mitosis) - Write components once, run everywhere. Compiles to React, Vue, Qwik, Solid, Angular, Svelte, and more.
 - [missive/emoji-mart](https://github.com/missive/emoji-mart) - 🏪 One component to pick them all
 - [legeling/PromptHub](https://github.com/legeling/PromptHub) - 一款开源、纯本地 AI Prompt 管理工具，帮助你高效管理、版本控制和复用 Prompt | An open-source, local-first AI prompt management tool that helps you efficiently manage, version-control, and reuse your prompts
 - [TanStack/query](https://github.com/TanStack/query) - 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query.
