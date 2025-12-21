@@ -375,6 +375,7 @@
 
 ## Rust 
 
+- [aiclientproxy/proxycast](https://github.com/aiclientproxy/proxycast) - 让 AI 编辑器之间自然流动，不仅仅可以其他工具使用，也可以转换成 api 为本地开发提供动力。
 - [bevyengine/bevy](https://github.com/bevyengine/bevy) - A refreshingly simple data-driven game engine built in Rust
 - [openai/codex](https://github.com/openai/codex) - Lightweight coding agent that runs in your terminal
 - [azat-io/todoctor](https://github.com/azat-io/todoctor) - 🐍 CLI tool to analyze and report TODO comments in JavaScript and TypeScript Git repositories
