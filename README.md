@@ -225,7 +225,6 @@
 - [xiaoxustudio/YaMiRPG_Plugin](https://github.com/xiaoxustudio/YaMiRPG_Plugin) - 自己编写的Yami RPG 引擎插件
 - [eveningwater/my-web-projects](https://github.com/eveningwater/my-web-projects) - my web projects
 - [rfvtgbzxc/RMMZ-TS-Vite](https://github.com/rfvtgbzxc/RMMZ-TS-Vite) - Using vite, typescript and more web-front techs to progress the experience of rmmz-game development.
-- [encode-studio-fe/fe-spec](https://github.com/encode-studio-fe/fe-spec) - 印客学院 前端编码规范工程化
 - [NaiboWang/EasySpider](https://github.com/NaiboWang/EasySpider) - A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化测试/数据采集/爬虫软件，可以无代码图形化的设计和执行爬虫任务。别名：ServiceWrapper面向Web应用的智能化服务封装系统。
 - [jxdingx/chrome-SaveAllResources](https://github.com/jxdingx/chrome-SaveAllResources) - 可以直接下载浏览器sources资源的Chrome插件
 - [lgwebdream/FE-Interview](https://github.com/lgwebdream/FE-Interview) - 🔥🔥🔥 前端面试，独有前端面试题详解，前端面试刷题必备，1000+前端面试真题，Html、Css、JavaScript、Vue、React、Node、TypeScript、Webpack、算法、网络与安全、浏览器
@@ -446,7 +445,7 @@
 - [LouisMazel/relizy](https://github.com/LouisMazel/relizy) - Seamless and automated release management with elegant changelog generation based on Conventional Commits, supporting both monorepos and single packages. Handles version bumping, changelog creation, G
 - [haydenbleasel/npm.bet](https://github.com/haydenbleasel/npm.bet) - an npm trends visualizer
 - [djyde/ccmate](https://github.com/djyde/ccmate) - Configure your Claude Code without pain
-- [hellodigua/code996](https://github.com/hellodigua/code996) - 统计 Git 项目的 commit 时间分布，进而推导出项目的编码工作强度。 Analyzes the commit time distribution of Git projects to infer coding work intensity.
+- [hellodigua/code996](https://github.com/hellodigua/code996) - 统计 Git 项目的 commit 时间分布，进而推导出项目的编码工作强度。
 - [preetsuthar17/HextaUI](https://github.com/preetsuthar17/HextaUI) - Ready-to-use foundation components/blocks built on top of shadcn/ui.
 - [antfu/starter-ts](https://github.com/antfu/starter-ts) - Starter template for TypeScript library
 - [nexe/nexe](https://github.com/nexe/nexe) - 🎉 create a single executable out of your node.js apps
