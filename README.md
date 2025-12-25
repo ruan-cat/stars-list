@@ -293,7 +293,7 @@
 - [langgptai/awesome-claude-prompts](https://github.com/langgptai/awesome-claude-prompts) - This repo includes Claude prompt curation to use Claude better.
 - [Justin3go/justin3go.com](https://github.com/Justin3go/justin3go.com) - A fully-featured, modern, and elegantly simple static blog based on VitePress; it mainly records ✍️ my blog and notes. 一款功能齐全的、现代化的、简洁优雅的静态博客，基于vitepress；主要记录✍️我的博客、笔记。
 - [x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, V
-- [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) - Production-ready Claude subagents collection with 100+ specialized AI agents for full-stack development, DevOps, data science, and business operations.
+- [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) - Claude subagents collection with 100+ specialized AI agents for full-stack development, DevOps, data science, and business operations.
 - [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) - A complete computer science study plan to become a software engineer.
 - [zijie0/HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization) - 健康学习到150岁 - 人体系统调优不完全指南
 - [zakirullin/cognitive-load](https://github.com/zakirullin/cognitive-load) - 🧠 Cognitive load is what matters
@@ -344,6 +344,7 @@
 
 ## PowerShell 
 
+- [GuDaStudio/skills](https://github.com/GuDaStudio/skills) - This repository contains a collection of Agent Skills developed by GudaStudio, enabling seamless collaboration between Claude and other AI models and tools.
 - [YerongAI/Office-Tool](https://github.com/YerongAI/Office-Tool) - Office Tool Plus localization projects.
 - [timtoday/mcp-windows-notify](https://github.com/timtoday/mcp-windows-notify) - 🔔 Windows notification MCP server - Get desktop notifications when AI tasks complete. Works with Claude Desktop, Cursor & other MCP-compatible tools.
 
@@ -408,6 +409,7 @@
 
 ## TypeScript 
 
+- [usememos/memos](https://github.com/usememos/memos) - An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees.
 - [cosscom/coss](https://github.com/cosscom/coss) - coss.com is the new holding company of cal.com, the pioneers of open source scheduling infrastructure and cal.com continues to be the 'google search' of our alphabet.
 - [nextify-limited/libra](https://github.com/nextify-limited/libra) - The open-source V0/Lovable alternative
 - [BuilderIO/mitosis](https://github.com/BuilderIO/mitosis) - Write components once, run everywhere. Compiles to React, Vue, Qwik, Solid, Angular, Svelte, and more.
@@ -730,6 +732,7 @@
 
 ## Vue 
 
+- [vuepont/ai-elements-vue](https://github.com/vuepont/ai-elements-vue) - AI Elements Vue is a component library built on top of shadcn-vue to help you build AI-native applications faster.
 - [AutomaApp/automa](https://github.com/AutomaApp/automa) - A browser extension for automating your browser by connecting blocks
 - [rogden/tailwind-config-viewer](https://github.com/rogden/tailwind-config-viewer) - A local UI tool for visualizing your Tailwind CSS configuration file.
 - [phosphor-icons/vue](https://github.com/phosphor-icons/vue) - A flexible icon family for Vue
