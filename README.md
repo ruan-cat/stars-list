@@ -10,6 +10,7 @@
 - [C#](#c#)
 - [C++](#c++)
 - [CSS](#css)
+- [EJS](#ejs)
 - [GDScript](#gdscript)
 - [Game Maker Language](#game-maker-language)
 - [Go](#go)
@@ -65,6 +66,10 @@
 - [chokcoco/CSS-Inspiration](https://github.com/chokcoco/CSS-Inspiration) - CSS Inspiration，在这里找到写 CSS 的灵感！
 - [lukehaas/css-loaders](https://github.com/lukehaas/css-loaders) - A collection of loading spinners animated with CSS
 
+## EJS 
+
+- [skirtles-code/create-vue-lib](https://github.com/skirtles-code/create-vue-lib) - Scaffolds a Vite project to build a Vue-based library
+
 ## GDScript 
 
 - [kinoyaa/godot_task_manager](https://github.com/kinoyaa/godot_task_manager) - 
@@ -107,7 +112,7 @@
 
 ## JavaScript 
 
-- [badri-s2001/antigravity-claude-proxy](https://github.com/badri-s2001/antigravity-claude-proxy) - Proxy that exposes Antigravity provided claude / gemini models, so we can use them in Claude Code
+- [badrisnarayanan/antigravity-claude-proxy](https://github.com/badrisnarayanan/antigravity-claude-proxy) - Proxy that exposes Antigravity provided claude / gemini models, so we can use them in Claude Code
 - [QuantumNous/new-api](https://github.com/QuantumNous/new-api) - AI模型聚合管理中转分发系统，一个应用管理您的所有AI模型，支持将多种大模型转为统一格式调用，支持OpenAI、Claude、Gemini等格式，可供个人或者企业内部管理与分发渠道使用。🍥 The next-generation LLM gateway and AI asset management system supports multiple languages.
 - [biud436/MZ](https://github.com/biud436/MZ) - This plugin package includes helpful features to get you on your way to create your game in RPG Maker MZ.
 - [fullcalendar/fullcalendar-vue](https://github.com/fullcalendar/fullcalendar-vue) - The official Vue 3 component for FullCalendar
@@ -472,7 +477,7 @@
 - [skiyee/uni-unocss](https://github.com/skiyee/uni-unocss) - 🦁 在 UniApp 中零心智负担的使用 UnoCSS
 - [bcakmakoglu/vue-flow](https://github.com/bcakmakoglu/vue-flow) - A highly customizable Flowchart component for Vue 3. Features seamless zoom & pan 🔎, additional components like a Minimap 🗺 and utilities to interact with state and graph.
 - [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) - Chrome DevTools for coding agents
-- [aymericzip/intlayer](https://github.com/aymericzip/intlayer) - Per-component Internationalisation solution for JS application focusing on scalability. Type-Safe. Translate with AI. Edit Visually.
+- [aymericzip/intlayer](https://github.com/aymericzip/intlayer) - Per-component Internationalisation solution for JS application. Type-Safe. Translate with AI. Edit Visually.
 - [xiaohe0601/uni-echarts](https://github.com/xiaohe0601/uni-echarts) - 🪀 适用于 uni-app 的 Apache ECharts 组件（仅支持 Vue 3）
 - [nativescript-vue/nativescript-vue](https://github.com/nativescript-vue/nativescript-vue) - Native mobile applications using Vue and NativeScript.
 - [dargmuesli/nuxt-cookie-control](https://github.com/dargmuesli/nuxt-cookie-control) - A highly configurable cookie banner for Nuxt.
@@ -724,7 +729,7 @@
 - [sunniejs/vue-h5-template](https://github.com/sunniejs/vue-h5-template) - :tada:vue搭建移动端开发,基于vue-cli4.0+webpack 4+vant ui + sass+ rem适配方案+axios封装，构建手机端模板脚手架
 - [zhensherlock/watermark-js-plus](https://github.com/zhensherlock/watermark-js-plus) - watermark for the browser
 - [dishait/tov-template](https://github.com/dishait/tov-template) - vite + vue3 + ts 开箱即用现代开发模板 | vite + vue3 + ts out-of-the-box modern development template
-- [kermanx/reactive-vscode](https://github.com/kermanx/reactive-vscode) - Vue Reactivity for VSCode Extension API
+- [kermanx/reactive-vscode](https://github.com/kermanx/reactive-vscode) - Develop VSCode extension with Vue Reactivity API
 - [atlassian/pragmatic-drag-and-drop](https://github.com/atlassian/pragmatic-drag-and-drop) - Fast drag and drop for any experience on any tech stack
 - [FightingDesign/fighting-design](https://github.com/FightingDesign/fighting-design) - 🌈 Fighting Design 可在 vue3 应用程序中快速构建交互界面，看起来还不错。(🌈 Fighting design can quickly build interactive interfaces in vue3 applications, which looks good.)
 - [Tahul/vue-composable-starter](https://github.com/Tahul/vue-composable-starter) - 🪝 Minimalist starting point for your next Vue Composable
