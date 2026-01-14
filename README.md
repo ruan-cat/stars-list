@@ -42,7 +42,7 @@
 
 ## Astro 
 
-- [ibelick/ui-skills](https://github.com/ibelick/ui-skills) - 
+- [ibelick/ui-skills](https://github.com/ibelick/ui-skills) - Opinionated constraints for building better interfaces with agents.
 
 ## C# # 
 
