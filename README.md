@@ -589,7 +589,7 @@
 - [Open-Yami-Community/awesome-yami](https://github.com/Open-Yami-Community/awesome-yami) - 优秀的Yami游戏合集
 - [flingyp/vitepress-demo-preview](https://github.com/flingyp/vitepress-demo-preview) - ⚙️⚙️⚙️ Vue component demo preview and source code show of vitepress
 - [jsdocs-io/web](https://github.com/jsdocs-io/web) - jsDocs.io is an open source documentation host for Javascript and Typescript packages.
-- [chibivue-land/chibivue](https://github.com/chibivue-land/chibivue) - chibivue is a minimal vuejs/core implementations (reactivity, virtual dom, component runtime, compiler). An online book for building your own Vue.js.
+- [chibivue-land/chibivue](https://github.com/chibivue-land/chibivue) - chibivue is a minimal vuejs/core implementations (reactivity, virtual dom, component runtime, compiler, vapor, ssr, store, router, language tools). An online book for building your own Vue.js.
 - [XPoet/picx](https://github.com/XPoet/picx) - 🏞️ PicX 是一款基于 GitHub API 开发的图床工具，提供图片上传托管、生成图片链接和常用图片工具箱服务。
 - [flauwekeul/honeycomb](https://github.com/flauwekeul/honeycomb) - Create hex grids easily, in node or the browser.
 - [antfu-collective/taze](https://github.com/antfu-collective/taze) - 🥦 A modern cli tool that keeps your deps fresh
