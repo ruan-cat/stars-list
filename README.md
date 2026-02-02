@@ -42,6 +42,7 @@
 
 ## Astro 
 
+- [sxzz/stackblitz-mcp](https://github.com/sxzz/stackblitz-mcp) - MCP server for reading files from StackBlitz projects
 - [ibelick/ui-skills](https://github.com/ibelick/ui-skills) - A growing set of skills to polish interfaces built by agents.
 
 ## C# # 
@@ -53,6 +54,7 @@
 
 ## C++ 
 
+- [mystralengine/mystralnative](https://github.com/mystralengine/mystralnative) - Native WebGPU JS runtime with SDL3
 - [EsotericSoftware/spine-runtimes](https://github.com/EsotericSoftware/spine-runtimes) - 2D skeletal animation runtimes for Spine.
 - [Admenri/urge](https://github.com/Admenri/urge) - The Universal Ruby Game Engine (URGE) Project
 - [neutralinojs/neutralinojs](https://github.com/neutralinojs/neutralinojs) - Portable and lightweight cross-platform desktop application development framework
@@ -112,6 +114,7 @@
 
 ## JavaScript 
 
+- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) - Vercel's official collection of agent skills
 - [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) - Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs. Battle-tested configs from an Anthropic hackathon winner.
 - [justlovemaki/AIClient-2-API](https://github.com/justlovemaki/AIClient-2-API) - Simulates Gemini CLI, Antigravity, Qwen Code, and Kiro client requests, compatible with the OpenAI API. It supports thousands of Gemini model requests per day and offers free use of the built-in Claud
 - [Data-Camp/WeApp_Demos](https://github.com/Data-Camp/WeApp_Demos) - 持续更新中的微信小程序和小游戏的源码案例库。目前涵盖了120多个微信小程序或小游戏。
@@ -428,6 +431,10 @@
 
 ## TypeScript 
 
+- [vercel-labs/just-bash](https://github.com/vercel-labs/just-bash) - Bash for Agents
+- [rohitg00/skillkit](https://github.com/rohitg00/skillkit) - Supercharge AI coding agents with portable skills. Install, translate & share skills across Claude Code, Cursor, Codex, Copilot & 28 more
+- [antfu/skills](https://github.com/antfu/skills) - Anthony Fu's curated collection of agent skills.
+- [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) - 
 - [vercel-labs/skills](https://github.com/vercel-labs/skills) - The open agent skills tool - npx skills
 - [miantiao-me/cloud-code](https://github.com/miantiao-me/cloud-code) - Cloud Code (Cloudflare + OpenCode), running OpenCode on Cloudflare to build a dedicated cloud Agent for you.
 - [openclaw/openclaw](https://github.com/openclaw/openclaw) - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
