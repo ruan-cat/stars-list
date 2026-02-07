@@ -1257,6 +1257,7 @@
 
 ## others 
 
+- [zhangchenchen/self-consistent-coder](https://github.com/zhangchenchen/self-consistent-coder) - 如何成为一名自洽的程序员
 - [du2333/flare-stack-blog](https://github.com/du2333/flare-stack-blog) - 全栈个人博客，由Cloudflare全家桶驱动
 - [uni-helper/mcp](https://github.com/uni-helper/mcp) - uniapp的Ai工具箱
 - [uni-helper/skills](https://github.com/uni-helper/skills) - uni-app skills
