@@ -1264,7 +1264,7 @@
 - [sxzz/stackblitz-mcp](https://github.com/sxzz/stackblitz-mcp) - MCP server for reading files from StackBlitz projects
 - [vercel-labs/just-bash](https://github.com/vercel-labs/just-bash) - Bash for Agents
 - [antfu/skills](https://github.com/antfu/skills) - Anthony Fu's curated collection of agent skills.
-- [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) - 🚀 通用 AI IDE 账号管理工具 - 支持 Antigravity & Codex 多账号管理、配额监控、多实例运行 | Universal AI IDE Account Manager with Multi-Instance Support
+- [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) - 🚀 通用 AI IDE 账号管理工具 - 支持 Antigravity & Codex & GitHub Copilot 多账号管理、配额监控、多实例运行 | Universal AI IDE Account Manager with Multi-Instance Support
 - [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) - Vercel's official collection of agent skills
 - [mystralengine/mystralnative](https://github.com/mystralengine/mystralnative) - Native WebGPU JS runtime with SDL3
 - [vercel-labs/skills](https://github.com/vercel-labs/skills) - The open agent skills tool - npx skills
