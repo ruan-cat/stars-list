@@ -468,7 +468,7 @@
 - [jlcodes99/vscode-antigravity-cockpit](https://github.com/jlcodes99/vscode-antigravity-cockpit) - VS Code extension for monitoring Google Antigravity AI quotas. Features Webview dashboard, QuickPick mode, and quota grouping.
 - [mg-chao/snow-shot](https://github.com/mg-chao/snow-shot) - 超好用的截图工具
 - [unjs/pathe](https://github.com/unjs/pathe) - 🛣️ Drop-in replacement of the Node.js's path module module that ensures paths are normalized
-- [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - The Stack Frontendstack for Agents. Connect to any agent framework & build Chat UI, Generative UI, Frontend Actions, Human-in-the-Loop and Shared State. React & Angular supported.
+- [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - The Frontend for Agents. Connect any agent framework to Chat, Generative UI, Frontend Tools, Human-in-the-Loop and Shared State. React & Angular supported.
 - [emosheeep/circular-dependency-scanner](https://github.com/emosheeep/circular-dependency-scanner) - Out-of-box circular dependencies detector, support js, jsx, ts, tsx, mjs, cjs, vue.
 - [DeadWaveWave/demo2apk](https://github.com/DeadWaveWave/demo2apk) - Turn your Vibe Coding ideas into runnable Android Apps instantly
 - [ln-dev7/square-ui](https://github.com/ln-dev7/square-ui) - Collection of beautifully crafted open-source layouts UI built with shadcn/ui.
@@ -655,7 +655,7 @@
 - [zhe-qi/uniez-template](https://github.com/zhe-qi/uniez-template) - uniez-template，一个“功能”和“开发体验”优先的 uniapp 模板
 - [motiondivision/motion-vue](https://github.com/motiondivision/motion-vue) - Motion for Vue
 - [misskey-dev/misskey](https://github.com/misskey-dev/misskey) - 🌎 A completely free and open interplanetary-microblogging platform 🚀
-- [beilunyang/moemail](https://github.com/beilunyang/moemail) - 一个基于 NextJS + Cloudflare 技术栈构建的可爱临时邮箱服务🎉 | A cute temporary email service built with NextJS + Cloudflare technology stack 🎉
+- [beilunyang/moemail](https://github.com/beilunyang/moemail) - A cute temporary email service built with NextJS + Cloudflare technology stack 🎉 | 一个基于 NextJS + Cloudflare 技术栈构建的可爱临时邮箱服务🎉
 - [soybeanjs/soybean-admin](https://github.com/soybeanjs/soybean-admin) - A clean, elegant, beautiful and powerful admin template, based on Vue3, Vite7, TypeScript, Pinia, NaiveUI and UnoCSS. 一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite7, TypeScript, Pinia, NaiveUI 和 Uno
 - [KUN1007/kun-touchgal-next](https://github.com/KUN1007/kun-touchgal-next) - TouchGAL是立足于分享快乐的一站式Galgame文化社区, 为Gal爱好者提供一片净土!
 - [kuizuo/api-service](https://github.com/kuizuo/api-service) - 基于 Nuxt 搭建的 API 接口服务网站
