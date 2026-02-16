@@ -1,0 +1,5 @@
+{
+  "explorer.fileNesting.patterns": {
+    "CLAUDE.md": "GEMINI.md,AGENTS.md"
+  }
+}
