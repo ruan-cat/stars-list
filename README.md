@@ -363,6 +363,8 @@
 
 ## Python 
 
+- [MaxMiksa/Auto-Company](https://github.com/MaxMiksa/Auto-Company) - An auto-company works for 24/7 on your own PC - Windows/Linux/macOS.
+- [nicepkg/auto-company](https://github.com/nicepkg/auto-company) - 🤖 A fully autonomous AI company that runs 24/7. 14 AI agents (Bezos, Munger, DHH...) brainstorm ideas, write code, deploy products & make money — no human in the loop. Powered by Claude Code.
 - [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit) - A curated collection of skills for AI coding agents. Skills are packaged instructions and scripts that extend agent capabilities across development, documentation, planning, and professional workflows
 - [agentskills/agentskills](https://github.com/agentskills/agentskills) - Specification and documentation for Agent Skills
 - [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) - An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms
@@ -431,6 +433,9 @@
 
 ## TypeScript 
 
+- [Heyvhuang/ship-faster](https://github.com/Heyvhuang/ship-faster) - 
+- [Nagi-ovo/gemini-voyager](https://github.com/Nagi-ovo/gemini-voyager) - An all-in-one enhancement suite for Google Gemini & AI Studio - timeline navigation, folder management, prompt library, and chat export in one powerful extension.
+- [chmod777john/swarm-ide](https://github.com/chmod777john/swarm-ide) - 为 Agent Swarm 打造的 IDE ，支持 Kimi-2.5, GLM-4.7 等（即使不像 K2.5 那样经过强化学习的模型也能用）An IDE built for Agent Swarms, supporting Kimi-2.5, GLM-4.7, and more (compatible with models even without RL-reinforcement like 
 - [du2333/flare-stack-blog](https://github.com/du2333/flare-stack-blog) - 全栈个人博客，由Cloudflare全家桶驱动
 - [uni-helper/mcp](https://github.com/uni-helper/mcp) - uniapp的Ai工具箱
 - [uni-helper/skills](https://github.com/uni-helper/skills) - uni-app skills
