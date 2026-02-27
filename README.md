@@ -156,7 +156,6 @@
 - [viarotel-org/vite-uniapp-template](https://github.com/viarotel-org/vite-uniapp-template) - 🚀 以实用为先的 uni-app 起手模板。
 - [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年自研高性能golang棋牌AI框架，基于最新主流大模型LLM+多agent协同决策，实测接近真实玩家智力水平。严禁赌博，否则后果自负！！！
 - [xaboy/form-create](https://github.com/xaboy/form-create) - :fire::fire::fire: 强大的低代码动态表单组件，通过JSON数据驱动表单渲染，适配移动端，支持可视化设计。提高开发者对表单的开发效率。目前在政务系统、OA系统、ERP系统、电商系统、流程管理等系统中已稳定应用。
-- [Deepractice/PromptX](https://github.com/Deepractice/PromptX) - PromptX · 领先的AI 智能体上下文平台 ｜ PromptX · Leading AI Agent Context Platform
 - [z2586300277/three-cesium-examples](https://github.com/z2586300277/three-cesium-examples) - WebGL Three.js Cesium.js Examples And Demo - WebGL 的 Three.js 和 Cesium.js 案例 --- Star ---点星星
 - [gloriasoft/veaury](https://github.com/gloriasoft/veaury) - Use React in Vue3 and Vue3 in React, And as perfect as possible!
 - [lin-123/javascript](https://github.com/lin-123/javascript) - eslint-config-airbnb 中文版
@@ -393,6 +392,7 @@
 ## Rust 
 
 - [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) - 🚀 通用 AI IDE 账号管理工具：支持 Antigravity / Codex / GitHub Copilot / Windsurf / Kiro，多账号切换、配额监控、自动唤醒与多开实例管理。  🚀 Universal AI IDE account manager for Antigravity / Codex / GitHub Copilot / Windsurf / Kiro, wit
+- [farion1231/cc-switch](https://github.com/farion1231/cc-switch) - A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode & Gemini CLI.
 - [junhoyeo/tokscale](https://github.com/junhoyeo/tokscale) - 🛰️ A CLI tool for tracking token usage from OpenCode, Claude Code, 🦞OpenClaw (Clawdbot/Moltbot), Pi, Codex, Gemini CLI, Cursor IDE, AmpCode, Factory Droid, and Kimi Code CLI • 🏅Global Leaderboard + 2D
 - [lbjlaq/Antigravity-Manager](https://github.com/lbjlaq/Antigravity-Manager) - Professional Antigravity Account Manager & Switcher. One-click seamless account switching for Antigravity Tools. Built with Tauri v2 + React (Rust).专业的 Antigravity 账号管理与切换工具。为 Antigravity 提供一键无缝账号切换功能
 - [aiclientproxy/proxycast](https://github.com/aiclientproxy/proxycast) - 把灵感、写作、出图、改稿、沉淀放进同一个工作台，让创作从“想到”直接走到“可发布”
@@ -453,7 +453,6 @@
 - [npmx-dev/npmx.dev](https://github.com/npmx-dev/npmx.dev) - a fast, modern browser for the npm registry
 - [keeplearning66/uni-quick](https://github.com/keeplearning66/uni-quick) - 可以直接使用 px 单位的 uni-app 轻量开发模板 | uni-app lightweight development template that can directly use px
 - [ShunsukeHayashi/rpgmaker-mz-mcp](https://github.com/ShunsukeHayashi/rpgmaker-mz-mcp) - MCP server for RPG Maker MZ - Create complete RPG games using MCP tools only
-- [farion1231/cc-switch](https://github.com/farion1231/cc-switch) - A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode & Gemini CLI.
 - [neondatabase/ai-rules](https://github.com/neondatabase/ai-rules) - 
 - [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) - Vue, Nuxt, and NuxtHub skills for AI coding assistants.
 - [andrelandgraf/fullstackrecipes](https://github.com/andrelandgraf/fullstackrecipes) - A Shadcn registry and collection of production-ready patterns and step-by-step guides (recipes) for full stack web AI apps
@@ -481,7 +480,7 @@
 - [vedaterenoglu/vuejs-tanstack-query-example](https://github.com/vedaterenoglu/vuejs-tanstack-query-example) - 
 - [AttoJS/vue-request](https://github.com/AttoJS/vue-request) - ⚡️ This is a library that can easily help you manage request states, supporting common features such as SWR, polling, error retry, caching, and pagination, etc. ⚡️ 这是一个能够轻松帮助你管理请求状态的库，支持 SWR、轮询、错误重试、缓
 - [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) - Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent. #1 on OpenRouter. 1.5M+ Kilo Coders. 25T+ tokens processed
-- [Tenas-AI/OpenSpec-Chinese](https://github.com/Tenas-AI/OpenSpec-Chinese) - OpenSpec规范驱动的AI编程助手开发中文版，解决OpenSpec中文环境下使用时生成的md文件不符合规范问题。
+- [OpenLoaf/OpenSpec-Chinese](https://github.com/OpenLoaf/OpenSpec-Chinese) - OpenSpec规范驱动的AI编程助手开发中文版，解决OpenSpec中文环境下使用时生成的md文件不符合规范问题。
 - [jinghaihan/vue-stream-markdown](https://github.com/jinghaihan/vue-stream-markdown) - Streaming markdown output, Useful for text streams like LLM outputs.
 - [vercel/streamdown](https://github.com/vercel/streamdown) - A drop-in replacement for react-markdown, designed for AI-powered streaming.
 - [privatenumber/tasuku](https://github.com/privatenumber/tasuku) - ✅ タスク — The minimal task visualizer for Node.js
@@ -574,6 +573,7 @@
 - [refined-github/refined-github](https://github.com/refined-github/refined-github) - :octocat: Browser extension that simplifies the GitHub interface and adds useful features
 - [alibaba/formily](https://github.com/alibaba/formily) - 📱🚀 🧩 Cross Device & High Performance Normal Form/Dynamic(JSON Schema) Form/Form Builder -- Support React/React Native/Vue 2/Vue 3
 - [w3cj/hono-open-api-starter](https://github.com/w3cj/hono-open-api-starter) - A starter template for building fully documented type-safe JSON APIs with Hono and Open API
+- [Deepractice/PromptX](https://github.com/Deepractice/PromptX) - PromptX · 领先的AI 智能体上下文平台 ｜ PromptX · Leading AI Agent Context Platform
 - [sankeyangshu/lemon-mobile-vue](https://github.com/sankeyangshu/lemon-mobile-vue) - A mobile web apps template based on the Vue 3 ecosystem. 🎉 一个基于 Vue 3 生态系统的移动 web 应用模板。
 - [sankeyangshu/lemon-mobile-uniapp](https://github.com/sankeyangshu/lemon-mobile-uniapp) - A mobile web apps template based on the UniApp ecosystem 🎉 一个基于 Uniapp 生态系统的移动小程序应用模板。
 - [zh-lx/code-inspector](https://github.com/zh-lx/code-inspector) - 🚀 Click the dom to open your IDE and position the cursor at dom's source code location! 点击页面 dom 来打开 IDE 并将光标自动定位到源代码位置!
