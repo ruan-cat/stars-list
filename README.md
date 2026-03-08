@@ -83,7 +83,7 @@
 ## Go 
 
 - [github/github-mcp-server](https://github.com/github/github-mcp-server) - GitHub's official MCP Server
-- [usememos/memos](https://github.com/usememos/memos) - An open-source, self-hosted note-taking service. Your thoughts, your data, your control — no tracking, no ads, no subscription fees.
+- [usememos/memos](https://github.com/usememos/memos) - An open-source, self-hosted note-taking tool. Capture thoughts instantly, own them completely — no tracking, no ads, no subscription fees.
 - [QuantumNous/new-api](https://github.com/QuantumNous/new-api) - A unified AI model hub for aggregation & distribution. It supports cross-converting various LLMs into OpenAI-compatible, Claude-compatible, or Gemini-compatible formats. A centralized gateway for pers
 - [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) - Wrap Gemini CLI, Antigravity, ChatGPT Codex, Claude Code, Qwen Code, iFlow as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 2.5 Pro, GPT 5, Claude, Qwen m
 - [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
@@ -387,6 +387,7 @@
 - [snailyp/gemini-balance](https://github.com/snailyp/gemini-balance) - Gemini polling proxy service （gemini轮询代理服务）
 - [maguowei/starred](https://github.com/maguowei/starred) - Create and maintain your own Awesome-style list from GitHub stars!
 - [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) - 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.
+- [jerrywu001/vue3-toastify](https://github.com/jerrywu001/vue3-toastify) - 🎉 Vue3-Toastify allows you to add notifications to your app with ease.
 
 ## Ruby 
 
@@ -394,7 +395,7 @@
 
 ## Rust 
 
-- [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) - 🚀 通用 AI IDE 账号管理工具：支持 Antigravity / Codex / GitHub Copilot / Windsurf / Kiro，多账号切换、配额监控、自动唤醒与多开实例管理。  🚀 Universal AI IDE account manager for Antigravity / Codex / GitHub Copilot / Windsurf / Kiro, wit
+- [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) - 🚀 通用 AI IDE 账号管理工具：支持 Antigravity / Codex / GitHub Copilot / Windsurf / Kiro / Cursor，多账号切换、配额监控、自动唤醒与多开实例管理。 🚀 Universal AI IDE account manager for Antigravity / Codex / GitHub Copilot / Windsurf / K
 - [junhoyeo/tokscale](https://github.com/junhoyeo/tokscale) - 🛰️ A CLI tool for tracking token usage from OpenCode, Claude Code, 🦞OpenClaw (Clawdbot/Moltbot), Pi, Codex, Gemini, Cursor, AmpCode, Factory Droid, Kimi, and more! • 🏅Global Leaderboard + 2D/3D Contri
 - [lbjlaq/Antigravity-Manager](https://github.com/lbjlaq/Antigravity-Manager) - Professional Antigravity Account Manager & Switcher. One-click seamless account switching for Antigravity Tools. Built with Tauri v2 + React (Rust).专业的 Antigravity 账号管理与切换工具。为 Antigravity 提供一键无缝账号切换功能
 - [aiclientproxy/proxycast](https://github.com/aiclientproxy/proxycast) - 把灵感、写作、出图、改稿、沉淀放进同一个工作台，让创作从“想到”直接走到“可发布”
@@ -433,7 +434,7 @@
 
 ## Swift 
 
-- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - Generate a timeline of your day, automatically
+- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - Turn your screen into a timeline of your workday. 1-click standups, perf review receipts, and beautiful time visualizations. Local AI or BYO key.
 
 ## TypeScript 
 
@@ -690,7 +691,6 @@
 - [Maronato/vue-toastification](https://github.com/Maronato/vue-toastification) - Vue notifications made easy!
 - [AnYiEE/touhou-mystia-izakaya-assistant](https://github.com/AnYiEE/touhou-mystia-izakaya-assistant) - 为游戏《东方夜雀食堂》所打造的辅助工具，旨在为玩家的游玩过程提供帮助。使用React、Tailwind CSS和Next.js开发和构建。
 - [Esposter/Esposter](https://github.com/Esposter/Esposter) - A nice and casual place for posting random things.
-- [jerrywu001/vue3-toastify](https://github.com/jerrywu001/vue3-toastify) - 🎉 Vue3-Toastify allows you to add notifications to your app with ease.
 - [unovue/shadcn-vue](https://github.com/unovue/shadcn-vue) - Vue port of shadcn-ui
 - [vexip-ui/lint-config](https://github.com/vexip-ui/lint-config) - Lint config for Vexip UI
 - [fast-crud/fast-crud](https://github.com/fast-crud/fast-crud) - 面向配置的crud框架，开发crud 快如闪电，超级表格；Options-oriented crud framework,  develop crud as fast as lightning；based on vue3；super table
