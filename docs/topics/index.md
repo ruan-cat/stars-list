@@ -227,7 +227,7 @@
 - [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) - Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent. #1 coding agent on OpenRouter. 1.5M+ Kilo Coders. 25T+ tokens proce
 - [vercel/streamdown](https://github.com/vercel/streamdown) - A drop-in replacement for react-markdown, designed for AI-powered streaming.
 - [AnandChowdhary/continuous-claude](https://github.com/AnandChowdhary/continuous-claude) - 🔂 Ralph loop with PRs: Run Claude Code in a continuous loop, autonomously creating PRs, waiting for checks, and merging
-- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - Turn your screen into a timeline of your workday. 1-click standups, perf review receipts, and beautiful time visualizations. Local AI or BYO key.
+- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - The automatic work journal. Privately turns your screen into a timeline of what you actually accomplished. Open-source and local-first.
 - [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message se
 - [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) - ⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，
 - [Simon-He95/markstream-vue](https://github.com/Simon-He95/markstream-vue) - A Vue 3 renderer specifically built for AI-powered streaming Markdown: Monaco incremental, Mermaid progressive, and KaTeX formula speed, with real-time updates and no jitter, ready to use out of the b
@@ -405,7 +405,7 @@
 
 - [DeadWaveWave/demo2apk](https://github.com/DeadWaveWave/demo2apk) - Turn your Vibe Coding ideas into runnable Android Apps instantly
 - [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) - Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent. #1 coding agent on OpenRouter. 1.5M+ Kilo Coders. 25T+ tokens proce
-- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - Turn your screen into a timeline of your workday. 1-click standups, perf review receipts, and beautiful time visualizations. Local AI or BYO key.
+- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - The automatic work journal. Privately turns your screen into a timeline of what you actually accomplished. Open-source and local-first.
 - [langgptai/awesome-claude-prompts](https://github.com/langgptai/awesome-claude-prompts) - This repo includes Claude prompt curation to use Claude better.
 - [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message se
 - [Hyk260/PureChat](https://github.com/Hyk260/PureChat) - PureChat 是一款全面的聊天应用程序，它将传统的即时消息与高级 AI 功能集成在一起。其模块化架构、可扩展的 AI 集成系统和灵活的配置选项使其成为强大的应用程序，也是 AI 增强通信应用程序的坚实基础。支持OpenAI，Ollama，DeepSeek等大语言模型，Markdown 渲染，聊天记录生成截图，主题切换，助力开发者快速掌握现代技术。
@@ -1004,7 +1004,7 @@
 - [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
 - [legeling/PromptHub](https://github.com/legeling/PromptHub) - 一款开源、纯本地 Prompt ，Skill 管理工具，帮助你高效管理、版本控制和复用 Prompt，并一键分发skill | An open-source, local-first AI prompt management tool that helps you efficiently manage, version-control, and reuse your prompts
 - [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - The Frontend Stack for Agents & Generative UI. React + Angular.  Makers of the AG-UI Protocol
-- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - Turn your screen into a timeline of your workday. 1-click standups, perf review receipts, and beautiful time visualizations. Local AI or BYO key.
+- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - The automatic work journal. Privately turns your screen into a timeline of what you actually accomplished. Open-source and local-first.
 - [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) - ⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，
 - [UfoMiao/zcf](https://github.com/UfoMiao/zcf) - Zero-Config Code Flow for Claude code & Codex
 - [DearVa/Everywhere](https://github.com/DearVa/Everywhere) - Context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integrating multiple LLMs and MCP tools.
@@ -1705,7 +1705,7 @@
 ## productivity 
 
 - [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
-- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - Turn your screen into a timeline of your workday. 1-click standups, perf review receipts, and beautiful time visualizations. Local AI or BYO key.
+- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - The automatic work journal. Privately turns your screen into a timeline of what you actually accomplished. Open-source and local-first.
 - [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) - Virtual whiteboard for sketching hand-drawn like diagrams
 - [plait-board/drawnix](https://github.com/plait-board/drawnix) - 开源白板工具（SaaS），一体化白板，包含思维导图、流程图、自由画等。All in one open-source whiteboard tool with mind, flowchart, freehand and etc.
 
@@ -1939,7 +1939,7 @@
 
 ## swift 
 
-- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - Turn your screen into a timeline of your workday. 1-click standups, perf review receipts, and beautiful time visualizations. Local AI or BYO key.
+- [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - The automatic work journal. Privately turns your screen into a timeline of what you actually accomplished. Open-source and local-first.
 - [NativeScript/NativeScript](https://github.com/NativeScript/NativeScript) - ⚡ Write Native with TypeScript ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (V
 
 ## swiftui 
