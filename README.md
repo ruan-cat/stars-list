@@ -117,6 +117,7 @@
 
 ## JavaScript 
 
+- [cloud-oc/RPGMakerMZ-Plugins-CN](https://github.com/cloud-oc/RPGMakerMZ-Plugins-CN) - 个人汉化的一些RPGMakerMZ插件
 - [6639835/cursor-card](https://github.com/6639835/cursor-card) - 
 - [ZTL-UwU/shadcn-docs-nuxt-starter](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter) - Starter template for shadcn-docs-nuxt.
 - [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - easy vibe 👋 一起 vibe｜ Learn Vibe Coding From 0 to 1｜ Vibe Coding 零基础｜产品原型、AI 与全栈多平台开发教程｜Tutorial on Product Prototype, AI & Full-Stack Multi-platform Dev
@@ -341,7 +342,6 @@
 - [Yimeng-Zhang/Machine-Learning-From-Scratch](https://github.com/Yimeng-Zhang/Machine-Learning-From-Scratch) - 系统梳理机器学习的各个知识点。
 - [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) - 🚀✨ Help beginners to contribute to open source projects
 - [weijunext/indie-hacker-tools](https://github.com/weijunext/indie-hacker-tools) - 收录独立开发者出海技术栈和工具
-- [itwanger/toBeBetterJavaer](https://github.com/itwanger/toBeBetterJavaer) - 一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点。学Java，就认准二哥的Java进阶之路😄
 - [course-dasheng/fullstack](https://github.com/course-dasheng/fullstack) - 全栈项目开发文档
 - [wgwang/awesome-LLMs-In-China](https://github.com/wgwang/awesome-LLMs-In-China) - 中国大模型
 - [iamouyang21/vue3-compiler](https://github.com/iamouyang21/vue3-compiler) - 「vue3编译原理揭秘」 一本初中级前端都能看得懂的vue3源码分析书
@@ -394,6 +394,7 @@
 - [snailyp/gemini-balance](https://github.com/snailyp/gemini-balance) - Gemini polling proxy service （gemini轮询代理服务）
 - [maguowei/starred](https://github.com/maguowei/starred) - Create and maintain your own Awesome-style list from GitHub stars!
 - [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) - 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.
+- [itwanger/toBeBetterJavaer](https://github.com/itwanger/toBeBetterJavaer) - 一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点。学Java，就认准二哥的Java进阶之路😄
 - [jerrywu001/vue3-toastify](https://github.com/jerrywu001/vue3-toastify) - 🎉 Vue3-Toastify allows you to add notifications to your app with ease.
 
 ## Ruby 
@@ -445,6 +446,7 @@
 
 ## TypeScript 
 
+- [graphif/project-graph](https://github.com/graphif/project-graph) - A node-based visual tool for organizing thoughts and notes in a non-linear way.
 - [arco-design/arco-design-vue](https://github.com/arco-design/arco-design-vue) - A Vue.js 3 UI Library based on Arco Design
 - [ZTL-UwU/starters](https://github.com/ZTL-UwU/starters) - My Starter Templates
 - [e-chan1007/nuxt-monaco-editor](https://github.com/e-chan1007/nuxt-monaco-editor) - Integrate monaco-editor with Nuxt
@@ -804,6 +806,7 @@
 
 ## Vue 
 
+- [roimdev/roim-picx](https://github.com/roimdev/roim-picx) - A free image hosting application based on Cloudflare's Worker, R2, Pages, and D1 architectures.一款基于 Cloudflare 的 Worker、R2、Pages、D1 实现的免费图床应用
 - [ZTL-UwU/shadcn-docs-nuxt](https://github.com/ZTL-UwU/shadcn-docs-nuxt) - Effortless and beautiful docs template built with Nuxt Content & shadcn-vue.
 - [weizwz/vite-vue3-charts](https://github.com/weizwz/vite-vue3-charts) - vite5 + vue3 + ts + datav-vue3 + echarts + 百度地图 大屏展示
 - [hepengwei/visualization-collection-vue](https://github.com/hepengwei/visualization-collection-vue) - 🌈 一个专注于前端视觉效果的集合应用，包含CSS动效、Canvas动画、Three.js3D、人工智能应用等上百个案例（Vue版本）
