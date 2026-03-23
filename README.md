@@ -93,6 +93,7 @@
 
 ## HTML 
 
+- [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) - practice made claude perfect
 - [HBAI-Ltd/Toonflow-app](https://github.com/HBAI-Ltd/Toonflow-app) - Toonflow 是一款 AI 短剧漫剧工具，能够利用 AI 技术将小说自动转化为剧本，并结合 AI 生成的图片和视频，实现高效的短剧创作。借助 Toonflow，可以轻松完成从文字到影像的全流程，让短剧制作变得更加智能与便捷。
 - [donlon/cloudflare-error-page](https://github.com/donlon/cloudflare-error-page) - ✅Browser ❌Cloudflare ✅Host — Generator of customized Cloudflare error pages (unofficial)
 - [abc-kkk/cursor-ui-music](https://github.com/abc-kkk/cursor-ui-music) - 音乐App界面设计原型 - 使用HTML、Tailwind CSS和JavaScript构建的高保真移动应用UI
@@ -448,6 +449,8 @@
 
 ## TypeScript 
 
+- [m1heng/claude-plugin-weixin](https://github.com/m1heng/claude-plugin-weixin) - 
+- [colyseus/colyseus](https://github.com/colyseus/colyseus) - ⚔ Multiplayer Framework for Node.js
 - [graphif/project-graph](https://github.com/graphif/project-graph) - A node-based visual tool for organizing thoughts and notes in a non-linear way.
 - [arco-design/arco-design-vue](https://github.com/arco-design/arco-design-vue) - A Vue.js 3 UI Library based on Arco Design
 - [ZTL-UwU/starters](https://github.com/ZTL-UwU/starters) - My Starter Templates
