@@ -1209,6 +1209,7 @@
 
 ## nodejs 
 
+- [colyseus/colyseus](https://github.com/colyseus/colyseus) - ⚔ Multiplayer Framework for Node.js
 - [kaitranntt/ccs](https://github.com/kaitranntt/ccs) - Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready.
 - [samuelcardillo/MMORPGMaker-MV](https://github.com/samuelcardillo/MMORPGMaker-MV) - Plugin to transform RPG Maker MZ to MMORPG Maker MZ
 - [nexe/nexe](https://github.com/nexe/nexe) - 🎉 create a single executable out of your node.js apps
@@ -1294,6 +1295,8 @@
 
 ## others 
 
+- [m1heng/claude-plugin-weixin](https://github.com/m1heng/claude-plugin-weixin) - 
+- [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) - practice made claude perfect
 - [mike-north/ai-plugin-marketplace-template](https://github.com/mike-north/ai-plugin-marketplace-template) - A single marketplace repo that works with claude, cursor, kiro, gemini and agent skills
 - [grafana/ai-marketplace](https://github.com/grafana/ai-marketplace) - 
 - [roimdev/roim-picx](https://github.com/roimdev/roim-picx) - A free image hosting application based on Cloudflare's Worker, R2, Pages, and D1 architectures.一款基于 Cloudflare 的 Worker、R2、Pages、D1 实现的免费图床应用
