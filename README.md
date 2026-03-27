@@ -125,7 +125,7 @@
 - [cloud-oc/RPGMakerMZ-Plugins-CN](https://github.com/cloud-oc/RPGMakerMZ-Plugins-CN) - 个人汉化的一些RPGMakerMZ插件
 - [6639835/cursor-card](https://github.com/6639835/cursor-card) - 
 - [ZTL-UwU/shadcn-docs-nuxt-starter](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter) - Starter template for shadcn-docs-nuxt.
-- [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - easy vibe 👋 一起 vibe｜ Learn Vibe Coding From 0 to 1｜ Vibe Coding 零基础｜产品原型、AI 与全栈多平台开发教程｜Tutorial on Product Prototype, AI & Full-Stack Multi-platform Dev
+- [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - easy vibe 👋 一起 vibe｜ Learn Vibe Coding From 0 to 1｜ Vibe Coding 零基础｜产品原型、AI 与全栈多平台开发教程｜Product Prototype, AI & Full-Stack Dev
 - [dongyubin/Baidu-VIP](https://github.com/dongyubin/Baidu-VIP) - 2026年3月更新，百度网盘(百度云)不限速工具分享。
 - [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) - Vercel's official collection of agent skills
 - [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
