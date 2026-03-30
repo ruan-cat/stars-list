@@ -451,6 +451,7 @@
 
 ## TypeScript 
 
+- [blackboardsh/electrobun](https://github.com/blackboardsh/electrobun) - Build ultra fast, tiny, and cross-platform desktop apps with Typescript.
 - [TraderAlice/OpenAlice](https://github.com/TraderAlice/OpenAlice) - File-driven AI trading agent engine for crypto and securities markets
 - [antfu/pnpm-workspace-utils](https://github.com/antfu/pnpm-workspace-utils) - Utilities for managing pnpm catalogs
 - [hywax/changelogen-monorepo](https://github.com/hywax/changelogen-monorepo) - 
@@ -818,6 +819,7 @@
 
 ## Vue 
 
+- [element-plus-x/Element-Plus-X](https://github.com/element-plus-x/Element-Plus-X) - Enterprise-level AI component library front-end solution 🤖
 - [xiaoluoboding/vue-color-wheel](https://github.com/xiaoluoboding/vue-color-wheel) - 🎨 A color wheel picker for Vue
 - [xiaoluoboding/vue-frimousse](https://github.com/xiaoluoboding/vue-frimousse) - 😊 A lightweight, unstyled, and composable emoji picker for Vue and Nuxt.
 - [YunYouJun/cook](https://github.com/YunYouJun/cook) - 🍲 好的，今天我们来做菜！OK, Let's Cook!
