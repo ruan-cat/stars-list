@@ -126,7 +126,7 @@
 - [cloud-oc/RPGMakerMZ-Plugins-CN](https://github.com/cloud-oc/RPGMakerMZ-Plugins-CN) - 个人汉化的一些RPGMakerMZ插件
 - [6639835/cursor-card](https://github.com/6639835/cursor-card) - 
 - [ZTL-UwU/shadcn-docs-nuxt-starter](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter) - Starter template for shadcn-docs-nuxt.
-- [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - A systematic tutorial on vibe coding, help beginners turn ideas into prototypes, MVPs, and launch-ready products.
+- [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - 🤖 A systematic tutorial on vibe coding, help beginners turn ideas into prototypes, MVPs, and launch-ready products.
 - [dongyubin/Baidu-VIP](https://github.com/dongyubin/Baidu-VIP) - 2026年3月更新，百度网盘(百度云)不限速工具分享。
 - [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) - Vercel's official collection of agent skills
 - [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
@@ -375,6 +375,7 @@
 
 ## Python 
 
+- [openakita/openakita](https://github.com/openakita/openakita) - An open-source AI assistant framework with skills and agent architecture
 - [liuzhenhonghhhhh/cursor-reg](https://github.com/liuzhenhonghhhhh/cursor-reg) - 111
 - [SongSongK/ZZXcursor](https://github.com/SongSongK/ZZXcursor) - 全自动注册cursor工具
 - [MaxMiksa/Auto-Company](https://github.com/MaxMiksa/Auto-Company) - An auto-company works for 24/7 on your own PC - Windows/Linux/macOS.
@@ -451,6 +452,7 @@
 
 ## TypeScript 
 
+- [tanweai/pua](https://github.com/tanweai/pua) - 你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.
 - [blackboardsh/electrobun](https://github.com/blackboardsh/electrobun) - Build ultra fast, tiny, and cross-platform desktop apps with Typescript.
 - [TraderAlice/OpenAlice](https://github.com/TraderAlice/OpenAlice) - File-driven AI trading agent engine for crypto and securities markets
 - [antfu/pnpm-workspace-utils](https://github.com/antfu/pnpm-workspace-utils) - Utilities for managing pnpm catalogs
