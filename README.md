@@ -83,6 +83,7 @@
 
 ## Go 
 
+- [larksuite/cli](https://github.com/larksuite/cli) - The official Lark/Feishu CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meeti
 - [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) - Sub2API-CRS2 一站式开源中转服务，让 Claude、Openai 、Gemini、Antigravity订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。
 - [tt-a1i/agmon](https://github.com/tt-a1i/agmon) - htop for AI Agents — monitor token usage, costs & tool calls across Claude Code and Codex in real time
 - [github/github-mcp-server](https://github.com/github/github-mcp-server) - GitHub's official MCP Server
@@ -341,7 +342,6 @@
 - [zenany/weekly](https://github.com/zenany/weekly) - 汇总平时看到的好文章...
 - [princehuang/overseas-website-note](https://github.com/princehuang/overseas-website-note) - 「海外工具网站」已经是我人生主要事业了，很庆幸还来得及，感谢这个伟大的 AI 时代。
 - [tnfe/TNT-Weekly](https://github.com/tnfe/TNT-Weekly) - 🙈 🙉 🙊 为您甄选国内外前端领域的优质资讯，洞悉行业最新进展，助力技术成长之旅。
-- [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - A collection of MCP servers.
 - [vuejs/awesome-vue](https://github.com/vuejs/awesome-vue) - 🎉 A curated list of awesome things related to Vue.js
 - [ljinkai/weekly](https://github.com/ljinkai/weekly) - 独立开发产品变现周刊，每周五发布。
 - [xx025/carrot](https://github.com/xx025/carrot) - AI 工具导航大全，帮你快速筛选免费、实用、高效的网站资源
@@ -493,7 +493,6 @@
 - [kaitranntt/ccs](https://github.com/kaitranntt/ccs) - Switch between Claude accounts, Gemini, Copilot, OpenRouter (300+ models) via CLIProxyAPI OAuth proxy. Visual dashboard, remote proxy support, WebSearch fallback. Zero-config to production-ready.
 - [npmx-dev/npmx.dev](https://github.com/npmx-dev/npmx.dev) - a fast, modern browser for the npm registry
 - [keeplearning66/uni-quick](https://github.com/keeplearning66/uni-quick) - 可以直接使用 px 单位的 uni-app 轻量开发模板 | uni-app lightweight development template that can directly use px
-- [ShunsukeHayashi/rpgmaker-mz-mcp](https://github.com/ShunsukeHayashi/rpgmaker-mz-mcp) - MCP server for RPG Maker MZ - Create complete RPG games using MCP tools only
 - [neondatabase/ai-rules](https://github.com/neondatabase/ai-rules) - 
 - [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) - Vue, Nuxt, and NuxtHub skills for AI coding assistants.
 - [andrelandgraf/fullstackrecipes](https://github.com/andrelandgraf/fullstackrecipes) - A Shadcn registry and collection of production-ready patterns and step-by-step guides (recipes) for full stack web AI apps
