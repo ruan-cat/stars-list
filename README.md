@@ -209,7 +209,6 @@
 - [pota-gon/RPGMakerMZ](https://github.com/pota-gon/RPGMakerMZ) - RPGツクールMZのプラグイン
 - [kuroudo119/RPGMZ-Plugin](https://github.com/kuroudo119/RPGMZ-Plugin) - RPGツクールMZ用プラグイン置き場。
 - [Sigureya/RmmzPluginSchemaOld](https://github.com/Sigureya/RmmzPluginSchemaOld) - 
-- [Sigureya/RpgTypes](https://github.com/Sigureya/RpgTypes) - 
 - [niokasgami/Rpg-Maker-MZ-Typescript](https://github.com/niokasgami/Rpg-Maker-MZ-Typescript) - The typescript definitions files for MZ
 - [Sigureya/RPGmakerMV](https://github.com/Sigureya/RPGmakerMV) - ツクールＭＶ用プラグイン
 - [munokura/MNKR-MZ-plugins](https://github.com/munokura/MNKR-MZ-plugins) - 
@@ -465,6 +464,7 @@
 
 - [WindRunnerMax/CanvasEditor](https://github.com/WindRunnerMax/CanvasEditor) - Canvas 简历编辑器
 - [chenglou/pretext](https://github.com/chenglou/pretext) - Fast, accurate & comprehensive text measurement & layout
+- [nirholas/claude-code](https://github.com/nirholas/claude-code) - Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows 
 - [ChinaSiro/claude-code-sourcemap](https://github.com/ChinaSiro/claude-code-sourcemap) - 
 - [tanweai/pua](https://github.com/tanweai/pua) - 你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.
 - [blackboardsh/electrobun](https://github.com/blackboardsh/electrobun) - Build ultra fast, tiny, and cross-platform desktop apps with Typescript.
@@ -718,6 +718,7 @@
 - [DhivinX/turbo-starter](https://github.com/DhivinX/turbo-starter) - Monorepo starter with advanced technologies and frameworks such as TurboRepo, NestJS, Vue 3 with Vite, TypeScript and Nuxt.js to facilitate seamless and efficient software development.
 - [luannguyenQV/turborepo-nextjs-prisma-postgres](https://github.com/luannguyenQV/turborepo-nextjs-prisma-postgres) - Next Forum: Nestjs - Prisma - Auth.js - Postgres - Shadcn - TailwindCSS and more ...
 - [rutan/rpgmaker-plugin-annotation](https://github.com/rutan/rpgmaker-plugin-annotation) - 
+- [Sigureya/RpgTypes](https://github.com/Sigureya/RpgTypes) - 
 - [Sigureya/RpgMakerAnnotation](https://github.com/Sigureya/RpgMakerAnnotation) - 
 - [zou-hong-run/dobang](https://github.com/zou-hong-run/dobang) - Typescript+vite+sass拖拽放置五子棋
 - [Codpoe/vite-plugin-ts-alias](https://github.com/Codpoe/vite-plugin-ts-alias) - vite plugin to transform tsconfig paths to alias
