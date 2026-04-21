@@ -13,8 +13,8 @@
 	"main": "index.js",
 	"scripts": {
 		"git:fetch": "git fetch -p",
-		"git:dev-2-master": "git rebase dev master && git push --follow-tags",
-		"git:master-2-dev": "git rebase master dev",
+		"git:dev-2-main": "git rebase dev main && git push --follow-tags",
+		"git:main-2-dev": "git rebase main dev",
 		"up-taze": "pnpm up @ruan-cat/taze-config -L && npx taze -r",
 		"format": "prettier --experimental-cli --write '**/*.{js,jsx,ts,tsx,mts,json,css,scss,md,yml,yaml,html}'",
 		"docs:dev": "vitepress dev docs",

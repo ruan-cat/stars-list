@@ -26,6 +26,7 @@ concurrency:
 jobs:
   # 单次部署的工作描述
   deploy:
+    if: github.event_name != 'push' || github.event.deleted == false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

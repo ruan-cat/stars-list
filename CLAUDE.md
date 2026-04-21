@@ -214,11 +214,11 @@ pnpm up-taze
 # 获取并清理远程分支
 pnpm git:fetch
 
-# 将 dev 分支 rebase 到 master 并推送
-pnpm git:dev-2-master
+# 将 dev 分支 rebase 到 main 并推送
+pnpm git:dev-2-main
 
-# 将 master 分支 rebase 到 dev
-pnpm git:master-2-dev
+# 将 main 分支 rebase 到 dev
+pnpm git:main-2-dev
 ```
 
 ## 架构与核心组件
