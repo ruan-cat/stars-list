@@ -17,11 +17,11 @@ jobs:
 
     steps:
       # 检出代码仓库
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
       # 配置 Python 环境
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           python-version: "3.10"
 
