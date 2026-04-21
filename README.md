@@ -171,7 +171,7 @@
 - [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) - An open source collection of animated, interactive & fully customizable React components for building memorable websites.
 - [Wei-Shaw/claude-relay-service](https://github.com/Wei-Shaw/claude-relay-service) - CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。
 - [jiawanlong/Cesium-Examples](https://github.com/jiawanlong/Cesium-Examples) - CesiumJS2026年最新Examples，200多个原生示例：自定义纹理、地形开挖、可视域分析、洪水淹没、缓冲分析、日照分析、方量分析、通透分析、剖面、单体化、视频融合、视频投射、雨雪雾、天空盒、场景出图、体积云、闪电、视锥体、雷达扫描、水波纹、动态扩散点、电子围栏、粒子效果、物理引擎、克里金、海流、大数据可视化、坐标转换、相机、飞行漫游、瓦片加载、xyz、tms、wms、wmts、天地图、
-- [PublicAffairs/openai-gemini](https://github.com/PublicAffairs/openai-gemini) - Gemini ➜ OpenAI API proxy. Serverless!
+- [PublicAffairs/openai-gemini](https://github.com/PublicAffairs/openai-gemini) - ✦ Gemini ➜ OpenAI API proxy. Serverless!
 - [tech-shrimp/gemini-balance-lite](https://github.com/tech-shrimp/gemini-balance-lite) - Gemini API 代理, 把Gemini API免费中转到国内。还可以聚合多个Gemini API Key，随机选取API Key的使用实现负载均衡，使得Gemini API免费成倍增加。
 - [viarotel-org/vite-uniapp-template](https://github.com/viarotel-org/vite-uniapp-template) - 🚀 以实用为先的 uni-app 起手模板。
 - [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年自研高性能golang棋牌AI框架，基于最新主流大模型LLM+多agent协同决策，实测接近真实玩家智力水平。严禁赌博，否则后果自负！！！
@@ -320,7 +320,7 @@
 ## Others 
 
 - [jeecgboot/JimuBI](https://github.com/jeecgboot/JimuBI) - 【可视化数据大屏】酷炫大屏 轻松设计，通过拖拽完成大屏设计，80多种组件及20多种边框装饰满足您的设计需求
-- [nirholas/fresh-start](https://github.com/nirholas/fresh-start) - 
+- [nirholas/fresh-start](https://github.com/nirholas/fresh-start) - The original nirholas/claude-code before DMCA and take down. Once everything is cleared, it will return. Working with Anthropic and Github to get everything back.
 - [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) - A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.
 - [vuejs-ai/skills](https://github.com/vuejs-ai/skills) - Agent skills for Vue 3 development
 - [forayconsulting/gemini_cli_skill](https://github.com/forayconsulting/gemini_cli_skill) - A Claude Code skill enabling Claude to use Gemini 3 Pro via Gemini CLI.
@@ -758,7 +758,7 @@
 - [HuolalaTech/page-spy-web](https://github.com/HuolalaTech/page-spy-web) - A remote debugging platform you'll definitely find useful. Lightweight, cross-platform, out-of-box debugging tool
 - [lobehub/lobehub](https://github.com/lobehub/lobehub) - The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effo
 - [wechatsync/Wechatsync](https://github.com/wechatsync/Wechatsync) - 一键同步文章到多个内容平台，支持今日头条、WordPress、知乎、简书、掘金、CSDN、typecho各大平台，一次发布，多平台同步发布。解放个人生产力
-- [xinlei3166/vite-vue-template](https://github.com/xinlei3166/vite-vue-template) - Vue 模板, Vite5 + Vue3 + Pinia + Vue Router + TypeScript + Ant Design Vue.
+- [xinlei3166/vite-vue-template](https://github.com/xinlei3166/vite-vue-template) - Vue 模板, Vite + Vue + Pinia + Vue Router + TypeScript + TDesign Vue Next.
 - [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) - freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.
 - [lengyibai/wzry](https://github.com/lengyibai/wzry) - 🌈基于 Vue3+TS的王者荣耀图鉴🚀
 - [xiangshu233/vue3-vant4-mobile](https://github.com/xiangshu233/vue3-vant4-mobile) - 👋👋👋 基于Vue3.5、Vite8、Vant4、Pinia、Typescript、UnoCSS等主流技术开发，集成 Dark Mode(暗黑)模式和系统主题色，且持久化保存，集成 Mock 数据，包括登录/注册/找回/keep-alive/Axios/useEcharts/IconSvg等其他扩展。你可以在此之上直接开发你的业务代码！
