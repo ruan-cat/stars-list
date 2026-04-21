@@ -1,8 +1,28 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package manager lockfile policy for this generated docs repo
 pnpm-lock.yaml
 
-docs/.vitepress/dist
-docs/.vitepress/cache
+# VitePress build output and cache
+.vitepress/dist/
+.vitepress/cache/
+.vitepress/.temp/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/.vitepress/.temp/
 
-# 首页是复制粘贴的README.md 内容 所以需要忽略
+# Generated docs entry copied from README.md
 docs/index.md
+
+# OS / editor files
+.DS_Store
+Thumbs.db

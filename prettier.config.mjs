@@ -5,6 +5,10 @@ const config = {
 	plugins: ["prettier-plugin-lint-md"],
 	overrides: [
 		{
+			files: ".vscode/extensions.json",
+			parser: "jsonc",
+		},
+		{
 			files: "**/*.{js,mjs,cjs,jsx}",
 			parser: "oxc",
 			plugins: [prettierPluginOxc],
@@ -21,7 +25,7 @@ const config = {
 	jsxSingleQuote: true,
 	useTabs: true,
 	tabWidth: 2,
-	endOfLine: "auto",
+	endOfLine: "lf",
 	"space-around-alphabet": true,
 	"space-around-number": true,
 	"no-empty-code-lang": false,
@@ -29,4 +33,3 @@ const config = {
 };
 
 export default config;
-
