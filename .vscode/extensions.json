@@ -1,0 +1,80 @@
+{
+	// 本文件是 VS Code 扩展推荐清单，语义上使用 JSONC。
+	// VS Code 会按 `.vscode/extensions.json` 的特殊规则读取这里的注释。
+	// 注意：不要用块注释包裹包含注释结束符示例的说明文本，否则会提前结束注释并造成语法错误。
+	"recommendations": [
+		// ========== 语言支持 ==========
+
+		// Vue 3 的 .vue SFCs LSP 语言支持服务
+		"Vue.volar",
+		// TypeScript 语言服务增强（Nightly 版本，支持最新特性）
+		"ms-vscode.vscode-typescript-next",
+
+		// ========== 代码格式化与检查 ==========
+
+		// 使用 Prettier 实现格式化
+		"esbenp.prettier-vscode",
+		// 使用 ESLint 实现代码检查
+		"dbaeumer.vscode-eslint",
+		// 行内展示错误与警告信息，提升错误可见性
+		"usernamehw.errorlens",
+		// 英文单词拼写检查
+		"streetsidesoftware.code-spell-checker",
+		// EditorConfig 文件支持（统一不同编辑器的代码风格）
+		"EditorConfig.EditorConfig",
+
+		// ========== Git 管理 ==========
+
+		// 使用 GitLens 插件实现 Git 代码管理
+		"eamodio.gitlens",
+		// 使用 Git Graph 插件查看 Git 提交分支图
+		"mhutchie.git-graph",
+
+		// ========== 测试 ==========
+
+		// Vitest 测试用例的可视化运行与管理
+		"vitest.explorer",
+
+		// ========== 样式与 UI 开发 ==========
+
+		// Tailwind CSS 智能提示与补全
+		"bradlc.vscode-tailwindcss",
+		// UnoCSS 智能提示
+		"antfu.unocss",
+		// 颜色值（如 hex、rgb）的行内颜色预览
+		"naumovs.color-highlight",
+
+		// ========== 路径与导入增强 ==========
+
+		// 路径字符串的智能补全
+		"christian-kohler.path-intellisense",
+		// 自动导入文件的智能跳转（支持路径别名）
+		"antfu.goto-alias",
+		// HTML/JSX 中标签重命名时自动同步修改配对标签
+		"formulahendry.auto-rename-tag",
+
+		// ========== 环境变量 ==========
+
+		// .env 文件的语法高亮支持
+		"mikestead.dotenv",
+
+		// ========== 图标与图片 ==========
+
+		// 对 Iconify 的图标做图标提示
+		"antfu.iconify",
+		// VS Code 的图标主题
+		"PKief.material-icon-theme",
+		// 粘贴图片并自动上传到图床（PicGo）
+		"Spades.vs-picgo",
+
+		// ========== UI 交互增强 ==========
+
+		// TODO 高亮
+		"wayou.vscode-todo-highlight",
+		// TODO 树统计
+		"Gruntfuggly.todo-tree",
+		// 自定义代码颜色
+		"warmthsea.vscode-custom-code-color"
+	],
+	"unwantedRecommendations": []
+}
