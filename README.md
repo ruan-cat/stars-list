@@ -103,7 +103,6 @@
 - [zouyaoji/vue-cesium](https://github.com/zouyaoji/vue-cesium) - 🎉 Vue 3.x components for CesiumJS.
 - [CommandCodeAI/langui](https://github.com/CommandCodeAI/langui) - UI for your AI. Open Source Tailwind components tailored for your GPT, generative AI, and LLM projects.
 - [uiverse-io/galaxy](https://github.com/uiverse-io/galaxy) - The largest Open-Source UI Library! Community-made and free to use. Made with either CSS or Tailwind.
-- [itwanger/toBeBetterJavaer](https://github.com/itwanger/toBeBetterJavaer) - 一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点。学Java，就认准二哥的Java进阶之路😄
 - [godbasin/front-end-playground](https://github.com/godbasin/front-end-playground) - 被删和阿猪的前端游乐场！！快来一起撸猫一起学习前端吧~
 - [javascript-tutorial/zh.javascript.info](https://github.com/javascript-tutorial/zh.javascript.info) - 现代 JavaScript 教程（The Modern JavaScript Tutorial），以最新的 ECMAScript 规范为基准，通过简单但足够详细的内容，为你讲解从基础到高阶的 JavaScript 相关知识。
 - [Open-Yami-Community/yamiapi](https://github.com/Open-Yami-Community/yamiapi) - 
@@ -116,6 +115,7 @@
 
 - [loks666/get_jobs](https://github.com/loks666/get_jobs) - 💼【AI找工作助手】全平台自动投简历脚本：(boss、前程无忧、猎聘、智联招聘)
 - [ageerle/ruoyi-ai](https://github.com/ageerle/ruoyi-ai) - 面向企业级市场的一站式AI应用开发框架，支持多厂商大模型统一接入与管理，具备安全可控的企业知识库与高精度检索优化能力，提供可视化流程编排、自主决策智能体与多智能体协同调度，兼容主流 Agent Skill 协议，帮助企业与开发者零门槛快速构建安全、高效、可落地的AI智能体应用与行业解决方案。
+- [itwanger/toBeBetterJavaer](https://github.com/itwanger/toBeBetterJavaer) - 一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点。学Java，就认准二哥的Java进阶之路😄
 - [youlaitech/youlai-mall](https://github.com/youlaitech/youlai-mall) - 🚀基于 Spring Boot 3、Spring Cloud & Alibaba 2022、SAS OAuth2 、Vue3、Element-Plus、uni-app 构建的开源全栈商城。
 - [1024-lab/smart-admin](https://github.com/1024-lab/smart-admin) - SmartAdmin国内首个以「高质量代码」为核心，「简洁、高效、安全」快速开发平台；基于SpringBoot2/3 + Sa-Token + Mybatis-Plus 和 Vue3 + Vite5 + Ant Design Vue 4.x (同时支持JavaScript和TypeScript双版本)；满足国家三级等保要求、支持登录限制、接口数据国产加解密、高防SQL注入等一系列安全体系。
 - [krahets/hello-algo](https://github.com/krahets/hello-algo) - 《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现
@@ -428,7 +428,7 @@
 - [agentcodee/cursor-free-everyday](https://github.com/agentcodee/cursor-free-everyday) - 完全免费, 自动获取新账号,一键重置新额度,  解决机器码问题, 自动满额度
 - [biomejs/biome](https://github.com/biomejs/biome) - A toolchain for web projects, aimed to provide functionalities to maintain them. Biome offers formatter and linter, usable via CLI and LSP.
 - [rustq/vue-skia](https://github.com/rustq/vue-skia) - Skia based 2d graphics vue rendering library. It is based on Rust to implement software rasterization to perform rendering. 基于 Skia 的 2D 图形 Vue 渲染库 —— 使用 Rust 语言实现纯软件光栅化
-- [Frodo45127/rpfm](https://github.com/Frodo45127/rpfm) - Rusted PackFile Manager (RPFM) is a... reimplementation in Rust and Qt5 of PackFile Manager (PFM), one of the best modding tools for Total War Games.
+- [Frodo45127/rpfm](https://github.com/Frodo45127/rpfm) - Rusted PackFile Manager (RPFM) is a... reimplementation in Rust and Qt6 of PackFile Manager (PFM), one of the best modding tools for Total War Games.
 
 ## SCSS 
 
