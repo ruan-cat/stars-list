@@ -535,7 +535,7 @@
 ## computer-science 
 
 - [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) - A complete computer science study plan to become a software engineer.
-- [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) - Interactive roadmaps, guides and other educational content to help developers grow in their careers.
+- [nilbuild/developer-roadmap](https://github.com/nilbuild/developer-roadmap) - Interactive roadmaps, guides and other educational content to help developers grow in their careers.
 
 ## config 
 
@@ -1348,6 +1348,7 @@
 
 ## others 
 
+- [NapNeko/NapCatQQ](https://github.com/NapNeko/NapCatQQ) - Modern protocol-side framework based on NTQQ
 - [konoboki/ciallo-ti](https://github.com/konoboki/ciallo-ti) - 一个基于MBTI的柚子社同人人格测试网站，参考ACGTI设计风格，使用Chatgpt 5.4进行性格分析，将用户匹配到最契合的柚子社游戏角色。 · 使用 Manus 构建
 - [tianxingleo/ACGTI](https://github.com/tianxingleo/ACGTI) - ACG Type Indicator - MBTI inspired anime persona quiz
 - [WindRunnerMax/CanvasEditor](https://github.com/WindRunnerMax/CanvasEditor) - Canvas 简历编辑器
@@ -1504,7 +1505,7 @@
 - [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.
 - [viarotel-org/vite-uniapp-template](https://github.com/viarotel-org/vite-uniapp-template) - 🚀 以实用为先的 uni-app 起手模板。
 - [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年自研高性能golang棋牌AI框架，基于最新主流大模型LLM+多agent协同决策，实测接近真实玩家智力水平。严禁赌博，否则后果自负！！！
-- [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - A Beautiful & Animated Chart UI Website built on top of shadcn & recharts.
+- [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - EvilCharts is an open-source chart UI website built with shadcn and Recharts, beautifully designed and handcrafted.
 - [openai/codex](https://github.com/openai/codex) - Lightweight coding agent that runs in your terminal
 - [ConardLi/easy-llm-cli](https://github.com/ConardLi/easy-llm-cli) - An open-source AI agent that is compatible with multiple LLM models
 - [wot-ui/wot-starter](https://github.com/wot-ui/wot-starter) - 🍀 基于 vitesse-uni-app 深度整合 Wot UI 组件库的 uni-app 快速起手项目
