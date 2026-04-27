@@ -463,6 +463,7 @@
 
 ## TypeScript 
 
+- [NapNeko/NapCatQQ](https://github.com/NapNeko/NapCatQQ) - Modern protocol-side framework based on NTQQ
 - [konoboki/ciallo-ti](https://github.com/konoboki/ciallo-ti) - 一个基于MBTI的柚子社同人人格测试网站，参考ACGTI设计风格，使用Chatgpt 5.4进行性格分析，将用户匹配到最契合的柚子社游戏角色。 · 使用 Manus 构建
 - [tianxingleo/ACGTI](https://github.com/tianxingleo/ACGTI) - ACG Type Indicator - MBTI inspired anime persona quiz
 - [murongg/vue3-lazyload](https://github.com/murongg/vue3-lazyload) - A Vue3.x image lazyload plugin
@@ -611,7 +612,7 @@
 - [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.
 - [posva/pinia-colada](https://github.com/posva/pinia-colada) - 🍹 The smart data fetching layer for Vue
 - [barbajs/barba](https://github.com/barbajs/barba) - Create badass, fluid and smooth transitions between your website’s pages
-- [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - A Beautiful & Animated Chart UI Website built on top of shadcn & recharts.
+- [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - EvilCharts is an open-source chart UI website built with shadcn and Recharts, beautifully designed and handcrafted.
 - [coze-dev/coze-studio](https://github.com/coze-dev/coze-studio) - An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation.
 - [ConardLi/easy-llm-cli](https://github.com/ConardLi/easy-llm-cli) - An open-source AI agent that is compatible with multiple LLM models
 - [EvanBacon/Expo-Crossy-Road](https://github.com/EvanBacon/Expo-Crossy-Road) - 🐥🚙 Crossy Road game clone made in Expo (iOS, Android, web), THREE.js, Tween, React Native. 🐔
@@ -772,7 +773,7 @@
 - [AsterAtwood/rmmv.d.ts](https://github.com/AsterAtwood/rmmv.d.ts) - rpg maker mv d.ts
 - [Narazaka/rpgmakermv_typescript_dts](https://github.com/Narazaka/rpgmakermv_typescript_dts) - RPGツクールMVに標準搭載されているJavaScriptを、TypeScriptで扱うための型定義ファイルです。
 - [matschik/component-party.dev](https://github.com/matschik/component-party.dev) - 🎉 Web component JS frameworks overview by their syntax and features
-- [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) - Interactive roadmaps, guides and other educational content to help developers grow in their careers.
+- [nilbuild/developer-roadmap](https://github.com/nilbuild/developer-roadmap) - Interactive roadmaps, guides and other educational content to help developers grow in their careers.
 - [serkodev/nuxt-monorepo](https://github.com/serkodev/nuxt-monorepo) - Using Nuxt Layers to build a complete monorepo architecture
 - [KareemDa/pnpm-monorepo-nuxt-3](https://github.com/KareemDa/pnpm-monorepo-nuxt-3) - 
 - [sunpm/unisave](https://github.com/sunpm/unisave) - 拥抱 web 开发，拯救 uniapp。👋👋👋 基于Uniapp、Vue 3、pinia(且持久化保存)、Typescript、UnoCSS等主流技术开发的开箱即用模版，适配所有(app、mp、web)平台！！！
