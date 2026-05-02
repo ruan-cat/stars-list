@@ -799,7 +799,7 @@
 - [oyjt/uniapp-vue3-template](https://github.com/oyjt/uniapp-vue3-template) - 使用uniapp+vite+vue3+typescript+uview-plus+unocss 搭建的适合团队协作的快速开发模版
 - [uni-helper/create-uni](https://github.com/uni-helper/create-uni) - 🛠️快速创建uni-app项目
 - [unplugin/unplugin-vue-markdown](https://github.com/unplugin/unplugin-vue-markdown) - Compile Markdown to Vue component
-- [nocobase/nocobase](https://github.com/nocobase/nocobase) - NocoBase is the most extensible AI-powered no-code/low-code platform for building business applications and enterprise solutions.
+- [nocobase/nocobase](https://github.com/nocobase/nocobase) - NocoBase is an open-source AI + no-code platform for building business systems fast. Instead of generating everything from scratch, AI works on top of production-proven infrastructure and a WYSIWYG no
 - [pengzhanbo/vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume) - A vuepress theme.  Simple, feature-rich,  document & blog
 - [IndexXuan/vue-cli-plugin-vite](https://github.com/IndexXuan/vue-cli-plugin-vite) - Use vite today, with vue-cli.
 - [alex8088/electron-toolkit](https://github.com/alex8088/electron-toolkit) - Toolkit for Electron
