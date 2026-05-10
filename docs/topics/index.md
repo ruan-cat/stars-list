@@ -203,7 +203,7 @@
 - [golutra/golutra](https://github.com/golutra/golutra) - Multi-agent AI orchestration platform for automation, workflows, and developer tools. Golutra transforms Codex, Claude Code, and OpenClaw into a unified agent system with parallel execution, task orch
 - [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - 💻 vibe coding 2026 | Your first modern programming course for beginners to master step by step.
 - [miantiao-me/cloud-code](https://github.com/miantiao-me/cloud-code) - Cloud Code (Cloudflare + OpenCode), running OpenCode on Cloudflare to build a dedicated cloud Agent for you.
-- [limecloud/lime](https://github.com/limecloud/lime) - 把灵感、写作、出图、改稿、沉淀放进同一个工作台，让创作从“想到”直接走到“可发布”
+- [limecloud/lime](https://github.com/limecloud/lime) - AI content workspace for Chinese creators: desktop writing, research, prompt   library, knowledge base, and multi-model workflows.
 - [legeling/PromptHub](https://github.com/legeling/PromptHub) - 一款包含了 Prompt管理，Skill管理，Agent管理的一站式AI工具箱，助你高效管理提示词，一键分发skills ，一站式管理Agent资产，并实现云同步，备份，版本管理 | An all-in-one AI toolbox for prompt, skill, and agent management. Reuse prompts, distribute skills with one 
 - [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - The Frontend Stack for Agents & Generative UI. React + Angular.  Makers of the AG-UI Protocol
 - [UfoMiao/zcf](https://github.com/UfoMiao/zcf) - Zero-Config Code Flow for Claude code & Codex
@@ -240,7 +240,7 @@
 - [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future ses
 - [vuepont/ai-elements-vue](https://github.com/vuepont/ai-elements-vue) - AI Elements Vue is a component library built on top of shadcn-vue to help you build AI-native applications faster.
 - [nextify-limited/libra](https://github.com/nextify-limited/libra) - The open-source V0/Lovable alternative
-- [limecloud/lime](https://github.com/limecloud/lime) - 把灵感、写作、出图、改稿、沉淀放进同一个工作台，让创作从“想到”直接走到“可发布”
+- [limecloud/lime](https://github.com/limecloud/lime) - AI content workspace for Chinese creators: desktop writing, research, prompt   library, knowledge base, and multi-model workflows.
 - [legeling/PromptHub](https://github.com/legeling/PromptHub) - 一款包含了 Prompt管理，Skill管理，Agent管理的一站式AI工具箱，助你高效管理提示词，一键分发skills ，一站式管理Agent资产，并实现云同步，备份，版本管理 | An all-in-one AI toolbox for prompt, skill, and agent management. Reuse prompts, distribute skills with one 
 - [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - The Frontend Stack for Agents & Generative UI. React + Angular.  Makers of the AG-UI Protocol
 - [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) - Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.
@@ -723,7 +723,7 @@
 
 ## eslint 
 
-- [rayxiom/rayxiom](https://github.com/rayxiom/rayxiom) - Ray's shared project configurations
+- [so1ve/codestyle-config](https://github.com/so1ve/codestyle-config) - Ray's shared project configurations
 - [un-pany/mobvue](https://github.com/un-pany/mobvue) - 📱 A crafted Vue3 mobile template | Vue Mobile | Vue H5 | Vue Vant | Vue3 Mobile | Vue3 H5 | Vue3 Vant | Vue 移动端模板 | Vue3 移动端模板
 - [lin-123/javascript](https://github.com/lin-123/javascript) - eslint-config-airbnb 中文版
 - [Whbbit1999/shadcn-vue-admin](https://github.com/Whbbit1999/shadcn-vue-admin) - Admin Dashboard UI crafted with Shadcn-vue, Vue3 and Vite. Built with responsiveness and accessibility in mind.管理面板 UI 采用 Shadcn-vue、Vue3 和 Vite 精心打造。构建时充分考虑了响应能力和可访问性。
@@ -1163,6 +1163,7 @@
 - [AVIDS2/memorix](https://github.com/AVIDS2/memorix) - Open-source cross-agent memory layer for coding agents via MCP. Compatible with Cursor, Claude Code, Codex, Windsurf, Gemini CLI, GitHub Copilot, Kiro, OpenCode, Antigravity, and Trae.
 - [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
 - [farion1231/cc-switch](https://github.com/farion1231/cc-switch) - A cross-platform desktop All-in-One assistant tool for Claude Code, Codex, OpenCode, openclaw & Gemini CLI.
+- [limecloud/lime](https://github.com/limecloud/lime) - AI content workspace for Chinese creators: desktop writing, research, prompt   library, knowledge base, and multi-model workflows.
 - [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message se
 - [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) - ⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，
 - [timtoday/mcp-windows-notify](https://github.com/timtoday/mcp-windows-notify) - 🔔 Windows notification MCP server - Get desktop notifications when AI tasks complete. Works with Claude Desktop, Cursor & other MCP-compatible tools.
@@ -1369,6 +1370,7 @@
 
 ## others 
 
+- [sconi789/AiGameAnent](https://github.com/sconi789/AiGameAnent) - View Ai GameAgent
 - [NapNeko/NapCatQQ](https://github.com/NapNeko/NapCatQQ) - Modern protocol-side framework based on NTQQ
 - [konoboki/ciallo-ti](https://github.com/konoboki/ciallo-ti) - 一个基于MBTI的柚子社同人人格测试网站，参考ACGTI设计风格，使用Chatgpt 5.4进行性格分析，将用户匹配到最契合的柚子社游戏角色。 · 使用 Manus 构建
 - [tianxingleo/ACGTI](https://github.com/tianxingleo/ACGTI) - ACG Type Indicator - MBTI inspired anime persona quiz
