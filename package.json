@@ -7,7 +7,11 @@
 	"engines": {
 		"node": ">=22.14.0"
 	},
-	"author": "ruan-cat",
+	"author": {
+		"name": "ruan-cat",
+		"email": "1219043956@qq.com",
+		"url": "https://github.com/ruan-cat"
+	},
 	"description": "阮喵喵的github star列表，是一个基于工作流自动更新的文档项目。",
 	"homepage": "https://ruan-cat.github.io/stars-list",
 	"main": "index.js",
