@@ -1605,7 +1605,7 @@
 - [katai5plate/RPGMV-CoreScript-Reference](https://github.com/katai5plate/RPGMV-CoreScript-Reference) - https://katai5plate.github.io/RPGMV-CoreScript-Reference/
 - [antfu/100](https://github.com/antfu/100) - My 100-day project of exploring design, compform, and new things.
 - [TyruswooStudio/Tyruswoo_FollowerControl-MV](https://github.com/TyruswooStudio/Tyruswoo_FollowerControl-MV) - Tyruswoo Follower Control plugin for RPG Maker MV
-- [cline/cline](https://github.com/cline/cline) - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.
+- [cline/cline](https://github.com/cline/cline) - Autonomous coding agent as an SDK, IDE extension, or CLI assistant.
 - [Ares-Chang/uni-vitesse](https://github.com/Ares-Chang/uni-vitesse) - 使用 Vitesse cli 而不是 HbuildX 获得 double 的开发快乐! Uniapp + Vue 3 + TS + UnoCSS template
 - [easychen/howto-make-more-money](https://github.com/easychen/howto-make-more-money) - 程序员如何优雅的挣零花钱，2.0版，升级为小书了。Most of this not work outside China , so no English translate
 - [wanglin2/mind-map](https://github.com/wanglin2/mind-map) - SimpleMindMap（思绪思维导图）：一个强大的思维导图。A powerful mind map.
