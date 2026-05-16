@@ -311,7 +311,6 @@
 ## MDX 
 
 - [magicuidesign/magicui](https://github.com/magicuidesign/magicui) - UI Library for Design Engineers. Animated components and effects you can copy and paste into your apps. Free. Open Source.
-- [zjh1943/awesome-claude-code](https://github.com/zjh1943/awesome-claude-code) - A repo that collects awsome learning materials/tools for Calude Code developers, aiming at 5X DEV efficiency
 
 ## Markdown 
 
