@@ -139,7 +139,6 @@
 - [6639835/cursor-card](https://github.com/6639835/cursor-card) - 
 - [ZTL-UwU/shadcn-docs-nuxt-starter](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter) - Starter template for shadcn-docs-nuxt.
 - [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - 💻 vibe coding 2026 | Your first modern Coding course for beginners to master step by step.
-- [dongyubin/Baidu-VIP](https://github.com/dongyubin/Baidu-VIP) - 2026年5月更新，百度网盘(百度云)不限速工具分享。
 - [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) - Vercel's official collection of agent skills
 - [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
 - [justlovemaki/AIClient2API](https://github.com/justlovemaki/AIClient2API) - Simulates Gemini CLI, Antigravity, Codex, Grok, and Kiro client requests, compatible with the OpenAI API. It supports thousands of Gemini model requests per day and offers free use of the built-in Cla
@@ -388,6 +387,7 @@
 
 ## Python 
 
+- [JUk1-GH/gpt-promo-scanner](https://github.com/JUk1-GH/gpt-promo-scanner) - ChatGPT Team(Business) 促销码自动扫描工具 — 批量发现/验证/价格收集，支持 17 国 34 个码，最高折扣 71% | ChatGPT Business promo code scanner — batch discovery, validation, price collection, 34 codes across 17 countries, up to 71% of
 - [dou-jiang/codex-console](https://github.com/dou-jiang/codex-console) - codex-console 是一个集成化控制台项目，支持任务管理、批量处理、数据导出、自动上传、日志查看与打包支持。
 - [openakita/openakita](https://github.com/openakita/openakita) - An open-source AI assistant framework with skills and agent architecture
 - [liuzhenhonghhhhh/cursor-reg](https://github.com/liuzhenhonghhhhh/cursor-reg) - 111
@@ -469,6 +469,7 @@
 
 ## TypeScript 
 
+- [nexu-io/open-design](https://github.com/nexu-io/open-design) - 🎨 Local-first, open-source alternative to Anthropic's Claude Design. ⚡ 19 Skills · ✨ 71 brand-grade Design Systems 🖼 Generate web · desktop · mobile prototypes · slides · images · videos · HyperFrames
 - [ParallaxPro-AI/Open-ParallaxPro](https://github.com/ParallaxPro-AI/Open-ParallaxPro) - Open source tool that turns your ideas into real video games
 - [ConardLi/easy-learn-ai](https://github.com/ConardLi/easy-learn-ai) - Easy-to-understand AI learning resources for beginners.
 - [garrytan/gstack](https://github.com/garrytan/gstack) - Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA
@@ -769,7 +770,7 @@
 - [wsfe/vue-tree](https://github.com/wsfe/vue-tree) - 使用虚拟列表优化的 Vue 树组件 Vue tree component optimized using virtual list
 - [strapi/strapi](https://github.com/strapi/strapi) - 🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.
 - [HuolalaTech/page-spy-web](https://github.com/HuolalaTech/page-spy-web) - A remote debugging platform you'll definitely find useful. Lightweight, cross-platform, out-of-box debugging tool
-- [lobehub/lobehub](https://github.com/lobehub/lobehub) - LobeHub organizes your agents into 7×24 operation. It hires, schedules, reports on your entire AI team. You stay in charge — without staying online.
+- [lobehub/lobehub](https://github.com/lobehub/lobehub) - 🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.
 - [wechatsync/Wechatsync](https://github.com/wechatsync/Wechatsync) - 一键同步文章到多个内容平台，支持今日头条、WordPress、知乎、简书、掘金、CSDN、typecho各大平台，一次发布，多平台同步发布。解放个人生产力
 - [xinlei3166/vite-vue-template](https://github.com/xinlei3166/vite-vue-template) - Vue 模板, Vite + Vue + Pinia + Vue Router + TypeScript + TDesign Vue Next.
 - [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) - freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.
@@ -777,7 +778,7 @@
 - [xiangshu233/vue3-vant4-mobile](https://github.com/xiangshu233/vue3-vant4-mobile) - 👋👋👋 基于Vue3.5、Vite8、Vant4、Pinia、Typescript、UnoCSS等主流技术开发，集成 Dark Mode(暗黑)模式和系统主题色，且持久化保存，集成 Mock 数据，包括登录/注册/找回/keep-alive/Axios/useEcharts/IconSvg等其他扩展。你可以在此之上直接开发你的业务代码！
 - [chengpeiquan/learning-vue3](https://github.com/chengpeiquan/learning-vue3) - 超过 230w+ 阅读人次的《Vue3 入门指南与实战案例》，关于前端工程化开发的基础知识点，以及 TypeScript 、 Vue 3 、 Pinia 的入门学习指南。
 - [Ender-Wiggin2019/VTuber-Logos-Collection](https://github.com/Ender-Wiggin2019/VTuber-Logos-Collection) - An elegant website for collecting kawaii logos from great artists
-- [Jannchie/codetime-web-v3](https://github.com/Jannchie/codetime-web-v3) - Front-end page of codetime, third version.
+- [codetime-dev/codetime-web](https://github.com/codetime-dev/codetime-web) - Front-end page of codetime, third version.
 - [rxliuli/liuli-tools](https://github.com/rxliuli/liuli-tools) - 琉璃的开发工具集，都是一些根据需要自行开发的函数库和开发者工具。
 - [nonzzz/vite-bundle-analyzer](https://github.com/nonzzz/vite-bundle-analyzer) - bundle analyzer for vite
 - [TypeStrong/typedoc](https://github.com/TypeStrong/typedoc) - Documentation generator for TypeScript projects.
@@ -928,8 +929,8 @@
 - [zhou-tao/vue-power-admin](https://github.com/zhou-tao/vue-power-admin) - 💪 A powerful admin based on Vue3.
 - [xkdvSrPD/blog-next-view](https://github.com/xkdvSrPD/blog-next-view) - Nuxt full-stack blog.
 - [themesberg/flowbite-vue](https://github.com/themesberg/flowbite-vue) - Official Vue 3 components built for Flowbite and Tailwind CSS
-- [pinky-pig/starter-vue-lib](https://github.com/pinky-pig/starter-vue-lib) - 
-- [pinky-pig/v3-bento](https://github.com/pinky-pig/v3-bento) - 拖拽方块布局
+- [6owen/starter-vue-lib](https://github.com/6owen/starter-vue-lib) - 
+- [6owen/v3-bento](https://github.com/6owen/v3-bento) - 拖拽方块布局
 - [wobsoriano/vuetify-sonner](https://github.com/wobsoriano/vuetify-sonner) - Stackable toast component for Vuetify.
 - [compiiile/compiiile](https://github.com/compiiile/compiiile) - The most convenient way to render and deploy a folder containing markdown files. Previewing and searching markdown files has never been that easy. Your alternative to Notion and Obsidian. No need for 
 - [wurencaideli/dumogu-admin](https://github.com/wurencaideli/dumogu-admin) - 最基础的管理端架子 - 毒蘑菇管理
