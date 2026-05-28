@@ -431,7 +431,6 @@
 - [farion1231/cc-switch](https://github.com/farion1231/cc-switch) - A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io
 - [junhoyeo/tokscale](https://github.com/junhoyeo/tokscale) - 🛰️ A CLI tool for tracking token usage from OpenCode, Claude Code, 🦞OpenClaw (Clawdbot/Moltbot), Pi, Codex, Gemini, Cursor, AmpCode, Factory Droid, Kimi, and more! • 🏅Global Leaderboard + 2D/3D Contri
 - [lbjlaq/Antigravity-Manager](https://github.com/lbjlaq/Antigravity-Manager) - Professional Antigravity Account Manager & Switcher. One-click seamless account switching for Antigravity Tools. Built with Tauri v2 + React (Rust).专业的 Antigravity 账号管理与切换工具。为 Antigravity 提供一键无缝账号切换功能
-- [limecloud/lime](https://github.com/limecloud/lime) - AI content workspace for Chinese creators: desktop writing, research, prompt   library, knowledge base, and multi-model workflows.
 - [bevyengine/bevy](https://github.com/bevyengine/bevy) - A refreshingly simple data-driven game engine built in Rust
 - [ryoppippi/ccusage](https://github.com/ryoppippi/ccusage) - Analyze coding (agent) CLI token usage and costs from local data.
 - [openai/codex](https://github.com/openai/codex) - Lightweight coding agent that runs in your terminal
@@ -472,6 +471,7 @@
 
 ## TypeScript 
 
+- [vuejs-ai/vue-tui](https://github.com/vuejs-ai/vue-tui) - The Vue framework for terminal UIs. SFC & JSX, Yoga flexbox, HMR, and testing out of the box.
 - [nexu-io/open-design](https://github.com/nexu-io/open-design) - 🎨 Local-first, open-source  Claude Design alternative. ⚡ 19 Skills · ✨ 71 brand-grade Design Systems 🖼 Generate web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed p
 - [ParallaxPro-AI/Open-ParallaxPro](https://github.com/ParallaxPro-AI/Open-ParallaxPro) - Open source tool that turns your ideas into real video games
 - [ConardLi/easy-learn-ai](https://github.com/ConardLi/easy-learn-ai) - Easy-to-understand AI learning resources for beginners.
@@ -531,6 +531,7 @@
 - [common-intellisense/common-intellisense](https://github.com/common-intellisense/common-intellisense) - Universal Component Intellisense for Any Frameworks
 - [cosscom/coss](https://github.com/cosscom/coss) - coss.com/ui is the official design system of Cal.com
 - [nextify-limited/libra](https://github.com/nextify-limited/libra) - The open-source V0/Lovable alternative
+- [limecloud/lime](https://github.com/limecloud/lime) - AI content workspace for Chinese creators: desktop writing, research, prompt   library, knowledge base, and multi-model workflows.
 - [BuilderIO/mitosis](https://github.com/BuilderIO/mitosis) - Write components once, run everywhere. Compiles to React, Vue, Qwik, Solid, Angular, Svelte, and more.
 - [missive/emoji-mart](https://github.com/missive/emoji-mart) - 🏪 One component to pick them all
 - [legeling/PromptHub](https://github.com/legeling/PromptHub) - 一款包含了 Prompt管理，Skill管理，Agent管理的一站式AI工具箱，助你高效管理提示词，一键分发skills ，一站式管理Agent资产，并实现云同步，备份，版本管理 | An all-in-one AI toolbox for prompt, agent, and skills management. Reuse prompts, distribute skills with one
