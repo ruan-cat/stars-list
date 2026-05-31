@@ -292,7 +292,6 @@
 - [rpgtkoolmv/corescript](https://github.com/rpgtkoolmv/corescript) - 
 - [kins-dev/rpgmaker-mv-pixi5](https://github.com/kins-dev/rpgmaker-mv-pixi5) - Taking the core of RPGMaker MV and updating it for PixiJS v5.3.3
 - [DavidAnson/markdownlint](https://github.com/DavidAnson/markdownlint) - A Node.js style checker and lint tool for Markdown/CommonMark files.
-- [mr099985/RMMVPlugin-Yanfly_TW](https://github.com/mr099985/RMMVPlugin-Yanfly_TW) - Translation "Plugin Comment" to Chinese(Traditional) .
 - [Ippang/Yanfly-Engine-Plugins-MV](https://github.com/Ippang/Yanfly-Engine-Plugins-MV) - A collection of Yanfly's MV Plugins. (http://yanfly.moe/)
 - [ruan-cat/Vue.js-Learning-Example](https://github.com/ruan-cat/Vue.js-Learning-Example) - Vue.js_2.x-Learning-Example
 - [Lagomoro/Lagomoro-Mission-MV](https://github.com/Lagomoro/Lagomoro-Mission-MV) - Mission System for RPG Maker MV
@@ -472,6 +471,7 @@
 
 ## TypeScript 
 
+- [knight-L/sc-datav](https://github.com/knight-L/sc-datav) - Three.js 可视化大屏，地理轮廓精确呈现3D地图
 - [vuejs-ai/vue-tui](https://github.com/vuejs-ai/vue-tui) - The Vue framework for terminal UIs. SFC & JSX, Yoga flexbox, HMR, and testing out of the box.
 - [nexu-io/open-design](https://github.com/nexu-io/open-design) - 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandb
 - [ParallaxPro-AI/Open-ParallaxPro](https://github.com/ParallaxPro-AI/Open-ParallaxPro) - Open source tool that turns your ideas into real video games
