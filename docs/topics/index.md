@@ -1790,7 +1790,6 @@
 - [luckyCatMiao/rpgmakermv-library-ChineseAnnotations](https://github.com/luckyCatMiao/rpgmakermv-library-ChineseAnnotations) - 
 - [rpgtkoolmv/corescript](https://github.com/rpgtkoolmv/corescript) - 
 - [kins-dev/rpgmaker-mv-pixi5](https://github.com/kins-dev/rpgmaker-mv-pixi5) - Taking the core of RPGMaker MV and updating it for PixiJS v5.3.3
-- [mr099985/RMMVPlugin-Yanfly_TW](https://github.com/mr099985/RMMVPlugin-Yanfly_TW) - Translation "Plugin Comment" to Chinese(Traditional) .
 - [Ippang/Yanfly-Engine-Plugins-MV](https://github.com/Ippang/Yanfly-Engine-Plugins-MV) - A collection of Yanfly's MV Plugins. (http://yanfly.moe/)
 - [neohoy/RPG-Maker-MV](https://github.com/neohoy/RPG-Maker-MV) - Yanfly插件汉化
 - [miaowm5/RMMV-F1](https://github.com/miaowm5/RMMV-F1) - RPG Maker MV 帮助文档汉化
@@ -1879,6 +1878,7 @@
 
 ## react 
 
+- [knight-L/sc-datav](https://github.com/knight-L/sc-datav) - Three.js 可视化大屏，地理轮廓精确呈现3D地图
 - [hiaaryan/sileo](https://github.com/hiaaryan/sileo) - An opinionated, physics-based toast component for React.
 - [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) - An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms
 - [hepengwei/visualization-collection](https://github.com/hepengwei/visualization-collection) - 🌈 一个专注于前端视觉效果的集合应用，包含CSS动效、Canvas动画、Three.js3D、人工智能应用等上百个案例（持续更新）
