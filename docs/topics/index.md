@@ -176,6 +176,7 @@
 - [tailwind](#tailwind)
 - [tailwindcss](#tailwindcss)
 - [terminal](#terminal)
+- [trading](#trading)
 - [tui](#tui)
 - [typescript](#typescript)
 - [ui](#ui)
@@ -252,6 +253,7 @@
 - [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) - Enhanced ChatGPT Clone: Features Agents, MCP, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message se
 - [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) - ⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，
 - [Simon-He95/markstream-vue](https://github.com/Simon-He95/markstream-vue) - A Vue 3 renderer specifically built for AI-powered streaming Markdown: Monaco incremental, Mermaid progressive, and KaTeX formula speed, with real-time updates and no jitter, ready to use out of the b
+- [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
 - [UfoMiao/zcf](https://github.com/UfoMiao/zcf) - Zero-Config Code Flow for Claude code & Codex
 - [x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, V
 - [Sylinko/Everywhere](https://github.com/Sylinko/Everywhere) - Context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integrating multiple LLMs and MCP tools.
@@ -291,6 +293,7 @@
 - [junhoyeo/tokscale](https://github.com/junhoyeo/tokscale) - 🛰️ A CLI tool for tracking token usage from OpenCode, Claude Code, 🦞OpenClaw (Clawdbot/Moltbot), Pi, Codex, Gemini, Cursor, AmpCode, Factory Droid, Kimi, and more! • 🏅Global Leaderboard + 2D/3D Contri
 - [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) - Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla
 - [AnandChowdhary/continuous-claude](https://github.com/AnandChowdhary/continuous-claude) - 🔂 Ralph loop with PRs: Run Claude Code in a continuous loop, autonomously creating PRs, waiting for checks, and merging
+- [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
 - [Sylinko/Everywhere](https://github.com/Sylinko/Everywhere) - Context-aware AI assistant for your desktop. Ready to respond intelligently, seamlessly integrating multiple LLMs and MCP tools.
 - [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) - A collection of 100+ specialized Claude Code subagents covering a wide range of development use cases
 - [wshobson/agents](https://github.com/wshobson/agents) - Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI
@@ -743,7 +746,7 @@
 - [lin-123/javascript](https://github.com/lin-123/javascript) - eslint-config-airbnb 中文版
 - [Whbbit1999/shadcn-vue-admin](https://github.com/Whbbit1999/shadcn-vue-admin) - Admin Dashboard UI crafted with Shadcn-vue, Vue3 and Vite. Built with responsiveness and accessibility in mind.管理面板 UI 采用 Shadcn-vue、Vue3 和 Vite 精心打造。构建时充分考虑了响应能力和可访问性。
 - [un-pany/v3-admin-vite](https://github.com/un-pany/v3-admin-vite) - ☀️ A crafted Vue3 admin template | Vue Admin | Vue Template | Vue3 Admin | Vue3 Template | Vue 后台 | Vue 模板 | Vue3 后台 | Vue3 模板
-- [KUN1007/kun-touchgal-next](https://github.com/KUN1007/kun-touchgal-next) - TouchGAL是立足于分享快乐的一站式Galgame文化社区, 为Gal爱好者提供一片净土!
+- [KunMoe/kun-touchgal-next](https://github.com/KunMoe/kun-touchgal-next) - TouchGAL是立足于分享快乐的一站式Galgame文化社区, 为Gal爱好者提供一片净土!
 - [vexip-ui/lint-config](https://github.com/vexip-ui/lint-config) - Lint config for Vexip UI
 - [pengzhanbo/configs](https://github.com/pengzhanbo/configs) - Config preset for eslint, prettier, stylelint
 - [JoshuaKGoldberg/create-typescript-app](https://github.com/JoshuaKGoldberg/create-typescript-app) - Quickstart-friendly TypeScript template with comprehensive, configurable, opinionated tooling. 🎁
@@ -856,6 +859,7 @@
 
 ## golang 
 
+- [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
 - [labring/sealos](https://github.com/labring/sealos) - Sealos is an AI-native Cloud Operating System built on Kubernetes that unifies the entire application lifecycle, from development in cloud IDEs to production deployment and management. It is perfect f
 - [xiaolincoder/CS-Base](https://github.com/xiaolincoder/CS-Base) - 图解计算机网络、操作系统、计算机组成、数据库，共 1000 张图 + 50 万字，破除晦涩难懂的计算机基础知识，让天下没有难懂的八股文！🚀 在线阅读：https://xiaolincoding.com
 - [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) - Curated list of project-based tutorials
@@ -1102,6 +1106,7 @@
 - [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - The Frontend Stack for Agents & Generative UI. React + Angular.  Makers of the AG-UI Protocol
 - [JerryZLiu/Dayflow](https://github.com/JerryZLiu/Dayflow) - The automatic work journal. Privately turns your screen into a timeline of what you actually accomplished. Open-source and local-first.
 - [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar) - ⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，
+- [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
 - [UfoMiao/zcf](https://github.com/UfoMiao/zcf) - Zero-Config Code Flow for Claude code & Codex
 - [idosal/git-mcp](https://github.com/idosal/git-mcp) - Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project
 - [doocs/md](https://github.com/doocs/md) - ✍ WeChat Markdown Editor | 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、自定义主题样式、内容管理、多图床、AI 助手等特性
@@ -1251,6 +1256,7 @@
 - [cosscom/coss](https://github.com/cosscom/coss) - coss.com/ui is the official design system of Cal.com
 - [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - The Frontend Stack for Agents & Generative UI. React + Angular.  Makers of the AG-UI Protocol
 - [magicuidesign/magicui](https://github.com/magicuidesign/magicui) - UI Library for Design Engineers. Animated components and effects you can copy and paste into your apps. Free. Open Source.
+- [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
 - [aymericzip/intlayer](https://github.com/aymericzip/intlayer) - Per-component Internationalisation solution for JS application. Type-Safe. Translate with AI. Edit Visually.
 - [AmanShakya0018/forgeui](https://github.com/AmanShakya0018/forgeui) - A library of React components for smooth, fast front-end development.
 - [Ali-Hussein-dev/indie-ui](https://github.com/Ali-Hussein-dev/indie-ui) - Collection of UI components
@@ -1267,7 +1273,7 @@
 - [shadcn-ui/ui](https://github.com/shadcn-ui/ui) - A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.
 - [t3-oss/create-t3-app](https://github.com/t3-oss/create-t3-app) - The best way to start a full-stack, typesafe Next.js app
 - [langgenius/dify](https://github.com/langgenius/dify) - Production-ready platform for agentic workflow development.
-- [KUN1007/kun-touchgal-next](https://github.com/KUN1007/kun-touchgal-next) - TouchGAL是立足于分享快乐的一站式Galgame文化社区, 为Gal爱好者提供一片净土!
+- [KunMoe/kun-touchgal-next](https://github.com/KunMoe/kun-touchgal-next) - TouchGAL是立足于分享快乐的一站式Galgame文化社区, 为Gal爱好者提供一片净土!
 - [luannguyenQV/turborepo-nextjs-prisma-postgres](https://github.com/luannguyenQV/turborepo-nextjs-prisma-postgres) - Next Forum: Nestjs - Prisma - Auth.js - Postgres - Shadcn - TailwindCSS and more ...
 - [Mereithhh/vanblog](https://github.com/Mereithhh/vanblog) - 一款简洁实用优雅的个人博客系统
 - [Evavic44/portfolio-ideas](https://github.com/Evavic44/portfolio-ideas) - A curation of awesome portfolio website ideas for developers and designers to draw inspiration from. Raise a pull request to add more. 💜
@@ -1500,7 +1506,6 @@
 - [antfu/starter-ts](https://github.com/antfu/starter-ts) - Starter template for TypeScript library
 - [xuemk/termiClaude](https://github.com/xuemk/termiClaude) - claude CLI（cc）客户端工具，使用可视化方式进行环境和模型对话管理
 - [diet103/claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase) - Examples of my Claude Code infrastructure with skill auto-activation, hooks, and agents
-- [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
 - [skiyee/uni-unocss](https://github.com/skiyee/uni-unocss) - 🦁 在 UniApp 中零心智负担的使用 UnoCSS
 - [anthropics/skills](https://github.com/anthropics/skills) - Public repository for Agent Skills
 - [xiaohe0601/uni-echarts](https://github.com/xiaohe0601/uni-echarts) - 🪀 适用于 uni-app 的 Apache ECharts 组件（仅支持 Vue 3）
@@ -1825,7 +1830,7 @@
 - [wannabespace/conar](https://github.com/wannabespace/conar) - AI-powered tool for working with Postgres, MySQL, MSSQL and Clickhouse. (beta)
 - [nocodb/nocodb](https://github.com/nocodb/nocodb) - 🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative
 - [Dokploy/dokploy](https://github.com/Dokploy/dokploy) - Open Source Alternative to Vercel, Netlify and Heroku.
-- [KUN1007/kun-touchgal-next](https://github.com/KUN1007/kun-touchgal-next) - TouchGAL是立足于分享快乐的一站式Galgame文化社区, 为Gal爱好者提供一片净土!
+- [KunMoe/kun-touchgal-next](https://github.com/KunMoe/kun-touchgal-next) - TouchGAL是立足于分享快乐的一站式Galgame文化社区, 为Gal爱好者提供一片净土!
 - [Esposter/Esposter](https://github.com/Esposter/Esposter) - A nice and casual place for posting random things.
 - [drawdb-io/drawdb](https://github.com/drawdb-io/drawdb) - Free, simple, and intuitive online database diagram editor and SQL generator.
 - [walinejs/waline](https://github.com/walinejs/waline) - 💬 A Simple, Safe Comment System
@@ -2144,6 +2149,10 @@
 
 - [vuejs-ai/vue-tui](https://github.com/vuejs-ai/vue-tui) - The Vue framework for terminal UIs. SFC & JSX, Yoga flexbox, HMR, and testing out of the box.
 - [superset-sh/superset](https://github.com/superset-sh/superset) - Code Editor for the AI Agents Era - Run an army of Claude Code, Codex, etc. on your machine
+
+## trading 
+
+- [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
 
 ## tui 
 
