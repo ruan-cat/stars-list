@@ -2117,7 +2117,7 @@
 - [Hyk260/PureChat](https://github.com/Hyk260/PureChat) - PureChat 是一款全面的聊天应用程序，它将传统的即时消息与高级 AI 功能集成在一起。其模块化架构、可扩展的 AI 集成系统和灵活的配置选项使其成为强大的应用程序，也是 AI 增强通信应用程序的坚实基础。支持OpenAI，Ollama，DeepSeek等大语言模型，Markdown 渲染，聊天记录生成截图，主题切换，助力开发者快速掌握现代技术。
 - [doocs/md](https://github.com/doocs/md) - ✍ WeChat Markdown Editor | 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、自定义主题样式、内容管理、多图床、AI 助手等特性
 - [DavidHDev/react-bits](https://github.com/DavidHDev/react-bits) - An open source collection of animated, interactive & fully customizable React components for building memorable websites.
-- [tenianon/lithe-admin](https://github.com/tenianon/lithe-admin) - A light and elegant backend management template with a slightly frosted texture design
+- [tenianon/lithe-admin](https://github.com/tenianon/lithe-admin) - 一个后台管理系统模板
 - [miantiao-me/Sink](https://github.com/miantiao-me/Sink) - ⚡ A Simple / Speedy / Secure Link Shortener with Analytics, 100% run on Cloudflare.
 - [saadeghi/daisyui](https://github.com/saadeghi/daisyui) - 🌼 🌼 🌼 🌼 🌼  The most popular, free and open-source Tailwind CSS component library
 - [keenthemes/ktui](https://github.com/keenthemes/ktui) - Open-source collection of customizable UI components for Tailwind CSS and vanilla JavaScript
