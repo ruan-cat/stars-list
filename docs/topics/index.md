@@ -1511,7 +1511,7 @@
 - [obra/superpowers](https://github.com/obra/superpowers) - An agentic skills framework & software development methodology that works.
 - [TsFreddie/rmmv_optimization](https://github.com/TsFreddie/rmmv_optimization) - A collection of plugins for optimizing specific RPG Maker MV games.
 - [yuyinws/vitepress-plugin-group-icons](https://github.com/yuyinws/vitepress-plugin-group-icons) - Enhance code blocks features for VitePress.
-- [colasama/MahoShojo-Generator](https://github.com/colasama/MahoShojo-Generator) - 基于 AI 结构化生成的个性化魔法少女角色生成器。
+- [RunoreLab/MahoShojo-Generator](https://github.com/RunoreLab/MahoShojo-Generator) - 基于 AI 结构化生成的个性化魔法少女角色生成器。
 - [TencentEdgeOne/edgeone-pages-mcp](https://github.com/TencentEdgeOne/edgeone-pages-mcp) - An MCP service designed for deploying HTML content to EdgeOne Pages and obtaining an accessible public URL.
 - [chongdashu/cc-statusline](https://github.com/chongdashu/cc-statusline) - Transform your Claude Code experience with a beautiful, informative statusline
 - [Gar-b-age/CookLikeHOC](https://github.com/Gar-b-age/CookLikeHOC) - 🥢像老乡鸡🐔那样做饭。已添加2026年发布的《老乡鸡菜品溯源报告 2.0中新出现的菜品。主要部分于2024年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.
