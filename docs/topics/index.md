@@ -1411,6 +1411,7 @@
 
 ## others 
 
+- [Agents365-ai/video-podcast-maker](https://github.com/Agents365-ai/video-podcast-maker) - Automated 4K video podcast creation for coding agents
 - [wangscript007/ThreeMaps](https://github.com/wangscript007/ThreeMaps) - 🔥Vue3、Three.js开发数据可视化大屏
 - [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) - A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.
 - [hanyi0000/chatgpt-plus-automation-toolkit](https://github.com/hanyi0000/chatgpt-plus-automation-toolkit) - 自动化完成 ChatGPT 账号注册、GoPay/PayPal 支付、OAuth 授权与 Session 导出，含 Windows 控制面板
@@ -2013,6 +2014,7 @@
 
 ## self-hosted 
 
+- [taichuy/1flowbase](https://github.com/taichuy/1flowbase) - Open-source AI gateway for local agent clients: publish fusion-style multi-model workflows as OpenAI/Claude-compatible virtual models with traces, tokens, latency, and cost visibility.
 - [usememos/memos](https://github.com/usememos/memos) - Open-source, self-hosted note-taking tool built for quick capture. Markdown-native, lightweight, and fully yours.
 - [n8n-io/n8n](https://github.com/n8n-io/n8n) - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
 - [Dokploy/dokploy](https://github.com/Dokploy/dokploy) - Open Source Alternative to Vercel, Netlify and Heroku.
