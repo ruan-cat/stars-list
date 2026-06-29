@@ -68,6 +68,7 @@
 - [tw93/Weekly](https://github.com/tw93/Weekly) - 🩴 Trendy Weekly records my non-boring life.
 - [Aikoyori/ProgrammingVTuberLogos](https://github.com/Aikoyori/ProgrammingVTuberLogos) - High-quality PNGs for logos I made for fun
 - [chokcoco/CSS-Inspiration](https://github.com/chokcoco/CSS-Inspiration) - CSS Inspiration，在这里找到写 CSS 的灵感！
+- [vineethtrv/css-loader](https://github.com/vineethtrv/css-loader) - This is a library having a collection of different types of CSS loaders, spinners
 - [lukehaas/css-loaders](https://github.com/lukehaas/css-loaders) - A collection of loading spinners animated with CSS
 
 ## Dockerfile 
@@ -229,7 +230,6 @@
 - [unagiootoro/RPGMZ](https://github.com/unagiootoro/RPGMZ) - RPGツクールMZ プラグイン一覧
 - [NewRPGProject/MZMV_Plugin](https://github.com/NewRPGProject/MZMV_Plugin) - ＲＰＧツクールＭＺおよびＭＶ用のプラグインです。
 - [chokcoco/iCSS](https://github.com/chokcoco/iCSS) - 不止于 CSS
-- [vineethtrv/css-loader](https://github.com/vineethtrv/css-loader) - This is a library having a collection of different types of CSS loaders, spinners
 - [l1veIn/lol-wom-electron](https://github.com/l1veIn/lol-wom-electron) - LOL互动助手electron-part
 - [Lunatlazur/rpgmaker](https://github.com/Lunatlazur/rpgmaker) - 
 - [moonyoulove/rpgmaker-plugin-conflict-finder](https://github.com/moonyoulove/rpgmaker-plugin-conflict-finder) - Find conflicts between RPG Maker MV/MZ plugins.
