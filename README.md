@@ -47,6 +47,7 @@
 
 ## C# # 
 
+- [Dailin521/codex-provider-sync](https://github.com/Dailin521/codex-provider-sync) - Synchronize Codex session provider metadata across rollout files and SQLite state.
 - [nkx111/SimpleRA3Launcher](https://github.com/nkx111/SimpleRA3Launcher) - (Kind of) Universal Mod launcher for the game Red Alert 3
 - [Sylinko/Everywhere](https://github.com/Sylinko/Everywhere) - On-screen aware AI assistant for your desktop. Uses current app context, multiple LLMs, and MCP tools to help you act across apps.
 - [PixiEditor/PixiEditor](https://github.com/PixiEditor/PixiEditor) - PixiEditor is a Universal Editor for all your 2D needs
@@ -657,7 +658,7 @@
 - [n8n-io/n8n](https://github.com/n8n-io/n8n) - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
 - [kuitos/axios-extensions](https://github.com/kuitos/axios-extensions) - 🍱 axios extensions lib, including throttle, cache, retry features etc...
 - [phphe/he-tree](https://github.com/phphe/he-tree) - Highly customizable draggable Vue.js tree component.
-- [labring/sealos](https://github.com/labring/sealos) - Sealos is an AI-native Cloud Operating System built on Kubernetes that unifies the entire application lifecycle, from development in cloud IDEs to production deployment and management. It is perfect f
+- [labring/sealos](https://github.com/labring/sealos) - Sealos is an AI-native Cloud Operating System that unifies the entire application lifecycle, from development in cloud IDEs to production deployment and management. It is perfect for building and scal
 - [kazupon/gunshi](https://github.com/kazupon/gunshi) - Gunshi: Modern javascript command-line library
 - [bytedance/flowgram.ai](https://github.com/bytedance/flowgram.ai) - FlowGram is an extensible workflow development framework with built-in canvas, form, variable, and materials that helps developers build AI workflow platforms faster and simpler.
 - [Easy-Editor/EasyEditor](https://github.com/Easy-Editor/EasyEditor) - Plugin-based cross-framework low-code engine for building visual application platforms  |  用于构建可视化应用平台的插件化跨框架低代码引擎
