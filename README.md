@@ -575,6 +575,7 @@
 - [histoire-dev/histoire](https://github.com/histoire-dev/histoire) - ⚡ Fast and beautiful interactive component playgrounds, powered by Vite
 - [Bosh-Kuo/Bosh-Docusaurus-Dev-Notes](https://github.com/Bosh-Kuo/Bosh-Docusaurus-Dev-Notes) - Bosh 的技術探索筆記 | 這是一個使用 Docusaurus 建立的一站式筆記中心。紀錄我在軟體開發路上的技術足跡與學習旅程
 - [breaking-brake/cc-wf-studio](https://github.com/breaking-brake/cc-wf-studio) - CC Workflow Studio
+- [miaotouy/aio-hub](https://github.com/miaotouy/aio-hub) - 终极个人AI平台应用，提供超强高可控性的LLM交互，和多种实用的开发和日常工具，VCP分布式联动。
 - [LouisMazel/relizy](https://github.com/LouisMazel/relizy) - Seamless and automated release management with elegant changelog generation based on Conventional Commits, supporting both monorepos and single packages. Handles version bumping, changelog creation, G
 - [vercel-labs/npm.bet](https://github.com/vercel-labs/npm.bet) - an npm trends visualizer
 - [djyde/ccmate](https://github.com/djyde/ccmate) - Configure your Claude Code without pain
@@ -882,7 +883,6 @@
 - [phosphor-icons/vue](https://github.com/phosphor-icons/vue) - A flexible icon family for Vue
 - [Daymychen/art-design-pro](https://github.com/Daymychen/art-design-pro) - A Vue 3 admin dashboard template using Vite + TypeScript + Element Plus | vue3 admin | vue-admin — focused on user experience and visual design.
 - [HuLaSpark/HuLa](https://github.com/HuLaSpark/HuLa) - 🍀 A cross-platform instant messaging desktop application with exceptional performance built on Rust + Vue3, compatible with Windows, macOS, Linux, Android, and iOS（一款基于Rust+Vue3极致性能的跨平台即时通讯桌面应用，兼容Wind
-- [miaotouy/aio-hub](https://github.com/miaotouy/aio-hub) - 终极个人AI平台应用，提供超强高可控性的LLM交互，和多种实用的开发和日常工具，VCP分布式联动。
 - [hooray/pick-the-right-admin](https://github.com/hooray/pick-the-right-admin) - 选择合适的 Vue 后台管理框架
 - [Simon-He95/markstream-vue](https://github.com/Simon-He95/markstream-vue) - Multi-framework streaming Markdown renderers for AI apps: Vue/Nuxt, React/Next.js, Svelte, and Angular, with Mermaid, KaTeX, Shiki, Monaco, safe HTML, and low-jitter updates.
 - [ikuaitu/vue-fabric-editor](https://github.com/ikuaitu/vue-fabric-editor) - 快图设计-基于fabric.js和Vue的开源图片编辑器，可自定义字体、素材、设计模板。fabric.js and Vue based image editor, can customize fonts, materials, design templates.
