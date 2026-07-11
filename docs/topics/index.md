@@ -1493,6 +1493,7 @@
 
 ## others 
 
+- [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) - Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local
 - [lochie/torph](https://github.com/lochie/torph) - Dependency-free animated text component.
 - [Dailin521/codex-provider-sync](https://github.com/Dailin521/codex-provider-sync) - Synchronize Codex session provider metadata across rollout files and SQLite state.
 - [zhyese/grid-qa](https://github.com/zhyese/grid-qa) - 基于大模型+RAG的电网自主运维智能问答系统(Vue3+FastAPI+Milvus+DeepSeek/百炼/火山云)
@@ -1687,7 +1688,6 @@
 - [RealKai42/qwerty-learner](https://github.com/RealKai42/qwerty-learner) - 为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件 / Words learning and English muscle memory training software designed for keyboard workers
 - [bluwy/vite-plugin-qrcode](https://github.com/bluwy/vite-plugin-qrcode) - Show QR code on server start
 - [heikaimu/vue3-waterfall-plugin](https://github.com/heikaimu/vue3-waterfall-plugin) - vue3 瀑布流插件，支持 PC 和移动端，支持 animate 的所有动画效果，支持图片懒加载
-- [princehuang/overseas-website-note](https://github.com/princehuang/overseas-website-note) - 「海外工具网站」已经是我人生主要事业了，很庆幸还来得及，感谢这个伟大的 AI 时代。
 - [imtaotao/danmu](https://github.com/imtaotao/danmu) - Collision detection, highly customized danmu screen styles, you deserve it. (碰撞检测，高度自定义的弹幕样式，你值得拥有) 😘
 - [hongfaqiu/cesium-extends](https://github.com/hongfaqiu/cesium-extends) - CesiumJS 的扩展库，提供事件订阅、大数据geojson加载、geojson样式、tooltip、popup、缩放控制、绘图工具、测量工具、双屏联动、指南针、热力图等功能
 - [zengm-games/facesjs](https://github.com/zengm-games/facesjs) - A JavaScript library for generating vector-based cartoon faces
