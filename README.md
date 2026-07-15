@@ -644,7 +644,7 @@
 - [Haleclipse/Claudiatron](https://github.com/Haleclipse/Claudiatron) - 
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) - Local, open-source AI app builder for power users ✨ v0 / Lovable / Replit / Bolt alternative 🌟 Star if you like it!
 - [winfunc/opcode](https://github.com/winfunc/opcode) - A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.
-- [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.
+- [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) - One local control plane for every AI agent: route across models, fuse new capabilities, orchestrate tools, and stay fully in control.
 - [posva/pinia-colada](https://github.com/posva/pinia-colada) - 🍹 The smart data fetching layer for Vue
 - [barbajs/barba](https://github.com/barbajs/barba) - Create badass, fluid and smooth transitions between your website’s pages
 - [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - EvilCharts is an open-source chart UI website built with shadcn and Recharts, beautifully designed and handcrafted.
@@ -853,7 +853,7 @@
 - [nolebase/integrations](https://github.com/nolebase/integrations) - ✍️ A collection of diverse documentation engineering tools. Better reading experience, inline link preview, highlight targeted title, enhanced &lt;mark&gt; element, state-of-the-art SEO and &lt;meta&g
 - [hellof2e/quark-design](https://github.com/hellof2e/quark-design) - Browser-native component library, framework-agnostic, base on web components.(企业级 H5 UI 组件库，无框架，即插即用。)
 - [sunniejs/vue-h5-template](https://github.com/sunniejs/vue-h5-template) - :tada:vue搭建移动端开发,基于vue-cli4.0+webpack 4+vant ui + sass+ rem适配方案+axios封装，构建手机端模板脚手架
-- [zhensherlock/watermark-js-plus](https://github.com/zhensherlock/watermark-js-plus) - watermark for the browser
+- [zhensherlock/watermark-js-plus](https://github.com/zhensherlock/watermark-js-plus) - Lightweight, framework-agnostic browser watermark library with text, image, rich-text and blind watermarks, decoding, grid layouts, and tamper protection.
 - [dishait/tov-template](https://github.com/dishait/tov-template) - vite + vue3 + ts 开箱即用现代开发模板 | vite + vue3 + ts out-of-the-box modern development template
 - [kermanx/reactive-vscode](https://github.com/kermanx/reactive-vscode) - Develop VSCode extension with Vue Reactivity API
 - [atlassian/pragmatic-drag-and-drop](https://github.com/atlassian/pragmatic-drag-and-drop) - Fast drag and drop for any experience on any tech stack
