@@ -96,7 +96,7 @@
 ## Go 
 
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix) - DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.
-- [larksuite/cli](https://github.com/larksuite/cli) - The official Lark/Feishu CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meeti
+- [larksuite/cli](https://github.com/larksuite/cli) - The official Lark/飞书 CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meetings,
 - [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api) - Sub2API 一站式开源中转服务，让 Claude、Openai 、Gemini、Grok订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。
 - [tt-a1i/tokenmeter](https://github.com/tt-a1i/tokenmeter) - htop for AI Agents — monitor token usage, costs & tool calls across Claude Code and Codex in real time
 - [github/github-mcp-server](https://github.com/github/github-mcp-server) - GitHub's official MCP Server
@@ -743,7 +743,6 @@
 - [lobehub/lobe-ui](https://github.com/lobehub/lobe-ui) - 🍭  Lobe UI - an open-source UI component library for building AIGC web apps
 - [ChatLunaLab/chatluna](https://github.com/ChatLunaLab/chatluna) - 多平台模型接入，可扩展，多种输出格式，提供大语言模型聊天服务的插件 | A bot plugin for LLM chat with multi-model integration, extensibility, and various output formats
 - [vaebe/blog](https://github.com/vaebe/blog) - 使用 nextjs 构建的个人博客，包含一些自己使用 nextjs 的实践，首页秒开！
-- [pdsuwwz/chatgpt-vue3-light-mvp](https://github.com/pdsuwwz/chatgpt-vue3-light-mvp) - 💭 一个可二次开发 Chat Bot 单轮对话 Web 端 MVP 原型模板, 基于 Vue 3, Vite8, TypeScript, Naive UI, Pinia(v3), UnoCSS 等主流技术构建, 🧤简单集成大模型 API, 采用单轮 AI 问答对话模式, 每次提问独立响应, 无需上下文, 支持 SSE 打字机效果流式输出, 集成 markdown-it  Mermaid/KaTex
 - [chatboxai/chatbox](https://github.com/chatboxai/chatbox) - Powerful AI Client
 - [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) - AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs
 - [languine-ai/languine](https://github.com/languine-ai/languine) - Translate your application with Languine CLI powered by AI.
@@ -949,6 +948,7 @@
 - [varletjs/varlet-app-template](https://github.com/varletjs/varlet-app-template) - An out-of-the-box mobile web template, developed based on Vue3, Varlet, Vite, Typescript.
 - [Rominwolf/the-wandering-earth-2-countdown-meme-generator.github.io](https://github.com/Rominwolf/the-wandering-earth-2-countdown-meme-generator.github.io) - 流浪地球2的倒计时梗图生成器。
 - [dianprata/nuxt-shadcn-dashboard](https://github.com/dianprata/nuxt-shadcn-dashboard) - Template Dashboard with Nuxt 4 + Shadcn + TailwindCSS 4
+- [pdsuwwz/chatgpt-vue3-light-mvp](https://github.com/pdsuwwz/chatgpt-vue3-light-mvp) - 💭 一个可二次开发 Chat Bot 单轮对话 Web 端 MVP 原型模板, 基于 Vue 3, Vite8, TypeScript, Naive UI, Pinia(v3), UnoCSS 等主流技术构建, 🧤简单集成大模型 API, 采用单轮 AI 问答对话模式, 每次提问独立响应, 无需上下文, 支持 SSE 打字机效果流式输出, 集成 markdown-it  Mermaid/KaTex
 - [classfang/AIHub](https://github.com/classfang/AIHub) - 一款集合多家大模型能力的客户端。拥有丰富的个性化功能。现已支持：OpenAI，Ollama，谷歌 Gemini，讯飞星火，百度文心，阿里通义，天工，月之暗面，智谱，阶跃星辰，DeepSeek 🎉🎉🎉。A collection of large model capabilities of the client. Has a wealth of personalized functions. Engl
 - [antfu/releases.antfu.me](https://github.com/antfu/releases.antfu.me) - Page for Anthony's Recent Releases
 - [antfu/100](https://github.com/antfu/100) - My 100-day project of exploring design, compform, and new things.
