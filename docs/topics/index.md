@@ -1522,7 +1522,7 @@
 ## others 
 
 - [tutu-zzz/zhilv-yuntu](https://github.com/tutu-zzz/zhilv-yuntu) - An AI travel planning system built with FastAPI, LangChain, ChromaDB, and AMap services.智旅云图是一个面向中文旅行场景的 AI 旅行规划项目。
-- [emilkowalski/skills](https://github.com/emilkowalski/skills) - Skills for Design Engineers.
+- [emilkowalski/skills](https://github.com/emilkowalski/skills) - Skills for Designers and Engineers.
 - [Paramchoudhary/ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) - A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to help with re
 - [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) - Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local
 - [lochie/torph](https://github.com/lochie/torph) - Dependency-free animated text component.
@@ -2476,7 +2476,7 @@
 
 ## vue 
 
-- [skiyee/oiyo](https://github.com/skiyee/oiyo) - 🍊 颠覆以往认知的 UniApp 增强型工程框架，支持用于商业项目！
+- [skiyee/oiyo-starters](https://github.com/skiyee/oiyo-starters) - 🍊 颠覆以往认知的 UniApp 增强型工程框架，支持用于商业项目！
 - [vercel/ai](https://github.com/vercel/ai) - The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents
 - [barvian/number-flow](https://github.com/barvian/number-flow) - An animated number component for React, Vue, Svelte, and TS/JS.
 - [vuejs-ai/vue-tui](https://github.com/vuejs-ai/vue-tui) - The Vue framework for terminal UIs. SFC & JSX, Yoga flexbox, HMR, and testing out of the box.
