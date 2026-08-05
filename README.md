@@ -130,7 +130,7 @@
 ## Java 
 
 - [loks666/get_jobs](https://github.com/loks666/get_jobs) - 💼【AI找工作助手】全平台自动投简历脚本：(boss、前程无忧、猎聘、智联招聘)
-- [ageerle/ruoyi-ai](https://github.com/ageerle/ruoyi-ai) - 面向企业级市场的一站式AI应用开发框架，支持多厂商大模型统一接入与管理，具备安全可控的企业知识库与高精度检索优化能力，提供可视化流程编排、自主决策智能体与多智能体协同调度，兼容主流 Agent Skill 协议，帮助企业与开发者零门槛快速构建安全、高效、可落地的AI智能体应用与行业解决方案。
+- [ageerle/ruoyi-ai](https://github.com/ageerle/ruoyi-ai) - An enterprise AI development framework for building AI agents. It provides unified management of multi-provider LLMs, secure enterprise knowledge bases with high-precision retrieval, visual workflow o
 - [itwanger/toBeBetterJavaer](https://github.com/itwanger/toBeBetterJavaer) - 一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点。学Java，就认准二哥的Java进阶之路😄
 - [youlaitech/youlai-mall](https://github.com/youlaitech/youlai-mall) - 🚀基于 Spring Boot 3、Spring Cloud & Alibaba 2022、SAS OAuth2 、Vue3、Element-Plus、uni-app 构建的开源全栈商城。
 - [1024-lab/smart-admin](https://github.com/1024-lab/smart-admin) - SmartAdmin国内首个以「高质量代码」为核心，「简洁、高效、安全」快速开发平台；基于SpringBoot2/3 + Sa-Token + Mybatis-Plus 和 Vue3 + Vite5 + Ant Design Vue 4.x (同时支持JavaScript和TypeScript双版本)；满足国家三级等保要求、支持登录限制、接口数据国产加解密、高防SQL注入等一系列安全体系。
@@ -156,7 +156,7 @@
 - [cloud-oc/RPGMakerMZ-Plugins-CN](https://github.com/cloud-oc/RPGMakerMZ-Plugins-CN) - 个人汉化的一些RPGMakerMZ插件
 - [6639835/cursor-card](https://github.com/6639835/cursor-card) - 
 - [ZTL-UwU/shadcn-docs-nuxt-starter](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter) - Starter template for shadcn-docs-nuxt.
-- [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - 💻 vibe coding 2026 | Your First Modern Coding Course Beginners to Master Step by Step.
+- [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) - 💻  The first course for AI-native product builders.
 - [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) - Vercel's official collection of agent skills
 - [affaan-m/ECC](https://github.com/affaan-m/ECC) - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
 - [justlovemaki/AIClient2API](https://github.com/justlovemaki/AIClient2API) - Self-hosted multi-protocol AI API proxy for Antigravity, Codex, Grok, Kiro, OpenAI, Claude, and custom providers. Supports OpenAI-compatible API, Claude API, Gemini protocol conversion, GPT, Grok Buil
@@ -216,7 +216,6 @@
 - [umijs/dumi](https://github.com/umijs/dumi) - 📖 Static Site Generator for component library development
 - [bubkoo/configs](https://github.com/bubkoo/configs) - Shared configs for my projects
 - [pplancq/dev-tools](https://github.com/pplancq/dev-tools) - Tools for developing ReactJS
-- [ornikar/shared-configs](https://github.com/ornikar/shared-configs) - 🔨 Ornikar shared configs
 - [cji3bp62000/hello-world](https://github.com/cji3bp62000/hello-world) - hello world!!
 - [mwilliamson/mammoth.js](https://github.com/mwilliamson/mammoth.js) - Convert Word documents (.docx files) to HTML
 - [katai5plate/RPGMV-CoreScript-Reference](https://github.com/katai5plate/RPGMV-CoreScript-Reference) - https://katai5plate.github.io/RPGMV-CoreScript-Reference/
@@ -937,7 +936,7 @@
 - [fantastic-admin/basic](https://github.com/fantastic-admin/basic) - ⭐⭐⭐⭐⭐ 面向 AI 编程的管理系统框架，兼容PC、移动端。AI-oriented management system framework, compatible with PC and mobile device.
 - [Whbbit1999/shadcn-vue-admin](https://github.com/Whbbit1999/shadcn-vue-admin) - Admin Dashboard UI crafted with Shadcn-vue, Vue3 and Vite. Built with responsiveness and accessibility in mind.管理面板 UI 采用 Shadcn-vue、Vue3 和 Vite 精心打造。构建时充分考虑了响应能力和可访问性。
 - [unovue/inspira-ui](https://github.com/unovue/inspira-ui) - Build beautiful website using Vue & Nuxt.
-- [ageerle/ruoyi-admin](https://github.com/ageerle/ruoyi-admin) - RuoYi-AI 的管理后台，提供系统管理、模型配置、知识库管理、流程编排等功能
+- [ageerle/ruoyi-admin](https://github.com/ageerle/ruoyi-admin) - RuoYi-AI admin panel for system management, model configuration, knowledge-base management, and workflow orchestration.
 - [bym110/vue-echarts](https://github.com/bym110/vue-echarts) - vue、 echarts、iview 实现大数据可视化大屏模板
 - [KazariEX/resume.bikari.top](https://github.com/KazariEX/resume.bikari.top) - 
 - [xiaoxustudio/LichtUI](https://github.com/xiaoxustudio/LichtUI) - Licht UI 是一个基于Vue3开发的轻量级组件库
