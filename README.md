@@ -109,7 +109,7 @@
 
 ## HTML 
 
-- [larashero3-dotcom/lieflat-charts](https://github.com/larashero3-dotcom/lieflat-charts) - 面向 AI Agents 的数据可视化 Skill，将数据快速生成精致、可交互的 HTML 图表
+- [larashero3-dotcom/lieflat-charts](https://github.com/larashero3-dotcom/lieflat-charts) - Data visualization Skill for AI Agents, turning data into polished, interactive HTML charts. 面向 AI Agents 的数据可视化 Skill，将数据快速生成精致、可交互的 HTML 图表。
 - [yanliudesign/behavior-question-skill](https://github.com/yanliudesign/behavior-question-skill) - Claude skill for behavioral interview prep — mine real experiences, structure them with STAR/CAR, and build a reusable bilingual story bank. JD-driven mode reverse-engineers a Top 20 question set from
 - [ConardLi/easy-learn-ai](https://github.com/ConardLi/easy-learn-ai) - Easy-to-understand AI learning resources for beginners.
 - [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) - from vibe coding to agentic engineering - practice makes claude perfect
