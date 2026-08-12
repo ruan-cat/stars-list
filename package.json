@@ -7,7 +7,11 @@
 	"engines": {
 		"node": ">=22.14.0"
 	},
-	"author": "ruan-cat",
+	"author": {
+		"name": "ruan-cat",
+		"email": "1219043956@qq.com",
+		"url": "https://github.com/ruan-cat"
+	},
 	"description": "阮喵喵的github star列表，是一个基于工作流自动更新的文档项目。",
 	"homepage": "https://ruan-cat.github.io/stars-list",
 	"main": "index.js",
@@ -16,7 +20,7 @@
 		"git:dev-2-main": "git rebase dev main && git push --follow-tags",
 		"git:main-2-dev": "git rebase main dev",
 		"up-taze": "pnpm up @ruan-cat/taze-config -L && npx taze -r",
-		"format": "prettier --experimental-cli --write '**/*.{js,jsx,ts,tsx,mts,json,css,scss,md,yml,yaml,html}'",
+		"format": "prettier --experimental-cli --write --no-parallel '**/*.{js,jsx,ts,tsx,mts,json,css,scss,md,yml,yaml,html}'",
 		"prepare": "simple-git-hooks",
 		"docs:dev": "vitepress dev docs",
 		"docs:build": "vitepress build docs",
@@ -34,7 +38,7 @@
 		"cz-git": "^1.12.0",
 		"lint-staged": "^16.4.0",
 		"prettier": "^3.8.3",
-		"prettier-plugin-lint-md": "^1.0.1",
+		"prettier-plugin-lint-md": "1.0.1",
 		"simple-git-hooks": "^2.13.1",
 		"taze": "^19.11.0",
 		"vitepress": "^1.6.4",
