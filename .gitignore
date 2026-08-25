@@ -26,3 +26,6 @@ docs/index.md
 # OS / editor files
 .DS_Store
 Thumbs.db
+
+# 不提交WorkBuddy系列的文件
+.workbuddy
