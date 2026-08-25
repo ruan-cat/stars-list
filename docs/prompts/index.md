@@ -81,3 +81,118 @@ logger.info(`${packageName} v${packageVersion} is running...`);
 ### 脚本使用规范要求 spec
 
 1. 在 `docs\.vitepress\config.ts` 的 `splitTopics` 函数之前，在 `copyReadmeMd` 之后调用。
+
+## 004 <!-- TODO: --> 设计一个检查指定 github user 用户仓库全部 TODO 待办任务的工作流
+
+这是一个产品调研、技术方案调研，和落地任务设计的任务：
+
+我需要你做一个对 `https://github.com/ruan-cat` 用户，也就是我的仓库信息专项收集的执行函数方案。
+
+我要你以 node 的方式，通过接口请求的方式，实现对指定用户全部开源或闭源项目的信息收集。按照特定的文本查询正则，来获取信息，并制作格式化数据。
+
+### 需要收集的信息
+
+1. 按照特定文本规则，根据 TODO 这个关键词获取的文本。
+2. 该文本所在：
+   - repo 仓库名称
+   - path 完整的相对根目录的文件路径
+   - git 分支名称
+   - line number 所在的文件行数
+
+### 要收集的信息以及正则规则管理
+
+你需要收集形如这样的`文本信息`：
+
+1. 在 markdown 内的二级标题
+
+你提取的文本是： `持续推进二期 AI 项目改造`
+
+```markdown
+## 006 <!-- TODO: 2026-8-24 codex 正在做 --> 持续推进二期 AI 项目改造
+```
+
+你提取的文本是： 换接口请求模型为 `claude-sonnet-5[1m]` ，并做出其他相应的改动
+
+```markdown
+### <!-- TODO: ZCode正在做 --> 换接口请求模型为 `claude-sonnet-5[1m]` ，并做出其他相应的改动
+```
+
+提取文本为：
+
+```markdown
+## 005 <!-- TODO: --> 调研合适的 nitro 接口生成接口请求信息表的工具
+```
+
+```markdown
+## <!-- TODO: --> 尝试更换付款方式的虚拟卡为美国卡
+```
+
+4. 在 markdown 内裸露的单行且无内容的 TODO。
+
+```markdown
+<!-- TODO: -->
+```
+
+5. 在 markdown 内裸露的单行且有内容的 TODO。
+
+```markdown
+<!-- TODO: 后面再考虑提供更好看的动效 现在暂时没有需求 -->
+```
+
+6. 在 markdown 内嵌入某行的 TODO。
+
+```markdown
+1. <!-- TODO: 可接受的优化 --> **先降低默认输出成本。** 默认 stdout 只返回摘要；增加显式完整审计开关。摘要至少包含 `Mode`、`CandidateCount`、候选 PID、阻断原因聚合、WorkBuddy 分组、停止结果、验证结果和是否存在 respawn。
+```
+
+7. 在其他格式文件的 TODO。
+
+```scss
+// TODO: 实现图标变化的动效
+```
+
+```typescript
+/**
+ * http的接口传参方式
+ * @description
+ * 用于控制接口请求时的参数传递方式
+ * @see https://www.cnblogs.com/jinyuanya/p/13934722.html
+ *
+ * @description
+ * 警告 该配置目前失去意义
+ *
+ * 该配置目前不再被使用了 不会被任何函数使用 配置起来属于无意义内容
+ *
+ * 未来会被删除 并重新整理对应的接口生成成果
+ *
+ * TODO: 准备删除该工具
+ */
+export type HttpParamWay =
+	// 路径传参
+	| "path"
+	// query传参
+	| "query"
+	// body传参
+	| "body";
+```
+
+### 格式匹配黑名单
+
+```markdown
+## 015 <!-- TODO: -->
+```
+
+### 制作用 tsx 直接驱动的 typescript 脚本
+
+你需要制作一揽子用 tsx + typescript + node 执行的脚本，来实现需求。在 `scripts\get-todo` 目录内编写你的脚本。
+这些脚本的有效交付物应该是一个巨大的 json 文件。至于这个 json 文件存储在哪里，由你来给出设计。
+
+### 未来可能的使用场景
+
+1. 直接在 window 环境内，我点击根包内已经封装好的命令来完成信息收集。生成出 json 文件。
+2. 在 github workflow 内，通过每天执行一次 tsx 执行的脚本，获取到脚本信息。
+3. 未来可能直接在 vitepress 内，通过纯异步请求的方式完成信息获取，并根据交付物直接刷新 vitepress 站点内的 vue 组件，实现页面更新。实现用户点击按钮，就即时获取到最新数据的效果。
+
+### 验收与校验方式
+
+你自己设计。按理说在 window 内执行一次脚本就行了。你设计。
