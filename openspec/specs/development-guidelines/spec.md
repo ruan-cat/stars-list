@@ -1,8 +1,11 @@
 # development-guidelines Specification
 
 ## Purpose
+
 TBD - created by archiving change add-topic-splitting-script. Update Purpose after archive.
+
 ## Requirements
+
 ### Requirement: 日志输出规范
 
 系统 SHALL 确保所有 TypeScript 脚本使用 `consola.withTag` 方式创建 logger，并通过 logger 对象输出日志。
@@ -118,4 +121,3 @@ TBD - created by archiving change add-topic-splitting-script. Update Purpose aft
   - 使用制表符进行缩进
   - 导入顺序正确（内置 → 第三方 → 内部）
   - 脚本文件位于 `docs/` 目录下
-
