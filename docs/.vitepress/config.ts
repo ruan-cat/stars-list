@@ -8,21 +8,17 @@ import {
 import { description } from "../../package.json";
 import { splitTopics } from "../split-topics";
 import { adjustTitleFormat } from "../adjust-title-format";
+import { shouldGenerateDerivedDocs } from "../derived-docs";
 
-// 为文档添加自动生成的changelog
-addChangelog2doc({
-	// 设置changelog的目标文件夹
-	target: "./docs",
-});
-
-// 将 README.md 文件移动到指定要求的位置内，并重命名为 index.md
-copyReadmeMd("./docs");
-
-// 调整标题格式
-adjustTitleFormat();
-
-// 拆分 topics 文件
-splitTopics();
+if (shouldGenerateDerivedDocs(process.env)) {
+	// 为文档添加自动生成的changelog
+	addChangelog2doc({ target: "./docs" });
+	// 将 README.md 文件移动到指定要求的位置内，并重命名为 index.md
+	copyReadmeMd("./docs");
+	// 调整标题格式并拆分 topics 文件
+	adjustTitleFormat();
+	splitTopics();
+}
 
 const userConfig = setUserConfig(
 	{
