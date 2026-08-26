@@ -47,7 +47,7 @@ jobs:
             --repository "${REPOSITORY}" \
             --sort \
             --token "${GITHUB_TOKEN}" \
-            --message "awesome-stars category by language update by github actions cron, created by starred"
+            --message "🐎 ci(stars): 更新按编程语言分类的 GitHub Stars 列表"
 
       # 按主题分类更新 stars 列表
       - name: update repo category by topic
@@ -61,7 +61,7 @@ jobs:
             --repository "${REPOSITORY}" \
             --sort \
             --token "${GITHUB_TOKEN}" \
-            --message "awesome-stars category by topic update by github actions cron, created by starred" \
+            --message "🐎 ci(stars): 更新按主题分类的 GitHub Stars 列表" \
             --topic \
             --topic_limit 500 \
             --filename docs/topics/index.md
