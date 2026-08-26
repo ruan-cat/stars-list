@@ -1,7 +1,84 @@
-
 # CLAUDE.md
 
 本文档为 Claude Code (claude.ai/code) 提供本仓库的开发指导。
+
+## 本项目的技能表
+
+- `record-bug-fix-memory`
+  - 路径：`.agents/skills/fix-bug/record-bug-fix-memory/SKILL.md`
+  - 用途：在 bug 已经定位并修复后，记录事故结论、排错经验、AI 记忆更新、复盘摘要和本地 MCP 记忆。
+  - 触发时机：用户要求记录经验教训、补充 AI 记忆、写事故记录或同步本地 MCP 记忆时；bug 修复完成后也应主动参考。
+  - 参考作用：提供仓库特有事故模式、验证证据和可复用修复结论的沉淀入口。
+  - 约束：只负责记忆沉淀，不承担调试和修复；详细案例写入同目录独立日期文件，不把事故正文堆进 SKILL.md。
+  - **存储架构**：双层存储。SKILL.md 只放流程指导和摘要索引，详细案例存储在同目录下的独立 `YYYY-MM-DD-{slug}.md` 文件中。
+  - **阅读方式**：使用此技能前先读 SKILL.md，再根据“案例索引”按需读取独立案例文件。
+  - **写入方式**：新增经验时创建独立案例文件并更新索引，禁止将完整事故正文写入 SKILL.md。
+
+## 主动问询实施细节
+
+实施更改前主动识别遗漏点、缺漏点和冲突点。信息不足或存在多种解释时，使用 AskUserQuestion 与用户协作补充实施清单；信息充分且低风险的小改动可说明假设后直接执行。
+
+## 编写测试用例规范
+
+- 优先使用 Vitest 的 `describe` 与 `test` 组织测试，测试文件使用 `*.test.ts`。
+- 测试放在对应 monorepo 子包的 `tests/` 或 `src/tests/` 目录；无法判断归属时先询问用户。
+- 每个行为先写失败测试，再实现最小通过版本；测试必须覆盖成功、失败和边界路径。
+
+## 沟通协作要求
+
+- 计划模式下先设计并沟通方案，完成后说明破坏性变更。
+- 不得擅自修改全局 skills 目录；只在当前项目范围内维护项目技能。
+- 交付时说明改动范围、验证证据和剩余风险，不用“应该可以”替代实际结果。
+
+## 终端操作注意事项（防卡住）
+
+- Windows PowerShell 避免超过 200 字符的超长命令；参数多时拆分执行。
+- 优先使用 `pnpm run`，避免用 `npx` 引发 `Terminate batch job (Y/N)?` 交互。
+- 长任务首次等待 10–15 秒无进展就止损并换方案，最多两次状态检查。
+- 建议超时：git 5–10 秒，commit 10 秒，build/test 30 秒，install 60 秒。
+
+## 简单任务的高效执行原则
+
+- 简单、明确、低风险的任务不创建额外任务列表、不写报告、不反复确认。
+- 多文件、多模块或用户明确要求跟踪时，才使用计划和进度记录。
+- 用户已经给出明确文件或命令时，优先处理该范围，不扩大扫描和修改边界。
+- 用户说“直接做”“按要求做”时停止无关侦察，回到最小行动路径。
+
+## 编码前思考、简洁优先、精准修改与目标驱动执行
+
+- 先显式说明会影响实现路径的假设；存在分歧时列出权衡并询问。
+- 只写解决当前目标所需的最少代码，不为未确认的未来场景增加抽象、配置或兼容层。
+- 只修改与用户请求、实现请求所需调整或本次改动产生的清理直接相关的文件。
+- 先定义成功标准，再用测试、构建、校验或浏览器证据验证；失败时先定位根因，不连续盲改。
+- 保护工作区已有改动；完成前检查 diff、路径、格式和验证输出。
+
+## 使用 superpower 技能的个人偏好
+
+- `brainstorming`、`writing-plans`、`executing-plans` 生成的 `docs\\superpowers\\specs` 和 `docs\\superpowers\\plans` 必须使用简体中文。
+- 不得擅自给 superpower 工件添加“已完成”状态；只有真实实施、验证并得到用户确认后才更新状态。
+- superpower 流程默认不执行 git commit；只有用户明确要求提交时，才暂存本轮相关文件并提交。
+- `executing-plans` 默认在当前分支工作，不擅自创建或切换 worktree。
+
+## 文档读取策略
+
+- 首次只读目录和标题结构；Markdown 先查看 `^##` 标题，再按任务读取相关章节。
+- JSON/YAML/TOML 先看顶层键和相关字段，不为确认单个字段倾倒全文。
+- 更新文档使用精准插入/替换，保留用户自定义内容；编辑后复读修改位置并执行差异检查。
+
+## 获取技术栈对应的上下文
+
+处理特定技术栈时主动读取官方文档和项目现有配置。Claude Code/Agent Skills 参考：
+
+- 编写语法与格式：https://code.claude.com/docs/zh-CN/skills
+- 最佳实践：https://platform.claude.com/docs/zh-CN/agents-and-tools/agent-skills/best-practices
+- 规范文档：https://agentskills.io/home
+
+## GitHub Actions 与 Prettier 维护规范
+
+- GitHub Actions 中的格式化检查以仓库根 `prettier.config.mjs` 和 `package.json` 的 `format` 命令为唯一配置来源。
+- workflow 应使用 `pnpm/action-setup`、锁定 Node/pnpm 版本，先安装依赖，再运行 `pnpm exec prettier --experimental-cli --check` 覆盖本次变更文件。
+- JSONC 风格文件（例如 `.vscode/extensions.json`）必须通过精确 parser override 处理，不得把所有 `*.json` 强制当作 JSONC。
+- 格式化 workflow 只负责检查或报告，不自动提交无关格式化结果；失败时输出可定位的文件路径和行号。
 
 ## 项目概述
 
@@ -156,6 +233,8 @@ export function successResponse<T>(data: T, message: string = "操作成功") {
   ````
 
 - 报告语言： 默认用简体中文。
+- 报告所使用的 agent 工具说明：在报告最前面说明当前报告由哪个 agent 工具完成。
+- 报告所使用的 AI 模型说明：在报告最前面说明当前报告由哪个 AI 模型完成。
 
 ## 常用开发命令
 
