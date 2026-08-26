@@ -1,0 +1,18 @@
+{
+	"schemaVersion": 1,
+	"owner": "octocat",
+	"generatedAt": "2026-08-26T00:00:00.000Z",
+	"source": "manual",
+	"manifestStale": false,
+	"repositories": [
+		{
+			"fullName": "octocat/Hello-World",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": "master",
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		}
+	]
+}
