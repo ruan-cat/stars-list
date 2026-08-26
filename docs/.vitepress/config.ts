@@ -43,6 +43,27 @@ const userConfig = setUserConfig(
 	},
 );
 
+// TODO Explorer 是应用型页面，不需要文档页的 Copy/Download 工具条。
+// preset 会在默认 markdown.config 中注入该组件；在保留其他 markdown 插件的前提下，
+// 只针对 todos.md 的渲染结果移除这一个注入节点。
+const defaultMarkdownConfig = userConfig.markdown?.config;
+if (defaultMarkdownConfig) {
+	userConfig.markdown = {
+		...userConfig.markdown,
+		config(md) {
+			defaultMarkdownConfig(md);
+			const render = md.renderer.render.bind(md.renderer);
+			md.renderer.render = (tokens, options, env) => {
+				const html = render(tokens, options, env);
+				if (env?.relativePath === "todos.md") {
+					return html.replace(/<CopyOrDownloadAsMarkdownButtons\s*\/>/g, "");
+				}
+				return html;
+			};
+		},
+	};
+}
+
 // @ts-ignore
 userConfig.themeConfig.sidebar = setGenerateSidebar({
 	documentRootPath: "./docs",
