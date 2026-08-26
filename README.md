@@ -995,6 +995,8 @@ pnpm todo:test
 
 配置 Actions Secret：`gh secret set TODO_SCAN_PAT --repo ruan-cat/stars-list`，随后手动触发 `Scan GitHub TODOs` workflow；不要尝试创建 `GITHUB_PAT_TOKEN` Secret，GitHub 会以 422 拒绝该名称。
 
+workflow 的 checkout 必须设置 `persist-credentials: false`，否则 checkout 写入的 Authorization header 会与扫描器的 Git Basic header 重复，导致 GitHub 返回 `Duplicate header: "Authorization"`。
+
 本地 `docs:dev/build/preview` 默认不会执行派生 Markdown 生成；GitHub Actions 中会生成。若本地需要刷新 `docs/topics/*.md` 等派生文件，显式设置 `GENERATE_DERIVED_DOCS=true` 后再运行文档命令。
 
 ## License
