@@ -207,9 +207,26 @@ export async function collectFromManifest(options: SnapshotCollectorOptions): Pr
 			archived: repository.archived,
 		}));
 	try {
-		const results = await mapWithConcurrency(selected, 4, (repository) =>
-			scanRepository(repository, options, extensions, maxFileBytes),
-		);
+		const results = await mapWithConcurrency(selected, 4, async (repository) => {
+			try {
+				return await scanRepository(repository, options, extensions, maxFileBytes);
+			} catch (error) {
+				return {
+					repository: {
+						fullName: repository.fullName,
+						visibility: repository.visibility,
+						selectedBranch: null,
+						status: "failed" as const,
+						todoCount: 0,
+						errors: [error instanceof Error ? error.message : "Repository scan failed"],
+						fork: repository.fork,
+						archived: repository.archived,
+					},
+					todos: [],
+					skipped: 0,
+				};
+			}
+		});
 		const repositories = [...skippedForks, ...skippedPrivate, ...results.map((result) => result.repository)].sort(
 			(left, right) => left.fullName.localeCompare(right.fullName),
 		);
