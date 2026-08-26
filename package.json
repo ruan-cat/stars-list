@@ -66,6 +66,9 @@
 	],
 	"license": "MIT",
 	"dependencies": {
+		"@iconify-icons/mdi": "^2.0.0",
+		"@iconify-icons/vscode-icons": "^2.0.2",
+		"@iconify/vue": "^5.0.1",
 		"citty": "^0.2.2",
 		"consola": "^3.4.2",
 		"degit": "^3.8.0",
