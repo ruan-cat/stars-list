@@ -105,3 +105,56 @@ test("skips private manifest entries without local credentials", async () => {
 		await rm(root, { recursive: true, force: true });
 	}
 });
+
+test("continues the full scan when one repository snapshot fails", async () => {
+	const root = await mkdtemp(join(tmpdir(), "todo-snapshot-partial-"));
+	const manifest: RepositoryManifest = {
+		schemaVersion: 1,
+		owner: "ruan-cat",
+		generatedAt: "2026-08-26T00:00:00.000Z",
+		source: "manual",
+		manifestStale: false,
+		repositories: [
+			{
+				fullName: "ruan-cat/fails",
+				visibility: "public",
+				fork: false,
+				archived: false,
+				selectedBranch: null,
+				lastKnownCommitSha: null,
+				lastFetchedAt: null,
+			},
+			{
+				fullName: "ruan-cat/works",
+				visibility: "public",
+				fork: false,
+				archived: false,
+				selectedBranch: null,
+				lastKnownCommitSha: null,
+				lastFetchedAt: null,
+			},
+		],
+	};
+	try {
+		const artifact = await collectFromManifest({
+			manifest,
+			root,
+			authenticated: true,
+			resolveBranch: async () => ({ branch: "dev", commitSha: "b".repeat(40) }),
+			downloadSnapshot: async (input) => {
+				if (input.fullName.endsWith("/fails")) throw new Error("snapshot unavailable");
+				await mkdir(input.destination, { recursive: true });
+				await writeFile(join(input.destination, "plan.md"), "<!-- TODO: keep scanning -->\n", "utf8");
+				return { source: "degit", commitSha: input.commitSha, cacheStatus: "miss" };
+			},
+			cleanup: async () => undefined,
+		});
+		assert.equal(artifact.repositories.length, 2);
+		assert.equal(artifact.summary.scannedRepositoryCount, 1);
+		assert.equal(artifact.summary.todoCount, 1);
+		assert.equal(artifact.repositories.find((repo) => repo.fullName.endsWith("/fails"))?.status, "failed");
+		assert.equal(artifact.repositories.find((repo) => repo.fullName.endsWith("/works"))?.status, "scanned");
+	} finally {
+		await rm(root, { recursive: true, force: true });
+	}
+});
