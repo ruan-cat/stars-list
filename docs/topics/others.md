@@ -1,12 +1,74 @@
 # Others
 
-- [donlon/cloudflare-error-page](https://github.com/donlon/cloudflare-error-page) - Cloudflare error page generator
-- [Teatime-AI/OpenSpec-Chinese](https://github.com/Teatime-AI/OpenSpec-Chinese) - OpenSpec规范驱动的AI编程助手开发中文版，解决OpenSpec中文环境下使用时生成的md文件不符合规范问题。
-- [su-kaka/gcli2api](https://github.com/su-kaka/gcli2api) - 将 GeminiCLI 转换为 OpenAI 和 GEMINI API 接口
+- [WindRunnerMax/CanvasEditor](https://github.com/WindRunnerMax/CanvasEditor) - Canvas 简历编辑器
+- [a78789191888/wkmcp-pjb](https://github.com/a78789191888/wkmcp-pjb) - cursor 无限放大器 cursor 无限额度 悟空 mcp 的破解版本
+- [larksuite/cli](https://github.com/larksuite/cli) - The official Lark/Feishu CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meeti
+- [tt-a1i/agmon](https://github.com/tt-a1i/agmon) - htop for AI Agents — monitor token usage, costs & tool calls across Claude Code and Codex in real time
+- [chenglou/pretext](https://github.com/chenglou/pretext) - Fast, accurate & comprehensive text measurement & layout
+- [nirholas/fresh-start](https://github.com/nirholas/fresh-start) - The original nirholas/claude-code before DMCA and take down. Once everything is cleared, it will return. Working with Anthropic and Github to get everything back.
+- [ultraworkers/claw-code](https://github.com/ultraworkers/claw-code) - The repo is finally unlocked. enjoy the party! The fastest repo in history to surpass 100K stars ⭐. Join Discord: https://discord.gg/5TUQKqFWd Built in Rust using oh-my-codex.
+- [ChinaSiro/claude-code-sourcemap](https://github.com/ChinaSiro/claude-code-sourcemap) -
+- [blackboardsh/electrobun](https://github.com/blackboardsh/electrobun) - Build ultra fast, tiny, and cross-platform desktop apps with Typescript.
+- [xiaoluoboding/vue-color-wheel](https://github.com/xiaoluoboding/vue-color-wheel) - 🎨 A color wheel picker for Vue
+- [TraderAlice/OpenAlice](https://github.com/TraderAlice/OpenAlice) - File-driven AI trading agent engine for crypto and securities markets
+- [loks666/get_jobs](https://github.com/loks666/get_jobs) - 💼【AI 找工作助手】全平台自动投简历脚本：(boss、前程无忧、猎聘、智联招聘)
+- [antfu/pnpm-workspace-utils](https://github.com/antfu/pnpm-workspace-utils) - Utilities for managing pnpm catalogs
+- [YunYouJun/cook](https://github.com/YunYouJun/cook) - 🍲 好的，今天我们来做菜！OK, Let's Cook!
+- [hywax/changelogen-monorepo](https://github.com/hywax/changelogen-monorepo) -
+- [m1heng/claude-plugin-weixin](https://github.com/m1heng/claude-plugin-weixin) -
+- [grafana/ai-marketplace](https://github.com/grafana/ai-marketplace) -
+- [roimdev/roim-picx](https://github.com/roimdev/roim-picx) - A free image hosting application based on Cloudflare's Worker, R2, Pages, and D1 architectures.一款基于 Cloudflare 的 Worker、R2、Pages、D1 实现的免费图床应用
+- [cloud-oc/RPGMakerMZ-Plugins-CN](https://github.com/cloud-oc/RPGMakerMZ-Plugins-CN) - 个人汉化的一些 RPGMakerMZ 插件
+- [HBAI-Ltd/Toonflow-app](https://github.com/HBAI-Ltd/Toonflow-app) - Toonflow 是一款 AI 短剧漫剧工具，能够利用 AI 技术将小说自动转化为剧本，并结合 AI 生成的图片和视频，实现高效的短剧创作。借助 Toonflow，可以轻松完成从文字到影像的全流程，让短剧制作变得更加智能与便捷。
+- [6639835/cursor-card](https://github.com/6639835/cursor-card) -
+- [liuzhenhonghhhhh/cursor-reg](https://github.com/liuzhenhonghhhhh/cursor-reg) - 111
+- [SongSongK/ZZXcursor](https://github.com/SongSongK/ZZXcursor) - 全自动注册 cursor 工具
+- [ZTL-UwU/starters](https://github.com/ZTL-UwU/starters) - My Starter Templates
+- [ZTL-UwU/shadcn-docs-nuxt-starter](https://github.com/ZTL-UwU/shadcn-docs-nuxt-starter) - Starter template for shadcn-docs-nuxt.
+- [nkx111/SimpleRA3Launcher](https://github.com/nkx111/SimpleRA3Launcher) - (Kind of) Universal Mod launcher for the game Red Alert 3
+- [e-chan1007/nuxt-monaco-editor](https://github.com/e-chan1007/nuxt-monaco-editor) - Integrate monaco-editor with Nuxt
+- [moeru-ai/airi](https://github.com/moeru-ai/airi) - 💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraf
+- [dongyubin/Baidu-VIP](https://github.com/dongyubin/Baidu-VIP) - 2026 年 4 月更新，百度网盘(百度云)不限速工具分享。
+- [Heyvhuang/ship-faster](https://github.com/Heyvhuang/ship-faster) -
+- [MaxMiksa/Auto-Company](https://github.com/MaxMiksa/Auto-Company) - An auto-company works for 24/7 on your own PC - Windows/Linux/macOS.
+- [chmod777john/swarm-ide](https://github.com/chmod777john/swarm-ide) - 为 Agent Swarm 打造的 IDE ，支持 Kimi-2.5, GLM-4.7 等（即使不像 K2.5 那样经过强化学习的模型也能用）An IDE built for Agent Swarms, supporting Kimi-2.5, GLM-4.7, and more (compatible with models even without RL-reinforcement like
+- [zhangchenchen/self-consistent-coder](https://github.com/zhangchenchen/self-consistent-coder) - 如何成为一名自洽的程序员
+- [du2333/flare-stack-blog](https://github.com/du2333/flare-stack-blog) - A modern full-stack blog CMS driven by Cloudflare. | 基于 Cloudflare 生态的全栈现代化博客 CMS。
+- [uni-helper/mcp](https://github.com/uni-helper/mcp) - uniapp 的 Ai 工具箱
+- [uni-helper/skills](https://github.com/uni-helper/skills) - uni-app skills
+- [sxzz/stackblitz-mcp](https://github.com/sxzz/stackblitz-mcp) - MCP server for reading files from StackBlitz projects
+- [vercel-labs/just-bash](https://github.com/vercel-labs/just-bash) - Bash for Agents
+- [antfu/skills](https://github.com/antfu/skills) - Anthony Fu's curated collection of agent skills.
+- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) - Vercel's official collection of agent skills
+- [mystralengine/mystralnative](https://github.com/mystralengine/mystralnative) - Native WebGPU JS runtime with SDL3
+- [vercel-labs/skills](https://github.com/vercel-labs/skills) - The open agent skills tool - npx skills
+- [subsy/ralph-tui](https://github.com/subsy/ralph-tui) -
+- [vuejs-ai/skills](https://github.com/vuejs-ai/skills) - Agent skills for Vue 3 development
+- [keeplearning66/uni-quick](https://github.com/keeplearning66/uni-quick) - 可以直接使用 px 单位的 uni-app 轻量开发模板 | uni-app lightweight development template that can directly use px
+- [agentskills/agentskills](https://github.com/agentskills/agentskills) - Specification and documentation for Agent Skills
+- [neondatabase/ai-rules](https://github.com/neondatabase/ai-rules) -
+- [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) - Vue, Nuxt, and NuxtHub skills for AI coding assistants.
+- [andrelandgraf/fullstackrecipes](https://github.com/andrelandgraf/fullstackrecipes) - A Shadcn registry and collection of production-ready patterns and step-by-step guides (recipes) for full stack web AI apps
+- [ibelick/ui-skills](https://github.com/ibelick/ui-skills) - A growing set of skills to polish interfaces built by agents.
+- [justlovemaki/AIClient-2-API](https://github.com/justlovemaki/AIClient-2-API) - Simulates Gemini CLI, Antigravity, Codex, Grok, and Kiro client requests, compatible with the OpenAI API. It supports thousands of Gemini model requests per day and offers free use of the built-in Cla
+- [uni-ku/bundle-optimizer](https://github.com/uni-ku/bundle-optimizer) - 🦾 Uniapp Vue3 版本的分包优化实现
+- [YunYouJun/starter-monorepo](https://github.com/YunYouJun/starter-monorepo) - Custom monorepo starter by pnpm.
+- [GuDaStudio/geminimcp](https://github.com/GuDaStudio/geminimcp) - Gemini-MCP is an MCP server that encapsulates Google's Gemini CLI tool into a standard MCP protocol interface, enabling Claude Code to invoke Gemini for AI-assisted programming tasks.
+- [qmhc/vscode-deprecation-lens](https://github.com/qmhc/vscode-deprecation-lens) - Dynamically collect and display all deprecated usages in your project.
+- [JamesLMilner/terra-draw](https://github.com/JamesLMilner/terra-draw) - A library for drawing on maps that supports Mapbox, MapLibre, Google Maps, OpenLayers and Leaflet out the box
+- [common-intellisense/common-intellisense](https://github.com/common-intellisense/common-intellisense) - Universal Component Intellisense for Any Frameworks
+- [y9nhjy/Proxifier-Keygen](https://github.com/y9nhjy/Proxifier-Keygen) - Proxifier 注册机
+- [lbjlaq/Antigravity-Manager](https://github.com/lbjlaq/Antigravity-Manager) - Professional Antigravity Account Manager & Switcher. One-click seamless account switching for Antigravity Tools. Built with Tauri v2 + React (Rust).专业的 Antigravity 账号管理与切换工具。为 Antigravity 提供一键无缝账号切换功能
+- [GuDaStudio/skills](https://github.com/GuDaStudio/skills) - This repository contains a collection of Agent Skills developed by GudaStudio, enabling seamless collaboration between Claude and other AI models and tools.
+- [jlcodes99/vscode-antigravity-cockpit](https://github.com/jlcodes99/vscode-antigravity-cockpit) - VS Code extension for monitoring Google Antigravity AI quotas. Features Webview dashboard, QuickPick mode, and quota grouping.
+- [unjs/pathe](https://github.com/unjs/pathe) - 🛣️ Drop-in replacement of the Node.js's path module module that ensures paths are normalized
+- [ln-dev7/square-ui](https://github.com/ln-dev7/square-ui) - Collection of beautifully crafted open-source layouts UI built with shadcn/ui.
+- [ZiHuixi/QQgroup-annual-report-analyzer](https://github.com/ZiHuixi/QQgroup-annual-report-analyzer) - 一个用于分析 QQ 群聊记录并生成年度热词报告的工具。支持热词发现、趣味统计、可视化报告生成等功能。
+- [donlon/cloudflare-error-page](https://github.com/donlon/cloudflare-error-page) - ✅Browser ❌Cloudflare ✅Host — Generator of customized Cloudflare error pages (unofficial)
 - [forayconsulting/gemini_cli_skill](https://github.com/forayconsulting/gemini_cli_skill) - A Claude Code skill enabling Claude to use Gemini 3 Pro via Gemini CLI.
 - [biud436/MZ](https://github.com/biud436/MZ) - This plugin package includes helpful features to get you on your way to create your game in RPG Maker MZ.
 - [numman-ali/openskills](https://github.com/numman-ali/openskills) - Universal skills loader for AI coding agents - npm i -g openskills
-- [SmileZXLee/uni-z-paging](https://github.com/SmileZXLee/uni-z-paging) - 【uni-app下拉刷新、上拉加载】高性能，全平台兼容(ios、安卓、鸿蒙next、h5以及各家小程序)。支持vue、nvue、vue2、vue3，使用wxs+renderjs实现。支持虚拟列表，支持自定义下拉刷新、上拉加载更多，支持自动管理空数据图、点击返回顶部，支持聊天分页、本地分页，支持国际化等数百项配置，流畅渲染百万级列表数据。
+- [SmileZXLee/uni-z-paging](https://github.com/SmileZXLee/uni-z-paging) - 【uni-app 下拉刷新、上拉加载】高性能，全平台兼容(ios、安卓、鸿蒙 next、h5 以及各家小程序)。支持 vue、nvue、vue2、vue3，使用 wxs+renderjs 实现。支持虚拟列表，支持自定义下拉刷新、上拉加载更多，支持自动管理空数据图、点击返回顶部，支持聊天分页、本地分页，支持国际化等数百项配置，流畅渲染百万级列表数据。
 - [Daymychen/art-design-pro](https://github.com/Daymychen/art-design-pro) - A Vue 3 admin dashboard template using Vite + TypeScript + Element Plus | vue3 admin | vue-admin — focused on user experience and visual design.
 - [YerongAI/Office-Tool](https://github.com/YerongAI/Office-Tool) - Office Tool Plus localization projects.
 - [ddahan/ui-libs](https://github.com/ddahan/ui-libs) - A UI Lib Picker for Vue 3 / Nuxt 3/4
@@ -16,8 +78,8 @@
 - [arrosev/RPGMakerMZPlugins](https://github.com/arrosev/RPGMakerMZPlugins) - Personal test file
 - [Ttanasart-pt/Pixel-Composer](https://github.com/Ttanasart-pt/Pixel-Composer) - Node base VFX editor for pixel art.
 - [je-can-code/ca](https://github.com/je-can-code/ca) - The public-facing project for Chef Adventure, leveraging my JABS plugin and RPG Maker MZ.
-- [dragonbaba/RPGMAKER-PIXI_V7](https://github.com/dragonbaba/RPGMAKER-PIXI_V7) - 
-- [nuun888/MZ](https://github.com/nuun888/MZ) - 
+- [dragonbaba/RPGMAKER-PIXI_V7](https://github.com/dragonbaba/RPGMAKER-PIXI_V7) -
+- [nuun888/MZ](https://github.com/nuun888/MZ) -
 - [Hudell/cyclone-engine](https://github.com/Hudell/cyclone-engine) - A series of plugins for Rpg Maker MZ (some are MV-compatible)
 - [biud436/MV-Exclude-Unused-Files](https://github.com/biud436/MV-Exclude-Unused-Files) - This script allows you to perform to copy a source directory to the destination folder and exclude unused resources.
 - [futokoro/RPGMaker](https://github.com/futokoro/RPGMaker) - Plugins for RPG Maker MV
@@ -28,38 +90,35 @@
 - [BehiSecc/awesome-claude-skills](https://github.com/BehiSecc/awesome-claude-skills) - A curated list of Claude Skills.
 - [nitrojs/nitro](https://github.com/nitrojs/nitro) - Next Generation Server Toolkit. Create web servers with everything you need and deploy them wherever you prefer.
 - [Bosh-Kuo/Bosh-Docusaurus-Dev-Notes](https://github.com/Bosh-Kuo/Bosh-Docusaurus-Dev-Notes) - Bosh 的技術探索筆記 | 這是一個使用 Docusaurus 建立的一站式筆記中心。紀錄我在軟體開發路上的技術足跡與學習旅程
-- [breaking-brake/cc-wf-studio](https://github.com/breaking-brake/cc-wf-studio) - ClaudeCode Workflow Studio
 - [nitrojs/create-nitro-app](https://github.com/nitrojs/create-nitro-app) - The fastest way to create a Nitro app.
-- [miaotouy/aio-hub](https://github.com/miaotouy/aio-hub) - AI平台应用，提供多种实用的开发和日常工具，以及高可控性的LLM交互。
+- [miaotouy/aio-hub](https://github.com/miaotouy/aio-hub) - 终极个人 AI 平台应用，提供超强高可控性的 LLM 交互，和多种实用的开发和日常工具，VCP 分布式联动。
 - [hooray/pick-the-right-admin](https://github.com/hooray/pick-the-right-admin) - 选择合适的 Vue 后台管理框架
 - [djyde/ccmate](https://github.com/djyde/ccmate) - Configure your Claude Code without pain
 - [hellodigua/code996](https://github.com/hellodigua/code996) - 统计 Git 项目的 commit 时间分布，进而推导出项目的编码工作强度。 Analyzes the commit time distribution of Git projects to infer coding work intensity.
 - [antfu/starter-ts](https://github.com/antfu/starter-ts) - Starter template for TypeScript library
-- [sxzz/workflows](https://github.com/sxzz/workflows) - A collection of reusable GitHub Actions workflows for TypeScript projects.
 - [xuemk/termiClaude](https://github.com/xuemk/termiClaude) - claude CLI（cc）客户端工具，使用可视化方式进行环境和模型对话管理
-- [timtoday/mcp-windows-notify](https://github.com/timtoday/mcp-windows-notify) - 🔔 Windows notification MCP server - Get desktop notifications when AI tasks complete. Works with Claude Desktop, Cursor & other MCP-compatible tools.
 - [diet103/claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase) - Examples of my Claude Code infrastructure with skill auto-activation, hooks, and agents
 - [wquguru/nof0](https://github.com/wquguru/nof0) - NOF0 - 开源的 AI 交易竞技场
 - [skiyee/uni-unocss](https://github.com/skiyee/uni-unocss) - 🦁 在 UniApp 中零心智负担的使用 UnoCSS
-- [anthropics/skills](https://github.com/anthropics/skills) - Public repository for Skills
+- [anthropics/skills](https://github.com/anthropics/skills) - Public repository for Agent Skills
 - [xiaohe0601/uni-echarts](https://github.com/xiaohe0601/uni-echarts) - 🪀 适用于 uni-app 的 Apache ECharts 组件（仅支持 Vue 3）
 - [CoronaEngine/CabbageEditor](https://github.com/CoronaEngine/CabbageEditor) - The editor of Corona Engine.
-- [obra/superpowers](https://github.com/obra/superpowers) - Claude Code superpowers: core skills library
+- [obra/superpowers](https://github.com/obra/superpowers) - An agentic skills framework & software development methodology that works.
 - [TsFreddie/rmmv_optimization](https://github.com/TsFreddie/rmmv_optimization) - A collection of plugins for optimizing specific RPG Maker MV games.
 - [yuyinws/vitepress-plugin-group-icons](https://github.com/yuyinws/vitepress-plugin-group-icons) - Enhance code blocks features for VitePress.
 - [colasama/MahoShojo-Generator](https://github.com/colasama/MahoShojo-Generator) - 基于 AI 结构化生成的个性化魔法少女角色生成器。
 - [TencentEdgeOne/edgeone-pages-mcp](https://github.com/TencentEdgeOne/edgeone-pages-mcp) - An MCP service designed for deploying HTML content to EdgeOne Pages and obtaining an accessible public URL.
 - [chongdashu/cc-statusline](https://github.com/chongdashu/cc-statusline) - Transform your Claude Code experience with a beautiful, informative statusline
-- [Gar-b-age/CookLikeHOC](https://github.com/Gar-b-age/CookLikeHOC) - 🥢像老乡鸡🐔那样做饭。主要部分于2024年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.
+- [Gar-b-age/CookLikeHOC](https://github.com/Gar-b-age/CookLikeHOC) - 🥢像老乡鸡🐔那样做饭。主要部分于 2024 年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.
 - [yikart/AiToEarn](https://github.com/yikart/AiToEarn) - Let's use AI to Earn!
-- [anthropics/claude-code-action](https://github.com/anthropics/claude-code-action) - 
+- [anthropics/claude-code-action](https://github.com/anthropics/claude-code-action) -
 - [FerryYoungFan/VirtualCockroach](https://github.com/FerryYoungFan/VirtualCockroach) - 一只蟑螂桌面“宠物” Cockroach Desktop "Pet"
 - [anyup/colorful-uni](https://github.com/anyup/colorful-uni) - uniapp ui components
-- [openapi-ui/openapi-ts-request](https://github.com/openapi-ui/openapi-ts-request) - Swagger2/OpenAPI3/Apifox to TS/JS, request client, mock service, enum, react-query, type field label, JSON Schemas;  根据 Swagger2/OpenAPI3/Apifox 生成 TypeScript/JavaScript, 客户端请求函数(支持任意客户端), 模拟请求响应服务, 枚
+- [openapi-ui/openapi-ts-request](https://github.com/openapi-ui/openapi-ts-request) - Swagger2/OpenAPI3/Apifox to TS/JS, request client, mock service, enum, react-query, type field label, JSON Schemas; 根据 Swagger2/OpenAPI3/Apifox 生成 TypeScript/JavaScript, 客户端请求函数(支持任意客户端), 模拟请求响应服务, 枚
 - [antdv-pro/antdv-pro](https://github.com/antdv-pro/antdv-pro) - An antdv-based middle and background management system
-- [unibest-tech/unibest](https://github.com/unibest-tech/unibest) - 【这是新仓库，codercup那个进不去不维护了。】unibest - 最好用的 uniapp 开发框架。unibest 是由 uniapp + Vue3 + Ts + Vite5 + UnoCss + WotUI 驱动的跨端快速启动模板，使用 VS Code 开发，具有代码提示、自动格式化、统一配置、代码片段等功能，同时内置了大量平时开发常用的基本组件，开箱即用，让你编写 uniapp 拥有 b
-- [AkiraBit/PicSharp](https://github.com/AkiraBit/PicSharp) - A modern, full-featured, high-performance, cross-platform image compression application  具有现代化UI、功能齐全、高性能、跨平台的图像压缩工具
-- [zijie0/HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization) - 健康学习到150岁 - 人体系统调优不完全指南
+- [feige996/unibest](https://github.com/feige996/unibest) - 【这是新仓库，codercup 那个进不去不维护了。】unibest - 最好用的 uniapp 开发框架。unibest 是由 uniapp + Vue3 + Ts + Vite5 + UnoCss + WotUI 驱动的跨端快速启动模板，使用 VS Code 开发，具有代码提示、自动格式化、统一配置、代码片段等功能，同时内置了大量平时开发常用的基本组件，开箱即用，让你编写 uniapp 拥有 b
+- [AkiraBit/PicSharp](https://github.com/AkiraBit/PicSharp) - A modern, full-featured, high-performance, cross-platform image compression application 具有现代化 UI、功能齐全、高性能、跨平台的图像压缩工具
+- [zijie0/HumanSystemOptimization](https://github.com/zijie0/HumanSystemOptimization) - 健康学习到 150 岁 - 人体系统调优不完全指南
 - [timqian/bambot](https://github.com/timqian/bambot) - Play with open source, low-cost AI robots with ease 🤖
 - [vangleer/es-big-screen](https://github.com/vangleer/es-big-screen) - 基于 vue3 + echarts + amap(高德地图) + pinia 开发的大屏可视化项目，支持拖拽布局
 - [condorheroblog/vitepress-export-pdf](https://github.com/condorheroblog/vitepress-export-pdf) - VitePress export PDF
@@ -67,14 +126,14 @@
 - [sxzz/npm-top-provenance](https://github.com/sxzz/npm-top-provenance) - Provenance of High Impact on npm
 - [meowtec/vite-plugin-svg-sprite](https://github.com/meowtec/vite-plugin-svg-sprite) - SVG sprite plugin for [vite](https://github.com/vitejs/vite)
 - [admin8756/vitepress-ext](https://github.com/admin8756/vitepress-ext) - 将 VitePress 变成的更强大，只需几分钟
-- [Zainking/LearningPixi](https://github.com/Zainking/LearningPixi) - ⚡️Pixi教程中文版
+- [Zainking/LearningPixi](https://github.com/Zainking/LearningPixi) - ⚡️Pixi 教程中文版
 - [sun0225SUN/camlife](https://github.com/sun0225SUN/camlife) - Capture life through the Camera.
 - [matthias-research/pages](https://github.com/matthias-research/pages) - My web page containing all the demos from my youtube channel "Ten Minute Physics" www.youtube.com/c/TenMinutePhysics
 - [sudoriaa/BOCCHI-THE-ROCK](https://github.com/sudoriaa/BOCCHI-THE-ROCK) - 孤独摇滚同人网页
-- [wangzmgit/alnitak](https://github.com/wangzmgit/alnitak) - Alnitak是一个基于nuxt和go开发的前后端分离的弹幕视频网站。 项目实现了视频、专栏、弹幕、评论、点赞、收藏等功能。
-- [mankindGames/RPGTkool](https://github.com/mankindGames/RPGTkool) - RPGツクールMV公開用
-- [mankindGames/RPGTkoolMZ](https://github.com/mankindGames/RPGTkoolMZ) - RPGツクールMZ用
-- [Barbapapazes/vue-library](https://github.com/Barbapapazes/vue-library) - 
+- [wangzmgit/alnitak](https://github.com/wangzmgit/alnitak) - Alnitak 是一个基于 nuxt 和 go 开发的前后端分离的弹幕视频网站。 项目实现了视频、专栏、弹幕、评论、点赞、收藏等功能。
+- [mankindGames/RPGTkool](https://github.com/mankindGames/RPGTkool) - RPGツクールMV 公開用
+- [mankindGames/RPGTkoolMZ](https://github.com/mankindGames/RPGTkoolMZ) - RPGツクールMZ 用
+- [Barbapapazes/vue-library](https://github.com/Barbapapazes/vue-library) -
 - [Kele-Bingtang/teek-design-vue3](https://github.com/Kele-Bingtang/teek-design-vue3) - Teek 是一个基于 Vue3、TypeScript、Vite、ElementPlus 构建的颜值强大、功能丰富、开箱即用的中后台管理系统解决方案。
 - [Kele-Bingtang/vitepress-theme-teek](https://github.com/Kele-Bingtang/vitepress-theme-teek) - ✨一个轻量、简洁高效、灵活配置、易于扩展的 VitePress 主题
 - [iannuttall/claude-agents](https://github.com/iannuttall/claude-agents) - Custom subagents to use with Claude Code.
@@ -82,49 +141,47 @@
 - [ryoppippi/ccusage](https://github.com/ryoppippi/ccusage) - A CLI tool for analyzing Claude Code/Codex CLI usage from local JSONL files.
 - [firecrawl/open-lovable](https://github.com/firecrawl/open-lovable) - 🔥 Clone and recreate any website as a modern React app in seconds
 - [kingparks/cursor-vip](https://github.com/kingparks/cursor-vip) - cursor IDE enjoy VIP
-- [anthropics/claude-code](https://github.com/anthropics/claude-code) - Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows 
+- [anthropics/claude-code](https://github.com/anthropics/claude-code) - Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows
 - [iflow-ai/iflow-cli](https://github.com/iflow-ai/iflow-cli) - iFlow cli is a comprehensive command-line intelligence that embeds in your terminal, analyzes your repositories, does coding tasks, interprets your needs across contexts, and boosts efficiency by perf
 - [poetries/FE-Interview-Questions](https://github.com/poetries/FE-Interview-Questions) - 关注公众号「前端进阶之旅」，一起学习。前端面试常考问题整理，按模块知识点分类 Front-end-Developer-Questions by Modules and knowledge
 - [tokenizin-agency/mcp-npx-fetch](https://github.com/tokenizin-agency/mcp-npx-fetch) - A powerful MCP server for fetching and transforming web content into various formats (HTML, JSON, Markdown, Plain Text) with ease.
-- [Haleclipse/Claudiatron](https://github.com/Haleclipse/Claudiatron) - 
+- [Haleclipse/Claudiatron](https://github.com/Haleclipse/Claudiatron) -
 - [BeehiveInnovations/pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server) - The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / Custom Model / All Of The Above] working as one.
-- [xixu-me/claude-code-toolkit](https://github.com/xixu-me/claude-code-toolkit) - Comprehensive cross-platform toolkit for Claude Code
-- [Wei-Shaw/claude-relay-service](https://github.com/Wei-Shaw/claude-relay-service) - CRS-自建Claude Code镜像，一站式开源中转服务，让 Claude、OpenAI、Gemini、Droid 订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。
-- [jiawanlong/Cesium-Examples](https://github.com/jiawanlong/Cesium-Examples) - CesiumJS2025年最新Examples，200多个原生示例：自定义纹理、地形开挖、可视域分析、洪水淹没、缓冲分析、日照分析、方量分析、通透分析、剖面、单体化、视频融合、视频投射、雨雪雾、天空盒、场景出图、体积云、闪电、视锥体、雷达扫描、水波纹、动态扩散点、电子围栏、粒子效果、物理引擎、克里金、海流、大数据可视化、坐标转换、相机、飞行漫游、瓦片加载、xyz、tms、wms、wmts、天地图、
+- [jiawanlong/Cesium-Examples](https://github.com/jiawanlong/Cesium-Examples) - CesiumJS2026 年最新 Examples，200 多个原生示例：自定义纹理、地形开挖、可视域分析、洪水淹没、缓冲分析、日照分析、方量分析、通透分析、剖面、单体化、视频融合、视频投射、雨雪雾、天空盒、场景出图、体积云、闪电、视锥体、雷达扫描、水波纹、动态扩散点、电子围栏、粒子效果、物理引擎、克里金、海流、大数据可视化、坐标转换、相机、飞行漫游、瓦片加载、xyz、tms、wms、wmts、天地图、
 - [itMrBoy/resumePolice](https://github.com/itMrBoy/resumePolice) - 简历警察 🕵️‍♂️ 疯狂逮捕
-- [snailyp/gemini-balance](https://github.com/snailyp/gemini-balance) - Gemini polling proxy service （gemini轮询代理服务）
-- [tech-shrimp/gemini-balance-lite](https://github.com/tech-shrimp/gemini-balance-lite) - Gemini API 代理, 把Gemini API免费中转到国内。还可以聚合多个Gemini API Key，随机选取API Key的使用实现负载均衡，使得Gemini API免费成倍增加。
+- [snailyp/gemini-balance](https://github.com/snailyp/gemini-balance) - Gemini polling proxy service （gemini 轮询代理服务）
+- [tech-shrimp/gemini-balance-lite](https://github.com/tech-shrimp/gemini-balance-lite) - Gemini API 代理, 把 Gemini API 免费中转到国内。还可以聚合多个 Gemini API Key，随机选取 API Key 的使用实现负载均衡，使得 Gemini API 免费成倍增加。
 - [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router) - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.
 - [viarotel-org/vite-uniapp-template](https://github.com/viarotel-org/vite-uniapp-template) - 🚀 以实用为先的 uni-app 起手模板。
-- [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年收集整理几十套棋牌源码(带小白搭建教程)，严禁商用，否则后果自负！！！
+- [qmcloud/chess](https://github.com/qmcloud/chess) - 耗时多年自研高性能 golang 棋牌 AI 框架，基于最新主流大模型 LLM+多 agent 协同决策，实测接近真实玩家智力水平。严禁赌博，否则后果自负！！！
 - [legions-developer/evilcharts](https://github.com/legions-developer/evilcharts) - A Beautiful & Animated Chart UI Website built on top of shadcn & recharts.
 - [openai/codex](https://github.com/openai/codex) - Lightweight coding agent that runs in your terminal
 - [ConardLi/easy-llm-cli](https://github.com/ConardLi/easy-llm-cli) - An open-source AI agent that is compatible with multiple LLM models
 - [wot-ui/wot-starter](https://github.com/wot-ui/wot-starter) - 🍀 基于 vitesse-uni-app 深度整合 Wot UI 组件库的 uni-app 快速起手项目
 - [Aikoyori/ProgrammingVTuberLogos](https://github.com/Aikoyori/ProgrammingVTuberLogos) - High-quality PNGs for logos I made for fun
 - [kirodotdev/spirit-of-kiro](https://github.com/kirodotdev/spirit-of-kiro) - Spirit of Kiro is built with and powered by generative AI. Play the game, or help build it!
-- [Deepractice/PromptX](https://github.com/Deepractice/PromptX) - PromptX · 领先的AI 智能体上下文平台 ｜ PromptX · Leading AI Agent Context Platform
+- [Deepractice/PromptX](https://github.com/Deepractice/PromptX) - PromptX · 领先的 AI 智能体上下文平台 ｜ PromptX · Leading AI Agent Context Platform
 - [z2586300277/three-cesium-examples](https://github.com/z2586300277/three-cesium-examples) - WebGL Three.js Cesium.js Examples And Demo - WebGL 的 Three.js 和 Cesium.js 案例 --- Star ---点星星
 - [li-jia-nan/my-blog](https://github.com/li-jia-nan/my-blog) - 个人技术博客，同步掘金，文章写在 Issues 里
-- [agentcodee/cursor-free-everyday](https://github.com/agentcodee/cursor-free-everyday) - 完全免费, 自动获取新账号,一键重置新额度,  解决机器码问题, 自动满额度
+- [agentcodee/cursor-free-everyday](https://github.com/agentcodee/cursor-free-everyday) - 完全免费, 自动获取新账号,一键重置新额度, 解决机器码问题, 自动满额度
 - [dreamhunter2333/cloudflare_temp_email](https://github.com/dreamhunter2333/cloudflare_temp_email) - CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot
 - [OpenListTeam/OpenList](https://github.com/OpenListTeam/OpenList) - A new AList Fork to Anti Trust Crisis
-- [yuaotian/go-cursor-help](https://github.com/yuaotian/go-cursor-help) - 解决Cursor在免费订阅期间出现以下提示的问题:  Your request has been blocked as our system has detected suspicious activity / You've reached your trial request limit.  /  Too many free trial accounts used on this machine
-- [jackchen0120/vueDataV](https://github.com/jackchen0120/vueDataV) - 基于Vue + Echarts 构建的数据可视化平台，酷炫大屏展示模板和组件库，持续更新各行各业实用模板和炫酷小组件。
-- [Easy-Editor/EasyEditor](https://github.com/Easy-Editor/EasyEditor) - Plugin-based cross-framework low-code engine for building visual application platforms  |  用于构建可视化应用平台的插件化跨框架低代码引擎
-- [BluePointLilac/ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager) - 🖱️ 纯粹的Windows右键菜单管理程序
-- [CHTK001/vue-support-parent-starter](https://github.com/CHTK001/vue-support-parent-starter) - 
-- [vue-zone/nuxt-vant-mobile](https://github.com/vue-zone/nuxt-vant-mobile) - An mobile web apps template based on the Nuxt ⁴ ecosystem。 一个基于 Nuxt ⁴  生态系统的移动 web 应用模板，帮助你快速完成业务开发。
-- [plus-pro-components/plus-pro-components](https://github.com/plus-pro-components/plus-pro-components) - 🔥Page level components developed based on Element Plus.  ProComponents in vue.
+- [yuaotian/go-cursor-help](https://github.com/yuaotian/go-cursor-help) - 解决 Cursor 在免费订阅期间出现以下提示的问题: Your request has been blocked as our system has detected suspicious activity / You've reached your trial request limit. / Too many free trial accounts used on this machine
+- [jackchen0120/vueDataV](https://github.com/jackchen0120/vueDataV) - 基于 Vue + Echarts 构建的数据可视化平台，酷炫大屏展示模板和组件库，持续更新各行各业实用模板和炫酷小组件。
+- [Easy-Editor/EasyEditor](https://github.com/Easy-Editor/EasyEditor) - Plugin-based cross-framework low-code engine for building visual application platforms | 用于构建可视化应用平台的插件化跨框架低代码引擎
+- [BluePointLilac/ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager) - 🖱️ 纯粹的 Windows 右键菜单管理程序
+- [CHTK001/vue-support-parent-starter](https://github.com/CHTK001/vue-support-parent-starter) -
+- [vue-zone/nuxt-vant-mobile](https://github.com/vue-zone/nuxt-vant-mobile) - An mobile web apps template based on the Nuxt ⁴ ecosystem。 一个基于 Nuxt ⁴ 生态系统的移动 web 应用模板，帮助你快速完成业务开发。
+- [plus-pro-components/plus-pro-components](https://github.com/plus-pro-components/plus-pro-components) - 🔥Page level components developed based on Element Plus. ProComponents in vue.
 - [imsyy/DailyHot](https://github.com/imsyy/DailyHot) - DailyHot 今日热榜前端页面 | API：https://github.com/imsyy/DailyHotApi
 - [imsyy/site-status](https://github.com/imsyy/site-status) - 📺 一个基于 UptimeRobot API 的在线状态面板 | 站点监测 | 状态检测 | An online status panel based on the UptimeRobot API | UptimeRobot, status, site
 - [daybrush/moveable](https://github.com/daybrush/moveable) - Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable! Pinchable! Groupable! Snappable!
 - [codercup/unibest](https://github.com/codercup/unibest) - unibest - 最好用的 uniapp 开发框架。unibest 是由 uniapp + Vue3 + Ts + Vite4 + UnoCss + UniUI 驱动的跨端快速启动模板，使用 VS Code 开发，具有代码提示、自动格式化、统一配置、代码片段等功能，同时内置了大量平时开发常用的基本组件，开箱即用，让你编写 uniapp 拥有 best 体验。
 - [Ares-Chang/vite-plugin-uni-polyfill](https://github.com/Ares-Chang/vite-plugin-uni-polyfill) - 解决 UniApp 依赖版本与 Vue 主版本库差异导致其它库不可使用问题.
 - [Ares-Chang/wooden-fish](https://github.com/Ares-Chang/wooden-fish) - 使用 solidjs 构建的电子木鱼
-- [abc-kkk/cursor-ui-music](https://github.com/abc-kkk/cursor-ui-music) - 音乐App界面设计原型 - 使用HTML、Tailwind CSS和JavaScript构建的高保真移动应用UI
+- [abc-kkk/cursor-ui-music](https://github.com/abc-kkk/cursor-ui-music) - 音乐 App 界面设计原型 - 使用 HTML、Tailwind CSS 和 JavaScript 构建的高保真移动应用 UI
 - [uni-helper/vitesse-uni-app](https://github.com/uni-helper/vitesse-uni-app) - 由 Vite & uni-app 驱动的跨端快速启动模板
-- [Moonofweisheng/wot-design-uni](https://github.com/Moonofweisheng/wot-design-uni) - 一个基于Vue3+TS开发的uni-app组件库，提供70+高质量组件，支持暗黑模式、国际化和自定义主题。
+- [Moonofweisheng/wot-design-uni](https://github.com/Moonofweisheng/wot-design-uni) - 一个基于 Vue3+TS 开发的 uni-app 组件库，提供 70+高质量组件，支持暗黑模式、国际化和自定义主题。
 - [chokcoco/CSS-Inspiration](https://github.com/chokcoco/CSS-Inspiration) - CSS Inspiration，在这里找到写 CSS 的灵感！
 - [h5bp/Front-end-Developer-Interview-Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions) - A list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore.
 - [cuixueshe/earthworm](https://github.com/cuixueshe/earthworm) - Learning English through the method of constructing sentences with conjunctions
@@ -134,29 +191,28 @@
 - [heikaimu/vue3-waterfall-plugin](https://github.com/heikaimu/vue3-waterfall-plugin) - vue3 瀑布流插件，支持 PC 和移动端，支持 animate 的所有动画效果，支持图片懒加载
 - [princehuang/overseas-website-note](https://github.com/princehuang/overseas-website-note) - 「海外工具网站」已经是我人生主要事业了，很庆幸还来得及，感谢这个伟大的 AI 时代。
 - [imtaotao/danmu](https://github.com/imtaotao/danmu) - Collision detection, highly customized danmu screen styles, you deserve it. (碰撞检测，高度自定义的弹幕样式，你值得拥有) 😘
-- [hongfaqiu/cesium-extends](https://github.com/hongfaqiu/cesium-extends) - CesiumJS 的扩展库，提供事件订阅、大数据geojson加载、geojson样式、tooltip、popup、缩放控制、绘图工具、测量工具、双屏联动、指南针、热力图等功能
+- [hongfaqiu/cesium-extends](https://github.com/hongfaqiu/cesium-extends) - CesiumJS 的扩展库，提供事件订阅、大数据 geojson 加载、geojson 样式、tooltip、popup、缩放控制、绘图工具、测量工具、双屏联动、指南针、热力图等功能
 - [zengm-games/facesjs](https://github.com/zengm-games/facesjs) - A JavaScript library for generating vector-based cartoon faces
 - [lando/vitepress-theme-default-plus](https://github.com/lando/vitepress-theme-default-plus) - The VitePress Default Theme with a little more POWAH
 - [bym110/vue-echarts](https://github.com/bym110/vue-echarts) - vue、 echarts、iview 实现大数据可视化大屏模板
-- [KazariEX/resume.bikari.top](https://github.com/KazariEX/resume.bikari.top) - 
-- [Open-Yami-Community/awesome-yami](https://github.com/Open-Yami-Community/awesome-yami) - 优秀的Yami游戏合集
-- [xiaoxustudio/LichtUI](https://github.com/xiaoxustudio/LichtUI) - Licht UI 是一个基于Vue3开发的轻量级组件库
+- [KazariEX/resume.bikari.top](https://github.com/KazariEX/resume.bikari.top) -
+- [Open-Yami-Community/awesome-yami](https://github.com/Open-Yami-Community/awesome-yami) - 优秀的 Yami 游戏合集
+- [xiaoxustudio/LichtUI](https://github.com/xiaoxustudio/LichtUI) - Licht UI 是一个基于 Vue3 开发的轻量级组件库
 - [mdnice/markdown-resume](https://github.com/mdnice/markdown-resume) - :necktie:支持 Markdown 和富文本的在线简历排版工具
 - [MrWeilian/much-more-design](https://github.com/MrWeilian/much-more-design) - 🌈 前端基建——组件库
 - [vuejs/awesome-vue](https://github.com/vuejs/awesome-vue) - 🎉 A curated list of awesome things related to Vue.js
 - [linwu-hi/coding-time](https://github.com/linwu-hi/coding-time) - 编程时光主站
 - [ljinkai/weekly](https://github.com/ljinkai/weekly) - 独立开发产品变现周刊，每周五发布。
-- [zizifn/edgetunnel](https://github.com/zizifn/edgetunnel) - Running V2ray inside edge/serverless runtime
 - [antfu-collective/taze](https://github.com/antfu-collective/taze) - 🥦 A modern cli tool that keeps your deps fresh
 - [umijs/dumi](https://github.com/umijs/dumi) - 📖 Static Site Generator for component library development
-- [Rominwolf/the-wandering-earth-2-countdown-meme-generator.github.io](https://github.com/Rominwolf/the-wandering-earth-2-countdown-meme-generator.github.io) - 流浪地球2的倒计时梗图生成器。
+- [Rominwolf/the-wandering-earth-2-countdown-meme-generator.github.io](https://github.com/Rominwolf/the-wandering-earth-2-countdown-meme-generator.github.io) - 流浪地球 2 的倒计时梗图生成器。
 - [dsrkafuu/sakana-widget](https://github.com/dsrkafuu/sakana-widget) - Sakana widget for Web. | 网页小组件版本的石蒜模拟器。
-- [Yiov/vitepress-doc](https://github.com/Yiov/vitepress-doc) - VitePress教程文档
-- [bleedline/aimoneyhunter](https://github.com/bleedline/aimoneyhunter) - ai副业赚钱大集合，教你如何利用ai做一些副业项目，赚取更多额外收益。The Ultimate Guide to Making Money with AI Side Hustles: Learn how to leverage AI for some cool side gigs and rake in some extra cash. Check out the English version 
-- [1006008051/vitepress-demoblock](https://github.com/1006008051/vitepress-demoblock) - 基于vitepress的组件库文档
+- [Yiov/vitepress-doc](https://github.com/Yiov/vitepress-doc) - VitePress 教程文档
+- [bleedline/aimoneyhunter](https://github.com/bleedline/aimoneyhunter) - ai 副业赚钱大集合，教你如何利用 ai 做一些副业项目，赚取更多额外收益。The Ultimate Guide to Making Money with AI Side Hustles: Learn how to leverage AI for some cool side gigs and rake in some extra cash. Check out the English version
+- [1006008051/vitepress-demoblock](https://github.com/1006008051/vitepress-demoblock) - 基于 vitepress 的组件库文档
 - [kingyue737/volar-plugin-vue-router](https://github.com/kingyue737/volar-plugin-vue-router) - Volar plugin for route custom block in Vue SFC
 - [dishait/vite-plugin-vue-meta-layouts](https://github.com/dishait/vite-plugin-vue-meta-layouts) - vite 的 vue-router 的元信息布局系统 | Vite's Vue-Router's meta-information layout system
-- [lriki/LN_FilmicFilter](https://github.com/lriki/LN_FilmicFilter) - RPGツクールMZ用のプラグイン
+- [lriki/LN_FilmicFilter](https://github.com/lriki/LN_FilmicFilter) - RPGツクールMZ 用のプラグイン
 - [jooy2/vitepress-sidebar](https://github.com/jooy2/vitepress-sidebar) - 🔌 VitePress auto sidebar generator plugin. Easy to use and supports advanced customization.
 - [bubkoo/configs](https://github.com/bubkoo/configs) - Shared configs for my projects
 - [pplancq/dev-tools](https://github.com/pplancq/dev-tools) - Tools for developing ReactJS
@@ -170,10 +226,10 @@
 - [TyruswooStudio/Tyruswoo_FollowerControl-MV](https://github.com/TyruswooStudio/Tyruswoo_FollowerControl-MV) - Tyruswoo Follower Control plugin for RPG Maker MV
 - [cline/cline](https://github.com/cline/cline) - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.
 - [Ares-Chang/uni-vitesse](https://github.com/Ares-Chang/uni-vitesse) - 使用 Vitesse cli 而不是 HbuildX 获得 double 的开发快乐! Uniapp + Vue 3 + TS + UnoCSS template
-- [easychen/howto-make-more-money](https://github.com/easychen/howto-make-more-money) - 程序员如何优雅的挣零花钱，2.0版，升级为小书了。Most of this not work outside China , so no English translate
-- [wanglin2/mind-map](https://github.com/wanglin2/mind-map) - SimpleMindMap（思绪思维导图）：一个强大的Web思维导图。A powerful web mind map.
-- [microapp-store/linjiashop](https://github.com/microapp-store/linjiashop) - 邻家小铺，轻量，简洁的商城系统,包括后台管理，手机h5，小程序，app版
-- [xiaomaogame/catctor](https://github.com/xiaomaogame/catctor) - 
+- [easychen/howto-make-more-money](https://github.com/easychen/howto-make-more-money) - 程序员如何优雅的挣零花钱，2.0 版，升级为小书了。Most of this not work outside China , so no English translate
+- [wanglin2/mind-map](https://github.com/wanglin2/mind-map) - SimpleMindMap（思绪思维导图）：一个强大的思维导图。A powerful mind map.
+- [microapp-store/linjiashop](https://github.com/microapp-store/linjiashop) - 邻家小铺，轻量，简洁的商城系统,包括后台管理，手机 h5，小程序，app 版
+- [xiaomaogame/catctor](https://github.com/xiaomaogame/catctor) -
 - [toss/es-toolkit](https://github.com/toss/es-toolkit) - A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller—a major upgrade to lodash.
 - [weijunext/indie-hacker-tools](https://github.com/weijunext/indie-hacker-tools) - 收录独立开发者出海技术栈和工具
 - [nwutils/nw-vue3-boilerplate](https://github.com/nwutils/nw-vue3-boilerplate) - NW.js + Vue 3 + Vite + Pinia + Vue-Router + Vitest
@@ -181,30 +237,30 @@
 - [zhe-qi/uniez-template](https://github.com/zhe-qi/uniez-template) - uniez-template，一个“功能”和“开发体验”优先的 uniapp 模板
 - [jordienr/whatamesh](https://github.com/jordienr/whatamesh) - tool to create mesh gradients
 - [misskey-dev/misskey](https://github.com/misskey-dev/misskey) - 🌎 A completely free and open interplanetary-microblogging platform 🚀
-- [beilunyang/moemail](https://github.com/beilunyang/moemail) - 一个基于 NextJS + Cloudflare 技术栈构建的可爱临时邮箱服务🎉 | A cute temporary email service built with NextJS + Cloudflare technology stack 🎉
+- [beilunyang/moemail](https://github.com/beilunyang/moemail) - A cute temporary email service built with NextJS + Cloudflare technology stack 🎉 | 一个基于 NextJS + Cloudflare 技术栈构建的可爱临时邮箱服务🎉
 - [anvaka/city-roads](https://github.com/anvaka/city-roads) - Visualization of all roads within any city
 - [ct-js/ct-js](https://github.com/ct-js/ct-js) - Ct.js is a desktop game engine that makes learning programming fun and game development easy by its visual editors and well-documented code library
 - [thieleju/5minutechess](https://github.com/thieleju/5minutechess) - 5 Minute Chess - Made with Nuxt 3, Vite, Vue 3 and Vuetify 3
 - [kingyue737/vitify-nuxt](https://github.com/kingyue737/vitify-nuxt) - 🔽🏔 Vuetify + Nuxt Starter Template
 - [xiaoluoboding/nuxt3-starter](https://github.com/xiaoluoboding/nuxt3-starter) - 💚 A Better Nuxt 3 Starter Template，generate by nuxi.
-- [rutan/rpgmaker-plugin-annotation](https://github.com/rutan/rpgmaker-plugin-annotation) - 
-- [rutan/torigoya-rpg-maker-plugin](https://github.com/rutan/torigoya-rpg-maker-plugin) - RPGツクールMV/MZ用のプラグイン
-- [rutan/steam-mz-template](https://github.com/rutan/steam-mz-template) - RPGツクールMZのSteam向けプロジェクトのテンプレート
+- [rutan/rpgmaker-plugin-annotation](https://github.com/rutan/rpgmaker-plugin-annotation) -
+- [rutan/torigoya-rpg-maker-plugin](https://github.com/rutan/torigoya-rpg-maker-plugin) - RPGツクールMV/MZ 用のプラグイン
+- [rutan/steam-mz-template](https://github.com/rutan/steam-mz-template) - RPGツクールMZのSteam 向けプロジェクトのテンプレート
 - [kenzakis2/RMPMZ_kenzaki](https://github.com/kenzakis2/RMPMZ_kenzaki) - Plugins for RPG Maker MZ
-- [tonbijp/RPGMakerMZ](https://github.com/tonbijp/RPGMakerMZ) - 
+- [tonbijp/RPGMakerMZ](https://github.com/tonbijp/RPGMakerMZ) -
 - [ImaginaryVillain/community_lights](https://github.com/ImaginaryVillain/community_lights) - A community driven lighting plugin for RPG Maker MV and MZ
 - [pota-gon/RPGMakerMZ](https://github.com/pota-gon/RPGMakerMZ) - RPGツクールMZのプラグイン
-- [kuroudo119/RPGMZ-Plugin](https://github.com/kuroudo119/RPGMZ-Plugin) - RPGツクールMZ用プラグイン置き場。
-- [Sigureya/RmmzPluginSchemaOld](https://github.com/Sigureya/RmmzPluginSchemaOld) - 
-- [Sigureya/RpgTypes](https://github.com/Sigureya/RpgTypes) - 
-- [Sigureya/RpgMakerAnnotation](https://github.com/Sigureya/RpgMakerAnnotation) - 
+- [kuroudo119/RPGMZ-Plugin](https://github.com/kuroudo119/RPGMZ-Plugin) - RPGツクールMZ 用プラグイン置き場。
+- [Sigureya/RmmzPluginSchemaOld](https://github.com/Sigureya/RmmzPluginSchemaOld) -
+- [Sigureya/RpgTypes](https://github.com/Sigureya/RpgTypes) -
+- [Sigureya/RpgMakerAnnotation](https://github.com/Sigureya/RpgMakerAnnotation) -
 - [niokasgami/Rpg-Maker-MZ-Typescript](https://github.com/niokasgami/Rpg-Maker-MZ-Typescript) - The typescript definitions files for MZ
 - [Sigureya/RPGmakerMV](https://github.com/Sigureya/RPGmakerMV) - ツクールＭＶ用プラグイン
-- [munokura/MNKR-MZ-plugins](https://github.com/munokura/MNKR-MZ-plugins) - 
+- [munokura/MNKR-MZ-plugins](https://github.com/munokura/MNKR-MZ-plugins) -
 - [triacontane/RPGMakerMV](https://github.com/triacontane/RPGMakerMV) - RPGツクールMV、MZで動作するプラグインです。
 - [GamesOfShadows/rpgmaker_mv-mz_plugins](https://github.com/GamesOfShadows/rpgmaker_mv-mz_plugins) - My small RPGmaker-MV/MZ-Plugins
 - [unagiootoro/RPGMZ](https://github.com/unagiootoro/RPGMZ) - RPGツクールMZ プラグイン一覧
-- [zou-hong-run/dobang](https://github.com/zou-hong-run/dobang) - Typescript+vite+sass拖拽放置五子棋
+- [zou-hong-run/dobang](https://github.com/zou-hong-run/dobang) - Typescript+vite+sass 拖拽放置五子棋
 - [Codpoe/vite-plugin-ts-alias](https://github.com/Codpoe/vite-plugin-ts-alias) - vite plugin to transform tsconfig paths to alias
 - [godbasin/front-end-playground](https://github.com/godbasin/front-end-playground) - 被删和阿猪的前端游乐场！！快来一起撸猫一起学习前端吧~
 - [NewRPGProject/MZMV_Plugin](https://github.com/NewRPGProject/MZMV_Plugin) - ＲＰＧツクールＭＺおよびＭＶ用のプラグインです。
@@ -218,128 +274,126 @@
 - [wgwang/awesome-LLMs-In-China](https://github.com/wgwang/awesome-LLMs-In-China) - 中国大模型
 - [zh-lx/vitepress-demo-plugin](https://github.com/zh-lx/vitepress-demo-plugin) - 🎨 A vitepress plugin to display and render code, support React/Vue/Html. 一个可以在 vitepress 中展示和渲染代码的插件，支持 Vue/React/Html.
 - [olegdon/nuxt3-pnpm-monorepo](https://github.com/olegdon/nuxt3-pnpm-monorepo) - Nuxt 3 PNPM Monorepo boilerplate including Tailwind, Storybook and Pinia
-- [l1veIn/lol-wom-electron](https://github.com/l1veIn/lol-wom-electron) - LOL互动助手electron-part
-- [pinky-pig/starter-vue-lib](https://github.com/pinky-pig/starter-vue-lib) - 
+- [l1veIn/lol-wom-electron](https://github.com/l1veIn/lol-wom-electron) - LOL 互动助手 electron-part
+- [pinky-pig/starter-vue-lib](https://github.com/pinky-pig/starter-vue-lib) -
 - [pinky-pig/v3-bento](https://github.com/pinky-pig/v3-bento) - 拖拽方块布局
-- [AnYiEE/touhou-mystia-izakaya-assistant](https://github.com/AnYiEE/touhou-mystia-izakaya-assistant) - 为游戏《东方夜雀食堂》所打造的辅助工具，旨在为玩家的游玩过程提供帮助。使用React、Tailwind CSS和Next.js开发和构建。
+- [AnYiEE/touhou-mystia-izakaya-assistant](https://github.com/AnYiEE/touhou-mystia-izakaya-assistant) - 为游戏《东方夜雀食堂》所打造的辅助工具，旨在为玩家的游玩过程提供帮助。使用 React、Tailwind CSS 和 Next.js 开发和构建。
 - [jerrywu001/vue3-toastify](https://github.com/jerrywu001/vue3-toastify) - 🎉 Vue3-Toastify allows you to add notifications to your app with ease.
-- [iamouyang21/vue3-compiler](https://github.com/iamouyang21/vue3-compiler) - 「vue3编译原理揭秘」 一本初中级前端都能看得懂的vue3源码分析书
+- [iamouyang21/vue3-compiler](https://github.com/iamouyang21/vue3-compiler) - 「vue3 编译原理揭秘」 一本初中级前端都能看得懂的 vue3 源码分析书
 - [digitalchina-frontend/digitalchina-frontend.github.io](https://github.com/digitalchina-frontend/digitalchina-frontend.github.io) - 官方网站
 - [wurencaideli/dumogu-admin](https://github.com/wurencaideli/dumogu-admin) - 最基础的管理端架子 - 毒蘑菇管理
 - [JohnCampionJr/vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts) - Vue layout plugin for Vite
-- [Lunatlazur/rpgmaker](https://github.com/Lunatlazur/rpgmaker) - 
+- [Lunatlazur/rpgmaker](https://github.com/Lunatlazur/rpgmaker) -
 - [keldaanCommunity/pokemonAutoChess](https://github.com/keldaanCommunity/pokemonAutoChess) - Pokemon Auto Chess Game. Made by fans for fans. Open source, non profit. All rights to the Pokemon Company.
 - [moonyoulove/rpgmaker-plugin-conflict-finder](https://github.com/moonyoulove/rpgmaker-plugin-conflict-finder) - Find conflicts between RPG Maker MV/MZ plugins.
 - [nuxt-content/docus](https://github.com/nuxt-content/docus) - Write beautiful documentations with Nuxt and Markdown.
-- [o2oa/o2oa](https://github.com/o2oa/o2oa) - 开源OA系统 - 码云GVP|Java开源oa|企业OA办公平台|企业OA|协同办公OA|流程平台OA|O2OA|OA，支持国产麒麟操作系统和国产数据库（达梦、人大金仓），政务OA，军工信息化OA
+- [o2oa/o2oa](https://github.com/o2oa/o2oa) - 开源 OA 系统 - 码云 GVP|Java 开源 oa|企业 OA 办公平台|企业 OA|协同办公 OA|流程平台 OA|O2OA|OA，支持国产麒麟操作系统和国产数据库（达梦、人大金仓），政务 OA，军工信息化 OA
 - [imba97/eslint-config](https://github.com/imba97/eslint-config) - ESLint Config
-- [qddidi/easyest](https://github.com/qddidi/easyest) - 基于Vite6+TypeScript的Vue3组件库开发框架
+- [qddidi/easyest](https://github.com/qddidi/easyest) - 基于 Vite6+TypeScript 的 Vue3 组件库开发框架
 - [popo-fishes/umy-ui](https://github.com/popo-fishes/umy-ui) - A desktop component library based on Vue 2.0 prepared for developers
 - [CavsZhouyou/Front-End-Interview-Notebook](https://github.com/CavsZhouyou/Front-End-Interview-Notebook) - :ant:前端面试复习笔记
-- [ecaps1038/yike-design-dev](https://github.com/ecaps1038/yike-design-dev) - Vue3+Ts+Less 开发的前端UI框架
-- [HuolalaTech/page-spy-web](https://github.com/HuolalaTech/page-spy-web) - A remote debugging platform you can definitely use.
-- [xinlei3166/vite-vue-template](https://github.com/xinlei3166/vite-vue-template) - Vue 模板, Vite5 + Vue3 + Pinia + Vue Router + TypeScript + Ant Design Vue.
-- [lengyibai/wzry](https://github.com/lengyibai/wzry) - 🌈基于 Vue3+TS的王者荣耀图鉴🚀
-- [jaskang/headui](https://github.com/jaskang/headui) - 一个基于 Vue.js 和 Tailwind CSS 的UI组件库，用于快速构建现代Web应用程序。
+- [ecaps1038/yike-design-dev](https://github.com/ecaps1038/yike-design-dev) - Vue3+Ts+Less 开发的前端 UI 框架
+- [HuolalaTech/page-spy-web](https://github.com/HuolalaTech/page-spy-web) - A remote debugging platform you'll definitely find useful. Lightweight, cross-platform, out-of-box debugging tool
+- [xinlei3166/vite-vue-template](https://github.com/xinlei3166/vite-vue-template) - Vue 模板, Vite + Vue + Pinia + Vue Router + TypeScript + TDesign Vue Next.
+- [lengyibai/wzry](https://github.com/lengyibai/wzry) - 🌈基于 Vue3+TS 的王者荣耀图鉴🚀
+- [jaskang/headui](https://github.com/jaskang/headui) - 一个基于 Vue.js 和 Tailwind CSS 的 UI 组件库，用于快速构建现代 Web 应用程序。
 - [nonzzz/vite-bundle-analyzer](https://github.com/nonzzz/vite-bundle-analyzer) - bundle analyzer for vite
 - [ryiwamoto/rmmv_weather_plugin_base](https://github.com/ryiwamoto/rmmv_weather_plugin_base) - (RPG Maker MV) Weather Plugin framework
-- [markprzepiora/rmmv-mrp-core](https://github.com/markprzepiora/rmmv-mrp-core) - 
-- [sabakan03/mv](https://github.com/sabakan03/mv) - 
+- [markprzepiora/rmmv-mrp-core](https://github.com/markprzepiora/rmmv-mrp-core) -
+- [sabakan03/mv](https://github.com/sabakan03/mv) -
 - [AsterAtwood/rmmv.d.ts](https://github.com/AsterAtwood/rmmv.d.ts) - rpg maker mv d.ts
 - [suppayami/yami-small-plugins](https://github.com/suppayami/yami-small-plugins) - RPG Maker MV plugins
 - [Narazaka/rpgmakermv_typescript_dts](https://github.com/Narazaka/rpgmakermv_typescript_dts) - RPGツクールMVに標準搭載されているJavaScriptを、TypeScriptで扱うための型定義ファイルです。
 - [je-can-code/rmmz-plugins](https://github.com/je-can-code/rmmz-plugins) - A repo containing a number of plugins developed for RM Developers to leverage to enhance their own RPG Maker MZ projects.
-- [KareemDa/pnpm-monorepo-nuxt-3](https://github.com/KareemDa/pnpm-monorepo-nuxt-3) - 
-- [leamsigc/nuxt-monorepo-layers](https://github.com/leamsigc/nuxt-monorepo-layers) - 
-- [sunpm/unisave](https://github.com/sunpm/unisave) - 拥抱 web 开发，拯救 uniapp。👋👋👋 基于Uniapp、Vue 3、pinia(且持久化保存)、Typescript、UnoCSS等主流技术开发的开箱即用模版，适配所有(app、mp、web)平台！！！
-- [ruan-cat/learn-postgres-drizzle-by-vercel-tmpl](https://github.com/ruan-cat/learn-postgres-drizzle-by-vercel-tmpl) - 
+- [KareemDa/pnpm-monorepo-nuxt-3](https://github.com/KareemDa/pnpm-monorepo-nuxt-3) -
+- [leamsigc/nuxt-monorepo-layers](https://github.com/leamsigc/nuxt-monorepo-layers) -
+- [sunpm/unisave](https://github.com/sunpm/unisave) - 拥抱 web 开发，拯救 uniapp。👋👋👋 基于 Uniapp、Vue 3、pinia(且持久化保存)、Typescript、UnoCSS 等主流技术开发的开箱即用模版，适配所有(app、mp、web)平台！！！
+- [ruan-cat/learn-postgres-drizzle-by-vercel-tmpl](https://github.com/ruan-cat/learn-postgres-drizzle-by-vercel-tmpl) -
 - [bfanger/pixi-inspector](https://github.com/bfanger/pixi-inspector) - Devtools for PixiJS
 - [LecodeMV/leTBS](https://github.com/LecodeMV/leTBS) - A tactical battle system for the game engine RPG Maker MV
-- [ruan-cat/learn-starter-by-nuxthub-tmpl](https://github.com/ruan-cat/learn-starter-by-nuxthub-tmpl) - starter，复制于nuxthub的模板。旨在于学习cloudflare D1等云基础设置的使用。
+- [ruan-cat/learn-starter-by-nuxthub-tmpl](https://github.com/ruan-cat/learn-starter-by-nuxthub-tmpl) - starter，复制于 nuxthub 的模板。旨在于学习 cloudflare D1 等云基础设置的使用。
 - [ruan-cat/register](https://github.com/ruan-cat/register) - Grab your own sweet-looking '.is-a.dev' subdomain.
 - [ruan-cat/rpgmaker-mv-flowchart](https://github.com/ruan-cat/rpgmaker-mv-flowchart) - RPGmakerMV Code running flowchart
-- [ruan-cat/learn-openx-ui](https://github.com/ruan-cat/learn-openx-ui) - 学习自建vue组件库
-- [ruan-cat/learn-nuxt-edge-functions-by-vercel-tmpl](https://github.com/ruan-cat/learn-nuxt-edge-functions-by-vercel-tmpl) - 
-- [ruan-cat/learn-nuxt-with-nuxthub-cloudflare-D1](https://github.com/ruan-cat/learn-nuxt-with-nuxthub-cloudflare-D1) - 在nuxthub内，使用 nuxt-todos-edge 创建模板，学习cloudflare D1的云数据库和nuxt接口开发。
-- [ruan-cat/leaen-hello-edge-by-nuxthub-tmpl](https://github.com/ruan-cat/leaen-hello-edge-by-nuxthub-tmpl) - 从nuxthub初始化的，最小化边缘服务器项目，用于学习nuxt预设，cloudflare，和边缘服务。
+- [ruan-cat/learn-openx-ui](https://github.com/ruan-cat/learn-openx-ui) - 学习自建 vue 组件库
+- [ruan-cat/learn-nuxt-edge-functions-by-vercel-tmpl](https://github.com/ruan-cat/learn-nuxt-edge-functions-by-vercel-tmpl) -
+- [ruan-cat/learn-nuxt-with-nuxthub-cloudflare-D1](https://github.com/ruan-cat/learn-nuxt-with-nuxthub-cloudflare-D1) - 在 nuxthub 内，使用 nuxt-todos-edge 创建模板，学习 cloudflare D1 的云数据库和 nuxt 接口开发。
+- [ruan-cat/leaen-hello-edge-by-nuxthub-tmpl](https://github.com/ruan-cat/leaen-hello-edge-by-nuxthub-tmpl) - 从 nuxthub 初始化的，最小化边缘服务器项目，用于学习 nuxt 预设，cloudflare，和边缘服务。
 - [ruan-cat/shareKaoYan](https://github.com/ruan-cat/shareKaoYan) - Share some of my experiences with postgraduate exams
 - [ruan-cat/Lagomoro-Mission-MV](https://github.com/ruan-cat/Lagomoro-Mission-MV) - Mission System for RPG Maker MV
 - [ruan-cat/FEBS-Cloud-Web](https://github.com/ruan-cat/FEBS-Cloud-Web) - FEBS Cloud 微服务权限系统前端，使用 vue-element-admin 构建
 - [inorganik/countUp.js](https://github.com/inorganik/countUp.js) - Animates a numerical value by counting to it
-- [build-admin/build-admin-nuxt](https://github.com/build-admin/build-admin-nuxt) - BuildAdmin的WebNuxt工程，BuildAdmin是支持可视化生成CRUD代码、内置WEB终端，基于Vue3.x(setup)+ThinkPHP6+TypeScript+Vite+Pinia+Element Plus的商业级后台管理系统，自适应多端，同时提供Web和Server端、自动注册路由、无限级菜单权限节点、全局数据回收站、字段级修改保护等等，是集颜值、实用、敏捷于一身的管理系统
-- [easychen/stack-roadmap](https://github.com/easychen/stack-roadmap) - 方糖全栈路线图2023，为「从螺丝钉到一人企业」补全技能栈
-- [chinshou/HCView-H5](https://github.com/chinshou/HCView-H5) - 
+- [build-admin/build-admin-nuxt](https://github.com/build-admin/build-admin-nuxt) - BuildAdmin 的 WebNuxt 工程，BuildAdmin 是支持可视化生成 CRUD 代码、内置 WEB 终端，基于 Vue3.x(setup)+ThinkPHP6+TypeScript+Vite+Pinia+Element Plus 的商业级后台管理系统，自适应多端，同时提供 Web 和 Server 端、自动注册路由、无限级菜单权限节点、全局数据回收站、字段级修改保护等等，是集颜值、实用、敏捷于一身的管理系统
+- [easychen/stack-roadmap](https://github.com/easychen/stack-roadmap) - 方糖全栈路线图 2023，为「从螺丝钉到一人企业」补全技能栈
+- [chinshou/HCView-H5](https://github.com/chinshou/HCView-H5) -
 - [vbenjs/vite-plugin-mock](https://github.com/vbenjs/vite-plugin-mock) - A mock plugin for vite.use mockjs.
 - [uni-helper/vite-plugin-uni-pages](https://github.com/uni-helper/vite-plugin-uni-pages) - 为 Vite 下的 uni-app 提供基于文件系统的路由
-- [luoyangC/vue-mall-template](https://github.com/luoyangC/vue-mall-template) - vue商城项目模板
-- [Open-Yami-Community/yamiapi](https://github.com/Open-Yami-Community/yamiapi) - 
-- [Tonel/typescript-monorepo](https://github.com/Tonel/typescript-monorepo) - 
-- [uni-helper/create-uni](https://github.com/uni-helper/create-uni) - 🛠️快速创建uni-app项目
+- [luoyangC/vue-mall-template](https://github.com/luoyangC/vue-mall-template) - vue 商城项目模板
+- [Open-Yami-Community/yamiapi](https://github.com/Open-Yami-Community/yamiapi) -
+- [Tonel/typescript-monorepo](https://github.com/Tonel/typescript-monorepo) -
+- [uni-helper/create-uni](https://github.com/uni-helper/create-uni) - 🛠️快速创建 uni-app 项目
 - [unplugin/unplugin-vue-markdown](https://github.com/unplugin/unplugin-vue-markdown) - Compile Markdown to Vue component
-- [pengzhanbo/vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume) - A vuepress theme.  Simple, feature-rich,  document & blog
+- [pengzhanbo/vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume) - A vuepress theme. Simple, feature-rich, document & blog
 - [BetaHuhn/github-actions-starter](https://github.com/BetaHuhn/github-actions-starter) - 🎬 GitHub Actions starter for a Node.js based Action with automated releases
 - [IndexXuan/vue-cli-plugin-vite](https://github.com/IndexXuan/vue-cli-plugin-vite) - Use vite today, with vue-cli.
 - [Couy69/vue-idle-game](https://github.com/Couy69/vue-idle-game) - 一个全随机的刷装备小游戏
 - [XiaofengdiZhu/vue-idle-game-mod](https://github.com/XiaofengdiZhu/vue-idle-game-mod) - 一个全随机的刷装备小游戏
-- [gkn1234/openx-ui](https://github.com/gkn1234/openx-ui) - 
+- [gkn1234/openx-ui](https://github.com/gkn1234/openx-ui) -
 - [ttk-cli/uni-vue3-vite-ts-pinia](https://github.com/ttk-cli/uni-vue3-vite-ts-pinia) - A template for uniapp with vue3.
 - [moefyit/moefy-canvas](https://github.com/moefyit/moefy-canvas) - :framed_picture: 使用可可爱爱的 canvas 动效装点你的网页～
 - [vue-vine/vue-vine](https://github.com/vue-vine/vue-vine) - Another style of writing Vue components.
 - [hellof2e/quark-design](https://github.com/hellof2e/quark-design) - Browser-native component library, framework-agnostic, base on web components.(企业级 H5 UI 组件库，无框架，即插即用。)
 - [xxxsf/my-vue3-template](https://github.com/xxxsf/my-vue3-template) - My starter template for Vue3, Best practices！
 - [monoplasty/vue-monoplasty-slide-verify](https://github.com/monoplasty/vue-monoplasty-slide-verify) - vue slide verify online preview
-- [tower1229/Vue-Giant-Tree](https://github.com/tower1229/Vue-Giant-Tree) - 🌳 巨树：基于ztree封装的Vue树形组件，轻松实现海量数据的高性能渲染。
+- [tower1229/Vue-Giant-Tree](https://github.com/tower1229/Vue-Giant-Tree) - 🌳 巨树：基于 ztree 封装的 Vue 树形组件，轻松实现海量数据的高性能渲染。
 - [Yangff/mvuccu](https://github.com/Yangff/mvuccu) - A Mod System for RMMV
-- [kermanx/reactive-vscode](https://github.com/kermanx/reactive-vscode) - Vue Reactivity for VSCode Extension API
+- [kermanx/reactive-vscode](https://github.com/kermanx/reactive-vscode) - Develop VSCode extension with Vue Reactivity API
 - [stylelint-scss/stylelint-config-recommended-scss](https://github.com/stylelint-scss/stylelint-config-recommended-scss) - The recommended shareable SCSS config for Stylelint
 - [markdown-it/markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) - Emoji syntax plugin for markdown-it markdown parser
 - [atlassian/pragmatic-drag-and-drop](https://github.com/atlassian/pragmatic-drag-and-drop) - Fast drag and drop for any experience on any tech stack
 - [focus-trap/focus-trap](https://github.com/focus-trap/focus-trap) - Trap focus within a DOM node.
 - [Tahul/vue-composable-starter](https://github.com/Tahul/vue-composable-starter) - 🪝 Minimalist starting point for your next Vue Composable
 - [logustra/vivu-npm](https://github.com/logustra/vivu-npm) - 🧩 Starter template to build component library for vue.js 2-3
-- [xiaoxustudio/YaMiRPG_Plugin](https://github.com/xiaoxustudio/YaMiRPG_Plugin) - 自己编写的Yami RPG 引擎插件
+- [Open-Yami-Community/YaMiRPG_Plugin](https://github.com/Open-Yami-Community/YaMiRPG_Plugin) - 自己编写的 Yami RPG 引擎插件
 - [eveningwater/my-web-projects](https://github.com/eveningwater/my-web-projects) - my web projects
 - [rfvtgbzxc/RMMZ-TS-Vite](https://github.com/rfvtgbzxc/RMMZ-TS-Vite) - Using vite, typescript and more web-front techs to progress the experience of rmmz-game development.
-- [encode-studio-fe/fe-spec](https://github.com/encode-studio-fe/fe-spec) - 印客学院 前端编码规范工程化
 - [klsdf/notes](https://github.com/klsdf/notes) - 我所有的笔记，包括计算机技术，艺术，作曲，文学等我拥有的一切知识。
-- [rfvtgbzxc/A-Star-Displayer](https://github.com/rfvtgbzxc/A-Star-Displayer) - 使用Vue展示A*算法
-- [hu-snail/vue3-resource](https://github.com/hu-snail/vue3-resource) - 🔥收集vue3资源，包含web端&移动端&小程序&Electron等栏目
-- [vaemusic/datav-vue3](https://github.com/vaemusic/datav-vue3) - datav Vue3+TS+Vite版
+- [rfvtgbzxc/A-Star-Displayer](https://github.com/rfvtgbzxc/A-Star-Displayer) - 使用 Vue 展示 A\*算法
+- [hu-snail/vue3-resource](https://github.com/hu-snail/vue3-resource) - 🔥收集 vue3 资源，包含 web 端&移动端&小程序&Electron 等栏目
+- [vaemusic/datav-vue3](https://github.com/vaemusic/datav-vue3) - datav Vue3+TS+Vite 版
 - [DataV-Team/DataV-Vue3](https://github.com/DataV-Team/DataV-Vue3) - WIP: DataV Vue3 + Vite + TypeScript
-- [Ludidi/amap-jsapi-plugins-types](https://github.com/Ludidi/amap-jsapi-plugins-types) - 高德地图 jsapi-2.0 插件DTS
+- [Ludidi/amap-jsapi-plugins-types](https://github.com/Ludidi/amap-jsapi-plugins-types) - 高德地图 jsapi-2.0 插件 DTS
 - [HULANG-BTB/element-ui-helper](https://github.com/HULANG-BTB/element-ui-helper) - A VSCode extension for Element UI.
-- [jxdingx/chrome-SaveAllResources](https://github.com/jxdingx/chrome-SaveAllResources) - 可以直接下载浏览器sources资源的Chrome插件
-- [pekonchan/Blog](https://github.com/pekonchan/Blog) - 
+- [jxdingx/chrome-SaveAllResources](https://github.com/jxdingx/chrome-SaveAllResources) - 可以直接下载浏览器 sources 资源的 Chrome 插件
+- [pekonchan/Blog](https://github.com/pekonchan/Blog) -
 - [ryanhanwu/How-To-Ask-Questions-The-Smart-Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) - 本文原文由知名 Hacker Eric S. Raymond 所撰寫，教你如何正確的提出技術問題並獲得你滿意的答案。
-- [xlei1123/please-update-cnpm](https://github.com/xlei1123/please-update-cnpm) - 强制项目内所有成员统一淘宝镜像源，淘宝旧镜像源将于2022年5月份停止服务
-- [kinoyaa/godot_task_manager](https://github.com/kinoyaa/godot_task_manager) - 
-- [godmid/godmid.github.io](https://github.com/godmid/godmid.github.io) - 
+- [xlei1123/please-update-cnpm](https://github.com/xlei1123/please-update-cnpm) - 强制项目内所有成员统一淘宝镜像源，淘宝旧镜像源将于 2022 年 5 月份停止服务
+- [kinoyaa/godot_task_manager](https://github.com/kinoyaa/godot_task_manager) -
+- [godmid/godmid.github.io](https://github.com/godmid/godmid.github.io) -
 - [Melody-of-Oblivion/Melody-of-Oblivion.github.io](https://github.com/Melody-of-Oblivion/Melody-of-Oblivion.github.io) - 简单小博客。
 - [otris/jsdoc-tsd](https://github.com/otris/jsdoc-tsd) - JSDoc template for generating TypeScript definition files based on JSDoc comments.
 - [vuepress-theme-hope/vuepress-theme-hope](https://github.com/vuepress-theme-hope/vuepress-theme-hope) - A vuepress theme with tons of features✨
-- [ruanyf/es6tutorial](https://github.com/ruanyf/es6tutorial) - 《ECMAScript 6入门》是一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新增的语法特性。
-- [cll123456/myPackage](https://github.com/cll123456/myPackage) - 从0开始学 rollup,  esbuild,  webpack5 等
-- [u2sb/vuepress-plugin-vssue-global](https://github.com/u2sb/vuepress-plugin-vssue-global) - Vuepress的Vssue全局评论插件
-- [ruan-cat/rmmv-http](https://github.com/ruan-cat/rmmv-http) - 基于axios.js的rmmv联网插件
-- [JMWpower/xiaojiejie](https://github.com/JMWpower/xiaojiejie) - 
+- [ruanyf/es6tutorial](https://github.com/ruanyf/es6tutorial) - 《ECMAScript 6 入门》是一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新增的语法特性。
+- [cll123456/myPackage](https://github.com/cll123456/myPackage) - 从 0 开始学 rollup, esbuild, webpack5 等
+- [u2sb/vuepress-plugin-vssue-global](https://github.com/u2sb/vuepress-plugin-vssue-global) - Vuepress 的 Vssue 全局评论插件
+- [ruan-cat/rmmv-http](https://github.com/ruan-cat/rmmv-http) - 基于 axios.js 的 rmmv 联网插件
 - [DrillUp/DrillPluginInformationReader](https://github.com/DrillUp/DrillPluginInformationReader) - 插件信息查看器
-- [ShiLinChenYing/RMMV-Plugins-SLCY](https://github.com/ShiLinChenYing/RMMV-Plugins-SLCY) - 石林尘影自制的RMMV插件合集。
+- [ShiLinChenYing/RMMV-Plugins-SLCY](https://github.com/ShiLinChenYing/RMMV-Plugins-SLCY) - 石林尘影自制的 RMMV 插件合集。
 - [Sora-Shiro/RMMV-Learn](https://github.com/Sora-Shiro/RMMV-Learn) - RPG Maker MV Learning Note
-- [wangwangxingao/RMMV](https://github.com/wangwangxingao/RMMV) - 
+- [wangwangxingao/RMMV](https://github.com/wangwangxingao/RMMV) -
 - [SoftwareBrothers/better-docs](https://github.com/SoftwareBrothers/better-docs) - Beautiful toolbox for jsdoc generated documentation - with 'typescript', `category` and `component` plugins
 - [shanyuhai123/vuepress-plugin-auto-sidebar](https://github.com/shanyuhai123/vuepress-plugin-auto-sidebar) - vuepress 自动生成侧边栏的插件。
 - [Ahaochan/Tampermonkey](https://github.com/Ahaochan/Tampermonkey) - 油猴脚本集合
 - [Tampermonkey/tampermonkey](https://github.com/Tampermonkey/tampermonkey) - Tampermonkey is the most popular userscript manager, with over 10 million users. It's available for Chrome, Microsoft Edge, Safari, Opera Next, and Firefox.
 - [Micropoor/Micro8](https://github.com/Micropoor/Micro8) - Gitbook
 - [yiminghe/async-validator](https://github.com/yiminghe/async-validator) - validate form asynchronous
-- [XMandarava/Plugins4RMMV](https://github.com/XMandarava/Plugins4RMMV) - 
+- [XMandarava/Plugins4RMMV](https://github.com/XMandarava/Plugins4RMMV) -
 - [Electravirus/MV3D](https://github.com/Electravirus/MV3D) - 3D RPG Maker MV Plugin
-- [luckyCatMiao/rpgmakermv-library-ChineseAnnotations](https://github.com/luckyCatMiao/rpgmakermv-library-ChineseAnnotations) - 
-- [rpgtkoolmv/corescript](https://github.com/rpgtkoolmv/corescript) - 
+- [luckyCatMiao/rpgmakermv-library-ChineseAnnotations](https://github.com/luckyCatMiao/rpgmakermv-library-ChineseAnnotations) -
+- [rpgtkoolmv/corescript](https://github.com/rpgtkoolmv/corescript) -
 - [kins-dev/rpgmaker-mv-pixi5](https://github.com/kins-dev/rpgmaker-mv-pixi5) - Taking the core of RPGMaker MV and updating it for PixiJS v5.3.3
 - [mr099985/RMMVPlugin-Yanfly_TW](https://github.com/mr099985/RMMVPlugin-Yanfly_TW) - Translation "Plugin Comment" to Chinese(Traditional) .
 - [Ippang/Yanfly-Engine-Plugins-MV](https://github.com/Ippang/Yanfly-Engine-Plugins-MV) - A collection of Yanfly's MV Plugins. (http://yanfly.moe/)
-- [neohoy/RPG-Maker-MV](https://github.com/neohoy/RPG-Maker-MV) - Yanfly插件汉化
+- [neohoy/RPG-Maker-MV](https://github.com/neohoy/RPG-Maker-MV) - Yanfly 插件汉化
 - [miaowm5/RMMV-F1](https://github.com/miaowm5/RMMV-F1) - RPG Maker MV 帮助文档汉化
 - [pixijs-userland/tilemap](https://github.com/pixijs-userland/tilemap) - Rectangular tilemap implementation for PixiJS
 - [ruan-cat/Vue.js-Learning-Example](https://github.com/ruan-cat/Vue.js-Learning-Example) - Vue.js_2.x-Learning-Example
