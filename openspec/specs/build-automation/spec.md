@@ -1,8 +1,11 @@
 # build-automation Specification
 
 ## Purpose
+
 TBD - created by archiving change add-topic-splitting-script. Update Purpose after archive.
+
 ## Requirements
+
 ### Requirement: 自动拆分 Topics 文件
 
 系统 SHALL 提供一个 TypeScript 脚本，能够自动读取 `docs/topics/index.md` 文件并将其中的二级标题内容拆分为单独的 markdown 文件。
@@ -63,4 +66,3 @@ TBD - created by archiving change add-topic-splitting-script. Update Purpose aft
 - **WHEN** 尝试写入该文件时
 - **THEN** 系统应记录错误信息
 - **AND** 跳过该文件继续处理其他文件
-

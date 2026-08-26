@@ -28,7 +28,7 @@ export function splitTopics(): void {
 
 	try {
 		// 读取源文件内容
-		const content = readFileSync(SOURCE_FILE, 'utf-8');
+		const content = readFileSync(SOURCE_FILE, "utf-8");
 
 		// 提取所有二级标题
 		const headings = extractHeadings(content);
@@ -61,7 +61,7 @@ export function splitTopics(): void {
 
 			// 写入文件
 			const fileContent = `# ${formattedTitle}\n\n${sectionContent}`;
-			writeFileSync(filepath, fileContent, 'utf-8');
+			writeFileSync(filepath, fileContent, "utf-8");
 
 			processedCount++;
 			logger.success(`Created: ${filename}`);
@@ -69,7 +69,7 @@ export function splitTopics(): void {
 
 		logger.success(`Successfully created ${processedCount} topic files`);
 	} catch (error) {
-		logger.error('Failed to split topics:', error);
+		logger.error("Failed to split topics:", error);
 		throw error;
 	}
 }
@@ -81,14 +81,14 @@ export function splitTopics(): void {
  */
 function extractHeadings(content: string): Array<{ title: string; anchor: string; lineIndex: number }> {
 	const headings: Array<{ title: string; anchor: string; lineIndex: number }> = [];
-	const lines = content.split('\n');
+	const lines = content.split("\n");
 
 	lines.forEach((line, index) => {
 		// 匹配二级标题: ## Title
 		const match = line.match(/^##\s+(.+)$/);
 		if (match) {
 			const title = match[1].trim();
-			const anchor = title.toLowerCase().replace(/\s+/g, '-');
+			const anchor = title.toLowerCase().replace(/\s+/g, "-");
 			headings.push({ title, anchor, lineIndex: index });
 		}
 	});
@@ -103,7 +103,7 @@ function extractHeadings(content: string): Array<{ title: string; anchor: string
  * @returns 标题下的内容（不包含标题本身）
  */
 function extractContent(content: string, heading: { title: string; anchor: string; lineIndex: number }): string | null {
-	const lines = content.split('\n');
+	const lines = content.split("\n");
 	const startLine = heading.lineIndex + 1;
 
 	// 查找下一个同级或更高级标题
@@ -119,7 +119,7 @@ function extractContent(content: string, heading: { title: string; anchor: strin
 
 	// 提取内容并去除首尾空行
 	const contentLines = lines.slice(startLine, endLine);
-	const trimmedContent = contentLines.join('\n').trim();
+	const trimmedContent = contentLines.join("\n").trim();
 
 	return trimmedContent || null;
 }
@@ -131,10 +131,10 @@ function extractContent(content: string, heading: { title: string; anchor: strin
  */
 function formatTitle(title: string): string {
 	// 将连字符替换为空格
-	const spacedTitle = title.replace(/-/g, ' ');
+	const spacedTitle = title.replace(/-/g, " ");
 
 	// 每个单词首字母大写
-	return spacedTitle.replace(/\b\w/g, char => char.toUpperCase());
+	return spacedTitle.replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
 /**

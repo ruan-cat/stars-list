@@ -51,7 +51,8 @@ export function adjustTitleFormat(): void {
  */
 function adjustTitle(content: string): string {
 	// 匹配一级标题和徽章（考虑可能有注释行在前）
-	const titlePattern = /^(#\s+Awesome Stars)\s+(\[!\[Awesome\]\(https:\/\/awesome\.re\/badge\.svg\)\]\(https:\/\/github\.com\/sindresorhus\/awesome\))/m;
+	const titlePattern =
+		/^(#\s+Awesome Stars)\s+(\[!\[Awesome\]\(https:\/\/awesome\.re\/badge\.svg\)\]\(https:\/\/github\.com\/sindresorhus\/awesome\))/m;
 
 	// 检查是否匹配
 	const match = content.match(titlePattern);

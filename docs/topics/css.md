@@ -16,7 +16,7 @@
 - [vexip-ui/lint-config](https://github.com/vexip-ui/lint-config) - Lint config for Vexip UI
 - [Evavic44/portfolio-ideas](https://github.com/Evavic44/portfolio-ideas) - A curation of awesome portfolio website ideas for developers and designers to draw inspiration from. Raise a pull request to add more. 💜
 - [zdhxiong/mdui](https://github.com/zdhxiong/mdui) - Material Design 3(Material You) UI components using Web Components.
-- [royalknight56/vtron](https://github.com/royalknight56/vtron) - Win10 Style Frontend Framework built with Vue3.基于Vue3的win10风格的UI框架.  windows10 in vue3
+- [royalknight56/vtron](https://github.com/royalknight56/vtron) - Win10 Style Frontend Framework built with Vue3.基于 Vue3 的 win10 风格的 UI 框架. windows10 in vue3
 - [isboyjc/Interview](https://github.com/isboyjc/Interview) - 八股是一份开放的面试题库，我们的愿景是覆盖 90%+ IT 知识点问答，节省面试者和面试官的时间！同时也是一份结构化的知识图谱，源于学习，而不是刷题！
 - [vexip-ui/vexip-ui](https://github.com/vexip-ui/vexip-ui) - A Vue 3 UI library, highly customizability, full TypeScript, performance pretty good.
 - [lgwebdream/FE-Interview](https://github.com/lgwebdream/FE-Interview) - 🔥🔥🔥 前端面试，独有前端面试题详解，前端面试刷题必备，1000+前端面试真题，Html、Css、JavaScript、Vue、React、Node、TypeScript、Webpack、算法、网络与安全、浏览器
