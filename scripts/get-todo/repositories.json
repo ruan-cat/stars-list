@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"owner": "ruan-cat",
-	"generatedAt": "2026-08-26T16:12:35.577Z",
+	"generatedAt": "2026-08-26T17:05:27.015Z",
 	"source": "github-api",
 	"manifestStale": false,
 	"repositories": [
@@ -159,35 +159,8 @@
 			"lastFetchedAt": null
 		},
 		{
-			"fullName": "ruan-cat/common",
-			"visibility": "private",
-			"fork": false,
-			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
 			"fullName": "ruan-cat/deploy-game-on-vercel-demo",
 			"visibility": "public",
-			"fork": false,
-			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
-			"fullName": "ruan-cat/dfsw-assets-admin",
-			"visibility": "private",
-			"fork": false,
-			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
-			"fullName": "ruan-cat/dfsw-oa-initialization",
-			"visibility": "private",
 			"fork": false,
 			"archived": false,
 			"selectedBranch": null,
@@ -267,26 +240,8 @@
 			"lastFetchedAt": null
 		},
 		{
-			"fullName": "ruan-cat/gzpc-big-screen",
-			"visibility": "private",
-			"fork": false,
-			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
 			"fullName": "ruan-cat/HelloWorld",
 			"visibility": "public",
-			"fork": false,
-			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
-			"fullName": "ruan-cat/hzx10",
-			"visibility": "private",
 			"fork": false,
 			"archived": false,
 			"selectedBranch": null,
@@ -357,15 +312,6 @@
 			"lastFetchedAt": null
 		},
 		{
-			"fullName": "ruan-cat/learn-openapi-template-with-cloudflare",
-			"visibility": "private",
-			"fork": false,
-			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
 			"fullName": "ruan-cat/learn-openx-ui",
 			"visibility": "public",
 			"fork": false,
@@ -423,15 +369,6 @@
 			"fullName": "ruan-cat/mota-js",
 			"visibility": "public",
 			"fork": true,
-			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
-			"fullName": "ruan-cat/mygithub-store",
-			"visibility": "private",
-			"fork": false,
 			"archived": false,
 			"selectedBranch": null,
 			"lastKnownCommitSha": null,
@@ -510,15 +447,6 @@
 			"lastFetchedAt": null
 		},
 		{
-			"fullName": "ruan-cat/resume",
-			"visibility": "private",
-			"fork": false,
-			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
 			"fullName": "ruan-cat/rm-monorepo",
 			"visibility": "public",
 			"fork": false,
@@ -586,15 +514,6 @@
 			"visibility": "public",
 			"fork": false,
 			"archived": false,
-			"selectedBranch": null,
-			"lastKnownCommitSha": null,
-			"lastFetchedAt": null
-		},
-		{
-			"fullName": "ruan-cat/tun-shi-tian-di-rmmz",
-			"visibility": "private",
-			"fork": false,
-			"archived": true,
 			"selectedBranch": null,
 			"lastKnownCommitSha": null,
 			"lastFetchedAt": null
