@@ -71,7 +71,10 @@ jobs:
             docs/public/artifacts/github-todos/ruan-cat.json
           if-no-files-found: error
       - name: Commit artifact
+        env:
+          GH_TOKEN: ${{ secrets.TODO_SCAN_PAT }}
         run: |
+          gh auth setup-git
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add scripts/get-todo/repositories.json
