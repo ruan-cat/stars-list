@@ -256,6 +256,27 @@ pnpm docs:build-in-github-page
 pnpm build
 ```
 
+### GitHub TODO 扫描与工件
+
+```bash
+# 本地 Windows 全量扫描（需要 GITHUB_PAT_TOKEN；Git-first/degit）
+pnpm todo:scan -- --owner ruan-cat --transport degit --refresh-manifest --manifest scripts/get-todo/repositories.json --output artifacts/github-todos/ruan-cat.json
+
+# 离线 fixture（只验证 parser/CLI）
+pnpm todo:scan -- --owner ruan-cat --fixture scripts/get-todo/fixtures --output artifacts/github-todos/ruan-cat.json
+
+# 校验结果
+pnpm todo:validate -- artifacts/github-todos/ruan-cat.json
+
+# scanner 全量测试
+pnpm todo:test
+```
+
+- `todo:scan` 使用 `degit`，按 `dev → main → master` 选分支，默认排除 fork；失败仓库写入 artifact 的 `repositories[].status/errors`，不会静默丢失。
+- 私有仓库使用 `GITHUB_PAT_TOKEN`；API Bearer 仅用于清单，Git transport 使用不进 argv 的 Basic `x-access-token:<PAT>` extraheader。`branch_unavailable` 是无目标分支，不等于认证失败。
+- `artifacts/github-todos/ruan-cat.json` 是 VitePress TODO 页面运行时读取的数据源；`complete/partial` 必须结合 summary 与 errors 解读。
+- 本地文档命令默认不生成派生 Markdown；需要刷新时显式设置 `GENERATE_DERIVED_DOCS=true`。GitHub Actions 会自动生成。
+
 ### 代码质量
 
 ```bash
