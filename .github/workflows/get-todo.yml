@@ -26,15 +26,15 @@ jobs:
         run: pnpm install --no-frozen-lockfile
       - name: Verify private scan credential
         env:
-          GITHUB_PAT_TOKEN: ${{ secrets.GITHUB_PAT_TOKEN }}
+          GITHUB_PAT_TOKEN: ${{ secrets.TODO_SCAN_PAT }}
         run: |
           if [ -z "$GITHUB_PAT_TOKEN" ]; then
-            echo "::error::GITHUB_PAT_TOKEN is required for the owner-wide open/private repository scan"
+            echo "::error::TODO_SCAN_PAT repository secret is required for the owner-wide open/private repository scan"
             exit 1
           fi
       - name: Scan repositories
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TODO_SCAN_PAT }}
         run: pnpm todo:scan -- --owner ruan-cat --transport degit --refresh-manifest --strict --manifest scripts/get-todo/repositories.json --output artifacts/github-todos/ruan-cat.json
       - name: Require authenticated full scan
         run: |
