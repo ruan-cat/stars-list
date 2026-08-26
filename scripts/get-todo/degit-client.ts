@@ -5,6 +5,8 @@ import { promisify } from "node:util";
 
 import degit from "degit";
 
+import { commandEnvironment } from "./git-auth.ts";
+
 const execFile = promisify(execFileCallback);
 
 export interface DegitEmitterLike {
@@ -31,16 +33,6 @@ export interface SnapshotResult {
 	source: "degit" | "git-fallback";
 	commitSha: string;
 	cacheStatus: "hit" | "miss" | "fallback";
-}
-
-function commandEnvironment(token?: string): NodeJS.ProcessEnv {
-	const environment: NodeJS.ProcessEnv = { ...process.env, GIT_TERMINAL_PROMPT: "0" };
-	if (token) {
-		environment.GIT_CONFIG_COUNT = "1";
-		environment.GIT_CONFIG_KEY_0 = "http.https://github.com/.extraheader";
-		environment.GIT_CONFIG_VALUE_0 = `AUTHORIZATION: bearer ${token}`;
-	}
-	return environment;
 }
 
 async function removeGitMetadata(destination: string): Promise<void> {
