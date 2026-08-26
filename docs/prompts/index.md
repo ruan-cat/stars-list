@@ -314,3 +314,9 @@ Vue Query API 边界分工，由你来设计，我同意；
 GitHub TODO 扫描 Workflow，产生了 artifacts\github-todos 的工件，这些工件会被另外一个工作流 build 的时候，被识别么？两个工作流都在修改文件，最后实际 build 的时候能获取到另外一部分的信息么？
 
 这两个工作流的工件，是不是事实上错位啊？比如 build page 的工作流，可能拿到的是稍微旧一点的 TODO 工件啊？
+
+### 持续完成 vitepress vue 的测试和生产环境 github workflow 测试
+
+你能确定我们的云端 github workflow 任务，能够完成全量的信息获取么？你有做测试么？你能做主动的触发并联调测试么？
+我现在授权你 git commit。
+你对全部内容做分门别类编写提交信息，然后 git commit，然后 git push，rebase 到 main 分支。并且用 github MCP 或者 gh cli 完成 github workflow 的主动触发，校验检查 github workflow 的任务工件生成效果。是否能完成开源和闭源仓库的 TODO 信息获取。
