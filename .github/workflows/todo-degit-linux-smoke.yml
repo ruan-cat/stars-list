@@ -1,0 +1,41 @@
+name: TODO degit Linux smoke
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dev implementation
+        uses: actions/checkout@v6
+        with:
+          ref: dev
+          fetch-depth: 1
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          version: 10.33.0
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.18.0
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Run scanner tests
+        run: pnpm todo:test
+      - name: Run public degit smoke
+        run: |
+          DESTINATION="$RUNNER_TEMP/todo-degit-smoke"
+          pnpm exec degit octocat/Hello-World#master "$DESTINATION" --force
+          test ! -d "$DESTINATION/.git"
+          test -f "$DESTINATION/README"
+          rm -rf "$DESTINATION"
+      - name: Run fixture contract validation
+        run: |
+          pnpm todo:scan -- --fixture scripts/get-todo/fixtures --output "$RUNNER_TEMP/todo-artifact.json"
+          pnpm todo:validate -- "$RUNNER_TEMP/todo-artifact.json"
