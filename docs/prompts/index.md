@@ -82,7 +82,7 @@ logger.info(`${packageName} v${packageVersion} is running...`);
 
 1. 在 `docs\.vitepress\config.ts` 的 `splitTopics` 函数之前，在 `copyReadmeMd` 之后调用。
 
-## 004 <!-- TODO: --> 设计一个检查指定 github user 用户仓库全部 TODO 待办任务的工作流
+## 004 <!-- TODO: 2026-8-26 codex正在做 --> 设计一个检查指定 github user 用户仓库全部 TODO 待办任务的工作流
 
 这是一个产品调研、技术方案调研，和落地任务设计的任务：
 
@@ -117,11 +117,13 @@ logger.info(`${packageName} v${packageVersion} is running...`);
 ### <!-- TODO: ZCode正在做 --> 换接口请求模型为 `claude-sonnet-5[1m]` ，并做出其他相应的改动
 ```
 
-提取文本为：
+提取文本为： 调研合适的 nitro 接口生成接口请求信息表的工具
 
 ```markdown
 ## 005 <!-- TODO: --> 调研合适的 nitro 接口生成接口请求信息表的工具
 ```
+
+提取的文本为： 尝试更换付款方式的虚拟卡为美国卡
 
 ```markdown
 ## <!-- TODO: --> 尝试更换付款方式的虚拟卡为美国卡
@@ -133,11 +135,25 @@ logger.info(`${packageName} v${packageVersion} is running...`);
 <!-- TODO: -->
 ```
 
+在这种情况下，你提取下面最近的一行，通常是这样的：
+
+```markdown
+<!-- TODO: -->
+
+回到本项目，针对 `docs\plan\2026-8-25-up-to-latest-nitro` 文件。
+
+更新上述报告的主体。上述报告的主体是以 `D:\code\ruan-cat\learn-nitro-starter-with-vercel` 的身份写的，不是以 `D:\store\WorkBuddy\2026-6-30-common` 的身份写的。
+```
+
+这个时候你提取的是这一行： 回到本项目，针对 `docs\plan\2026-8-25-up-to-latest-nitro` 文件。
+
 5. 在 markdown 内裸露的单行且有内容的 TODO。
 
 ```markdown
 <!-- TODO: 后面再考虑提供更好看的动效 现在暂时没有需求 -->
 ```
+
+你提取这一行： 后面再考虑提供更好看的动效 现在暂时没有需求
 
 6. 在 markdown 内嵌入某行的 TODO。
 
@@ -145,11 +161,15 @@ logger.info(`${packageName} v${packageVersion} is running...`);
 1. <!-- TODO: 可接受的优化 --> **先降低默认输出成本。** 默认 stdout 只返回摘要；增加显式完整审计开关。摘要至少包含 `Mode`、`CandidateCount`、候选 PID、阻断原因聚合、WorkBuddy 分组、停止结果、验证结果和是否存在 respawn。
 ```
 
+你提取的是这一行： 可接受的优化
+
 7. 在其他格式文件的 TODO。
 
 ```scss
 // TODO: 实现图标变化的动效
 ```
+
+你提取的是： 实现图标变化的动效
 
 ```typescript
 /**
@@ -176,11 +196,15 @@ export type HttpParamWay =
 	| "body";
 ```
 
+你提取的是： 准备删除该工具
+
 ### 格式匹配黑名单
 
 ```markdown
 ## 015 <!-- TODO: -->
 ```
+
+你什么都不提取。不要做任何识别和处理。
 
 ### 制作用 tsx 直接驱动的 typescript 脚本
 
@@ -196,3 +220,44 @@ export type HttpParamWay =
 ### 验收与校验方式
 
 你自己设计。按理说在 window 内执行一次脚本就行了。你设计。
+
+---
+
+### 2026-8-26 沟通
+
+你说的对，我们的 token 这样获取：
+
+如果你发现在本地 window 执行的时候，没有可以用的环境变量获取到个人级别的环境变量，那么你就默认只查询开源仓库，不查询私人仓库。
+如果你在 github workflow 内运行时，那么你必须要查询私有和公开仓库，因为给 github workflow 肯定会给你提供 user token。
+运行时优先读取 GITHUB_TOKEN，兼容我现有的 GITHUB_PAT_TOKEN
+
+---
+
+你说的对，branch 分支的查询细节我没有考虑清楚。
+
+分支扫描策略如下：
+
+1. 优先扫描名为 dev 的开发分支。因为我的主分支经常不更新。
+2. 目标 repo 仓库没有 dev 分支时，默认查询 main master 分支。即主分支。
+
+---
+
+你考虑的很好。我们现在只按照这样的方式来做查询。我们只查询 `TODO` ，只查询大写的 TODO。就这 4 个大写字母。
+允许 TODO 后有冒号和空白。
+`todo: 修复` 是不识别的。这是小写。
+TODOLIST 不识别。这不是单独的文本。
+TODO: 是识别的。特别是大写字母且带有冒号的。
+
+---
+
+采用“向下跳过空白行，取第一条非空文本行；遇到下一个标题、代码围栏或另一个 TODO 就停止并记录 unresolved_empty_todo，避免误把结构行当待办”的规则
+我确认
+
+---
+
+顺便更新 .github\workflows\schedules.yml 的 git commit message 写法，按照我常见的 git-commit 技能的指导，来完成 git commit message 的字符串模板编写。就像你在 .github\workflows\get-todo.yml 写的一样。
+
+### 2026-8-26 思考配额受限的问题
+
+我们受限于 github api 的配额问题，这是我们之前调研没想到的。我们还有哪些方案，可以跳过这个 github api 配额问题的？用本地浅克隆形式的 git clone 或者是 degit 方案，可以实现基于本地文件的快速查询么？
+这个方案在本地 window 和云端 github workflow 都合适吗？
