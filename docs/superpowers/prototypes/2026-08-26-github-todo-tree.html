@@ -411,7 +411,7 @@
 			</div>
 			<div class="actions">
 				<button class="icon-button" aria-label="toggle theme">☾</button
-				><button class="refresh">↻ Refresh artifact</button>
+				><button class="refresh" type="button" onclick="demoRefresh(this)">↻ Refresh artifact</button>
 			</div>
 		</header>
 
@@ -458,7 +458,13 @@
 						<span class="chev">›</span><span class="kind">▤</span><span>2026-8-25-up-to-latest-nitro.md</span
 						><span class="count">4</span>
 					</button>
-					<button class="node level-4 active">
+					<button
+						class="node level-4 active"
+						data-todo-title="更新接口请求信息表"
+						data-todo-path="learn-nitro-starter-with-vercel / docs / plan / 2026-8-25-up-to-latest-nitro.md"
+						data-todo-text="调研合适的 nitro 接口生成接口请求信息表的工具"
+						data-todo-line="L38"
+					>
 						<span class="chev">•</span><span class="kind">!</span><span>更新接口请求信息表</span
 						><span class="count">L38</span>
 					</button>
@@ -497,7 +503,9 @@
 						<div class="meta"><small>Commit</small><code>8e7c4ad</code></div>
 						<div class="meta"><small>Source</small><code>degit · cache hit</code></div>
 					</div>
-					<div class="status"><span class="dot"></span> artifact 已加载 · 2026-08-26 10:42 · 点击路径可跳转 GitHub</div>
+					<div class="status" id="artifact-status" aria-live="polite">
+						<span class="dot"></span> artifact 已加载 · 2026-08-26 10:42 · 点击路径可跳转 GitHub
+					</div>
 				</div>
 			</section>
 		</div>
@@ -506,3 +514,37 @@
 		</div>
 	</section>
 </main>
+
+<script>
+	function demoRefresh(button) {
+		if (button.dataset.loading === "true") return;
+		button.dataset.loading = "true";
+		button.disabled = true;
+		button.textContent = "↻ 读取中…";
+		const status = document.querySelector("#artifact-status");
+		if (status) status.innerHTML = '<span class="dot" style="background: var(--amber)"></span> 正在读取公开 artifact…';
+		window.setTimeout(() => {
+			button.dataset.loading = "false";
+			button.disabled = false;
+			button.textContent = "↻ Refresh artifact";
+			if (status) status.innerHTML = '<span class="dot"></span> artifact 已更新 · 刚刚 · 本次为演示读取';
+		}, 700);
+	}
+
+	document.querySelectorAll(".node").forEach((node) => {
+		node.addEventListener("click", () => {
+			document.querySelectorAll(".node").forEach((item) => item.classList.remove("active"));
+			node.classList.add("active");
+			const title = node.dataset.todoTitle;
+			if (!title) return;
+			const heading = document.querySelector(".detail-head h2");
+			const path = document.querySelector(".detail-head p");
+			const text = document.querySelector(".todo-card p");
+			const badge = document.querySelector(".badge");
+			if (heading) heading.textContent = title;
+			if (path) path.textContent = node.dataset.todoPath || "";
+			if (text) text.textContent = node.dataset.todoText || "";
+			if (badge) badge.textContent = `TODO · ${node.dataset.todoLine || "selected"}`;
+		});
+	});
+</script>
