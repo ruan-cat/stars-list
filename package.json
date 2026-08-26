@@ -26,13 +26,17 @@
 		"docs:build": "vitepress build docs",
 		"docs:preview": "vitepress preview docs",
 		"docs:build-in-github-page": "vitepress build docs --base=/stars-list/",
-		"build": "pnpm docs:build-in-github-page"
+		"build": "pnpm docs:build-in-github-page",
+		"todo:scan": "tsx scripts/get-todo/cli.ts",
+		"todo:validate": "tsx scripts/get-todo/validate.ts",
+		"todo:test": "tsx --test scripts/get-todo/*.test.ts"
 	},
 	"devDependencies": {
 		"@prettier/plugin-oxc": "^0.1.4",
 		"@ruan-cat/commitlint-config": "^4.11.1",
 		"@ruan-cat/taze-config": "^1.1.1",
 		"@ruan-cat/vitepress-preset-config": "^3.2.1",
+		"@types/node": "^26.3.0",
 		"commitizen": "^4.3.1",
 		"commitlint": "^20.5.0",
 		"cz-git": "^1.12.0",
@@ -41,6 +45,7 @@
 		"prettier-plugin-lint-md": "1.0.1",
 		"simple-git-hooks": "^2.13.1",
 		"taze": "^19.11.0",
+		"tsx": "^4.23.12",
 		"vitepress": "^1.6.4",
 		"vitepress-demo-plugin": "^1.5.1",
 		"vue": "^3.5.32"
@@ -53,6 +58,9 @@
 	],
 	"license": "MIT",
 	"dependencies": {
-		"consola": "^3.4.2"
+		"citty": "^0.2.2",
+		"consola": "^3.4.2",
+		"degit": "^3.8.0",
+		"ofetch": "^1.5.1"
 	}
 }

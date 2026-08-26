@@ -1,0 +1,40 @@
+name: Scan GitHub TODOs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 1 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          version: 10.33.0
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.18.0
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Scan repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT_TOKEN }}
+        run: pnpm todo:scan -- --owner ruan-cat --transport degit --refresh-manifest --strict --manifest scripts/get-todo/repositories.json --output artifacts/github-todos/ruan-cat.json
+      - name: Validate artifact
+        run: pnpm todo:validate -- artifacts/github-todos/ruan-cat.json
+      - name: Commit artifact
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/get-todo/repositories.json
+          git add artifacts/github-todos/ruan-cat.json
+          git diff --cached --quiet || git commit -m "🐎 ci(todo): 更新 GitHub TODO 扫描清单与结果"
+          git push

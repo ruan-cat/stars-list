@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"owner": "ruan-cat",
+	"generatedAt": "2026-08-26T00:00:00.000Z",
+	"source": "manual",
+	"manifestStale": false,
+	"repositories": [
+		{
+			"fullName": "ruan-cat/fixture-original",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": "dev",
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/fixture-fork",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": "main",
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		}
+	]
+}
