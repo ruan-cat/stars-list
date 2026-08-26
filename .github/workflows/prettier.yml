@@ -1,0 +1,132 @@
+name: 云端 PR Prettier 格式化
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: cloud-pr-prettier-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  format-same-repository:
+    name: 格式化同仓 PR 改动
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          version: 10.33.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.18.0
+          cache: pnpm
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Format changed PR files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        shell: bash
+        run: |
+          files=()
+          while IFS= read -r -d '' file; do
+            files+=("$file")
+          done < <(git diff --name-only -z --diff-filter=ACMR "$BASE_SHA...$HEAD_SHA" -- \
+            '*.js' '*.jsx' '*.mjs' '*.cjs' '*.ts' '*.tsx' '*.mts' '*.cts' \
+            '*.json' '*.jsonc' '*.md' '*.mdx' '*.yaml' '*.yml' '*.css' '*.scss' '*.less' '*.html')
+
+          if ((${#files[@]} == 0)); then
+            echo "PR 中没有需要 Prettier 处理的文件。"
+            exit 0
+          fi
+
+          pnpm exec prettier --experimental-cli --no-parallel --write -- "${files[@]}"
+          git add -- "${files[@]}"
+          git diff --cached --check
+
+          if git diff --cached --quiet; then
+            echo "Prettier 未产生格式化改动。"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "🌈 style: 自动格式化 PR 改动"
+          git push origin "HEAD:$HEAD_REF"
+
+  check-fork:
+    name: 检查 fork PR 改动
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout fork PR head
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          version: 10.33.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.18.0
+          cache: pnpm
+
+      - name: Install locked dependencies without scripts
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Fetch upstream base commit
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        shell: bash
+        run: git fetch --no-tags --depth=1 "https://github.com/${{ github.repository }}.git" "$BASE_SHA"
+
+      - name: Check changed PR files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash
+        run: |
+          files=()
+          while IFS= read -r -d '' file; do
+            files+=("$file")
+          done < <(git diff --name-only -z --diff-filter=ACMR "$BASE_SHA...$HEAD_SHA" -- \
+            '*.js' '*.jsx' '*.mjs' '*.cjs' '*.ts' '*.tsx' '*.mts' '*.cts' \
+            '*.json' '*.jsonc' '*.md' '*.mdx' '*.yaml' '*.yml' '*.css' '*.scss' '*.less' '*.html')
+
+          if ((${#files[@]} == 0)); then
+            echo "PR 中没有需要 Prettier 检查的文件。"
+            exit 0
+          fi
+
+          pnpm exec prettier --experimental-cli --no-parallel --check -- "${files[@]}"
