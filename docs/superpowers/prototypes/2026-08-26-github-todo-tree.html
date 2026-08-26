@@ -1,0 +1,508 @@
+<style>
+	:root {
+		--ink: #e8eef5;
+		--muted: #8fa2b8;
+		--surface: #111a24;
+		--surface-2: #172433;
+		--surface-3: #1d3043;
+		--line: rgba(166, 190, 214, 0.16);
+		--cyan: #61d9e7;
+		--amber: #f4bd67;
+		--violet: #b5a2ff;
+		--green: #7cdaa1;
+		--shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+		font-family:
+			Inter,
+			ui-sans-serif,
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			sans-serif;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		margin: 0;
+		background: #0b121a;
+		color: var(--ink);
+	}
+	button,
+	input {
+		font: inherit;
+	}
+	.prototype {
+		max-width: 1220px;
+		margin: 0 auto;
+		padding: 30px 20px 54px;
+	}
+	.eyebrow {
+		margin: 0 0 7px;
+		color: var(--cyan);
+		font-size: 11px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+	h1 {
+		margin: 0;
+		font:
+			650 clamp(28px, 4vw, 48px)/1.02 Georgia,
+			serif;
+		letter-spacing: -0.045em;
+	}
+	.lede {
+		max-width: 720px;
+		margin: 12px 0 26px;
+		color: var(--muted);
+		line-height: 1.65;
+	}
+	.choice-row {
+		display: flex;
+		gap: 10px;
+		margin: 0 0 18px;
+		flex-wrap: wrap;
+	}
+	.choice {
+		border: 1px solid var(--line);
+		background: transparent;
+		border-radius: 8px;
+		color: var(--muted);
+		padding: 8px 12px;
+		cursor: pointer;
+	}
+	.choice[data-selected="true"] {
+		border-color: var(--cyan);
+		color: var(--ink);
+		background: rgba(97, 217, 231, 0.1);
+	}
+	.shell {
+		overflow: hidden;
+		border: 1px solid var(--line);
+		border-radius: 16px;
+		background: var(--surface);
+		box-shadow: var(--shadow);
+	}
+	.topbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		padding: 16px 18px;
+		border-bottom: 1px solid var(--line);
+	}
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 11px;
+	}
+	.mark {
+		display: grid;
+		place-items: center;
+		width: 32px;
+		height: 32px;
+		border: 1px solid rgba(97, 217, 231, 0.5);
+		border-radius: 9px;
+		color: var(--cyan);
+		background: rgba(97, 217, 231, 0.08);
+		font-size: 16px;
+	}
+	.brand strong {
+		display: block;
+		font-size: 14px;
+	}
+	.brand small {
+		color: var(--muted);
+		font-size: 11px;
+	}
+	.actions {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	.icon-button,
+	.refresh {
+		border: 1px solid var(--line);
+		border-radius: 7px;
+		background: var(--surface-2);
+		color: var(--ink);
+		cursor: pointer;
+	}
+	.icon-button {
+		width: 32px;
+		height: 32px;
+	}
+	.refresh {
+		padding: 8px 12px;
+		color: #0b121a;
+		border-color: var(--cyan);
+		background: var(--cyan);
+		font-weight: 700;
+	}
+	.toolbar {
+		display: grid;
+		grid-template-columns: minmax(210px, 1.8fr) repeat(3, minmax(120px, 1fr));
+		gap: 8px;
+		padding: 12px 18px;
+		border-bottom: 1px solid var(--line);
+		background: rgba(255, 255, 255, 0.018);
+	}
+	.search,
+	.select {
+		min-width: 0;
+		border: 1px solid var(--line);
+		border-radius: 7px;
+		padding: 9px 10px;
+		color: var(--ink);
+		background: var(--surface-2);
+		outline: none;
+	}
+	.search:focus,
+	.select:focus {
+		border-color: var(--cyan);
+		box-shadow: 0 0 0 3px rgba(97, 217, 231, 0.12);
+	}
+	.metrics {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1px;
+		border-bottom: 1px solid var(--line);
+		background: var(--line);
+	}
+	.metric {
+		padding: 14px 18px;
+		background: var(--surface);
+	}
+	.metric b {
+		display: block;
+		font-size: 22px;
+		letter-spacing: -0.03em;
+	}
+	.metric span {
+		color: var(--muted);
+		font-size: 11px;
+	}
+	.workspace {
+		display: grid;
+		grid-template-columns: minmax(290px, 1.1fr) minmax(360px, 1.5fr);
+		min-height: 430px;
+	}
+	.tree-pane {
+		border-right: 1px solid var(--line);
+	}
+	.pane-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 13px 16px;
+		border-bottom: 1px solid var(--line);
+		color: var(--muted);
+		font-size: 11px;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	.tree {
+		padding: 10px 8px 16px;
+		font-size: 13px;
+	}
+	.node {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		width: 100%;
+		border: 0;
+		border-radius: 6px;
+		padding: 7px 8px;
+		color: var(--ink);
+		background: transparent;
+		text-align: left;
+		cursor: pointer;
+	}
+	.node:hover,
+	.node.active {
+		background: var(--surface-3);
+	}
+	.node .chev {
+		width: 12px;
+		color: var(--muted);
+	}
+	.node .kind {
+		width: 16px;
+		text-align: center;
+		color: var(--cyan);
+		font-size: 12px;
+	}
+	.node .count {
+		margin-left: auto;
+		border-radius: 999px;
+		padding: 2px 7px;
+		color: var(--amber);
+		background: rgba(244, 189, 103, 0.12);
+		font-size: 10px;
+	}
+	.level-1 {
+		padding-left: 28px;
+	}
+	.level-2 {
+		padding-left: 48px;
+	}
+	.level-3 {
+		padding-left: 68px;
+	}
+	.level-4 {
+		padding-left: 88px;
+	}
+	.muted {
+		color: var(--muted);
+	}
+	.detail {
+		background: linear-gradient(140deg, rgba(97, 217, 231, 0.035), transparent 42%);
+	}
+	.detail-head {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 16px;
+		padding: 19px 22px 14px;
+		border-bottom: 1px solid var(--line);
+	}
+	.detail-head h2 {
+		margin: 0 0 6px;
+		font-size: 18px;
+		letter-spacing: -0.02em;
+	}
+	.detail-head p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 12px;
+	}
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+		border-radius: 999px;
+		padding: 5px 8px;
+		color: var(--amber);
+		background: rgba(244, 189, 103, 0.12);
+		font-size: 10px;
+		white-space: nowrap;
+	}
+	.detail-body {
+		padding: 20px 22px;
+	}
+	.todo-card {
+		border: 1px solid rgba(244, 189, 103, 0.28);
+		border-left: 3px solid var(--amber);
+		border-radius: 10px;
+		padding: 15px;
+		background: rgba(244, 189, 103, 0.055);
+	}
+	.todo-card strong {
+		display: block;
+		margin-bottom: 9px;
+		color: var(--amber);
+		font-size: 12px;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
+	.todo-card p {
+		margin: 0;
+		line-height: 1.55;
+	}
+	.meta-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+		margin-top: 16px;
+	}
+	.meta {
+		padding: 11px 12px;
+		border: 1px solid var(--line);
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.02);
+	}
+	.meta small {
+		display: block;
+		margin-bottom: 5px;
+		color: var(--muted);
+		font-size: 10px;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+	.meta code {
+		color: var(--violet);
+		font-size: 12px;
+		overflow-wrap: anywhere;
+	}
+	.status {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: 18px;
+		color: var(--muted);
+		font-size: 11px;
+	}
+	.dot {
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background: var(--green);
+		box-shadow: 0 0 0 4px rgba(124, 218, 161, 0.1);
+	}
+	.footer-note {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		padding: 11px 18px;
+		border-top: 1px solid var(--line);
+		color: var(--muted);
+		font-size: 11px;
+	}
+	@media (max-width: 760px) {
+		.toolbar {
+			grid-template-columns: 1fr 1fr;
+		}
+		.search {
+			grid-column: 1 / -1;
+		}
+		.metrics {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.workspace {
+			grid-template-columns: 1fr;
+		}
+		.tree-pane {
+			border-right: 0;
+			border-bottom: 1px solid var(--line);
+		}
+		.topbar,
+		.footer-note {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+		.actions {
+			width: 100%;
+			justify-content: flex-end;
+		}
+	}
+</style>
+
+<main class="prototype">
+	<p class="eyebrow">Visual direction · cloud todo tree</p>
+	<h1>让进度像在编辑器里一样清楚。</h1>
+	<p class="lede">
+		参考 Better Todo Tree 的 Explorer 心智模型，把仓库、分支、目录、文件和 TODO
+		行压进同一棵可筛选的树；右侧只在选中节点时展开上下文。请先判断这种密度与信息层级是否适合作为 VitePress 页面。
+	</p>
+
+	<div class="choice-row" data-multiselect>
+		<button class="choice" data-choice="explorer-dense" data-selected="true" onclick="toggleSelect(this)">
+			A · Explorer 密集型（推荐）
+		</button>
+		<button class="choice" data-choice="reading-wide" onclick="toggleSelect(this)">B · 阅读宽松型</button>
+	</div>
+
+	<section class="shell" aria-label="GitHub TODO tree mockup">
+		<header class="topbar">
+			<div class="brand">
+				<div class="mark">✓</div>
+				<div><strong>GitHub TODO Tree</strong><small>ruan-cat · owner repositories</small></div>
+			</div>
+			<div class="actions">
+				<button class="icon-button" aria-label="toggle theme">☾</button
+				><button class="refresh">↻ Refresh artifact</button>
+			</div>
+		</header>
+
+		<div class="toolbar">
+			<input class="search" aria-label="Search TODOs" placeholder="⌕  搜索文本、文件路径或仓库…" value="nitro" />
+			<select class="select" aria-label="Repository">
+				<option>所有仓库</option>
+				<option>learn-nitro-starter-with-vercel</option>
+			</select>
+			<select class="select" aria-label="Branch">
+				<option>所有分支</option>
+				<option>dev</option>
+				<option>main</option>
+			</select>
+			<select class="select" aria-label="Kind">
+				<option>所有类型</option>
+				<option>markdown-heading</option>
+				<option>source-comment</option>
+			</select>
+		</div>
+
+		<div class="metrics">
+			<div class="metric"><b>128</b><span>可见 TODO</span></div>
+			<div class="metric"><b>24</b><span>仓库</span></div>
+			<div class="metric"><b>9</b><span>分支</span></div>
+			<div class="metric"><b>2m</b><span>上次读取</span></div>
+		</div>
+
+		<div class="workspace">
+			<section class="tree-pane">
+				<div class="pane-head"><span>Explorer</span><span>128 results</span></div>
+				<div class="tree">
+					<button class="node active">
+						<span class="chev">⌄</span><span class="kind">◈</span><span>learn-nitro-starter-with-vercel</span
+						><span class="count">42</span>
+					</button>
+					<button class="node level-1">
+						<span class="chev">⌄</span><span class="kind">⑂</span><span>dev</span><span class="count">31</span>
+					</button>
+					<button class="node level-2">
+						<span class="chev">⌄</span><span class="kind">□</span><span>docs / plan</span><span class="count">12</span>
+					</button>
+					<button class="node level-3">
+						<span class="chev">›</span><span class="kind">▤</span><span>2026-8-25-up-to-latest-nitro.md</span
+						><span class="count">4</span>
+					</button>
+					<button class="node level-4 active">
+						<span class="chev">•</span><span class="kind">!</span><span>更新接口请求信息表</span
+						><span class="count">L38</span>
+					</button>
+					<button class="node level-3">
+						<span class="chev">›</span><span class="kind">▤</span><span>roadmap.md</span><span class="count">8</span>
+					</button>
+					<button class="node level-2">
+						<span class="chev">›</span><span class="kind">□</span><span>packages / api</span
+						><span class="count">19</span>
+					</button>
+					<button class="node">
+						<span class="chev">⌄</span><span class="kind">◈</span><span>stars-list</span><span class="count">17</span>
+					</button>
+					<button class="node level-1">
+						<span class="chev">›</span><span class="kind">⑂</span><span>main</span><span class="count">17</span>
+					</button>
+				</div>
+			</section>
+
+			<section class="detail">
+				<div class="detail-head">
+					<div>
+						<h2>更新接口请求信息表</h2>
+						<p>learn-nitro-starter-with-vercel / docs / plan / 2026-8-25-up-to-latest-nitro.md</p>
+					</div>
+					<span class="badge">TODO · L38</span>
+				</div>
+				<div class="detail-body">
+					<div class="todo-card">
+						<strong>markdown-heading · annotation</strong>
+						<p>调研合适的 nitro 接口生成接口请求信息表的工具</p>
+					</div>
+					<div class="meta-grid">
+						<div class="meta"><small>Branch</small><code>dev</code></div>
+						<div class="meta"><small>Repository</small><code>ruan-cat/learn-nitro-starter-with-vercel</code></div>
+						<div class="meta"><small>Commit</small><code>8e7c4ad</code></div>
+						<div class="meta"><small>Source</small><code>degit · cache hit</code></div>
+					</div>
+					<div class="status"><span class="dot"></span> artifact 已加载 · 2026-08-26 10:42 · 点击路径可跳转 GitHub</div>
+				</div>
+			</section>
+		</div>
+		<div class="footer-note">
+			<span>Filters persist locally · data freshness 30 min</span><span>Schema v1 · public artifact</span>
+		</div>
+	</section>
+</main>
