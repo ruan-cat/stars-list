@@ -1,16 +1,16 @@
 <style>
 	:root {
-		--ink: #e8eef5;
-		--muted: #8fa2b8;
-		--surface: #111a24;
-		--surface-2: #172433;
-		--surface-3: #1d3043;
-		--line: rgba(166, 190, 214, 0.16);
-		--cyan: #61d9e7;
-		--amber: #f4bd67;
-		--violet: #b5a2ff;
-		--green: #7cdaa1;
-		--shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+		--ink: var(--vp-c-text-1, #e8eef5);
+		--muted: var(--vp-c-text-2, #8fa2b8);
+		--surface: var(--vp-c-bg, #111a24);
+		--surface-2: var(--vp-c-bg-alt, #172433);
+		--surface-3: var(--vp-c-bg-soft, #1d3043);
+		--line: var(--vp-c-divider, rgba(166, 190, 214, 0.16));
+		--cyan: var(--vp-c-brand-1, #61d9e7);
+		--amber: var(--tk-el-color-warning, #f4bd67);
+		--violet: var(--vp-c-brand-2, #b5a2ff);
+		--green: var(--tk-el-color-success, #7cdaa1);
+		--shadow: var(--vp-shadow-3, 0 24px 80px rgba(0, 0, 0, 0.35));
 		font-family:
 			Inter,
 			ui-sans-serif,
@@ -77,11 +77,25 @@
 		color: var(--ink);
 		background: rgba(97, 217, 231, 0.1);
 	}
+	.shell[data-theme="light"] {
+		--ink: #1f2937;
+		--muted: #4b5563;
+		--surface: #ffffff;
+		--surface-2: #f6f7f9;
+		--surface-3: #e8eef3;
+		--line: #c7d2de;
+		--cyan: #007c91;
+		--amber: #9a6700;
+		--violet: #5b4bb7;
+		--green: #18794e;
+		--shadow: 0 24px 80px rgba(40, 80, 110, 0.18);
+	}
 	.shell {
 		overflow: hidden;
 		border: 1px solid var(--line);
 		border-radius: 16px;
 		background: var(--surface);
+		color: var(--ink);
 		box-shadow: var(--shadow);
 	}
 	.topbar {
@@ -187,6 +201,21 @@
 		display: grid;
 		grid-template-columns: minmax(290px, 1.1fr) minmax(360px, 1.5fr);
 		min-height: 430px;
+	}
+	.shell[data-layout="wide"] .workspace {
+		grid-template-columns: 1fr;
+	}
+	.shell[data-layout="wide"] .tree-pane {
+		border-right: 0;
+		border-bottom: 1px solid var(--line);
+	}
+	.shell[data-layout="wide"] .tree {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 2px 10px;
+	}
+	.shell[data-layout="wide"] .detail {
+		min-height: 300px;
 	}
 	.tree-pane {
 		border-right: 1px solid var(--line);
@@ -397,44 +426,66 @@
 	</p>
 
 	<div class="choice-row" data-multiselect>
-		<button class="choice" data-choice="explorer-dense" data-selected="true" onclick="toggleSelect(this)">
+		<button
+			class="choice"
+			data-choice="explorer-dense"
+			data-selected="true"
+			aria-pressed="true"
+			onclick="toggleSelect(this)"
+		>
 			A · Explorer 密集型（推荐）
 		</button>
-		<button class="choice" data-choice="reading-wide" onclick="toggleSelect(this)">B · 阅读宽松型</button>
+		<button
+			class="choice"
+			data-choice="reading-wide"
+			data-selected="false"
+			aria-pressed="false"
+			onclick="toggleSelect(this)"
+		>
+			B · 阅读宽松型
+		</button>
 	</div>
 
-	<section class="shell" aria-label="GitHub TODO tree mockup">
+	<section class="shell" data-layout="dense" aria-label="GitHub TODO tree mockup">
 		<header class="topbar">
 			<div class="brand">
 				<div class="mark">✓</div>
 				<div><strong>GitHub TODO Tree</strong><small>ruan-cat · owner repositories</small></div>
 			</div>
 			<div class="actions">
-				<button class="icon-button" aria-label="toggle theme">☾</button
+				<button class="icon-button" type="button" aria-label="toggle theme" onclick="toggleTheme(this)">☾</button
 				><button class="refresh" type="button" onclick="demoRefresh(this)">↻ Refresh artifact</button>
 			</div>
 		</header>
 
 		<div class="toolbar">
-			<input class="search" aria-label="Search TODOs" placeholder="⌕  搜索文本、文件路径或仓库…" value="nitro" />
-			<select class="select" aria-label="Repository">
-				<option>所有仓库</option>
-				<option>learn-nitro-starter-with-vercel</option>
+			<input
+				class="search"
+				type="search"
+				aria-label="Search TODOs"
+				placeholder="⌕  搜索文本、文件路径或仓库…"
+				value="nitro"
+				oninput="applyFilters()"
+			/>
+			<select class="select" aria-label="Repository" onchange="applyFilters()">
+				<option value="all">所有仓库</option>
+				<option value="learn-nitro-starter-with-vercel">learn-nitro-starter-with-vercel</option>
+				<option value="stars-list">stars-list</option>
 			</select>
-			<select class="select" aria-label="Branch">
-				<option>所有分支</option>
-				<option>dev</option>
-				<option>main</option>
+			<select class="select" aria-label="Branch" onchange="applyFilters()">
+				<option value="all">所有分支</option>
+				<option value="dev">dev</option>
+				<option value="main">main</option>
 			</select>
-			<select class="select" aria-label="Kind">
-				<option>所有类型</option>
-				<option>markdown-heading</option>
-				<option>source-comment</option>
+			<select class="select" aria-label="Kind" onchange="applyFilters()">
+				<option value="all">所有类型</option>
+				<option value="markdown-heading">markdown-heading</option>
+				<option value="source-comment">source-comment</option>
 			</select>
 		</div>
 
 		<div class="metrics">
-			<div class="metric"><b>128</b><span>可见 TODO</span></div>
+			<div class="metric"><b id="visible-count">128</b><span>可见 TODO</span></div>
 			<div class="metric"><b>24</b><span>仓库</span></div>
 			<div class="metric"><b>9</b><span>分支</span></div>
 			<div class="metric"><b>2m</b><span>上次读取</span></div>
@@ -442,24 +493,27 @@
 
 		<div class="workspace">
 			<section class="tree-pane">
-				<div class="pane-head"><span>Explorer</span><span>128 results</span></div>
+				<div class="pane-head"><span id="view-mode">Explorer</span><span id="result-count">128 results</span></div>
 				<div class="tree">
-					<button class="node active">
+					<button class="node active" data-repo="learn-nitro-starter-with-vercel" data-branch="all" data-kind="all">
 						<span class="chev">⌄</span><span class="kind">◈</span><span>learn-nitro-starter-with-vercel</span
 						><span class="count">42</span>
 					</button>
-					<button class="node level-1">
+					<button class="node level-1" data-repo="learn-nitro-starter-with-vercel" data-branch="dev" data-kind="all">
 						<span class="chev">⌄</span><span class="kind">⑂</span><span>dev</span><span class="count">31</span>
 					</button>
-					<button class="node level-2">
+					<button class="node level-2" data-repo="learn-nitro-starter-with-vercel" data-branch="dev" data-kind="all">
 						<span class="chev">⌄</span><span class="kind">□</span><span>docs / plan</span><span class="count">12</span>
 					</button>
-					<button class="node level-3">
+					<button class="node level-3" data-repo="learn-nitro-starter-with-vercel" data-branch="dev" data-kind="all">
 						<span class="chev">›</span><span class="kind">▤</span><span>2026-8-25-up-to-latest-nitro.md</span
 						><span class="count">4</span>
 					</button>
 					<button
 						class="node level-4 active"
+						data-repo="learn-nitro-starter-with-vercel"
+						data-branch="dev"
+						data-kind="markdown-heading"
 						data-todo-title="更新接口请求信息表"
 						data-todo-path="learn-nitro-starter-with-vercel / docs / plan / 2026-8-25-up-to-latest-nitro.md"
 						data-todo-text="调研合适的 nitro 接口生成接口请求信息表的工具"
@@ -468,17 +522,27 @@
 						<span class="chev">•</span><span class="kind">!</span><span>更新接口请求信息表</span
 						><span class="count">L38</span>
 					</button>
-					<button class="node level-3">
+					<button
+						class="node level-3"
+						data-repo="learn-nitro-starter-with-vercel"
+						data-branch="dev"
+						data-kind="markdown-heading"
+					>
 						<span class="chev">›</span><span class="kind">▤</span><span>roadmap.md</span><span class="count">8</span>
 					</button>
-					<button class="node level-2">
+					<button
+						class="node level-2"
+						data-repo="learn-nitro-starter-with-vercel"
+						data-branch="dev"
+						data-kind="source-comment"
+					>
 						<span class="chev">›</span><span class="kind">□</span><span>packages / api</span
 						><span class="count">19</span>
 					</button>
-					<button class="node">
+					<button class="node" data-repo="stars-list" data-branch="all" data-kind="all">
 						<span class="chev">⌄</span><span class="kind">◈</span><span>stars-list</span><span class="count">17</span>
 					</button>
-					<button class="node level-1">
+					<button class="node level-1" data-repo="stars-list" data-branch="main" data-kind="all">
 						<span class="chev">›</span><span class="kind">⑂</span><span>main</span><span class="count">17</span>
 					</button>
 				</div>
@@ -487,19 +551,21 @@
 			<section class="detail">
 				<div class="detail-head">
 					<div>
-						<h2>更新接口请求信息表</h2>
-						<p>learn-nitro-starter-with-vercel / docs / plan / 2026-8-25-up-to-latest-nitro.md</p>
+						<h2 id="detail-title">更新接口请求信息表</h2>
+						<p id="detail-path">learn-nitro-starter-with-vercel / docs / plan / 2026-8-25-up-to-latest-nitro.md</p>
 					</div>
-					<span class="badge">TODO · L38</span>
+					<span class="badge" id="detail-badge">TODO · L38</span>
 				</div>
 				<div class="detail-body">
 					<div class="todo-card">
-						<strong>markdown-heading · annotation</strong>
-						<p>调研合适的 nitro 接口生成接口请求信息表的工具</p>
+						<strong id="detail-kind">markdown-heading · annotation</strong>
+						<p id="detail-text">调研合适的 nitro 接口生成接口请求信息表的工具</p>
 					</div>
 					<div class="meta-grid">
-						<div class="meta"><small>Branch</small><code>dev</code></div>
-						<div class="meta"><small>Repository</small><code>ruan-cat/learn-nitro-starter-with-vercel</code></div>
+						<div class="meta"><small>Branch</small><code id="detail-branch">dev</code></div>
+						<div class="meta">
+							<small>Repository</small><code id="detail-repo">ruan-cat/learn-nitro-starter-with-vercel</code>
+						</div>
 						<div class="meta"><small>Commit</small><code>8e7c4ad</code></div>
 						<div class="meta"><small>Source</small><code>degit · cache hit</code></div>
 					</div>
@@ -516,6 +582,75 @@
 </main>
 
 <script>
+	function toggleSelect(button) {
+		const choiceRow = button.closest(".choice-row");
+		if (!choiceRow) return;
+		const shell = document.querySelector(".shell");
+		choiceRow.querySelectorAll(".choice").forEach((choice) => {
+			choice.dataset.selected = choice === button ? "true" : "false";
+			choice.setAttribute("aria-pressed", choice === button ? "true" : "false");
+		});
+		if (shell) shell.dataset.layout = button.dataset.choice === "reading-wide" ? "wide" : "dense";
+		if (shell)
+			document.querySelector("#view-mode").textContent =
+				button.dataset.choice === "reading-wide" ? "Reading view" : "Explorer";
+	}
+
+	function toggleTheme(button) {
+		const shell = document.querySelector(".shell");
+		if (!shell) return;
+		const light = shell.dataset.theme !== "light";
+		shell.dataset.theme = light ? "light" : "dark";
+		button.textContent = light ? "☀" : "☾";
+		button.setAttribute("aria-pressed", light ? "true" : "false");
+	}
+
+	function applyFilters() {
+		const query = document.querySelector(".search")?.value.trim().toLowerCase() || "";
+		const repository = document.querySelector('[aria-label="Repository"]')?.value || "all";
+		const branch = document.querySelector('[aria-label="Branch"]')?.value || "all";
+		const kind = document.querySelector('[aria-label="Kind"]')?.value || "all";
+		let visible = 0;
+		document.querySelectorAll(".node").forEach((node) => {
+			const matches =
+				(!query || node.textContent.toLowerCase().includes(query)) &&
+				(repository === "all" || node.dataset.repo === repository) &&
+				(branch === "all" || node.dataset.branch === branch) &&
+				(kind === "all" || node.dataset.kind === "all" || node.dataset.kind === kind);
+			node.dataset.filterHidden = String(!matches);
+			node.hidden = !matches || node.dataset.treeHidden === "true";
+			if (matches) visible += 1;
+		});
+		const count = document.querySelector("#result-count");
+		const metric = document.querySelector("#visible-count");
+		if (count) count.textContent = `${visible} results`;
+		if (metric) metric.textContent = String(visible);
+	}
+
+	function nodeLevel(node) {
+		const level = [...node.classList].find((name) => name.startsWith("level-"));
+		return level ? Number(level.slice(6)) : 0;
+	}
+
+	function toggleTreeBranch(node) {
+		const currentLevel = nodeLevel(node);
+		const siblings = [];
+		let next = node.nextElementSibling;
+		while (next?.classList.contains("node")) {
+			if (nodeLevel(next) <= currentLevel) break;
+			siblings.push(next);
+			next = next.nextElementSibling;
+		}
+		if (!siblings.length) return;
+		const collapsed = node.dataset.collapsed !== "true";
+		node.dataset.collapsed = collapsed ? "true" : "false";
+		node.querySelector(".chev").textContent = collapsed ? "›" : "⌄";
+		siblings.forEach((child) => {
+			child.dataset.treeHidden = String(collapsed);
+			child.hidden = collapsed || child.dataset.filterHidden === "true";
+		});
+	}
+
 	function demoRefresh(button) {
 		if (button.dataset.loading === "true") return;
 		button.dataset.loading = "true";
@@ -531,20 +666,43 @@
 		}, 700);
 	}
 
+	function updateDetails(node) {
+		const spans = node.querySelectorAll("span");
+		const label = spans[2]?.textContent.trim() || "Selected node";
+		const count = spans[3]?.textContent.trim() || "—";
+		const isTodo = Boolean(node.dataset.todoTitle);
+		const title = isTodo ? node.dataset.todoTitle : label;
+		const path = isTodo ? node.dataset.todoPath : `${node.dataset.repo || "ruan-cat"} / ${label}`;
+		const kind = isTodo
+			? "markdown-heading · annotation"
+			: `${node.dataset.kind === "all" ? "tree" : node.dataset.kind} · node`;
+		const text = isTodo
+			? node.dataset.todoText
+			: `${label} 当前包含 ${count} 项 TODO。点击带箭头的节点可展开或收起子树。`;
+		const heading = document.querySelector("#detail-title");
+		const detailPath = document.querySelector("#detail-path");
+		const detailText = document.querySelector("#detail-text");
+		const detailKind = document.querySelector("#detail-kind");
+		const badge = document.querySelector("#detail-badge");
+		const branch = document.querySelector("#detail-branch");
+		const repo = document.querySelector("#detail-repo");
+		if (heading) heading.textContent = title;
+		if (detailPath) detailPath.textContent = path;
+		if (detailText) detailText.textContent = text;
+		if (detailKind) detailKind.textContent = kind;
+		if (badge) badge.textContent = isTodo ? `TODO · ${node.dataset.todoLine || "selected"}` : `NODE · ${count}`;
+		if (branch) branch.textContent = node.dataset.branch === "all" ? "—" : node.dataset.branch;
+		if (repo) repo.textContent = node.dataset.repo ? `ruan-cat/${node.dataset.repo}` : "—";
+	}
+
 	document.querySelectorAll(".node").forEach((node) => {
 		node.addEventListener("click", () => {
+			toggleTreeBranch(node);
 			document.querySelectorAll(".node").forEach((item) => item.classList.remove("active"));
 			node.classList.add("active");
-			const title = node.dataset.todoTitle;
-			if (!title) return;
-			const heading = document.querySelector(".detail-head h2");
-			const path = document.querySelector(".detail-head p");
-			const text = document.querySelector(".todo-card p");
-			const badge = document.querySelector(".badge");
-			if (heading) heading.textContent = title;
-			if (path) path.textContent = node.dataset.todoPath || "";
-			if (text) text.textContent = node.dataset.todoText || "";
-			if (badge) badge.textContent = `TODO · ${node.dataset.todoLine || "selected"}`;
+			updateDetails(node);
 		});
 	});
+
+	applyFilters();
 </script>

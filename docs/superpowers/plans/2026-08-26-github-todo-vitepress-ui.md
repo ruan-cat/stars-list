@@ -8,6 +8,13 @@
 
 **Tech Stack:** VitePress 1.x、Vue 3、TypeScript/tsx、`@tanstack/vue-query`、shadcn-vue/Reka UI、现有 Teek 主题变量、Node `node:test`、agent-browser。
 
+## 当前阶段（2026-08-26）
+
+- UI 实现阶段：基本完成（Tree、Inspector、Iconify、Resizable、Select、清空入口、页面插件排除）。
+- 当前进入：功能检查阶段。
+- 已有 Codex Chrome 证据：刷新按钮可执行、Select 可打开/选择/清空、Resizable 可拖拽且受最小宽度约束、artifact 本地读取成功。
+- 尚待完成：跨筛选组合回归、localStorage 恢复、取消/失败降级、移动端与亮暗主题完整检查。
+
 ## Global Constraints
 
 - 只读取 `VITE_GITHUB_TODO_ARTIFACT_URL`，默认 raw GitHub URL；不调用 GitHub REST API。
@@ -134,3 +141,14 @@
 - [ ] Step 3: 用 browser route/mock 返回成功、404、非法 schema、延迟响应，验证去重、取消请求、30 分钟 stale 和旧数据降级。
 - [x] Step 4: 使用 `pnpm docs:build` + `pnpm docs:preview` 验证构建预览，检查亮暗主题文本对比度和移动端单列布局。
 - [x] Step 5: 运行 `pnpm todo:test`、新增纯函数/契约测试、TypeScript 检查、Prettier、`git diff --check`，把实际输出写入报告；不把浏览器 mock 成功写成真实 GitHub artifact 成功。
+
+### Task 7: 功能检查阶段
+
+**目标：** 在 UI 基本稳定后，验证用户可执行的完整交互链路，不把静态渲染或单元测试当成功能完成。
+
+- [x] Step 1: 用 Codex Chrome 点击“刷新快照”，确认按钮 enabled、请求执行后恢复可用，状态保持 `10 可见 TODO / complete`。
+- [x] Step 2: 验证仓库/分支/类型下拉可打开、可选择、可清空；已验证类型选择后清空按钮恢复 placeholder。
+- [x] Step 3: 验证左右 Resizable handle 的 separator/aria 属性、拖拽改变宽度和最小宽度约束。
+- [ ] Step 4: 验证搜索、仓库、分支、kind 组合筛选及无结果空态，确认结果计数和详情同步。
+- [ ] Step 5: 验证 localStorage 恢复、刷新取消、HTTP 404/非法 schema/延迟响应下的旧快照降级。
+- [ ] Step 6: 验证 375px 移动端单列、亮暗主题对比度、reduced-motion，并将结果补入报告。
