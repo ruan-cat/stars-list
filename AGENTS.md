@@ -275,6 +275,7 @@ pnpm todo:test
 - `todo:scan` 使用 `degit`，按 `dev → main → master` 选分支，默认排除 fork；失败仓库写入 artifact 的 `repositories[].status/errors`，不会静默丢失。
 - 私有仓库本地使用 `GITHUB_PAT_TOKEN`；GitHub Actions 使用 `TODO_SCAN_PAT` Secret（`GITHUB_` 前缀被 GitHub 保留），workflow 将它映射为 `GITHUB_TOKEN`。API Bearer 仅用于清单，Git transport 使用不进 argv 的 Basic `x-access-token:<PAT>` extraheader。`branch_unavailable` 是无目标分支，不等于认证失败。
 - 配置 Actions Secret 使用 `gh secret set TODO_SCAN_PAT --repo ruan-cat/stars-list`；不要创建 `GITHUB_PAT_TOKEN` Secret（GitHub 会拒绝 `GITHUB_` 前缀）。
+- `get-todo.yml` 的 checkout 必须 `persist-credentials: false`，避免 checkout header 与扫描器 Git Basic header 重复。
 - `artifacts/github-todos/ruan-cat.json` 是 VitePress TODO 页面运行时读取的数据源；`complete/partial` 必须结合 summary 与 errors 解读。
 - 本地文档命令默认不生成派生 Markdown；需要刷新时显式设置 `GENERATE_DERIVED_DOCS=true`。GitHub Actions 会自动生成。
 
