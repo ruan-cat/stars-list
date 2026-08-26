@@ -98,7 +98,7 @@ export function isTodoScanArtifact(value: unknown): value is TodoScanArtifact {
 export async function fetchTodoArtifact(url: string, signal?: AbortSignal): Promise<TodoScanArtifact> {
 	let response: Response;
 	try {
-		response = await fetch(url, { signal, headers: { accept: "application/json" } });
+		response = await fetch(url, { signal, cache: "no-store", headers: { accept: "application/json" } });
 	} catch (error) {
 		if (error instanceof TodoArtifactError) throw error;
 		throw new TodoArtifactError("Failed to fetch TODO artifact", error);

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { LoaderCircle } from "lucide-vue-next";
 import { useTodoArtifactQuery, useTodoArtifactRefresh } from "../use-todo-query";
 import { buildTodoTree, filterTodoTree, type TodoFilters as TodoFilterState, type TodoTreeNode } from "../todo-tree";
 import TodoFilters from "./TodoFilters.vue";
@@ -47,9 +48,10 @@ function toggle(id: string) {
 				<h1>GitHub TODO Tree</h1>
 				<p>按仓库、分支、目录和文件追踪待办。</p>
 			</div>
-			<Button :disabled="refresh.isPending.value" @click="refresh.mutate()">{{
-				refresh.isPending.value ? "刷新中…" : "刷新快照"
-			}}</Button>
+			<Button :disabled="refresh.isPending.value" :aria-busy="refresh.isPending.value" @click="refresh.mutate()">
+				<LoaderCircle v-if="refresh.isPending.value" class="todo-refresh__spinner" :size="15" aria-hidden="true" />
+				{{ refresh.isPending.value ? "正在读取最新快照…" : "刷新快照" }}
+			</Button>
 		</header>
 		<TodoFilters v-model="filters" :artifact="query.data.value" />
 		<TodoStatusBar
@@ -109,6 +111,14 @@ function toggle(id: string) {
 	font-weight: 700;
 	letter-spacing: 0.12em;
 	margin: 0 0 0.35rem;
+}
+.todo-refresh__spinner {
+	animation: todo-spin 700ms linear infinite;
+}
+@keyframes todo-spin {
+	to {
+		transform: rotate(360deg);
+	}
 }
 .todo-layout {
 	display: flex;
