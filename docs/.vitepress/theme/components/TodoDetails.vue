@@ -1,7 +1,13 @@
 <script setup lang="ts">
-import { ExternalLink, FileCode2, FolderTree, GitBranch, Hash, Layers3 } from "lucide-vue-next";
+import { ExternalLink, FileCode2, FolderTree, GitBranch, Layers3 } from "lucide-vue-next";
+import { Icon } from "@iconify/vue";
+import repositoryMetaIcon from "@iconify-icons/mdi/source-repository";
+import pathMetaIcon from "@iconify-icons/mdi/file-tree";
+import branchMetaIcon from "@iconify-icons/mdi/source-branch";
+import lineMetaIcon from "@iconify-icons/mdi/format-line-spacing";
 import type { TodoTreeNode } from "../todo-tree";
 defineProps<{ node: TodoTreeNode | null }>();
+const metadataIcons = { repo: repositoryMetaIcon, path: pathMetaIcon, branch: branchMetaIcon, line: lineMetaIcon };
 </script>
 <template>
 	<aside class="todo-details" aria-live="polite">
@@ -20,19 +26,27 @@ defineProps<{ node: TodoTreeNode | null }>();
 				<p class="todo-details__section-title">上下文</p>
 				<dl class="todo-details__meta">
 					<div v-if="node.todo?.repo || node.repo">
-						<dt>仓库</dt>
+						<dt>
+							<Icon class="metadata-icon" :icon="metadataIcons.repo" width="14" height="14" aria-hidden="true" />仓库
+						</dt>
 						<dd>{{ node.todo?.repo ?? node.repo }}</dd>
 					</div>
 					<div v-if="node.todo?.path || node.path">
-						<dt>路径</dt>
+						<dt>
+							<Icon class="metadata-icon" :icon="metadataIcons.path" width="14" height="14" aria-hidden="true" />路径
+						</dt>
 						<dd>{{ node.todo?.path ?? node.path }}</dd>
 					</div>
 					<div v-if="node.todo?.branch || node.branch">
-						<dt>分支</dt>
+						<dt>
+							<Icon class="metadata-icon" :icon="metadataIcons.branch" width="14" height="14" aria-hidden="true" />分支
+						</dt>
 						<dd>{{ node.todo?.branch ?? node.branch }}</dd>
 					</div>
 					<div v-if="node.todo?.line">
-						<dt><Hash :size="13" aria-hidden="true" /> 行号</dt>
+						<dt>
+							<Icon class="metadata-icon" :icon="metadataIcons.line" width="14" height="14" aria-hidden="true" />行号
+						</dt>
 						<dd>{{ node.todo.line }}</dd>
 					</div>
 				</dl>
@@ -119,6 +133,10 @@ defineProps<{ node: TodoTreeNode | null }>();
 	margin-bottom: 0.22rem;
 	color: var(--vp-c-text-3);
 	font-size: 0.75rem;
+}
+.metadata-icon {
+	flex: 0 0 14px;
+	color: var(--vp-c-brand-1);
 }
 .todo-details__meta dd {
 	margin: 0;
