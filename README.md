@@ -991,7 +991,9 @@ pnpm todo:test
 
 `todo:scan` 默认使用 `degit` 下载干净快照，按 `dev → main → master` 选分支，跳过 fork；单仓库失败会记录到 artifact 并继续其他仓库。`scan.completeness` 为 `complete` 或 `partial`，提交前必须同时查看 `summary`、`repositories[].status` 和 `errors`，不能只看命令退出码。
 
-私有仓库需要 `GITHUB_PAT_TOKEN`（至少具备目标仓库内容读取权限）。API 探测使用 Bearer，Git smart HTTP 下载使用不出现在命令参数中的 Basic `x-access-token:<PAT>` extraheader；API 返回 200 不代表 Git transport 一定可用。`branch_unavailable` 表示仓库没有 `dev/main/master`，与认证失败是两类问题。
+私有仓库需要本地环境变量 `GITHUB_PAT_TOKEN`（至少具备目标仓库内容读取权限）；GitHub Actions 使用同一凭据的 `TODO_SCAN_PAT` Secret（GitHub 禁止 Secret 名以 `GITHUB_` 开头，workflow 会将其映射为 `GITHUB_TOKEN`）。API 探测使用 Bearer，Git smart HTTP 下载使用不出现在命令参数中的 Basic `x-access-token:<PAT>` extraheader；API 返回 200 不代表 Git transport 一定可用。`branch_unavailable` 表示仓库没有 `dev/main/master`，与认证失败是两类问题。
+
+配置 Actions Secret：`gh secret set TODO_SCAN_PAT --repo ruan-cat/stars-list`，随后手动触发 `Scan GitHub TODOs` workflow；不要尝试创建 `GITHUB_PAT_TOKEN` Secret，GitHub 会以 422 拒绝该名称。
 
 本地 `docs:dev/build/preview` 默认不会执行派生 Markdown 生成；GitHub Actions 中会生成。若本地需要刷新 `docs/topics/*.md` 等派生文件，显式设置 `GENERATE_DERIVED_DOCS=true` 后再运行文档命令。
 
