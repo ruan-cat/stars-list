@@ -24,10 +24,36 @@ jobs:
           node-version: 24.18.0
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
+      - name: Verify private scan credential
+        env:
+          GITHUB_PAT_TOKEN: ${{ secrets.GITHUB_PAT_TOKEN }}
+        run: |
+          if [ -z "$GITHUB_PAT_TOKEN" ]; then
+            echo "::error::GITHUB_PAT_TOKEN is required for the owner-wide open/private repository scan"
+            exit 1
+          fi
       - name: Scan repositories
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_PAT_TOKEN }}
         run: pnpm todo:scan -- --owner ruan-cat --transport degit --refresh-manifest --strict --manifest scripts/get-todo/repositories.json --output artifacts/github-todos/ruan-cat.json
+      - name: Require authenticated full scan
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile } from "node:fs/promises";
+
+          const artifact = JSON.parse(await readFile("artifacts/github-todos/ruan-cat.json", "utf8"));
+          if (artifact.scan?.authMode !== "authenticated") {
+            throw new Error(`TODO artifact authMode is ${artifact.scan?.authMode ?? "unknown"}; private coverage is not proven`);
+          }
+          const privateRepositories = artifact.repositories.filter((repository) => repository.visibility === "private");
+          const inaccessible = privateRepositories.filter((repository) => ["failed", "unauthorized"].includes(repository.status));
+          if (privateRepositories.length === 0) throw new Error("TODO artifact contains no private repositories");
+          if (inaccessible.length > 0) {
+            throw new Error(`Private repositories inaccessible: ${inaccessible.map((repository) => repository.fullName).join(", ")}`);
+          }
+          const branchUnavailable = privateRepositories.filter((repository) => repository.status === "branch_unavailable").length;
+          console.log(`Authenticated TODO scan includes ${privateRepositories.length} private repositories (${branchUnavailable} without a target branch)`);
+          NODE
       - name: Sync runtime artifact
         run: |
           mkdir -p docs/public/artifacts/github-todos
