@@ -196,6 +196,12 @@ metadata:
 > 此章节在初始化时为空。随着项目中实际的 bug 修复经验积累，按照第 2.4 节的格式逐步补充摘要索引。
 > 详细案例内容写入同目录下的独立 md 文件，不要写在这里。
 
+### GitHub TODO Explorer UI 连续回归（2026-08-26）
+
+- 详细案例：`2026-08-26-todo-explorer-ui-regressions.md`
+- 适用场景：VitePress/Vue 递归 Tree、shadcn-vue/Reka UI 控件和 Iconify 视觉交互迭代。
+- 关键约束：组件契约、递归 scoped CSS、盒模型装饰线和 fresh Chrome 验收必须同时闭环，不能用构建/单测替代视觉证据。
+
 ## 14. 本仓库落点覆盖
 
 - 本仓库的 bug 经验优先记录在当前技能目录：`.agents/skills/fix-bug/record-bug-fix-memory/*.md`
