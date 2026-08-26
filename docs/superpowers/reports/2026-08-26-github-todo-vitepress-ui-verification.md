@@ -29,3 +29,8 @@
 - agent-browser 真实读取本地 artifact 返回 HTTP 200；状态栏显示 `10 可见 TODO / 1 个仓库 / complete`，展开 `ruan-cat/fixture` 后显示 `dev 10`，选中仓库后右侧显示“当前节点包含 10 项 TODO”。
 - 修复空筛选值被误判为有效过滤器的问题，并新增回归测试。
 - 修复本地 dev 未继承环境变量时回退 raw URL 的问题：本地 hostname 自动使用 `/artifacts/github-todos/ruan-cat.json`；独立 dev 浏览器验证显示 10 条 TODO。
+
+## 功能阶段检查
+
+- Codex Chrome 点击“刷新快照”：按钮初始 `enabled=true`，点击后请求完成并恢复“刷新快照”，状态保持 `10 可见 TODO / complete`。
+- Select/Resizable 的交互证据已在 Memorix #5680、#5686、#5688 留存；组合筛选、持久化恢复、取消/失败降级和移动端仍列为下一批检查项。
