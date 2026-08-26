@@ -1023,9 +1023,32 @@
 - [xaboy/form-create-designer](https://github.com/xaboy/form-create-designer) - 好用的Vue低代码可视化 AI 表单设计器，可以通过拖拽的方式快速创建表单，提高开发者对表单的开发效率。支持PC端和移动端，目前在政务系统、OA系统、ERP系统、电商系统、流程管理等系统中已稳定应用。
 
 
+## GitHub TODO 工件工具
+
+以下命令用于本地 Windows 或 GitHub Actions 的 TODO 扫描与校验。扫描结果写入 `artifacts/github-todos/ruan-cat.json`，VitePress 页面只读取这个 JSON，不在浏览器暴露 token。
+
+```bash
+# 全量扫描 owner 仓库（Git-first/degit；本地需要 GITHUB_PAT_TOKEN）
+pnpm todo:scan -- --owner ruan-cat --transport degit --refresh-manifest --manifest scripts/get-todo/repositories.json --output artifacts/github-todos/ruan-cat.json
+
+# 离线 fixture 扫描（验证 parser/CLI，不代表真实 GitHub 全量结果）
+pnpm todo:scan -- --owner ruan-cat --fixture scripts/get-todo/fixtures --output artifacts/github-todos/ruan-cat.json
+
+# 校验 artifact schema
+pnpm todo:validate -- artifacts/github-todos/ruan-cat.json
+
+# 运行 scanner、parser、collector、cache 全部测试
+pnpm todo:test
+```
+
+`todo:scan` 默认使用 `degit` 下载干净快照，按 `dev → main → master` 选分支，跳过 fork；单仓库失败会记录到 artifact 并继续其他仓库。`scan.completeness` 为 `complete` 或 `partial`，提交前必须同时查看 `summary`、`repositories[].status` 和 `errors`，不能只看命令退出码。
+
+私有仓库需要 `GITHUB_PAT_TOKEN`（至少具备目标仓库内容读取权限）。API 探测使用 Bearer，Git smart HTTP 下载使用不出现在命令参数中的 Basic `x-access-token:<PAT>` extraheader；API 返回 200 不代表 Git transport 一定可用。`branch_unavailable` 表示仓库没有 `dev/main/master`，与认证失败是两类问题。
+
+本地 `docs:dev/build/preview` 默认不会执行派生 Markdown 生成；GitHub Actions 中会生成。若本地需要刷新 `docs/topics/*.md` 等派生文件，显式设置 `GENERATE_DERIVED_DOCS=true` 后再运行文档命令。
+
 ## License
 
 [![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 To the extent possible under law, [ruan-cat](https://github.com/ruan-cat) has waived all copyright and related or neighboring rights to this work.
-
