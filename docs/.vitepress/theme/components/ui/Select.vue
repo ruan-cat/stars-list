@@ -11,7 +11,7 @@ import {
 	SelectViewport,
 } from "reka-ui";
 import { computed } from "vue";
-import { ChevronDown } from "lucide-vue-next";
+import { ChevronDown, X } from "lucide-vue-next";
 const props = defineProps<{ modelValue: string; options: string[]; placeholder: string; ariaLabel: string }>();
 const emit = defineEmits<{ change: [string] }>();
 const ALL_VALUE = "__all__";
@@ -22,26 +22,37 @@ function update(value: string) {
 }
 </script>
 <template>
-	<SelectRoot :model-value="selectedValue" @update:model-value="update"
-		><SelectTrigger class="ui-select" :aria-label="ariaLabel"
-			><SelectValue :placeholder="placeholder" /><SelectIcon as-child
-				><ChevronDown
-					class="ui-select__icon"
-					:size="15"
-					:stroke-width="2"
-					aria-hidden="true" /></SelectIcon></SelectTrigger
-		><SelectPortal
-			><SelectContent class="ui-select__content" position="popper" align="start" :side-offset="4"
-				><SelectViewport
-					><SelectItem :value="ALL_VALUE" class="ui-select__item"
-						><SelectItemText>{{ placeholder }}</SelectItemText></SelectItem
-					><SelectItem v-for="option in optionValues" :key="option" :value="option" class="ui-select__item"
-						><SelectItemText>{{ option }}</SelectItemText></SelectItem
-					></SelectViewport
-				></SelectContent
-			></SelectPortal
-		></SelectRoot
-	>
+	<div class="ui-select-wrap">
+		<SelectRoot :model-value="selectedValue" @update:model-value="update"
+			><SelectTrigger class="ui-select" :aria-label="ariaLabel"
+				><SelectValue :placeholder="placeholder" /><SelectIcon as-child
+					><ChevronDown
+						class="ui-select__icon"
+						:size="15"
+						:stroke-width="2"
+						aria-hidden="true" /></SelectIcon></SelectTrigger
+			><button
+				v-if="modelValue"
+				class="ui-select__clear"
+				type="button"
+				:aria-label="`清空${ariaLabel}筛选`"
+				@pointerdown.stop.prevent
+				@click.stop="update(ALL_VALUE)"
+			>
+				<X :size="13" :stroke-width="2" aria-hidden="true" /></button
+			><SelectPortal
+				><SelectContent class="ui-select__content" position="popper" align="start" :side-offset="4"
+					><SelectViewport
+						><SelectItem :value="ALL_VALUE" class="ui-select__item"
+							><SelectItemText>{{ placeholder }}</SelectItemText></SelectItem
+						><SelectItem v-for="option in optionValues" :key="option" :value="option" class="ui-select__item"
+							><SelectItemText>{{ option }}</SelectItemText></SelectItem
+						></SelectViewport
+					></SelectContent
+				></SelectPortal
+			></SelectRoot
+		>
+	</div>
 </template>
 
 <style scoped>
@@ -58,8 +69,38 @@ function update(value: string) {
 	background: var(--vp-c-bg-soft);
 	color: var(--vp-c-text-1);
 	padding: 0.6rem 0.7rem;
+	padding-right: 3.6rem;
 	text-align: left;
 	cursor: pointer;
+}
+.ui-select-wrap {
+	position: relative;
+	min-width: 0;
+	width: 100%;
+}
+.ui-select__clear {
+	position: absolute;
+	top: 50%;
+	right: 1.8rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.35rem;
+	height: 1.35rem;
+	border: 0;
+	border-radius: 4px;
+	background: transparent;
+	color: var(--vp-c-text-3);
+	cursor: pointer;
+	transform: translateY(-50%);
+}
+.ui-select__clear:hover {
+	background: var(--vp-c-brand-soft);
+	color: var(--vp-c-brand-1);
+}
+.ui-select__clear:focus-visible {
+	outline: 2px solid var(--vp-c-brand-1);
+	outline-offset: 1px;
 }
 .ui-select__icon {
 	flex: 0 0 auto;
