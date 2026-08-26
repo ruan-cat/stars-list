@@ -9,9 +9,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Package manager lockfile policy for this generated docs repo
-pnpm-lock.yaml
-
 # VitePress build output and cache
 .vitepress/dist/
 .vitepress/cache/
