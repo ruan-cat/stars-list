@@ -9,6 +9,7 @@ import { description } from "../../package.json";
 import { splitTopics } from "../split-topics";
 import { adjustTitleFormat } from "../adjust-title-format";
 import { shouldGenerateDerivedDocs } from "../derived-docs";
+import { escapeVueInterpolations } from "../escape-vue-interpolations";
 
 if (shouldGenerateDerivedDocs(process.env)) {
 	// 为文档添加自动生成的changelog
@@ -54,6 +55,7 @@ if (defaultMarkdownConfig) {
 				if (env?.relativePath === "todos.md") {
 					return html.replace(/<CopyOrDownloadAsMarkdownButtons\s*\/>/g, "");
 				}
+				if (env?.relativePath === "prompts/index.md") return escapeVueInterpolations(html);
 				return html;
 			};
 		},
