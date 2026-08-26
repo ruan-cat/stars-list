@@ -1,0 +1,702 @@
+{
+	"schemaVersion": 1,
+	"owner": "ruan-cat",
+	"generatedAt": "2026-08-26T16:12:35.577Z",
+	"source": "github-api",
+	"manifestStale": false,
+	"repositories": [
+		{
+			"fullName": "ruan-cat/08mes",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/09oa",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/10wms",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/11comm",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/11comm-app",
+			"visibility": "public",
+			"fork": false,
+			"archived": true,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/12psi",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/2026-2-25-try-nitro-vite-in-vercel",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/add-nitro-in-pure-admin",
+			"visibility": "public",
+			"fork": false,
+			"archived": true,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/ai-chat-demo-by-meoo",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/apps.apple.com",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/automd-error-reproduction",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/awesome-yami",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/bug-in-vue-router-4.6.0-with-uniapp",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/bug-teek-title",
+			"visibility": "public",
+			"fork": false,
+			"archived": true,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/ccs",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/claude-code",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/clawd-code",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/common",
+			"visibility": "private",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/deploy-game-on-vercel-demo",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/dfsw-assets-admin",
+			"visibility": "private",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/dfsw-oa-initialization",
+			"visibility": "private",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/docs",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/drill-docx",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/drill_plugins-fork-from-drill",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/eams-component-lib",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/fde-wiki",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/FEBS-Cloud-Web",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/fix-build-error-vitepress-plugin-llms",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/gemini-balance-lite",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/gzpc-big-screen",
+			"visibility": "private",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/HelloWorld",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/hzx10",
+			"visibility": "private",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/img-store",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/java-pilot-base-doc",
+			"visibility": "public",
+			"fork": false,
+			"archived": true,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/Lagomoro-Mission-MV",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/leaen-hello-edge-by-nuxthub-tmpl",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/learn-nitro-starter-with-vercel",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/learn-nuxt-edge-functions-by-vercel-tmpl",
+			"visibility": "public",
+			"fork": false,
+			"archived": true,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/learn-nuxt-with-nuxthub-cloudflare-D1",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/learn-openapi-template-with-cloudflare",
+			"visibility": "private",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/learn-openx-ui",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/learn-postgres-drizzle-by-vercel-tmpl",
+			"visibility": "public",
+			"fork": false,
+			"archived": true,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/learn-starter-by-nuxthub-tmpl",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/mall-nuxt",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/misaka-components",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/monorepo",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/mota-js",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/mygithub-store",
+			"visibility": "private",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/nitro",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/notes",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/openai-gemini",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/openai-gemini-9cef0",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/postgres-nuxt",
+			"visibility": "public",
+			"fork": false,
+			"archived": true,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/QiuJiu-9.github.io",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/register",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/relizy",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/resume",
+			"visibility": "private",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/rm-monorepo",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/RMMZ-TS-Vite",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/rpgmaker-mv-flowchart",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/RuanZhongNan",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/shareKaoYan",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/skills",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/SmallAliceWeb",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/stars-list",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/tun-shi-tian-di-rmmz",
+			"visibility": "private",
+			"fork": false,
+			"archived": true,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/twoslash",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/twoslash-bug-mini-reproduction",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/uni-app",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/uni-app-monorepo",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/vitepress-code-line-number-bug-when-use-with-shiki",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/vitepress-demo-plugin",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/vitepress-theme-teek-bug-when-use-dynamic-routes",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/vless",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/vscode-cpptools",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/Vue.js-Learning-Example",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/yami-rpg-editor",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		}
+	]
+}
