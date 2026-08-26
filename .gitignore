@@ -26,3 +26,6 @@ Thumbs.db
 
 # 不提交WorkBuddy系列的文件
 .workbuddy
+
+# Superpowers brainstorming companion 临时文件
+.superpowers/
