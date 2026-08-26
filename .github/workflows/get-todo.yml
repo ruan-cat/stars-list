@@ -28,13 +28,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_PAT_TOKEN }}
         run: pnpm todo:scan -- --owner ruan-cat --transport degit --refresh-manifest --strict --manifest scripts/get-todo/repositories.json --output artifacts/github-todos/ruan-cat.json
+      - name: Sync runtime artifact
+        run: |
+          mkdir -p docs/public/artifacts/github-todos
+          cp artifacts/github-todos/ruan-cat.json docs/public/artifacts/github-todos/ruan-cat.json
       - name: Validate artifact
         run: pnpm todo:validate -- artifacts/github-todos/ruan-cat.json
+      - name: Upload scan artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-todos-${{ github.run_id }}
+          path: |
+            artifacts/github-todos/ruan-cat.json
+            docs/public/artifacts/github-todos/ruan-cat.json
+          if-no-files-found: error
       - name: Commit artifact
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add scripts/get-todo/repositories.json
           git add artifacts/github-todos/ruan-cat.json
+          git add docs/public/artifacts/github-todos/ruan-cat.json
           git diff --cached --quiet || git commit -m "🐎 ci(todo): 更新 GitHub TODO 扫描清单与结果"
           git push
