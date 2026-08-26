@@ -82,7 +82,7 @@ logger.info(`${packageName} v${packageVersion} is running...`);
 
 1. 在 `docs\.vitepress\config.ts` 的 `splitTopics` 函数之前，在 `copyReadmeMd` 之后调用。
 
-## 004 <!-- TODO: 2026-8-26 codex正在做 --> 设计一个检查指定 github user 用户仓库全部 TODO 待办任务的工作流
+## 004 <!-- 已完成 2026-8-26 codex正在做 --> 设计一个检查指定 github user 用户仓库全部 TODO 待办任务的工作流
 
 这是一个产品调研、技术方案调研，和落地任务设计的任务：
 
@@ -261,3 +261,9 @@ TODO: 是识别的。特别是大写字母且带有冒号的。
 
 我们受限于 github api 的配额问题，这是我们之前调研没想到的。我们还有哪些方案，可以跳过这个 github api 配额问题的？用本地浅克隆形式的 git clone 或者是 degit 方案，可以实现基于本地文件的快速查询么？
 这个方案在本地 window 和云端 github workflow 都合适吗？
+
+## 005 <!-- TODO: --> 实现基于 vitepress vue 页面的功能
+
+你做的很好，请你完成上下文压缩，我准备开始新的任务了。
+
+新任务：我要实现 vitepress 内提供一个特定按钮，点击按钮就能主动实现请求，获取待办信息，并且适当的更新文件。
