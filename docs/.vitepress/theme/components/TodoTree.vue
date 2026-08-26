@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { TodoTreeNode } from "../todo-tree";
 import TreeToggle from "./ui/TreeToggle.vue";
+import TodoNodeIcon from "./TodoNodeIcon.vue";
 defineProps<{ nodes: TodoTreeNode[]; expanded: Set<string>; selectedId: string | null }>();
 const emit = defineEmits<{ select: [string]; toggle: [string] }>();
 </script>
@@ -22,7 +23,8 @@ const emit = defineEmits<{ select: [string]; toggle: [string] }>();
 						:aria-selected="selectedId === node.id"
 						@click="emit('select', node.id)"
 					>
-						<span>{{ node.label }}</span
+						<span class="todo-tree__name"
+							><TodoNodeIcon :node="node" /><span>{{ node.label }}</span></span
 						><small>{{ node.count }}</small>
 					</button>
 				</div>
@@ -138,6 +140,12 @@ const emit = defineEmits<{ select: [string]; toggle: [string] }>();
 	text-align: left;
 	padding: 0.2rem 0.45rem;
 	line-height: 1.35;
+}
+.todo-tree__name {
+	display: flex;
+	align-items: center;
+	min-width: 0;
+	gap: 0.45rem;
 }
 .todo-tree__label small {
 	color: var(--vp-c-text-3);

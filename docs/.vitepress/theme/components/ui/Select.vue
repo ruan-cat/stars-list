@@ -57,9 +57,10 @@ function update(value: string) {
 
 <style scoped>
 .ui-select {
+	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 	gap: 0.5rem;
 	min-width: 0;
 	width: 100%;
@@ -103,6 +104,8 @@ function update(value: string) {
 	outline-offset: 1px;
 }
 .ui-select__icon {
+	position: absolute;
+	right: 0.7rem;
 	flex: 0 0 auto;
 	color: var(--vp-c-text-3);
 	transition:
