@@ -1,6 +1,8 @@
 import { execFile as execFileCallback } from "node:child_process";
 import { promisify } from "node:util";
 
+import { commandEnvironment } from "./git-auth.ts";
+
 const execFile = promisify(execFileCallback);
 
 export type GitCommandRunner = (args: string[], options: { env?: NodeJS.ProcessEnv }) => Promise<string>;
@@ -16,16 +18,6 @@ function sanitizeError(error: unknown, token?: string): Error {
 async function defaultRunner(args: string[], options: { env?: NodeJS.ProcessEnv }): Promise<string> {
 	const result = await execFile("git", args, { ...options, windowsHide: true, encoding: "utf8" });
 	return result.stdout;
-}
-
-function commandEnvironment(token?: string): NodeJS.ProcessEnv {
-	const environment: NodeJS.ProcessEnv = { ...process.env, GIT_TERMINAL_PROMPT: "0" };
-	if (token) {
-		environment.GIT_CONFIG_COUNT = "1";
-		environment.GIT_CONFIG_KEY_0 = "http.https://github.com/.extraheader";
-		environment.GIT_CONFIG_VALUE_0 = `AUTHORIZATION: bearer ${token}`;
-	}
-	return environment;
 }
 
 /** 列出远端分支和 commit SHA。 */
