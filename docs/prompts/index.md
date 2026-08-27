@@ -323,7 +323,7 @@ GitHub TODO 扫描 Workflow，产生了 artifacts\github-todos 的工件，这�
 
 ---
 
-<code v-pre>GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}</code> 用这种通用的方式不行吗？难道 github workflow 不能实现获取通用的 github token 么？
+用这种通用的方式不行吗？难道 github workflow 不能实现获取通用的 github token 么？
 
 <!-- 不能访问其他私有仓库， 只能看自己的当前仓库 这个是受限制的 -->
 
@@ -340,9 +340,9 @@ gh secret set GITHUB_PAT_TOKEN --repo ruan-cat/stars-list
 
 ### <!-- TODO: --> 2026-8-27 持续完成生产环境验证
 
-我已经修复了 vitepress 站点的部署故障，现在 vitepress 站点已经有了最新的修改了，请你继续完成生产环境的验证。
+我已经修复了 vitepress 站点的部署故障，现在 vitepress 站点已经有了最新的修改了，请你继续完成生产环境 `https://ruan-cat.github.io/stars-list` 的验证。
 
-## 006 <!-- TODO: ChatGPT web 正在做 --> 处理工作流不继续执行的问题
+## 006 <!-- 已完成 2026-8-27 ChatGPT web 正在做 --> 处理工作流不继续执行的问题
 
 1. PR 目标和信息表：
    - 你的 pr github 仓库地址为： https://github.com/ruan-cat/stars-list
@@ -363,3 +363,5 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 你按照本仓库 `.agents\skills\fix-bug\record-bug-fix-memory\SKILL.md` 技能的要求，在 `.agents\skills\fix-bug\record-bug-fix-memory` 写经验教训。
 你在 `docs\reports` 内为本次事故编写一个完整的事故链路，问题追踪，排查手段，以及故障解决的说明报告。
 重点说明为什么 `TanStack Query 创建的一个 7 天 GC 定时器` 会导致如此严重的故障，以及该情况是否很容易的导致其他项目也出现类似的问题？
+
+## 007 <!-- TODO: -->
