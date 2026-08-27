@@ -312,17 +312,9 @@ Cannot read properties of undefined (reading 'GITHUB_TOKEN')
 
 定位到 Markdown：
 
-```md
-`GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}`
-```
-
-VitePress Markdown 最终编译为 Vue SSR 模板，`{{ secrets.GITHUB_TOKEN }}` 被当作 Vue 插值执行。
+VitePress Markdown 最终编译为 Vue SSR 模板， 被当作 Vue 插值执行。
 
 修复：
-
-```html
-<code v-pre>GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}</code>
-```
 
 修复后构建能够稳定达到：
 
@@ -536,10 +528,6 @@ pnpm/action-setup
 ### 5.4 VitePress GitHub Actions 示例转义
 
 使用：
-
-```html
-<code v-pre>GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}</code>
-```
 
 避免 Markdown 中的 GitHub Actions 模板语法与 Vue 插值语法冲突。
 
