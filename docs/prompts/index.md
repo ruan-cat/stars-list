@@ -337,3 +337,12 @@ gh secret set GITHUB_PAT_TOKEN --repo ruan-cat/stars-list
 
 执行一次 package.json 的 format 命令，全量格式化一次。
 然后执行 git-commit，对度全部内容做一次 git commit，然后 git push，然后你 rebase 合并到 main 分支内。确保 main 得到最新代码。
+
+## 006 <!-- TODO: ChatGPT web 正在做 --> 处理工作流不继续执行的问题
+
+1. PR 目标和信息表：
+   - 你的 pr github 仓库地址为： https://github.com/ruan-cat/stars-list
+   - 你的 pr 目标分支为： dev
+   - 你的 pr 工作主分支为： 2026-8-27-fix-deploy-github-page
+
+我的 https://github.com/ruan-cat/stars-list/actions/workflows/deploy-github-page.yml 工作流有很奇怪的问题，已经完成 build 了，但是不能继续部署了，卡在那个环节 6 小时了，然后工作流被迫自动取消。这是为什么啊？
