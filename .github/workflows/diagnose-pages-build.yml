@@ -9,8 +9,8 @@ permissions:
   contents: read
 
 jobs:
-  inspect-active-timeouts:
-    name: Trace live Timeout after VitePress build
+  inspect-timeout-source:
+    name: Inspect VitePress Timeout source
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
@@ -32,48 +32,40 @@ jobs:
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
-      - name: 构建并追踪活动定时器
+      - name: 构建并输出定时器调用源码
         shell: bash
         run: |
           timeout --signal=TERM --kill-after=10s 90s node --input-type=module <<'NODE'
-          import { createHook } from "node:async_hooks";
+          import { readFileSync } from "node:fs";
+          import { build } from "vitepress";
 
-          const liveTimeouts = new Map();
-          const hook = createHook({
-            init(asyncId, type, triggerAsyncId, resource) {
-              if (type !== "Timeout") return;
-              liveTimeouts.set(asyncId, {
-                triggerAsyncId,
-                idleTimeout: resource?._idleTimeout ?? null,
-                hasRef: typeof resource?.hasRef === "function" ? resource.hasRef() : null,
-                stack: new Error("Timeout created here").stack,
-              });
-            },
-            destroy(asyncId) {
-              liveTimeouts.delete(asyncId);
-            },
-          });
-          hook.enable();
-
-          const { build } = await import("vitepress");
           await build("docs", { base: "/stars-list/" });
-
           console.log("DIAG_BUILD_PROMISE_RETURNED");
-          console.log("DIAG_ACTIVE_RESOURCES", JSON.stringify(process.getActiveResourcesInfo()));
 
-          for (const [asyncId, info] of liveTimeouts.entries()) {
-            console.log(
-              "DIAG_LIVE_TIMEOUT",
-              JSON.stringify({
-                asyncId,
-                triggerAsyncId: info.triggerAsyncId,
-                idleTimeout: info.idleTimeout,
-                hasRef: info.hasRef,
-                stack: info.stack,
-              }),
-            );
+          const path = "docs/.vitepress/.temp/app.js";
+          const lines = readFileSync(path, "utf8").split("\n");
+
+          function printAround(label, needle, before = 16, after = 28) {
+            const index = lines.findIndex((line) => line.includes(needle));
+            console.log(`DIAG_SOURCE_${label}_LINE`, index + 1);
+            if (index < 0) return;
+            const start = Math.max(0, index - before);
+            const end = Math.min(lines.length, index + after + 1);
+            console.log(`DIAG_SOURCE_${label}_BEGIN`);
+            for (let i = start; i < end; i += 1) {
+              console.log(`${i + 1}: ${lines[i]}`);
+            }
+            console.log(`DIAG_SOURCE_${label}_END`);
           }
 
-          hook.disable();
+          printAround("USE_WINDOW_SIZE", "function useWindowSize");
+          printAround("USE_POPOVER_SIZE", "function usePopoverSize");
+
+          console.log("DIAG_SOURCE_CALLER_BEGIN");
+          for (let i = 85800; i < Math.min(lines.length, 85870); i += 1) {
+            console.log(`${i + 1}: ${lines[i]}`);
+          }
+          console.log("DIAG_SOURCE_CALLER_END");
+
           process.exit(0);
           NODE
