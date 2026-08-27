@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   inspect-timeout-source:
-    name: Inspect VitePress Timeout source
+    name: Capture VitePress Timeout source
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
@@ -32,40 +32,64 @@ jobs:
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
-      - name: 构建并输出定时器调用源码
+      - name: 构建并捕获定时器调用源码
         shell: bash
         run: |
           timeout --signal=TERM --kill-after=10s 90s node --input-type=module <<'NODE'
+          import { createHook } from "node:async_hooks";
           import { readFileSync } from "node:fs";
-          import { build } from "vitepress";
 
+          let captured = null;
+          const hook = createHook({
+            init(asyncId, type, triggerAsyncId, resource) {
+              if (captured || type !== "Timeout" || resource?._idleTimeout !== 100) return;
+
+              const stack = new Error("Timeout created here").stack ?? "";
+              if (!stack.includes("docs/.vitepress/.temp/app.js")) return;
+
+              const path = "docs/.vitepress/.temp/app.js";
+              const lines = readFileSync(path, "utf8").split("\n");
+              const lineNumbers = [
+                ...new Set(
+                  [...stack.matchAll(/docs\/\.vitepress\/\.temp\/app\.js:(\d+):\d+/g)].map(
+                    (match) => Number(match[1]),
+                  ),
+                ),
+              ];
+
+              const snippets = lineNumbers.map((lineNumber) => {
+                const start = Math.max(1, lineNumber - 18);
+                const end = Math.min(lines.length, lineNumber + 22);
+                return {
+                  lineNumber,
+                  source: lines
+                    .slice(start - 1, end)
+                    .map((line, index) => `${start + index}: ${line}`)
+                    .join("\n"),
+                };
+              });
+
+              captured = { asyncId, triggerAsyncId, stack, snippets };
+            },
+          });
+          hook.enable();
+
+          const { build } = await import("vitepress");
           await build("docs", { base: "/stars-list/" });
+
           console.log("DIAG_BUILD_PROMISE_RETURNED");
-
-          const path = "docs/.vitepress/.temp/app.js";
-          const lines = readFileSync(path, "utf8").split("\n");
-
-          function printAround(label, needle, before = 16, after = 28) {
-            const index = lines.findIndex((line) => line.includes(needle));
-            console.log(`DIAG_SOURCE_${label}_LINE`, index + 1);
-            if (index < 0) return;
-            const start = Math.max(0, index - before);
-            const end = Math.min(lines.length, index + after + 1);
-            console.log(`DIAG_SOURCE_${label}_BEGIN`);
-            for (let i = start; i < end; i += 1) {
-              console.log(`${i + 1}: ${lines[i]}`);
+          console.log("DIAG_CAPTURED_TIMEOUT", captured ? "yes" : "no");
+          if (captured) {
+            console.log("DIAG_TIMEOUT_STACK_BEGIN");
+            console.log(captured.stack);
+            console.log("DIAG_TIMEOUT_STACK_END");
+            for (const snippet of captured.snippets) {
+              console.log(`DIAG_SOURCE_LINE_${snippet.lineNumber}_BEGIN`);
+              console.log(snippet.source);
+              console.log(`DIAG_SOURCE_LINE_${snippet.lineNumber}_END`);
             }
-            console.log(`DIAG_SOURCE_${label}_END`);
           }
 
-          printAround("USE_WINDOW_SIZE", "function useWindowSize");
-          printAround("USE_POPOVER_SIZE", "function usePopoverSize");
-
-          console.log("DIAG_SOURCE_CALLER_BEGIN");
-          for (let i = 85800; i < Math.min(lines.length, 85870); i += 1) {
-            console.log(`${i + 1}: ${lines[i]}`);
-          }
-          console.log("DIAG_SOURCE_CALLER_END");
-
+          hook.disable();
           process.exit(0);
           NODE
