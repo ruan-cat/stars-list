@@ -6,9 +6,70 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
+  apply-source-fix:
+    name: 提交 VitePress 插值修复
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出主修复分支
+        uses: actions/checkout@v6
+        with:
+          ref: 2026-8-27-fix-deploy-github-page
+          fetch-depth: 0
+
+      - name: 修复主修复分支中的 GitHub Actions 表达式展示
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("docs/prompts/index.md")
+          text = path.read_text(encoding="utf-8")
+          target = "`GITHUB_TOKEN: " + "$" + "{{ secrets.GITHUB_TOKEN }}`"
+          replacement = "<code v-pre>GITHUB_TOKEN: " + "$" + "{{ secrets.GITHUB_TOKEN }}</code>"
+          if target in text:
+              path.write_text(text.replace(target, replacement), encoding="utf-8")
+          PY
+
+          if git diff --quiet -- docs/prompts/index.md; then
+            echo "主修复分支已包含插值修复。"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -- docs/prompts/index.md
+            git commit -m "📃 docs: 转义提示词中的 GitHub Actions 模板表达式"
+            git push origin HEAD:2026-8-27-fix-deploy-github-page
+          fi
+
+      - name: 同步修复到临时测试分支
+        shell: bash
+        run: |
+          git fetch origin 2026-8-27-fix-deploy-github-page-test-2
+          git checkout -B pages-test origin/2026-8-27-fix-deploy-github-page-test-2
+
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("docs/prompts/index.md")
+          text = path.read_text(encoding="utf-8")
+          target = "`GITHUB_TOKEN: " + "$" + "{{ secrets.GITHUB_TOKEN }}`"
+          replacement = "<code v-pre>GITHUB_TOKEN: " + "$" + "{{ secrets.GITHUB_TOKEN }}</code>"
+          if target in text:
+              path.write_text(text.replace(target, replacement), encoding="utf-8")
+          PY
+
+          if git diff --quiet -- docs/prompts/index.md; then
+            echo "临时测试分支已包含插值修复。"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -- docs/prompts/index.md
+            git commit -m "📃 docs: 转义提示词中的 GitHub Actions 模板表达式"
+            git push origin HEAD:2026-8-27-fix-deploy-github-page-test-2
+          fi
+
   build-exit:
     name: Build exit / Node ${{ matrix.node-version }}
     runs-on: ubuntu-latest
