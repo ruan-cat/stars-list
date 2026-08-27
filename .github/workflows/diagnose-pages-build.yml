@@ -9,10 +9,14 @@ permissions:
   contents: read
 
 jobs:
-  inspect-long-lived-resources:
-    name: Inspect long-lived resources after VitePress build
+  verify-natural-exit:
+    name: Verify natural exit / Node ${{ matrix.node-version }}
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 4
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ["22.22.0", "24.18.0"]
 
     steps:
       - name: 检出分支
@@ -26,97 +30,14 @@ jobs:
       - name: 安装 Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 24.18.0
+          node-version: ${{ matrix.node-version }}
           cache: pnpm
 
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
-      - name: 定位 Popover 定时器所属依赖
-        shell: bash
-        run: |
-          echo "DIAG_PACKAGE_SEARCH_USE_POPOVER_SIZE_BEGIN"
-          grep -RIl --include='*.js' --include='*.mjs' --include='*.cjs' 'usePopoverSize' node_modules/.pnpm 2>/dev/null | head -40 || true
-          echo "DIAG_PACKAGE_SEARCH_USE_POPOVER_SIZE_END"
+      - name: 验证 QueryClient SSR GC 策略
+        run: pnpm exec tsx --test docs/.vitepress/theme/query-client.test.ts
 
-          echo "DIAG_PACKAGE_SEARCH_USE_WINDOW_SIZE_BEGIN"
-          grep -RIl --include='*.js' --include='*.mjs' --include='*.cjs' 'useWindowSize' node_modules/.pnpm 2>/dev/null | head -40 || true
-          echo "DIAG_PACKAGE_SEARCH_USE_WINDOW_SIZE_END"
-
-      - name: 构建并追踪长期存活资源
-        shell: bash
-        run: |
-          timeout --signal=TERM --kill-after=10s 100s node --input-type=module <<'NODE'
-          import { createHook } from "node:async_hooks";
-          import { setTimeout as sleep } from "node:timers/promises";
-
-          const liveTimeouts = new Map();
-          const hook = createHook({
-            init(asyncId, type, triggerAsyncId, resource) {
-              if (type !== "Timeout") return;
-              liveTimeouts.set(asyncId, {
-                triggerAsyncId,
-                resource,
-                idleTimeout: resource?._idleTimeout ?? null,
-                stack: new Error("Timeout created here").stack ?? "",
-              });
-            },
-            destroy(asyncId) {
-              liveTimeouts.delete(asyncId);
-            },
-          });
-          hook.enable();
-
-          const { build } = await import("vitepress");
-          await build("docs", { base: "/stars-list/" });
-
-          console.log("DIAG_BUILD_PROMISE_RETURNED");
-          console.log("DIAG_RESOURCES_AT_RETURN", JSON.stringify(process.getActiveResourcesInfo()));
-          console.log("DIAG_TIMEOUT_COUNT_AT_RETURN", liveTimeouts.size);
-
-          // 等待短生命周期的 debounce / undici timer 自行释放，
-          // 再观察真正能够长期阻止 Node.js 自然退出的资源。
-          await sleep(7000);
-
-          console.log("DIAG_AFTER_7S");
-          console.log("DIAG_RESOURCES_AFTER_7S", JSON.stringify(process.getActiveResourcesInfo()));
-
-          let longLivedCount = 0;
-          for (const [asyncId, info] of liveTimeouts.entries()) {
-            // 排除本诊断脚本自己的 7 秒等待定时器。
-            if (info.idleTimeout === 7000 && info.stack.includes("[eval1]")) continue;
-
-            longLivedCount += 1;
-            console.log(
-              "DIAG_LONG_LIVED_TIMEOUT",
-              JSON.stringify({
-                asyncId,
-                triggerAsyncId: info.triggerAsyncId,
-                idleTimeout: info.idleTimeout,
-                hasRef:
-                  typeof info.resource?.hasRef === "function" ? info.resource.hasRef() : null,
-                repeat: info.resource?._repeat ?? null,
-                stack: info.stack,
-              }),
-            );
-          }
-
-          console.log("DIAG_LONG_LIVED_TIMEOUT_COUNT", longLivedCount);
-
-          const handles = process._getActiveHandles?.() ?? [];
-          for (const [index, handle] of handles.entries()) {
-            console.log(
-              "DIAG_ACTIVE_HANDLE_AFTER_7S",
-              JSON.stringify({
-                index,
-                type: handle?.constructor?.name ?? typeof handle,
-                hasRef: typeof handle?.hasRef === "function" ? handle.hasRef() : null,
-                fd: typeof handle?.fd === "number" ? handle.fd : null,
-                eventNames: typeof handle?.eventNames === "function" ? handle.eventNames() : [],
-              }),
-            );
-          }
-
-          hook.disable();
-          process.exit(0);
-          NODE
+      - name: 验证 VitePress 构建能够自然退出
+        run: timeout --signal=TERM --kill-after=10s 100s pnpm run build
