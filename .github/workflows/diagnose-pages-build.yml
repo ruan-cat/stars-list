@@ -9,23 +9,10 @@ permissions:
   contents: read
 
 jobs:
-  build-exit:
-    name: Build exit / ${{ matrix.name }}
+  inspect-active-handles:
+    name: Inspect active handles after VitePress build
     runs-on: ubuntu-latest
     timeout-minutes: 3
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - name: llms-off
-            disable-llms: "1"
-            disable-git: "0"
-          - name: git-off
-            disable-llms: "0"
-            disable-git: "1"
-          - name: all-off
-            disable-llms: "1"
-            disable-git: "1"
 
     steps:
       - name: 检出分支
@@ -45,8 +32,38 @@ jobs:
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
-      - name: 验证构建进程能够正常退出
-        env:
-          VITEPRESS_DISABLE_LLMSTXT: ${{ matrix.disable-llms }}
-          VITEPRESS_DISABLE_GIT_CHANGELOG: ${{ matrix.disable-git }}
-        run: timeout --signal=TERM --kill-after=10s 90s pnpm run build
+      - name: 构建并打印活动资源
+        shell: bash
+        run: |
+          timeout --signal=TERM --kill-after=10s 90s node --input-type=module <<'NODE'
+          import { build } from "vitepress";
+
+          await build("docs", { base: "/stars-list/" });
+          console.log("DIAG_BUILD_PROMISE_RETURNED");
+
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+
+          console.log("DIAG_ACTIVE_RESOURCES", JSON.stringify(process.getActiveResourcesInfo()));
+
+          const handles = process._getActiveHandles?.() ?? [];
+          for (const [index, handle] of handles.entries()) {
+            const info = {
+              index,
+              type: handle?.constructor?.name ?? typeof handle,
+              hasRef: typeof handle?.hasRef === "function" ? handle.hasRef() : null,
+              fd: typeof handle?.fd === "number" ? handle.fd : null,
+              eventNames: typeof handle?.eventNames === "function" ? handle.eventNames() : [],
+            };
+            console.log("DIAG_ACTIVE_HANDLE", JSON.stringify(info));
+          }
+
+          const requests = process._getActiveRequests?.() ?? [];
+          for (const [index, request] of requests.entries()) {
+            console.log(
+              "DIAG_ACTIVE_REQUEST",
+              JSON.stringify({ index, type: request?.constructor?.name ?? typeof request }),
+            );
+          }
+
+          process.exit(0);
+          NODE
