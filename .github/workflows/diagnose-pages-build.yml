@@ -9,8 +9,8 @@ permissions:
   contents: read
 
 jobs:
-  inspect-timeout-source:
-    name: Capture VitePress Timeout source
+  inspect-long-lived-resources:
+    name: Inspect long-lived resources after VitePress build
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
@@ -32,44 +32,37 @@ jobs:
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
-      - name: 构建并捕获定时器调用源码
+      - name: 定位 Popover 定时器所属依赖
         shell: bash
         run: |
-          timeout --signal=TERM --kill-after=10s 90s node --input-type=module <<'NODE'
-          import { createHook } from "node:async_hooks";
-          import { readFileSync } from "node:fs";
+          echo "DIAG_PACKAGE_SEARCH_USE_POPOVER_SIZE_BEGIN"
+          grep -RIl --include='*.js' --include='*.mjs' --include='*.cjs' 'usePopoverSize' node_modules/.pnpm 2>/dev/null | head -40 || true
+          echo "DIAG_PACKAGE_SEARCH_USE_POPOVER_SIZE_END"
 
-          let captured = null;
+          echo "DIAG_PACKAGE_SEARCH_USE_WINDOW_SIZE_BEGIN"
+          grep -RIl --include='*.js' --include='*.mjs' --include='*.cjs' 'useWindowSize' node_modules/.pnpm 2>/dev/null | head -40 || true
+          echo "DIAG_PACKAGE_SEARCH_USE_WINDOW_SIZE_END"
+
+      - name: 构建并追踪长期存活资源
+        shell: bash
+        run: |
+          timeout --signal=TERM --kill-after=10s 100s node --input-type=module <<'NODE'
+          import { createHook } from "node:async_hooks";
+          import { setTimeout as sleep } from "node:timers/promises";
+
+          const liveTimeouts = new Map();
           const hook = createHook({
             init(asyncId, type, triggerAsyncId, resource) {
-              if (captured || type !== "Timeout" || resource?._idleTimeout !== 100) return;
-
-              const stack = new Error("Timeout created here").stack ?? "";
-              if (!stack.includes("docs/.vitepress/.temp/app.js")) return;
-
-              const path = "docs/.vitepress/.temp/app.js";
-              const lines = readFileSync(path, "utf8").split("\n");
-              const lineNumbers = [
-                ...new Set(
-                  [...stack.matchAll(/docs\/\.vitepress\/\.temp\/app\.js:(\d+):\d+/g)].map(
-                    (match) => Number(match[1]),
-                  ),
-                ),
-              ];
-
-              const snippets = lineNumbers.map((lineNumber) => {
-                const start = Math.max(1, lineNumber - 18);
-                const end = Math.min(lines.length, lineNumber + 22);
-                return {
-                  lineNumber,
-                  source: lines
-                    .slice(start - 1, end)
-                    .map((line, index) => `${start + index}: ${line}`)
-                    .join("\n"),
-                };
+              if (type !== "Timeout") return;
+              liveTimeouts.set(asyncId, {
+                triggerAsyncId,
+                resource,
+                idleTimeout: resource?._idleTimeout ?? null,
+                stack: new Error("Timeout created here").stack ?? "",
               });
-
-              captured = { asyncId, triggerAsyncId, stack, snippets };
+            },
+            destroy(asyncId) {
+              liveTimeouts.delete(asyncId);
             },
           });
           hook.enable();
@@ -78,16 +71,50 @@ jobs:
           await build("docs", { base: "/stars-list/" });
 
           console.log("DIAG_BUILD_PROMISE_RETURNED");
-          console.log("DIAG_CAPTURED_TIMEOUT", captured ? "yes" : "no");
-          if (captured) {
-            console.log("DIAG_TIMEOUT_STACK_BEGIN");
-            console.log(captured.stack);
-            console.log("DIAG_TIMEOUT_STACK_END");
-            for (const snippet of captured.snippets) {
-              console.log(`DIAG_SOURCE_LINE_${snippet.lineNumber}_BEGIN`);
-              console.log(snippet.source);
-              console.log(`DIAG_SOURCE_LINE_${snippet.lineNumber}_END`);
-            }
+          console.log("DIAG_RESOURCES_AT_RETURN", JSON.stringify(process.getActiveResourcesInfo()));
+          console.log("DIAG_TIMEOUT_COUNT_AT_RETURN", liveTimeouts.size);
+
+          // 等待短生命周期的 debounce / undici timer 自行释放，
+          // 再观察真正能够长期阻止 Node.js 自然退出的资源。
+          await sleep(7000);
+
+          console.log("DIAG_AFTER_7S");
+          console.log("DIAG_RESOURCES_AFTER_7S", JSON.stringify(process.getActiveResourcesInfo()));
+
+          let longLivedCount = 0;
+          for (const [asyncId, info] of liveTimeouts.entries()) {
+            // 排除本诊断脚本自己的 7 秒等待定时器。
+            if (info.idleTimeout === 7000 && info.stack.includes("[eval1]")) continue;
+
+            longLivedCount += 1;
+            console.log(
+              "DIAG_LONG_LIVED_TIMEOUT",
+              JSON.stringify({
+                asyncId,
+                triggerAsyncId: info.triggerAsyncId,
+                idleTimeout: info.idleTimeout,
+                hasRef:
+                  typeof info.resource?.hasRef === "function" ? info.resource.hasRef() : null,
+                repeat: info.resource?._repeat ?? null,
+                stack: info.stack,
+              }),
+            );
+          }
+
+          console.log("DIAG_LONG_LIVED_TIMEOUT_COUNT", longLivedCount);
+
+          const handles = process._getActiveHandles?.() ?? [];
+          for (const [index, handle] of handles.entries()) {
+            console.log(
+              "DIAG_ACTIVE_HANDLE_AFTER_7S",
+              JSON.stringify({
+                index,
+                type: handle?.constructor?.name ?? typeof handle,
+                hasRef: typeof handle?.hasRef === "function" ? handle.hasRef() : null,
+                fd: typeof handle?.fd === "number" ? handle.fd : null,
+                eventNames: typeof handle?.eventNames === "function" ? handle.eventNames() : [],
+              }),
+            );
           }
 
           hook.disable();
