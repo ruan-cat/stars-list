@@ -29,7 +29,7 @@ Node 进程也不会自然退出。GitHub Actions 的 `run: pnpm run build` step
 正式修复为：
 
 ```ts
-gcTime: isServer ? Infinity : TODO_GC_TIME
+gcTime: isServer ? Infinity : TODO_GC_TIME;
 ```
 
 即浏览器仍保留 7 天缓存策略，SSR 恢复 TanStack Query 的安全默认语义，不创建长期 GC timer。
@@ -94,15 +94,15 @@ export const TODO_STALE_TIME = 30 * 60 * 1000;
 export const TODO_GC_TIME = 7 * 24 * 60 * 60 * 1000;
 
 export function createTodoQueryClient(): QueryClient {
-  return new QueryClient({
-    defaultOptions: {
-      queries: {
-        staleTime: TODO_STALE_TIME,
-        gcTime: TODO_GC_TIME,
-        refetchOnWindowFocus: false,
-      },
-    },
-  });
+	return new QueryClient({
+		defaultOptions: {
+			queries: {
+				staleTime: TODO_STALE_TIME,
+				gcTime: TODO_GC_TIME,
+				refetchOnWindowFocus: false,
+			},
+		},
+	});
 }
 ```
 
@@ -114,9 +114,9 @@ export function createTodoQueryClient(): QueryClient {
 
 ```ts
 export default defineRuancatPresetTheme({
-  enhanceAppCallBack({ app }) {
-    installTodoQuery(app);
-  },
+	enhanceAppCallBack({ app }) {
+		installTodoQuery(app);
+	},
 });
 ```
 
@@ -148,7 +148,7 @@ TanStack Query 的 `gcTime` 表示 inactive query 在缓存中保留多久后执
 在浏览器中，设置：
 
 ```ts
-gcTime: 604800000
+gcTime: 604800000;
 ```
 
 通常意味着：一个 query 不再被组件使用后，保留 7 天再清理。
@@ -452,15 +452,15 @@ export const TODO_GC_TIME = 7 * 24 * 60 * 60 * 1000;
 
 ```ts
 export function createTodoQueryClient(isServer = typeof window === "undefined"): QueryClient {
-  return new QueryClient({
-    defaultOptions: {
-      queries: {
-        staleTime: TODO_STALE_TIME,
-        gcTime: isServer ? Infinity : TODO_GC_TIME,
-        refetchOnWindowFocus: false,
-      },
-    },
-  });
+	return new QueryClient({
+		defaultOptions: {
+			queries: {
+				staleTime: TODO_STALE_TIME,
+				gcTime: isServer ? Infinity : TODO_GC_TIME,
+				refetchOnWindowFocus: false,
+			},
+		},
+	});
 }
 ```
 
@@ -496,13 +496,13 @@ DIAG_EVENT_LOOP_AUDIT_OK
 修复核心：
 
 ```ts
-gcTime: isServer ? Infinity : TODO_GC_TIME
+gcTime: isServer ? Infinity : TODO_GC_TIME;
 ```
 
 设计原则：
 
 - Client：继续使用 7 天缓存，满足 UI 使用体验。
-- SSR：不创建有限 GC timer，避免服务端/CLI生命周期被 timer 保活。
+- SSR：不创建有限 GC timer，避免服务端/CLI 生命周期被 timer 保活。
 
 ### 5.2 回归测试
 
@@ -553,10 +553,10 @@ pnpm/action-setup
 
 验证矩阵：
 
-| 环境 | QueryClient tests | VitePress build | 自然退出 |
-| --- | --- | --- | --- |
-| Node 22.22.0 | success | success | success |
-| Node 24.18.0 | success | success | success |
+| 环境         | QueryClient tests | VitePress build | 自然退出 |
+| ------------ | ----------------- | --------------- | -------- |
+| Node 22.22.0 | success           | success         | success  |
+| Node 24.18.0 | success           | success         | success  |
 
 Node 24 日志：
 
@@ -647,12 +647,12 @@ SSR gcTime defaults to Infinity
 
 ```ts
 new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 30 * 60 * 1000,
-      gcTime: 7 * 24 * 60 * 60 * 1000,
-    },
-  },
+	defaultOptions: {
+		queries: {
+			staleTime: 30 * 60 * 1000,
+			gcTime: 7 * 24 * 60 * 60 * 1000,
+		},
+	},
 });
 ```
 
@@ -707,27 +707,27 @@ TanStack Query 官方 SSR 文档也明确警告：如果服务端显式设置 no
 
 所以同一个配置错误，在不同部署模型下表现不同：
 
-| 场景 | 主要症状 |
-| --- | --- |
-| VitePress/SSG CLI | build 完成但进程不退出 |
-| Jest/Vitest/Node test | tests completed but runner hangs |
-| Serverless SSR | invocation 生命周期延迟或资源滞留风险 |
-| 常驻 Node SSR server | query cache 长期保留、内存压力 |
-| Browser SPA | 通常就是正常缓存策略 |
+| 场景                  | 主要症状                              |
+| --------------------- | ------------------------------------- |
+| VitePress/SSG CLI     | build 完成但进程不退出                |
+| Jest/Vitest/Node test | tests completed but runner hangs      |
+| Serverless SSR        | invocation 生命周期延迟或资源滞留风险 |
+| 常驻 Node SSR server  | query cache 长期保留、内存压力        |
+| Browser SPA           | 通常就是正常缓存策略                  |
 
 ### 7.4 风险条件矩阵
 
 只有多个条件同时满足时，才容易出现本事故同类问题：
 
-| 条件 | 风险贡献 |
-| --- | --- |
-| SSR/SSG/Node 环境真实执行 Query | 必要条件 |
-| 显式设置有限 `gcTime` | 高 |
-| `gcTime` 很长（小时/天） | 极高 |
-| Query 进入 inactive 并 schedule GC | 必要触发路径 |
-| timer 保持 ref | Node 默认行为 |
-| 没有 `queryClient.clear()` 或显式清理 | 高 |
-| 运行形态要求进程自动退出 | 会变成 CI 卡死 |
+| 条件                                  | 风险贡献       |
+| ------------------------------------- | -------------- |
+| SSR/SSG/Node 环境真实执行 Query       | 必要条件       |
+| 显式设置有限 `gcTime`                 | 高             |
+| `gcTime` 很长（小时/天）              | 极高           |
+| Query 进入 inactive 并 schedule GC    | 必要触发路径   |
+| timer 保持 ref                        | Node 默认行为  |
+| 没有 `queryClient.clear()` 或显式清理 | 高             |
+| 运行形态要求进程自动退出              | 会变成 CI 卡死 |
 
 因此这不是“TanStack Query 一用 SSR 就危险”，而是一个**非常具体但很容易因共享配置而复制的生命周期错误**。
 
@@ -743,11 +743,11 @@ TanStack Query 官方 SSR 文档也明确警告：如果服务端显式设置 no
 const isServer = typeof window === "undefined";
 
 new QueryClient({
-  defaultOptions: {
-    queries: {
-      gcTime: isServer ? Infinity : CLIENT_GC_TIME,
-    },
-  },
+	defaultOptions: {
+		queries: {
+			gcTime: isServer ? Infinity : CLIENT_GC_TIME,
+		},
+	},
 });
 ```
 
@@ -795,7 +795,7 @@ timeout 100s pnpm run build
 第一层：
 
 ```js
-process.getActiveResourcesInfo()
+process.getActiveResourcesInfo();
 ```
 
 确认资源类型。
@@ -803,7 +803,7 @@ process.getActiveResourcesInfo()
 第二层：
 
 ```js
-process._getActiveHandles()
+process._getActiveHandles();
 ```
 
 辅助检查 socket/pipe 等 handle。
@@ -811,7 +811,7 @@ process._getActiveHandles()
 第三层：
 
 ```js
-async_hooks.createHook({ init, destroy })
+async_hooks.createHook({ init, destroy });
 ```
 
 记录 Timeout 等资源的创建堆栈。
