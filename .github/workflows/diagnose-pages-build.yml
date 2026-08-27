@@ -10,13 +10,22 @@ permissions:
 
 jobs:
   build-exit:
-    name: Build exit / Node ${{ matrix.node-version }}
+    name: Build exit / ${{ matrix.name }}
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 3
     strategy:
       fail-fast: false
       matrix:
-        node-version: ["22.22.0", "24.18.0"]
+        include:
+          - name: llms-off
+            disable-llms: "1"
+            disable-git: "0"
+          - name: git-off
+            disable-llms: "0"
+            disable-git: "1"
+          - name: all-off
+            disable-llms: "1"
+            disable-git: "1"
 
     steps:
       - name: 检出分支
@@ -30,11 +39,14 @@ jobs:
       - name: 安装 Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24.18.0
           cache: pnpm
 
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
       - name: 验证构建进程能够正常退出
-        run: timeout --signal=TERM --kill-after=10s 150s pnpm run build
+        env:
+          VITEPRESS_DISABLE_LLMSTXT: ${{ matrix.disable-llms }}
+          VITEPRESS_DISABLE_GIT_CHANGELOG: ${{ matrix.disable-git }}
+        run: timeout --signal=TERM --kill-after=10s 90s pnpm run build
