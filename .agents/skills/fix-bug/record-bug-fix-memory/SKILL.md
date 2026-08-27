@@ -202,6 +202,12 @@ metadata:
 - 适用场景：VitePress/Vue 递归 Tree、shadcn-vue/Reka UI 控件和 Iconify 视觉交互迭代。
 - 关键约束：组件契约、递归 scoped CSS、盒模型装饰线和 fresh Chrome 验收必须同时闭环，不能用构建/单测替代视觉证据。
 
+### TanStack Query SSR GC 定时器阻塞 VitePress 构建退出（2026-08-27）
+
+- 详细案例：`2026-08-27-tanstack-query-ssr-gctime-build-hang.md`
+- 适用场景：VitePress/SSR/SSG/Node 构建或测试在输出完成后进程长期不退出，且项目共享 TanStack Query 客户端配置。
+- 关键约束：浏览器有限 `gcTime` 不得无条件复用于 SSR；先用 fresh Actions step 状态确认卡点，再用观察窗口 + `async_hooks` 区分短 timer 与长期 ref'ed timer。
+
 ## 14. 本仓库落点覆盖
 
 - 本仓库的 bug 经验优先记录在当前技能目录：`.agents/skills/fix-bug/record-bug-fix-memory/*.md`
