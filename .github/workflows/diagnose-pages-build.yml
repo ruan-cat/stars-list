@@ -1,0 +1,40 @@
+name: Diagnose Pages build exit
+
+on:
+  pull_request:
+    branches: ["dev"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-exit:
+    name: Build exit / Node ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ["22.22.0", "24.18.0"]
+
+    steps:
+      - name: 检出分支
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      - name: 验证构建进程能够正常退出
+        run: timeout --signal=TERM --kill-after=10s 150s pnpm run build
