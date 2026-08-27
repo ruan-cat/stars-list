@@ -20,9 +20,6 @@ if (shouldGenerateDerivedDocs(process.env)) {
 	splitTopics();
 }
 
-const disableLlmstxt = process.env.VITEPRESS_DISABLE_LLMSTXT === "1";
-const disableGitChangelog = process.env.VITEPRESS_DISABLE_GIT_CHANGELOG === "1";
-
 const userConfig = setUserConfig(
 	{
 		title: "阮喵喵的github star列表",
@@ -34,14 +31,10 @@ const userConfig = setUserConfig(
 	},
 	{
 		plugins: {
-			llmstxt: disableLlmstxt
-				? false
-				: {
-						// 忽略首页复制粘贴的 README.md 内容
-						ignoreFiles: ["index.md"],
-					},
-			gitChangelog: disableGitChangelog ? false : undefined,
-			gitChangelogMarkdownSection: disableGitChangelog ? false : undefined,
+			llmstxt: {
+				// 忽略首页复制粘贴的 README.md 内容
+				ignoreFiles: ["index.md"],
+			},
 		},
 	},
 );
