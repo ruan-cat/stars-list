@@ -338,6 +338,10 @@ gh secret set GITHUB_PAT_TOKEN --repo ruan-cat/stars-list
 执行一次 package.json 的 format 命令，全量格式化一次。
 然后执行 git-commit，对度全部内容做一次 git commit，然后 git push，然后你 rebase 合并到 main 分支内。确保 main 得到最新代码。
 
+### <!-- TODO: --> 2026-8-27 持续完成生产环境验证
+
+我已经修复了 vitepress 站点的部署故障，现在 vitepress 站点已经有了最新的修改了，请你继续完成生产环境的验证。
+
 ## 006 <!-- TODO: ChatGPT web 正在做 --> 处理工作流不继续执行的问题
 
 1. PR 目标和信息表：
@@ -346,3 +350,16 @@ gh secret set GITHUB_PAT_TOKEN --repo ruan-cat/stars-list
    - 你的 pr 工作主分支为： 2026-8-27-fix-deploy-github-page
 
 我的 https://github.com/ruan-cat/stars-list/actions/workflows/deploy-github-page.yml 工作流有很奇怪的问题，已经完成 build 了，但是不能继续部署了，卡在那个环节 6 小时了，然后工作流被迫自动取消。这是为什么啊？
+
+---
+
+问题已经从最开始的“GitHub Pages 怎么卡住了”，收敛成了非常具体的：
+VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR 过程中产生的 Node 定时资源使 CLI 无法自然退出。已发现 Popover → usePopoverSize() → useWindowSize() 会错误地在 SSR 中创建 timer；下一步需要区分这些短 timer 与最终长期保活的 timer。
+真正让进程长期不退出的不是 Teek 的 100ms timer，而是 TanStack Query 创建的一个 7 天 GC 定时器。
+
+---
+
+真正让进程长期不退出的不是 Teek 的 100ms timer，而是 TanStack Query 创建的一个 7 天 GC 定时器。
+你按照本仓库 `.agents\skills\fix-bug\record-bug-fix-memory\SKILL.md` 技能的要求，在 `.agents\skills\fix-bug\record-bug-fix-memory` 写经验教训。
+你在 `docs\reports` 内为本次事故编写一个完整的事故链路，问题追踪，排查手段，以及故障解决的说明报告。
+重点说明为什么 `TanStack Query 创建的一个 7 天 GC 定时器` 会导致如此严重的故障，以及该情况是否很容易的导致其他项目也出现类似的问题？
