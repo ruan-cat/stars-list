@@ -323,7 +323,7 @@ GitHub TODO 扫描 Workflow，产生了 artifacts\github-todos 的工件，这�
 
 ---
 
-`GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` 用这种通用的方式不行吗？难道 github workflow 不能实现获取通用的 github token 么？
+<code v-pre>GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}</code> 用这种通用的方式不行吗？难道 github workflow 不能实现获取通用的 github token 么？
 
 <!-- 不能访问其他私有仓库， 只能看自己的当前仓库 这个是受限制的 -->
 
