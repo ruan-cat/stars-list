@@ -86,3 +86,34 @@ jobs:
           git commit -m "style: 自动格式化 PR 改动"
           # checkout 使用 head SHA（detached HEAD），因此明确将 HEAD 推送回 PR 的 head 分支。
           git push origin "HEAD:${{ github.event.pull_request.head.ref }}"
+
+  diagnose-pages-build:
+    name: 验证 Pages 构建退出 / Node ${{ matrix.node-version }}
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ["22.22.0", "24.18.0"]
+
+    steps:
+      - name: 检出分支
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      - name: 验证构建进程能够正常退出
+        run: timeout --signal=TERM --kill-after=10s 150s pnpm run build
