@@ -9,8 +9,8 @@ permissions:
   contents: read
 
 jobs:
-  inspect-active-handles:
-    name: Inspect active handles after VitePress build
+  inspect-active-timeouts:
+    name: Trace live Timeout after VitePress build
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
@@ -32,38 +32,48 @@ jobs:
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
-      - name: 构建并打印活动资源
+      - name: 构建并追踪活动定时器
         shell: bash
         run: |
           timeout --signal=TERM --kill-after=10s 90s node --input-type=module <<'NODE'
-          import { build } from "vitepress";
+          import { createHook } from "node:async_hooks";
 
+          const liveTimeouts = new Map();
+          const hook = createHook({
+            init(asyncId, type, triggerAsyncId, resource) {
+              if (type !== "Timeout") return;
+              liveTimeouts.set(asyncId, {
+                triggerAsyncId,
+                idleTimeout: resource?._idleTimeout ?? null,
+                hasRef: typeof resource?.hasRef === "function" ? resource.hasRef() : null,
+                stack: new Error("Timeout created here").stack,
+              });
+            },
+            destroy(asyncId) {
+              liveTimeouts.delete(asyncId);
+            },
+          });
+          hook.enable();
+
+          const { build } = await import("vitepress");
           await build("docs", { base: "/stars-list/" });
+
           console.log("DIAG_BUILD_PROMISE_RETURNED");
-
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-
           console.log("DIAG_ACTIVE_RESOURCES", JSON.stringify(process.getActiveResourcesInfo()));
 
-          const handles = process._getActiveHandles?.() ?? [];
-          for (const [index, handle] of handles.entries()) {
-            const info = {
-              index,
-              type: handle?.constructor?.name ?? typeof handle,
-              hasRef: typeof handle?.hasRef === "function" ? handle.hasRef() : null,
-              fd: typeof handle?.fd === "number" ? handle.fd : null,
-              eventNames: typeof handle?.eventNames === "function" ? handle.eventNames() : [],
-            };
-            console.log("DIAG_ACTIVE_HANDLE", JSON.stringify(info));
-          }
-
-          const requests = process._getActiveRequests?.() ?? [];
-          for (const [index, request] of requests.entries()) {
+          for (const [asyncId, info] of liveTimeouts.entries()) {
             console.log(
-              "DIAG_ACTIVE_REQUEST",
-              JSON.stringify({ index, type: request?.constructor?.name ?? typeof request }),
+              "DIAG_LIVE_TIMEOUT",
+              JSON.stringify({
+                asyncId,
+                triggerAsyncId: info.triggerAsyncId,
+                idleTimeout: info.idleTimeout,
+                hasRef: info.hasRef,
+                stack: info.stack,
+              }),
             );
           }
 
+          hook.disable();
           process.exit(0);
           NODE
