@@ -262,7 +262,7 @@ TODO: 是识别的。特别是大写字母且带有冒号的。
 我们受限于 github api 的配额问题，这是我们之前调研没想到的。我们还有哪些方案，可以跳过这个 github api 配额问题的？用本地浅克隆形式的 git clone 或者是 degit 方案，可以实现基于本地文件的快速查询么？
 这个方案在本地 window 和云端 github workflow 都合适吗？
 
-## 005 <!-- TODO: codex 正在做 --> 实现基于 vitepress vue 页面的功能
+## 005 <!-- TODO: 等待手动关闭并且合并必要的上下文信息； codex 正在做 --> 实现基于 vitepress vue 页面的功能
 
 你做的很好，请你完成上下文压缩，我准备开始新的任务了。
 
@@ -338,7 +338,7 @@ gh secret set GITHUB_PAT_TOKEN --repo ruan-cat/stars-list
 执行一次 package.json 的 format 命令，全量格式化一次。
 然后执行 git-commit，对度全部内容做一次 git commit，然后 git push，然后你 rebase 合并到 main 分支内。确保 main 得到最新代码。
 
-### <!-- TODO: --> 2026-8-27 持续完成生产环境验证
+### <!-- 已取消 已完成正常的部署 进入到下一个阶段的优化开发 --> 2026-8-27 持续完成生产环境验证
 
 我已经修复了 vitepress 站点的部署故障，现在 vitepress 站点已经有了最新的修改了，请你继续完成生产环境 `https://ruan-cat.github.io/stars-list` 的验证。
 
