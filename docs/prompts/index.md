@@ -364,4 +364,25 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 你在 `docs\reports` 内为本次事故编写一个完整的事故链路，问题追踪，排查手段，以及故障解决的说明报告。
 重点说明为什么 `TanStack Query 创建的一个 7 天 GC 定时器` 会导致如此严重的故障，以及该情况是否很容易的导致其他项目也出现类似的问题？
 
-## 007 <!-- TODO: -->
+## 007 <!-- TODO: --> 重构 README.md 的定位
+
+1. 重构 `.github\workflows\schedules.yml` ，schedules.yml 不再继续输出信息到根目录的 README.md 了，只保留剩下的一个函数来完成内容获取。
+2. 根据我们项目的具体情况，重新编写有意义的 readme 文件。现在的 readme 事实上是不可阅读的。
+
+## 008 <!-- TODO: --> add favicon
+
+我们项目需要一个 favicon icon，要不然看的不好看，请你想办法设计一个出来。这个考验你的设计能力了。
+
+## 009 <!-- TODO: --> 继续优化 TodoDashboard 的视觉效果
+
+1. 用 memorix 先获取上一轮关于 vitepress todo vue 组件的实现效果。接下来我们完成功能的优化。
+   - 截止目前，我们核心的 github workflow `.github\workflows\get-todo.yml` 确实是正常运行，且提供了有效的 git commit。自动化效果实现了。
+   - 基于本地 window 的自动化获取 todo 的效果也实现了。
+   - 但是我们的在 vitepress web 页面，手动点击获取的接口请求逻辑，却没有实现好。这个接口请求的功能完全不能用。
+2. 针对 vitepress web 页面重新获取 todo 信息的功能，你要完成有意义的接口请求，处理这个 bug。
+3. 针对 `docs\.vitepress\theme\components\TodoDashboard.vue` 的整体视觉效果，和前端层面的交互优化
+   - 增加一个按钮，实现树形图的平铺切换效果。点击切换树形图、和平铺图的视觉效果。
+   - 仓库的下拉单选框，你要做最基础的滚动条，和弹框高度限制。你这个不限制基础高度的，万一以后的仓库越来越多怎么办？你考虑好这个问题了么？做的太偷懒，太蠢了。
+   - 看下面的内容时，我无法看右侧信息面板。内容完全错位。这个做的很差。我觉得我们这个 TodoDashboard.vue ，整个界面应该要恰当的提供一个高度。做好基于左侧 TODO 信息的滚动条。而 TodoDashboard.vue 要恰当的占满当前 vite 页面的剩余可用的高度。不要出现双滚动条。左侧 TODO 信息很多的，我们的数据很多，700 多条 todo 数据，所以要设计合适的滚动条，和面板页面高度的计算控制。
+
+## 010 <!-- TODO: -->
