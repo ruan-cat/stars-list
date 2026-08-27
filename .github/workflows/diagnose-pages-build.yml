@@ -1,4 +1,4 @@
-name: Diagnose Pages artifact upload
+name: Diagnose post-fix event loop
 
 on:
   pull_request:
@@ -7,14 +7,12 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 jobs:
-  verify-pages-artifact:
-    name: Verify Pages artifact upload
+  audit-event-loop:
+    name: Audit post-fix long-lived timers
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 3
 
     steps:
       - name: 检出分支
@@ -34,16 +32,63 @@ jobs:
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
 
-      - name: 验证 QueryClient SSR GC 策略
-        run: pnpm exec tsx --test docs/.vitepress/theme/query-client.test.ts
+      - name: 审计构建完成后的长期活动定时器
+        shell: bash
+        run: |
+          timeout --signal=TERM --kill-after=10s 100s node --input-type=module <<'NODE'
+          import { createHook } from "node:async_hooks";
+          import { setTimeout as sleep } from "node:timers/promises";
 
-      - name: 验证 VitePress 构建能够自然退出
-        run: timeout --signal=TERM --kill-after=10s 100s pnpm run build
+          const liveTimeouts = new Map();
+          const hook = createHook({
+            init(asyncId, type, triggerAsyncId, resource) {
+              if (type !== "Timeout") return;
+              liveTimeouts.set(asyncId, {
+                triggerAsyncId,
+                resource,
+                idleTimeout: resource?._idleTimeout ?? null,
+                stack: new Error("Timeout created here").stack ?? "",
+              });
+            },
+            destroy(asyncId) {
+              liveTimeouts.delete(asyncId);
+            },
+          });
+          hook.enable();
 
-      - name: 设置 GitHub Pages
-        uses: actions/configure-pages@v6
+          const { build } = await import("vitepress");
+          await build("docs", { base: "/stars-list/" });
+          console.log("DIAG_BUILD_PROMISE_RETURNED");
+          console.log("DIAG_RESOURCES_AT_RETURN", JSON.stringify(process.getActiveResourcesInfo()));
 
-      - name: 上传 Pages 构建工件
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: "./docs/.vitepress/dist"
+          await sleep(7000);
+
+          const unexpected = [];
+          for (const [asyncId, info] of liveTimeouts.entries()) {
+            // 排除本诊断脚本用于观察窗口的 sleep timer（通常此时已销毁）。
+            if (info.idleTimeout === 7000 && info.stack.includes("[eval1]")) continue;
+            const hasRef = typeof info.resource?.hasRef === "function" ? info.resource.hasRef() : null;
+            if (hasRef === false) continue;
+            unexpected.push({
+              asyncId,
+              triggerAsyncId: info.triggerAsyncId,
+              idleTimeout: info.idleTimeout,
+              hasRef,
+              repeat: info.resource?._repeat ?? null,
+              stack: info.stack,
+            });
+          }
+
+          console.log("DIAG_RESOURCES_AFTER_7S", JSON.stringify(process.getActiveResourcesInfo()));
+          console.log("DIAG_LONG_LIVED_TIMEOUT_COUNT", unexpected.length);
+          for (const item of unexpected) {
+            console.log("DIAG_UNEXPECTED_LONG_LIVED_TIMEOUT", JSON.stringify(item));
+          }
+
+          hook.disable();
+          if (unexpected.length > 0) {
+            throw new Error(`Found ${unexpected.length} ref'ed Timeout resource(s) after the 7s audit window`);
+          }
+
+          console.log("DIAG_EVENT_LOOP_AUDIT_OK");
+          NODE
