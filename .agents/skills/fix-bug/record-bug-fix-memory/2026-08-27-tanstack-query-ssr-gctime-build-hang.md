@@ -9,19 +9,19 @@
 
 ## 2. 实际根因
 
-- 项目在 `docs/.vitepress/theme/query-client.ts` 中把浏览器端缓存策略全局应用给了 SSR：
+项目在 `docs/.vitepress/theme/query-client.ts` 中把浏览器端缓存策略全局应用给了 SSR：
 
-  ```ts
-  export const TODO_GC_TIME = 7 * 24 * 60 * 60 * 1000;
+```ts
+export const TODO_GC_TIME = 7 * 24 * 60 * 60 * 1000;
 
-  new QueryClient({
-    defaultOptions: {
-      queries: {
-        gcTime: TODO_GC_TIME,
-      },
-    },
-  });
-  ```
+new QueryClient({
+	defaultOptions: {
+		queries: {
+			gcTime: TODO_GC_TIME,
+		},
+	},
+});
+```
 
 - `docs/todos.md` 在 VitePress SSR 时会渲染 `TodoDashboard`，组件中的 `useTodoArtifactQuery()` 会触发 TanStack Query。查询在 SSR 生命周期中进入 inactive/GC 调度路径后，`@tanstack/query-core` 调用 `Query.scheduleGc()`，通过 `TimeoutManager.setTimeout()` 创建一个 `604800000ms`（7 天）的 Node `Timeout`。
 - 这个 timer 的 `hasRef()` 为 `true`。对 Node.js 来说，只要事件循环里仍有 ref'ed timer，进程就不能自然退出；即使 VitePress 的 `build()` Promise 已经返回、所有 HTML 都已生成，CLI 进程仍会等待这个 7 天 timer。
@@ -38,26 +38,24 @@
 
 ## 4. 有效修复
 
-- 保留浏览器端 7 天缓存语义，但恢复 SSR 的安全 GC 策略：
+保留浏览器端 7 天缓存语义，但恢复 SSR 的安全 GC 策略：
 
-  ```ts
-  export function createTodoQueryClient(isServer = typeof window === "undefined"): QueryClient {
-    return new QueryClient({
-      defaultOptions: {
-        queries: {
-          staleTime: TODO_STALE_TIME,
-          gcTime: isServer ? Infinity : TODO_GC_TIME,
-          refetchOnWindowFocus: false,
-        },
-      },
-    });
-  }
-  ```
+```ts
+export function createTodoQueryClient(isServer = typeof window === "undefined"): QueryClient {
+	return new QueryClient({
+		defaultOptions: {
+			queries: {
+				staleTime: TODO_STALE_TIME,
+				gcTime: isServer ? Infinity : TODO_GC_TIME,
+				refetchOnWindowFocus: false,
+			},
+		},
+	});
+}
+```
 
 - 为 `createTodoQueryClient` 增加 server/client 分支回归测试：浏览器 `gcTime` 必须仍是 7 天，SSR 必须是 `Infinity`，避免未来重构重新把浏览器缓存时长覆盖到服务端。
-- 同时完成两项配套修复：
-  - Pages workflow 调整为 `pnpm/action-setup` → `actions/setup-node` → 单次 `pnpm install --frozen-lockfile`，移除 `run_install` 与重复安装。
-  - `docs/prompts/index.md` 用 `<code v-pre>...</code>` 展示 GitHub Actions `${{ ... }}` 示例，避免 Vue SSR 求值。
+- 同时完成两项配套修复：Pages workflow 调整为 `pnpm/action-setup` → `actions/setup-node` → 单次 `pnpm install --frozen-lockfile`，移除 `run_install` 与重复安装；`docs/prompts/index.md` 用 `<code v-pre>...</code>` 展示 GitHub Actions `${{ ... }}` 示例，避免 Vue SSR 求值。
 - 没有使用 `process.exit(0)` 作为正式修复。强制退出只能掩盖仍存活的资源，可能截断插件收尾或隐藏未来泄漏；正式构建必须能够自然退出。
 
 ## 5. 验证方式
@@ -65,25 +63,26 @@
 - 首个可信信号来自 fresh GitHub Actions：VitePress 明确输出 `build complete`，但 `pnpm run build` step 长时间仍处于 in_progress；这直接排除了“构建仍在渲染页面”的解释。
 - 修复前通过 `async_hooks` 在 `build()` Promise 返回 7 秒后采样，确认唯一长期 ref'ed timer：
 
-  ```text
-  idleTimeout: 604800000
-  hasRef: true
-  @tanstack/query-core/timeoutManager.js
-  → Query.scheduleGc
-  → Query.fetch
-  ```
+```text
+idleTimeout: 604800000
+hasRef: true
+@tanstack/query-core/timeoutManager.js
+→ Query.scheduleGc
+→ Query.fetch
+```
 
 - 修复后 Node 22.22.0 与 Node 24.18.0 两个 fresh job 均通过 QueryClient 回归测试，并在 `pnpm run build` 打印 `build complete` 后自然退出为 success；100 秒保护 timeout 未触发。
 - 修复后的 fresh `async_hooks` A/B 审计：
 
-  ```text
-  build complete in 58.19s.
-  DIAG_RESOURCES_AFTER_7S ["PipeWrap","PipeWrap"]
-  DIAG_LONG_LIVED_TIMEOUT_COUNT 0
-  DIAG_EVENT_LOOP_AUDIT_OK
-  ```
+```text
+build complete in 58.19s.
+DIAG_RESOURCES_AFTER_7S ["PipeWrap","PipeWrap"]
+DIAG_LONG_LIVED_TIMEOUT_COUNT 0
+DIAG_EVENT_LOOP_AUDIT_OK
+```
 
-  7 秒后只剩 GitHub Actions stdout/stderr 管道，不再存在 ref'ed Timeout。
+7 秒后只剩 GitHub Actions stdout/stderr 管道，不再存在 ref'ed Timeout。
+
 - Pages 工件链路继续验证 `actions/configure-pages@v6` 与 `actions/upload-pages-artifact@v5` 均 success，并生成真实 `github-pages` artifact（ID 9645764782，6,054,937 bytes）；解包后包含 868 个条目、200 个 HTML 页面、`index.html`、`todos.html`、`assets/` 等预期内容。
 
 ## 6. 后续约束
