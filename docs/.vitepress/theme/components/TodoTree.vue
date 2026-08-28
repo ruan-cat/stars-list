@@ -46,12 +46,14 @@ const emit = defineEmits<{ select: [string]; toggle: [string] }>();
 
 <style scoped>
 .todo-tree {
+	height: 100%;
 	padding: 0.65rem;
 	background: var(--vp-c-bg-soft);
 	overflow: auto;
 	min-width: 0;
 }
 .todo-tree .todo-tree {
+	height: auto;
 	width: 100%;
 	padding: 0;
 	background: transparent;

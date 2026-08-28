@@ -42,7 +42,7 @@ function update(value: string) {
 				<X :size="13" :stroke-width="2" aria-hidden="true" /></button
 			><SelectPortal
 				><SelectContent class="ui-select__content" position="popper" align="start" :side-offset="4"
-					><SelectViewport
+					><SelectViewport class="ui-select__viewport"
 						><SelectItem :value="ALL_VALUE" class="ui-select__item"
 							><SelectItemText>{{ placeholder }}</SelectItemText></SelectItem
 						><SelectItem v-for="option in optionValues" :key="option" :value="option" class="ui-select__item"
@@ -127,6 +127,14 @@ function update(value: string) {
 	box-shadow: var(--vp-shadow-3);
 	transform-origin: var(--reka-select-content-transform-origin);
 	animation: ui-select-content-in 140ms ease-out;
+}
+/* 选项过多时限制弹层高度并提供滚动条，避免下拉面板无限拉高。
+   注意：弹层经 SelectPortal 渲染在组件根节点之外，scoped 属性匹配不到，
+   必须用 :global() 声明。 */
+:global(.ui-select__viewport) {
+	max-height: min(320px, var(--reka-select-content-available-height, 320px));
+	overflow-y: auto;
+	scrollbar-width: thin;
 }
 :global(.ui-select__item) {
 	padding: 0.4rem 0.55rem;

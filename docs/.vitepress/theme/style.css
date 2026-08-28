@@ -71,3 +71,27 @@
 .DocSearch {
 	--docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
+
+/* todos 应用型页面：隐藏文档页脚（上一页/下一页）与页面历史区块，
+   让 TodoDashboard 恰好占满首屏剩余高度，整页不再出现第二个滚动条 */
+.content-container:has(.vp-doc._todos) .VPDocFooter,
+.content-container:has(.vp-doc._todos) .tk-article-update {
+	display: none;
+}
+
+/* nolebase git-changelog 插件会在 vp-doc 内注入"贡献者/页面历史"区块，同样在 todos 应用型页面隐藏 */
+.vp-doc._todos .vp-nolebase-git-changelog,
+.vp-doc._todos h2:has(+ .vp-nolebase-git-changelog) {
+	display: none;
+}
+
+/* VPDoc content 默认 128px 底部 padding 在 todos 应用型页面同样去掉，整页高度即视口高度 */
+.VPDoc:has(.vp-doc._todos) .content {
+	padding-bottom: 0;
+}
+
+/* 大纲里指向已隐藏的"贡献者/页面历史"区块的条目一并隐藏，避免死锚点 */
+.VPDoc:has(.vp-doc._todos) .VPDocAsideOutline li:has(> a[href$="贡献者"]),
+.VPDoc:has(.vp-doc._todos) .VPDocAsideOutline li:has(> a[href$="页面历史"]) {
+	display: none;
+}
