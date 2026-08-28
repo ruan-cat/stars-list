@@ -186,8 +186,10 @@ function update(value: string) {
 	padding: 0.25rem;
 	box-shadow: var(--vp-shadow-3);
 	transform-origin: var(--reka-select-content-transform-origin);
-	animation: ui-select-content-in 140ms ease-out;
 }
+/* 注意：不要给弹层加任何 CSS animation/transition（哪怕只挂在 [data-state="open"] 上）。
+   Reka 的 Presence 依据元素的 animationName 决定关闭时是否等待动画结束——
+   存在任何 animation 声明都可能让弹层关闭后残留挂载、遮挡页面交互（2026-08-29 事故）。 */
 /* 选项过多时限制弹层高度并提供可见滚动条，避免下拉面板无限拉高。
    Reka UI 自带隐藏原生滚动条的样式（[data-reka-select-viewport] { scrollbar-width: none }
    + ::-webkit-scrollbar { display: none }），这里用"类名+属性"双选择器压过它，
