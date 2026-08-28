@@ -1,5 +1,7 @@
-# GitHub Actions 工作流：自动更新 awesome-stars 列表
-# 此工作流会定期运行 starred 工具来生成和更新 GitHub stars 的分类列表
+# GitHub Actions 工作流：自动更新 awesome-stars 主题分类列表
+# 此工作流定期运行 starred 工具，按主题分类生成和更新 GitHub stars 列表。
+# 注意：本工作流不再输出任何内容到根目录 README.md。
+# README.md 已改为手工维护的项目说明文档，构建时会被复制为站点首页 docs/index.md。
 name: update awesome-stars
 
 # 触发条件
@@ -35,21 +37,7 @@ jobs:
       - name: get repository name
         run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
 
-      # 按编程语言分类更新 stars 列表
-      - name: update repo category by language
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY: ${{ env.REPOSITORY_NAME }}
-          USERNAME: ${{ github.repository_owner }}
-        run: |
-          starred \
-            --username "${USERNAME}" \
-            --repository "${REPOSITORY}" \
-            --sort \
-            --token "${GITHUB_TOKEN}" \
-            --message "🐎 ci(stars): 更新按编程语言分类的 GitHub Stars 列表"
-
-      # 按主题分类更新 stars 列表
+      # 按主题分类更新 stars 列表（本工作流唯一的内容获取步骤）
       - name: update repo category by topic
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
