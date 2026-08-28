@@ -10,6 +10,7 @@ import { splitTopics } from "../split-topics";
 import { adjustTitleFormat } from "../adjust-title-format";
 import { shouldGenerateDerivedDocs } from "../derived-docs";
 import { escapeVueInterpolations } from "../escape-vue-interpolations";
+import { serveArtifacts } from "./serve-artifacts-plugin";
 
 if (shouldGenerateDerivedDocs(process.env)) {
 	// 为文档添加自动生成的changelog
@@ -33,6 +34,10 @@ const userConfig = setUserConfig(
 		themeConfig: {
 			editLink: { pattern: "https://github.com/ruan-cat/stars-list/blob/dev/docs/:path" },
 			socialLinks: [{ icon: "github", link: "https://github.com/ruan-cat/stars-list" }],
+		},
+		vite: {
+			// 本地 dev/preview 下让 /artifacts/** 指向仓库根目录的 artifacts，TODO 页面刷新快照依赖它
+			plugins: [serveArtifacts()],
 		},
 	},
 	{
