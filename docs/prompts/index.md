@@ -262,7 +262,7 @@ TODO: 是识别的。特别是大写字母且带有冒号的。
 我们受限于 github api 的配额问题，这是我们之前调研没想到的。我们还有哪些方案，可以跳过这个 github api 配额问题的？用本地浅克隆形式的 git clone 或者是 degit 方案，可以实现基于本地文件的快速查询么？
 这个方案在本地 window 和云端 github workflow 都合适吗？
 
-## 005 <!-- TODO: 等待手动关闭并且合并必要的上下文信息； codex 正在做 --> 实现基于 vitepress vue 页面的功能
+## 005 <!-- 已完成 等待手动关闭并且合并必要的上下文信息； codex 正在做 --> 实现基于 vitepress vue 页面的功能
 
 你做的很好，请你完成上下文压缩，我准备开始新的任务了。
 
@@ -364,7 +364,7 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 你在 `docs\reports` 内为本次事故编写一个完整的事故链路，问题追踪，排查手段，以及故障解决的说明报告。
 重点说明为什么 `TanStack Query 创建的一个 7 天 GC 定时器` 会导致如此严重的故障，以及该情况是否很容易的导致其他项目也出现类似的问题？
 
-## 007 <!-- TODO: --> 重构 README.md 的定位
+## 007 <!-- TODO: ZCode正在做 --> 重构 README.md 的定位
 
 1. 重构 `.github\workflows\schedules.yml` ，schedules.yml 不再继续输出信息到根目录的 README.md 了，只保留剩下的一个函数来完成内容获取。
 2. 根据我们项目的具体情况，重新编写有意义的 readme 文件。现在的 readme 事实上是不可阅读的。
