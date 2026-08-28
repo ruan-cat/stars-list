@@ -1,4 +1,6 @@
-# GitHub TODO Tree
+---
+title: GitHub TODO Tree
+---
 
 <TodoDashboard />
 

@@ -5,6 +5,9 @@ export type { TodoScanArtifact };
 export const DEFAULT_ARTIFACT_URL =
 	"https://raw.githubusercontent.com/ruan-cat/stars-list/main/artifacts/github-todos/ruan-cat.json";
 
+/** artifact 在部署产物内的相对路径；get-todo.yml 会把它复制进 docs/public 一起发布到 GitHub Pages */
+export const ARTIFACT_PUBLIC_PATH = "artifacts/github-todos/ruan-cat.json";
+
 export class TodoArtifactError extends Error {
 	constructor(
 		message: string,
@@ -15,11 +18,20 @@ export class TodoArtifactError extends Error {
 	}
 }
 
+/**
+ * 依据运行环境解析 artifact 请求地址。
+ *
+ * 浏览器端始终请求与页面同源的静态路径（dev 由 serve-artifacts 中间件提供，
+ * 线上由 GitHub Pages 提供），不依赖 raw.githubusercontent.com——该域名在部分
+ * 网络环境下不可达，曾导致线上"刷新快照"的接口请求整体失效。
+ * 仅 SSR/构建期（无 location）回退到 DEFAULT_ARTIFACT_URL。
+ */
 export function resolveArtifactUrl(env: Record<string, string | undefined>): string {
 	const configured = env.VITE_GITHUB_TODO_ARTIFACT_URL?.trim();
 	if (configured) return configured;
-	if (typeof location !== "undefined" && /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
-		return "/artifacts/github-todos/ruan-cat.json";
+	if (typeof location !== "undefined") {
+		const base = (env.BASE_URL ?? "/").replace(/\/+$/, "");
+		return `${base}/${ARTIFACT_PUBLIC_PATH}`;
 	}
 	return DEFAULT_ARTIFACT_URL;
 }

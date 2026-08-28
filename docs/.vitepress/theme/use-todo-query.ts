@@ -45,6 +45,8 @@ export function useTodoArtifactRefresh() {
 	return {
 		mutate: () => mutation.mutate(),
 		isPending: computed(() => mutation.isPending.value),
+		isSuccess: computed(() => mutation.isSuccess.value),
+		error: computed(() => mutation.error.value),
 		cancel: () => client.cancelQueries({ queryKey: [...TODO_QUERY_KEY, url] }),
 	};
 }

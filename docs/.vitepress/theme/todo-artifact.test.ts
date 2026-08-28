@@ -35,6 +35,27 @@ test("resolves the default and environment artifact URLs", () => {
 	);
 });
 
+/** 临时伪造浏览器 location，用完即还原，避免污染其他用例 */
+function withBrowserLocation(hostname: string, run: () => void): void {
+	const original = (globalThis as { location?: unknown }).location;
+	(globalThis as { location?: unknown }).location = { hostname };
+	try {
+		run();
+	} finally {
+		(globalThis as { location?: unknown }).location = original;
+	}
+}
+
+test("browser requests the same-origin GitHub Pages artifact path honoring BASE_URL", () => {
+	withBrowserLocation("ruan-cat.github.io", () => {
+		assert.equal(resolveArtifactUrl({ BASE_URL: "/stars-list/" }), "/stars-list/artifacts/github-todos/ruan-cat.json");
+		assert.equal(resolveArtifactUrl({}), "/artifacts/github-todos/ruan-cat.json");
+	});
+	withBrowserLocation("localhost", () => {
+		assert.equal(resolveArtifactUrl({}), "/artifacts/github-todos/ruan-cat.json");
+	});
+});
+
 test("rejects schema and top-level type mismatches", () => {
 	assert.equal(isTodoScanArtifact(validArtifact), true);
 	assert.equal(isTodoScanArtifact({ ...validArtifact, schemaVersion: 2 }), false);
