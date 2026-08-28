@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildTodoTree, countVisibleTodos, filterTodoTree, toggleTodoNode, type TodoTreeState } from "./todo-tree.ts";
+import { buildTodoTree, countVisibleTodos, filterTodoTree, flattenTodoTree, toggleTodoNode, type TodoTreeState } from "./todo-tree.ts";
 import type { TodoScanArtifact } from "../../../scripts/get-todo/types.ts";
 
 const artifact: TodoScanArtifact = {
@@ -101,4 +101,20 @@ test("treats empty UI filter values as no filter", () => {
 	const tree = buildTodoTree(artifact);
 	const filtered = filterTodoTree(tree, { search: "", repo: "", branch: "", kind: "" });
 	assert.equal(countVisibleTodos(filtered), 2);
+});
+
+test("flattenTodoTree collects todo nodes in depth-first order without mutating the tree", () => {
+	const tree = buildTodoTree(artifact);
+	const flat = flattenTodoTree(tree);
+	assert.equal(flat.length, 2);
+	assert.ok(flat.every((node) => node.type === "todo"));
+	assert.ok(flat.every((node) => node.todo));
+	// 深度优先：README.md (a) 排在 src/ (b) 前，与其在树中的可见顺序一致
+	assert.equal(flat[0].todo?.id, "a");
+	assert.equal(flat[1].todo?.id, "b");
+	assert.equal(countVisibleTodos(tree), 2);
+	// 与筛选联动：过滤后的树展平也只保留匹配的 todo
+	const filteredFlat = flattenTodoTree(filterTodoTree(tree, { repo: "demo", kind: "source-comment" }));
+	assert.equal(filteredFlat.length, 1);
+	assert.equal(filteredFlat[0].todo?.id, "b");
 });

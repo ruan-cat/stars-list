@@ -185,6 +185,25 @@ export function countVisibleTodos(nodes: TodoTreeNode[]): number {
 	return nodes.reduce((sum, node) => sum + countTodos(node), 0);
 }
 
+/**
+ * 按深度优先顺序展平树，收集全部 todo 叶子节点，供平铺视图使用。
+ *
+ * @example
+ * const rows = flattenTodoTree(visibleTree.value);
+ */
+export function flattenTodoTree(nodes: TodoTreeNode[]): TodoTreeNode[] {
+	const result: TodoTreeNode[] = [];
+	const visit = (node: TodoTreeNode) => {
+		if (node.type === "todo") {
+			result.push(node);
+			return;
+		}
+		node.children.forEach(visit);
+	};
+	nodes.forEach(visit);
+	return result;
+}
+
 export function toggleTodoNode(state: TodoTreeState, nodeId: string): TodoTreeState {
 	return { ...state, expanded: { ...state.expanded, [nodeId]: !(state.expanded[nodeId] ?? true) } };
 }
