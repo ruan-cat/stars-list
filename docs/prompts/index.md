@@ -364,12 +364,12 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 你在 `docs\reports` 内为本次事故编写一个完整的事故链路，问题追踪，排查手段，以及故障解决的说明报告。
 重点说明为什么 `TanStack Query 创建的一个 7 天 GC 定时器` 会导致如此严重的故障，以及该情况是否很容易的导致其他项目也出现类似的问题？
 
-## 007 <!-- TODO: ZCode正在做 --> 重构 README.md 的定位
+## 007 <!-- 已完成 2026-8-28 ZCode正在做 --> 重构 README.md 的定位
 
 1. 重构 `.github\workflows\schedules.yml` ，schedules.yml 不再继续输出信息到根目录的 README.md 了，只保留剩下的一个函数来完成内容获取。
 2. 根据我们项目的具体情况，重新编写有意义的 readme 文件。现在的 readme 事实上是不可阅读的。
 
-## 008 <!-- TODO: --> add favicon
+## 008 <!-- 已完成 2026-8-28 ZCode正在做 --> add favicon
 
 我们项目需要一个 favicon icon，要不然看的不好看，请你想办法设计一个出来。这个考验你的设计能力了。
 
