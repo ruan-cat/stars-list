@@ -57,14 +57,11 @@ const metadataIcons = { repo: repositoryMetaIcon, path: pathMetaIcon, branch: br
 					{{ node.todo.commitSha ? `commit ${node.todo.commitSha.slice(0, 8)}` : node.todo.source }}
 				</p>
 			</div>
-			<a
-				v-if="node.todo?.htmlUrl"
-				class="todo-details__action"
-				:href="node.todo.htmlUrl"
-				target="_blank"
-				rel="noreferrer"
-				><span>在 GitHub 查看</span><ExternalLink :size="15" aria-hidden="true"
-			/></a>
+			<div v-if="node.todo?.htmlUrl" class="todo-details__action-bar">
+				<a class="todo-details__action" :href="node.todo.htmlUrl" target="_blank" rel="noreferrer"
+					><span>在 GitHub 查看</span><ExternalLink :size="15" aria-hidden="true"
+				/></a>
+			</div>
 		</template>
 		<p v-else class="todo-details__empty">选择左侧节点查看详情。</p>
 	</aside>
@@ -149,11 +146,18 @@ const metadataIcons = { repo: repositoryMetaIcon, path: pathMetaIcon, branch: br
 	font-family: var(--vp-font-family-mono);
 	font-size: 0.8rem;
 }
+/* 详情内容超出面板高度时，动作栏吸附在滚动区底部，保证"在 GitHub 查看"按钮始终可见、不被裁切 */
+.todo-details__action-bar {
+	position: sticky;
+	bottom: 0;
+	margin: 1.35rem -1.25rem 0;
+	padding: 0.9rem 1.25rem 0.35rem;
+	background: linear-gradient(to top, var(--vp-c-bg) 78%, transparent);
+}
 .todo-details__action {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.4rem;
-	margin-top: 1.35rem;
 	padding: 0.55rem 0.7rem;
 	border: 1px solid var(--vp-c-divider);
 	border-radius: 6px;

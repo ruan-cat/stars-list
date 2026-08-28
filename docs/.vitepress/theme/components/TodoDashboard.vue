@@ -172,6 +172,7 @@ const layoutStyle = computed(() => ({ height: `calc(100dvh - ${viewportReserve.v
 }
 .todo-dashboard__header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	gap: 1rem;
 	align-items: flex-start;
@@ -284,7 +285,7 @@ const layoutStyle = computed(() => ({ height: `calc(100dvh - ${viewportReserve.v
 .todo-state--error {
 	color: var(--vp-c-danger-1) !important;
 }
-@media (max-width: 720px) {
+@media (max-width: 900px) {
 	.todo-layout {
 		display: block;
 		height: auto !important;
