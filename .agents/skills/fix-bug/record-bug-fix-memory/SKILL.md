@@ -214,6 +214,12 @@ metadata:
 - 适用场景：浏览器端请求仓库自有静态资源（artifact）、或给 Reka UI Portal 弹层写 scoped 样式时。
 - 关键约束：生产代码禁直连 `raw.githubusercontent.com`，一律走同源 `BASE_URL` 路径；Portal 内容的样式必须 `:global()` 并用真实浏览器 `getComputedStyle` 验证；curl 结果不能代表浏览器网络环境。
 
+### Select 弹层关闭后残留遮挡页面（2026-08-29）
+
+- 详细案例：`2026-08-29-select-presence-animation-leftover.md`
+- 适用场景：给 Reka/Radix 系 Portal 弹层写 CSS animation/transition 时。
+- 关键约束：Presence 卸载机制依据 animationName 决定是否等待 animationend——禁止给这类弹层声明任何 animation（除非提供成对 enter/leave）；弹层回归必须用 DOM 卸载+截图做证据，不能用组件内部状态。
+
 ## 14. 本仓库落点覆盖
 
 - 本仓库的 bug 经验优先记录在当前技能目录：`.agents/skills/fix-bug/record-bug-fix-memory/*.md`
