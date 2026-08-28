@@ -208,6 +208,12 @@ metadata:
 - 适用场景：VitePress/SSR/SSG/Node 构建或测试在输出完成后进程长期不退出，且项目共享 TanStack Query 客户端配置。
 - 关键约束：浏览器有限 `gcTime` 不得无条件复用于 SSR；先用 fresh Actions step 状态确认卡点，再用观察窗口 + `async_hooks` 区分短 timer 与长期 ref'ed timer。
 
+### TODO 快照接口生产不可用与 Select 弹层高度失效（2026-08-28）
+
+- 详细案例：`2026-08-28-todo-artifact-same-origin-url-and-portal-scoped-css.md`
+- 适用场景：浏览器端请求仓库自有静态资源（artifact）、或给 Reka UI Portal 弹层写 scoped 样式时。
+- 关键约束：生产代码禁直连 `raw.githubusercontent.com`，一律走同源 `BASE_URL` 路径；Portal 内容的样式必须 `:global()` 并用真实浏览器 `getComputedStyle` 验证；curl 结果不能代表浏览器网络环境。
+
 ## 14. 本仓库落点覆盖
 
 - 本仓库的 bug 经验优先记录在当前技能目录：`.agents/skills/fix-bug/record-bug-fix-memory/*.md`
