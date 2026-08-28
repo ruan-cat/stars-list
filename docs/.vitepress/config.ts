@@ -21,10 +21,15 @@ if (shouldGenerateDerivedDocs(process.env)) {
 	splitTopics();
 }
 
+// VitePress 对用户 head 配置原样输出、不做 base 前缀改写；
+// GitHub Pages 部署在 /stars-list/ 子路径下，favicon href 必须手动感知 base，否则线上 404。
+const headIconHref = process.env.GITHUB_ACTIONS === "true" ? "/stars-list/favicon.svg" : "/favicon.svg";
+
 const userConfig = setUserConfig(
 	{
 		title: "阮喵喵的github star列表",
 		description,
+		head: [["link", { rel: "icon", type: "image/svg+xml", href: headIconHref }]],
 		themeConfig: {
 			editLink: { pattern: "https://github.com/ruan-cat/stars-list/blob/dev/docs/:path" },
 			socialLinks: [{ icon: "github", link: "https://github.com/ruan-cat/stars-list" }],
