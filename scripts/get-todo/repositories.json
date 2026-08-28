@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"owner": "ruan-cat",
-	"generatedAt": "2026-08-27T11:12:34.478Z",
+	"generatedAt": "2026-08-28T12:47:05.335Z",
 	"source": "github-api",
 	"manifestStale": false,
 	"repositories": [
@@ -547,6 +547,15 @@
 		},
 		{
 			"fullName": "ruan-cat/RuanZhongNan",
+			"visibility": "public",
+			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/shadcn-docs-nuxt-production-repro",
 			"visibility": "public",
 			"fork": false,
 			"archived": false,
