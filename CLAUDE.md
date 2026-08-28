@@ -82,7 +82,7 @@
 
 ## 项目概述
 
-这是一个 VitePress 文档站点，用于自动生成和展示按编程语言和主题分类的 GitHub stars 列表。项目使用 GitHub Actions 实现自动化，并部署到 GitHub Pages。
+这是一个 VitePress 文档站点，用于自动生成和展示按主题分类的 GitHub stars 列表。项目使用 GitHub Actions 实现自动化，并部署到 GitHub Pages。根目录 `README.md` 是手工维护的项目说明文档，构建时会自动复制为站点首页 `docs/index.md`。
 
 ## 代码/编码格式要求
 
@@ -316,9 +316,9 @@ pnpm git:main-2-dev
 ### 自动化与工作流程
 
 - `.github/workflows/schedules.yml` - 每日自动执行：
-  - 运行 starred 工具更新基于语言的分类
-  - 生成基于主题的分类
+  - 运行 starred 工具按仓库主题分类生成 stars 列表（唯一的 starred 步骤）
   - 将更改提交回仓库
+  - 不再输出任何内容到根目录 README.md；按编程语言分类的输出已下线
 - `.github/workflows/deploy-github-page.yml` - 推送时部署到 GitHub Pages
 
 ### 配置文件
@@ -340,9 +340,7 @@ pnpm git:main-2-dev
 ### GitHub Stars 处理
 
 - 使用 `starred` Python 包生成分类列表
-- 两种分类方式：
-  1. 按编程语言分类（主列表在 `docs/index.md`）
-  2. 按仓库主题分类（在 `docs/topics/index.md`）
+- 仅保留按仓库主题分类（在 `docs/topics/index.md`）；按编程语言分类已下线，不再生成
 - 通过 GitHub Actions 每日自动更新
 
 ### 开发工作流
@@ -355,7 +353,8 @@ pnpm git:main-2-dev
 
 ## 重要说明
 
-- 主要内容（`docs/index.md` 和 `docs/topics/index.md`）是自动生成的 - 请勿手动编辑这些文件
+- `docs/topics/index.md` 与 `docs/topics/*.md` 是自动生成的 - 请勿手动编辑这些文件
+- `docs/index.md` 在构建时从根目录 README.md 复制生成（已在 .gitignore 中忽略）；修改站点首页请直接编辑根目录 README.md
 - 项目使用 `@ruan-cat/*` 包的自定义预设系统
 - 任何分支推送都会自动触发 GitHub Pages 部署
 - 站点配置了 `/stars-list/` 作为 GitHub Pages 的 base 路径以确保兼容性
