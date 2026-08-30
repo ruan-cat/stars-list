@@ -373,7 +373,7 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 
 我们项目需要一个 favicon icon，要不然看的不好看，请你想办法设计一个出来。这个考验你的设计能力了。
 
-## 009 <!-- TODO: 2026-8-28 尝试让ZCode的多模态模型试试看；效果超预期 --> 继续优化 TodoDashboard 的视觉效果
+## 009 <!-- 任务接力 2026-8-28 尝试让ZCode的多模态模型试试看；效果超预期 --> 继续优化 TodoDashboard 的视觉效果
 
 1. 用 memorix 先获取上一轮关于 vitepress todo vue 组件的实现效果。接下来我们完成功能的优化。
    - 截止目前，我们核心的 github workflow `.github\workflows\get-todo.yml` 确实是正常运行，且提供了有效的 git commit。自动化效果实现了。
@@ -408,4 +408,29 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 
 你进入 dev 分支，自己本地启动 dev 开发服务，自己用 agent browser 启动谷歌浏览器，自己完成测试。
 
-## 010 <!-- TODO: -->
+## 010 <!-- TODO: 2026-8-30 ZCode正在做 --> 继续优化 TodoDashboard 的视觉效果
+
+### 2026-8-30 reka-ui 是不是走弯路了？
+
+但 Reka UI 的 Presence 卸载机制会在关闭时读取元素的 animationName，发现非 none 就等待 animationend——而这个动画只在元素插入时播放一次，关闭时永远等不到，于是弹层永久残留在页面上，还带着事件拦截层，把“点外部关闭”“再点打开”全部挡死。这就是你看到的“关不掉”。
+对于这个问题，我非常疑惑，难道用 Reka UI 那么难受么？是不是我们一开始实现这个基础功能的时候，就走弯路走错了？为什么我们是直接使用 reka-ui 呢？而不是使用 shadcn-vue 呢？当初我们设定的目标，就是要这个的。你的 superpower 任务工件根本没告诉你要用 `shadcn-vue` 来做页面么？为什么这么简单的一个下拉列表，都能被你搞得如此痛苦难堪呢？
+
+你看这个 `https://shadcn-vue.com/docs/components/dropdown-menu` ，不是很简单清晰么？你是不是一开始的路就走错了？
+
+---
+
+当初决策就是错的！我们要纠偏！
+
+1. 重做你的历史任务工件。我们的本次任务是`继续优化 TodoDashboard 的视觉效果`，你重做历史的任务工件，说清楚之前的选用 `Reka UI` 的方案很离谱。
+2. 删除、更改掉旧 memorix 的历史决策，不对。
+3. 你按照 openspec 系列技能，和 do-long-task 技能的要求，在 `openspec\changes\2026-8-30-use-shadcn-vue` 新建一个长任务工件。我们要新建 `openspec\changes\2026-8-30-use-shadcn-vue` 长任务。
+4. `2026-8-30-use-shadcn-vue` 长任务的任务安排：
+   - 迁移 shadcn-vue CLI 。迁移标准的 shadcn-vue 方案。
+   - 让 tailwindcss 兼容识别主题是 Teek 变量体系。
+   - 用你的视觉能力，对现在现成的功能。做清晰的记录。确保重构之后，我们不会丢失最基础的功能和视觉效果。你要针对现在的已实现的功能情况，列举清楚功能清单，视觉效果，基础功能，交互情况等一系列`验收细节`。确保你重构组件后，我们新的组件实现的效果仍旧和`验收细节`相对应。
+   - 用 agent browser 启动本地 dev 进程，在现成的谷歌浏览器实例内打开并阅览界面，收集必要的`验收细节`。
+   - 用 skills 包，去用 context7 MCP，获取到 `shadcn-vue` 组件库对应的最佳实践的指导 skills，安装成项目级别的本地 skills，未来开发将要按照这个要求来完成。
+   - 用 init-ai-md 技能的指导，及时在 AI 记忆文档内更新你增加的项目级别技能，
+   - 重构替换现在的组件，从 `Reka UI` 方案换成正规的 `shadcn-vue` 和 `tailwindcss` 方案。
+
+## 011 <!-- TODO: -->

@@ -14,6 +14,13 @@
   - **阅读方式**：使用此技能前先读 SKILL.md，再根据“案例索引”按需读取独立案例文件。
   - **写入方式**：新增经验时创建独立案例文件并更新索引，禁止将完整事故正文写入 SKILL.md。
 
+- `shadcn-vue`
+  - 路径：`.agents/skills/shadcn-vue/SKILL.md`
+  - 用途：TodoDashboard UI 组件的 shadcn-vue + tailwindcss 标准方案指导，含 Tailwind v4 接入 VitePress、Teek 令牌桥接、弹层动画红线。
+  - 触发时机：创建/修改 `docs/.vitepress/theme/components/ui/` 组件，或为 TodoDashboard 写样式、调整弹层动画、桥接主题变量时必须先读。
+  - 参考作用：沉淀 context7 拉取的 shadcn-vue 官方最佳实践与本仓库的落地决策（design.md D1~D7）。
+  - 约束：弹层动画必须成对（open/closed）或不用，禁止 enter-only；颜色一律走语义令牌，禁止硬编码色值；普通文档页渲染像素不得变化。
+
 ## 主动问询实施细节
 
 实施更改前主动识别遗漏点、缺漏点和冲突点。信息不足或存在多种解释时，使用 AskUserQuestion 与用户协作补充实施清单；信息充分且低风险的小改动可说明假设后直接执行。

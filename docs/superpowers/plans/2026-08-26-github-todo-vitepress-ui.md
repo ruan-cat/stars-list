@@ -2,6 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans or superpowers:subagent-driven-development to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
+> [!WARNING]
+> **2026-08-30 纠偏声明（覆盖本文的 Tech Stack 组件部分）：** 本文 Tech Stack 中的"shadcn-vue/Reka UI"按"手写 reka-ui primitives + scoped CSS"执行，该路线已作废并判定为错误（连续两起生产事故：Portal scoped 样式失效、Presence 弹层残留）。组件层现行方案为 shadcn-vue + tailwindcss 标准体系，见 `openspec/changes/2026-8-30-use-shadcn-vue/`（proposal/design/specs/tasks）。本文的 Vue Query 数据层、tree model 与验收流程仍然有效。
+
 **Goal:** 在 VitePress 内交付一个采用 A「Explorer 密集型」布局的 GitHub TODO 浏览页面，使用 Vue Query 读取、缓存和刷新公开 artifact。
 
 **Architecture:** 保留现有 Git-first 扫描器作为 artifact 生产者；新增一个纯浏览器消费层。artifact client 负责安全读取和 schema 校验，Vue Query 负责 30 分钟有效缓存、localStorage 恢复、去重和取消，tree model 负责平面 TODO 到 Explorer 层级的转换，Vue 组件负责筛选、折叠、详情和降级状态。
