@@ -2,6 +2,9 @@
 
 > 状态：已确认，作为 GitHub TODO 扫描器之后的前端实现工件。正式页面采用 A「Explorer 密集型」方案；HTML 原型只作为视觉参考，不再继续扩展原型功能。
 
+> [!WARNING]
+> **2026-08-30 纠偏声明（覆盖本文的组件选型部分）：** 本文"采用 shadcn-vue 的 Reka UI 生态"及后续按"shadcn-vue/Reka UI primitives"手写组件的路线已被判定为**错误方案**并作废。手写 reka-ui 包装层缺失 shadcn-vue 官方组件的实战检验样式，连续引发两起生产事故（Portal scoped 样式失效、Presence 弹层残留遮挡）。页面组件选型与样式体系的现行有效方案见 `openspec/changes/2026-8-30-use-shadcn-vue/`（shadcn-vue + tailwindcss 标准方案，Tailwind 令牌桥接 Teek 变量）。本文的页面目标、信息架构与验收心智模型仍然有效；凡与该 change 冲突的组件选型表述，一律以 change 为准。
+
 ## 1. 目标
 
 在现有 VitePress 站点内增加独立 TODO 页面，读取公开的 `TodoScanArtifact` JSON，在浏览器内提供接近 `FanaticPythoner.better-todo-tree` 的仓库进度浏览体验：仓库、分支、目录、文件和 TODO 行以树形层级呈现，左侧筛选/折叠/选中，右侧同步显示上下文详情。
