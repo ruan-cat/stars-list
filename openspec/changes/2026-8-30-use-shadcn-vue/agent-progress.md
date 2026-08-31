@@ -46,6 +46,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 2026-09-01 按 reviewer P2 建议补齐状态栏成功态 `role=status`/`aria-live=polite`；TDD 先红后绿，组件测试 7/7、tsc/build 通过，提交 `99bf185` + `416b7cf`，不改变验收门禁状态。
 - 2026-09-01 产出并提交事故/门槛设计审计报告 `docs/reports/2026-09-01-shadcn-vue-agent-browser-acceptance-incident.md`（`01d19b9`），明确 agent-browser 能力边界、验收打法过度点、延误责任与 5 分钟能力探针/分层矩阵/时间盒改进方案；未擅自放宽 tasks 或归档。
 - 2026-09-01 用户确认重设计验收协议：tasks/spec/design/manifest 已改为“能力探针 → 产品核心矩阵 → 故障/资源补证 → 独立复核”四层；保留同环境唯一 session 与证据链底线，增加 `pass/partial/blocked/not-run` 状态、single-flight 结构性不适用规则、规范化资源清单 + SHA、像素 diff mask/归一化规则和二次同类控制面故障即止损。
+- 2026-09-01 对照事故报告逐项补齐剩余落差：能力探针增加可选 A2 reload 探针（失败只阻塞 C reload 子项），mask 后归一化 diff 明确 `≤1%` 参考阈值与 `>1%` 独立解释规则；tasks/spec/design/manifest/技能口径已一致。
 
 ## 阻塞点
 

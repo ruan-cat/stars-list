@@ -167,3 +167,7 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F43 [active] 用户授权重设计验收门槛与 session 方案
 
 用户确认重新设计更合理的验收门槛和 agent-browser session 会话设计。任务源、spec、design、manifest 已统一采用“能力探针 → 产品核心矩阵 → 故障/资源补证 → 独立复核”四层协议：每环境一次能力探针和一个 headed session，控制面故障标记 `blocked`，single-flight 乱序场景可标记 `not-applicable`，原始 HAR 可用规范化请求清单 + SHA-256 等价复核，像素 diff 使用固定条件与 mask/归一化结论。当前不修改任何任务勾选，不归档 change。
+
+## F44 [active] 报告建议与工件逐项对齐
+
+对照事故报告第 5 节复核后，补齐两处原先未完全落实的建议：任务/spec/design/manifest/技能现在都明确可选 A2 reload 探针（仅一次，失败只阻塞 C 的 reload 子项），并定义 mask 后归一化 diff `≤1%` 参考阈值与 `>1%` 独立解释规则。产品/故障分层、规范化资源清单 + SHA、独立只读 verifier、二次同类控制面故障止损和不跨 session 规则均已存在且口径一致。未修改任务勾选。

@@ -176,9 +176,9 @@
 #### Scenario: 能力探针与 session 注册
 
 - **GIVEN** 任一环境准备开始验收
-- **WHEN** 执行 `skills get core`、`doctor --offline --quick`、具名 session 注册、headed 前台切换、`visibilityState=visible`、一次截图和一次 network requests 检查
+- **WHEN** 执行基础探针：`skills get core`、`doctor --offline --quick`、具名 session 注册、headed 前台切换、`visibilityState=visible`、一次截图、一次 network requests 检查和 close；若 C 阶段需要 reload，再最多执行一次 artifact `route --abort` → 单次 reload → 原 session 恢复的可选控制面探针
 - **THEN** 记录探针命令、session、Chrome/agent-browser 版本、viewport、URL、服务 PID/端口与结果
-- **AND** 探针失败时标记该环境 `blocked` 并停止，不启动第二个 session；探针通过后才进入产品核心矩阵
+- **AND** 基础探针失败时标记该环境 `blocked` 并停止，不启动第二个 session；可选 reload 探针失败只将 C 的 reload 子项标记 `blocked`，保留已通过的 B 产品证据；基础探针通过后才进入产品核心矩阵
 
 #### Scenario: dev 环境验收
 
@@ -212,6 +212,7 @@
 - **AND** 只对稳定的验收状态截图；截图按 `{environment}-{scenario}-{timestamp}.png` 命名，并在 `evidence/manifest.md` 登记环境、URL、viewport、Chrome/agent-browser 版本、session、命令、断言结果和文件哈希
 - **AND** 每张截图必须能回指本 spec 的 Requirement/Scenario；缺少元数据或断言的图片只能标记 `partial`/`参考`
 - **AND** 提交前逐行检查截图路径存在、PNG 尺寸与 viewport 一致、SHA-256 匹配，并输出 `checked/missing/mismatched/unreferenced` 汇总
+- **AND** mask 后的归一化 diff `≤1%` 只作为可接受参考阈值，`>1%` 必须由独立复核解释；原始 diff 不单独决定通过/失败，结构性视觉漂移始终判定失败
 
 #### Scenario: 产品矩阵与故障/资源补证分层
 
