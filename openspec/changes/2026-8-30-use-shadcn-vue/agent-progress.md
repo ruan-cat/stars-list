@@ -2,7 +2,7 @@
 
 ## 当前 checkpoint
 
-Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成 2.1、2.2、2.4、2.5、3.1–3.4、3.6、4.3；3.5/3.7 及普通文档页与三环境回归仍待真实浏览器门禁。
+Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成 2.1、2.2、2.4、2.5、3.1–3.4、3.6–3.7、4.3；3.5 及普通文档页与三环境完整回归仍待真实浏览器门禁。
 
 ## 当前 task
 
@@ -26,11 +26,12 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - Select/TreeToggle 旧 scoped CSS 已移除，官方 SelectTrigger 重复 Chevron 已修正；TodoTree/TodoFlatList 增加 focus-visible ring，TodoDetails 采用唯一 `overflow-auto`，TodoDashboard 在刷新 pending 结束后恢复触发按钮焦点；`todo-tree.test.ts` 新增仓库+分支+类型交集测试（11/11 通过）。
 - 2026-08-31 串行 `pnpm docs:build` exit 0（55.71s）；本轮变更文件 `pnpm exec prettier --experimental-cli --check` exit 0；3.6/4.3 的静态门禁已记录，未替代浏览器门禁。
 - 2026-08-31 冷启动 headed Chrome 复验 Tailwind utilities：1280×900 `docScrollH=900`、nav `overflowY=auto`；720×900 group `display=block`、nav `overflowY=visible`、页面自然滚动；CSSRules 含 `.h-full/.overflow-auto/.bg-muted/.text-foreground`，截图和 SHA-256 已登记在 manifest 第 12 节。
-- `use-todo-query.test.ts` 2/2 通过：single-flight 刷新守卫合并并发调用，结算后允许下一次请求；`todo-tree.test.ts` 已覆盖搜索+仓库+路径+分支+类型交集和无匹配空树；3.7 的刷新竞态/筛选实现已有单测，但完整组件键盘仍待 headed Chrome。
+- `use-todo-query.test.ts` 2/2 通过：single-flight 刷新守卫合并并发调用，结算后允许下一次请求；`todo-tree.test.ts` 已覆盖搜索+仓库+路径+分支+类型交集和无匹配空树；新增 Vitest + Vue Test Utils + happy-dom 组件套件 `pnpm test:components` 7/7 通过，覆盖 Enter/Space/ArrowUp/ArrowDown/Escape、close-auto-focus、初载失败/重试、刷新 disabled/aria-busy、single-flight 与焦点回收。
 - preview headed Chrome 已完成下拉/清空/Escape/外点/树平铺/详情/刷新禁用与焦点恢复、亮暗稳定截图和 artifact HTTP 200；hydration mismatch 与普通首页同为全站基线警告，详情见 manifest §13。
 - preview 受控故障注入已完成：fetch 拒绝时显示刷新失败 alert，恢复 fetch/解除 route 后真实刷新显示成功反馈，焦点回到刷新按钮；截图和 SHA-256 见 manifest §16。
 - preview 首次加载失败也已受控验证：清空 local/session storage 后在 reload 前 abort artifact，状态栏和页面错误态均显示失败且无伪造统计；解除 route 后刷新恢复，证据见 manifest §16。
 - 同 viewport 1600×1000 preview 树形截图与 `evidence/01-tree-initial.png` diff 为 4.60%（73642/1600000），标记参考，不能勾选 2.3/4.4；marker 本身已通过 `listStyle=none`/`paddingLeft=0` 验证。
+- Select 外点关闭在 fresh preview headed Chrome 中首次复现焦点落 BODY；随后以 Reka `close-auto-focus` + 双 RAF + 延迟 fallback 修复，新的 `shadcn-preview-fix-e3381299a1aa` session 三路径均 `aria-expanded=false`、Portal options=0、activeElement 为仓库触发器，截图与哈希登记在 manifest §20。
 
 ## 阻塞点
 
@@ -39,6 +40,6 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 
 ## 下一步
 
-1. 进入 3.5–3.7 Todo\* 视觉迁移与边界验证。
+1. 进入 3.5 Todo\* 视觉迁移与边界验证，并继续补齐三环境矩阵。
 2. 处理 2.3：补齐重构前 fresh baseline，并完成首页、topics、prompts 固定 viewport before/after 像素回归。
 3. 最终回归阶段执行 4.1–4.7 三环境 agent-browser 验收。

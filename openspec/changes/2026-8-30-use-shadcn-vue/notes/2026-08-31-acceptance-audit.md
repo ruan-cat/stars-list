@@ -4,12 +4,12 @@
 
 ## 1. 结论
 
-当前 change **仍不通过最终验收，不得归档**。规划工件结构有效，实施已部分推进但浏览器与部署门禁尚未闭环。初次审核时 CLI 报告总任务 20、完成 3、剩余 17；按用户确认补充可访问性与三环境浏览器验收任务后，当前总任务为 24、完成 13、剩余 11。
+当前 change **仍不通过最终验收，不得归档**。规划工件结构有效，实施已部分推进但浏览器与部署门禁尚未闭环。初次审核时 CLI 报告总任务 20、完成 3、剩余 17；按用户确认补充可访问性与三环境浏览器验收任务后，当前总任务为 24、完成 14、剩余 10。
 
 ## 2. 完整性与实现证据
 
 - 已完成：`tasks.md` 1.1–1.3（基线截图、量化指标、spec 固化）。
-- 已完成：2.1、2.2、2.4、2.5、3.1–3.4、3.6、4.3，并有 CLI/tsc/test/build/Prettier 证据；3.5/3.7、2.3、4.1–4.2、4.4–4.7、5.1–5.2 仍未闭环。
+- 已完成：2.1、2.2、2.4、2.5、3.1–3.4、3.6–3.7、4.3，并有 CLI/tsc/test/build/Prettier/ headed Chrome 证据；3.5、2.3、4.1–4.2、4.4–4.7、5.1–5.2 仍未闭环。
 - 当前源码已接入 Tailwind v4、官方 shadcn-vue 生成子组件和业务视觉迁移；仍保留少量树连接线/过渡 scoped 微调，且缺少 900/720px 与三环境 headed Chrome 的真实证据，不能把构建通过当作视觉/交互完成。
 - `openspec validate ... --strict` 只证明工件格式有效，不能证明实现或场景通过。
 
@@ -53,7 +53,7 @@ sourceType=github
 
 ## 7. 基础设施推进记录
 
-随后已完成 tasks 2.1–2.2、2.4–2.5、3.1–3.4、3.6、4.3：安装 `tailwindcss@4.3.3` 与 `@tailwindcss/vite@4.3.3`，在 VitePress 注册 Tailwind 插件，新增无 preflight 的 `theme/tw.css` 并由 TodoDashboard 入口加载；通过 CLI 生成并修正 `components.json`、Select、Button、Input、Resizable 官方子组件和 `evidence/manifest.md`。Todo\* 静态视觉迁移已完成，补上状态统计、连接线、焦点 ring、刷新焦点恢复和组合筛选测试；修复 preset 覆盖 `vite.plugins` 导致 Tailwind utilities 未生成的问题，并补充 `@source`/显式 utilities 入口；串行 fresh `pnpm docs:build` exit 0（55.71s），本轮变更文件 Prettier check exit 0。一次并行构建出现 `.vitepress/.temp` 临时文件竞争，已记录为 F14，后续构建验收必须串行。3.2 外点焦点修复后 headed Chrome 三路径复验通过；当前总任务 24 项，完成 13 项，剩余 11 项；2.3、3.5、3.7、4.1–4.2、4.4–4.7、5.1–5.2 仍不得提前勾选。
+随后已完成 tasks 2.1–2.2、2.4–2.5、3.1–3.4、3.6–3.7、4.3：安装 `tailwindcss@4.3.3` 与 `@tailwindcss/vite@4.3.3`，在 VitePress 注册 Tailwind 插件，新增无 preflight 的 `theme/tw.css` 并由 TodoDashboard 入口加载；通过 CLI 生成并修正 `components.json`、Select、Button、Input、Resizable 官方子组件和 `evidence/manifest.md`。Todo\* 静态视觉迁移已完成，补上状态统计、连接线、焦点 ring、刷新焦点恢复和组合筛选测试；修复 preset 覆盖 `vite.plugins` 导致 Tailwind utilities 未生成的问题，并补充 `@source`/显式 utilities 入口；新增 Vitest + Vue Test Utils + happy-dom 组件测试，`pnpm test:components` 7/7 通过；Select 外点关闭改为监听 close-auto-focus 并以双 RAF/延迟兜底恢复焦点，fresh preview headed Chrome 三路径通过；串行 fresh `pnpm docs:build` exit 0（61.29s），本轮变更文件 Prettier check exit 0。一次并行构建出现 `.vitepress/.temp` 临时文件竞争，已记录为 F14，后续构建验收必须串行。当前总任务 24 项，完成 14 项，剩余 10 项；2.3、3.5、4.1–4.2、4.4–4.7、5.1–5.2 仍不得提前勾选。
 
 ## 8. 2026-08-31 工件加固与未验证门禁
 

@@ -217,4 +217,40 @@ agent-browser diff screenshot --baseline openspec/changes/2026-8-30-use-shadcn-v
 | 选中关闭    | 打开仓库下拉 → 坐标点击 `10wms`；触发器值 `10wms`、`aria-expanded=false`、Portal options=0、activeElement `aria-label=仓库` | 通过 |
 | Escape 关闭 | 打开仓库下拉 → Escape；`aria-expanded=false`、Portal options=0、activeElement `aria-label=仓库`                             | 通过 |
 
-该节取代 §8 中“修复前焦点落 BODY”的失败状态；旧失败证据保留用于解释修复原因。3.2 的三条关闭路径与焦点回收现已具备新 session 证据，待独立复核后再勾选。
+该节取代 §8 中“修复前焦点落 BODY”的失败状态；旧失败证据保留用于解释修复原因。由于后续 fresh preview session 仍发现外点焦点回收回到 BODY，该节只能视为候选历史证据；最终结果以 §20 的修复后 session 为准。
+
+## 19. 2026-08-31 组件层自动化回归（3.7）
+
+| 命令                                                                                                                                                                                                          | 结果            | 覆盖边界                                                                                                                                                                                                                            |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm test:components`                                                                                                                                                                                        | Vitest 7/7 通过 | TodoFilters 的 Enter/Space/ArrowUp/ArrowDown/Escape、选中提交、close-auto-focus 焦点回收；四个筛选控件键盘可达且无伪 disabled；TodoDashboard 首次失败/无假计数/重试、刷新 disabled/aria-busy、重复点击 single-flight 与结束焦点恢复 |
+| `pnpm exec tsc --noEmit`                                                                                                                                                                                      | exit 0          | SFC 与测试类型检查                                                                                                                                                                                                                  |
+| `pnpm todo:test`                                                                                                                                                                                              | 30/30 通过      | scanner 既有测试与四维组合筛选/无匹配边界                                                                                                                                                                                           |
+| `pnpm exec prettier --experimental-cli --check package.json pnpm-lock.yaml vitest.config.ts docs/.vitepress/theme/components/todo-dashboard.component.test.ts docs/.vitepress/theme/components/ui/Select.vue` | 通过            | 本轮测试基础设施与 Select 修复文件格式                                                                                                                                                                                              |
+
+测试基础设施见根目录 `vitest.config.ts`（Vue plugin + happy-dom），组件用例见 `docs/.vitepress/theme/components/todo-dashboard.component.test.ts`。happy-dom 无法可靠模拟 Reka 的真实 `pointerdown-outside`，所以外点关闭必须以 headed Chrome 的真实坐标证据复验，不能把该边界写成自动化通过。
+
+## 20. 2026-08-31 preview Select 焦点修复 fresh headed Chrome 复验
+
+> 先串行执行 `pnpm docs:build`（exit 0，61.29s），再以前台 `pnpm docs:preview -- --host 127.0.0.1 --port 4173` 服务打开 URL。session `shadcn-preview-fix-e3381299a1aa`；Chrome `152.0.0.0`；agent-browser `0.35.0`；viewport `1280×900`；启动参数 `--headed --args '--no-sandbox,--disable-gpu'`。全新 session 初始 console 仅记录全站既有 `Hydration completed but contains mismatches.`，未出现新的 `InvalidStateError`。
+
+| 路径        | 真实操作与断言                                                                                                                                   | 截图                                                                  | SHA-256                                                            | 结果 |
+| :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :----------------------------------------------------------------- | :--: |
+| 外点关闭    | 坐标点击仓库触发器打开 → 坐标点击 `h1` → 等待 300ms；`aria-expanded=false`、Portal options=0、值保持 `10wms`、activeElement 为 `aria-label=仓库` | `browser-2026-08-31/preview-focus-fix-outside-1280x900-20260831.png`  | `A6A9E10FC3AD1DAF2B0EF2DEACD3C0872817EDE7B617E3CD523C173BCCD30713` | 通过 |
+| 选中关闭    | 打开仓库下拉 → 坐标点击 `10wms` → 等待 300ms；值为 `10wms`、Portal options=0、activeElement 为仓库触发器、147 可见 TODO                          | `browser-2026-08-31/preview-focus-fix-selected-1280x900-20260831.png` | `2B377684D3A7652EFC10B65C227B0021AFFCA6E06349FF6C8F5ABD8EDEB10E46` | 通过 |
+| Escape 关闭 | 打开仓库下拉 → 真实 Escape → 等待 300ms；`aria-expanded=false`、Portal options=0、值保持 `10wms`、activeElement 为仓库触发器                     | `browser-2026-08-31/preview-focus-fix-escape-1280x900-20260831.png`   | `A6A9E10FC3AD1DAF2B0EF2DEACD3C0872817EDE7B617E3CD523C173BCCD30713` | 通过 |
+
+该节只证明 Select 三条关闭路径在 preview 的真实浏览器行为；它不替代 4.5–4.7 的完整三环境矩阵、普通文档像素回归或 production/Flex 部署证据。
+
+## 21. 2026-08-31 dev Select/刷新/响应式 fresh headed Chrome 复验
+
+> 服务：前台 `pnpm docs:dev -- --host 127.0.0.1 --port 8080`；session `shadcn-dev-fix-e3381299a1aa`；Chrome `152.0.0.0`；agent-browser `0.35.0`；启动参数 `--headed --args '--no-sandbox,--disable-gpu'`。1280×900 首屏与互动路径的 console 无新增消息；720×900 用于窄视口布局断言。
+
+| 路径          | 真实操作与断言                                                                                                              | 截图                                                             | SHA-256                                                            | 结果 |
+| :------------ | :-------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- | :----------------------------------------------------------------- | :--: |
+| 首屏/marker   | 打开 `/todos.html`，等待 `699 可见 TODO`；`docScrollH=900`、`docScrollW=1280`、树列表 `listStyleType=none`、`paddingLeft=0` | `browser-2026-08-31/dev-focus-fix-initial-1280x900-20260831.png` | `FB69E70F57A780D98BAF19CD5B75526C39D5C9F4BA2A938DDB5FFE1F2106B39F` | 通过 |
+| 外点关闭      | 真实坐标打开仓库下拉 → 坐标点击 `h1` → 等待 300ms；`aria-expanded=false`、Portal options=0、activeElement 为仓库触发器      | `browser-2026-08-31/dev-focus-fix-outside-1280x900-20260831.png` | `630677128F92F8608FA958063A2CC2AEDA16BC0971788236C3C5D201BB5B8FAA` | 通过 |
+| 刷新禁用/恢复 | 真实坐标点击刷新；100ms 内 `disabled=true`、`aria-busy=true`；500ms 后恢复可用、成功提示出现、焦点回刷新按钮                | `browser-2026-08-31/dev-focus-fix-refresh-1280x900-20260831.png` | `9C00450D01A072307E66150CD31497E531CAC4C59ED6010F122BDC3A2684EA4A` | 通过 |
+| 窄视口        | 设置 720×900；group `display=block`、文档自然滚动 `docScrollH=1525`、`docScrollW=714`                                       | `browser-2026-08-31/dev-focus-fix-mobile-720x900-20260831.png`   | `07AA15848D2A25E7B216B1DB549691E000B2A874EE892558906BD2B7BB5FFEFD` | 通过 |
+
+本节仍是 dev 的局部 fresh 证据；四维组合筛选、下拉滚动/清空、树/平铺/详情全量路径、主题双态和失败注入需按 4.5 完整矩阵继续登记。
