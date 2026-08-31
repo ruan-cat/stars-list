@@ -98,7 +98,30 @@ health probe → start one server → open one URL → baseline → core matrix 
 - 同时登记原始 diff、归一化 diff 和结构性视觉结果；单一百分比不自动等于产品失败，也不自动等于通过。
 - 原始/归一化 diff 只作同视口诊断，不设跨 viewport 的统一百分比硬阈值；`1600×1000` 与 `1280×900` 等不同尺寸的差异不得单独判定通过或失败。响应式验收以结构性事实为硬门禁：桌面无页面级双滚动、窄视口面板上下堆叠、marker/缩进符合基线意图、主题变量生效、sticky 动作栏完整可见。
 
-### 4.2 提交前证据落盘校验
+### 4.2 无障碍验收：axe + 语义树 + 真实键盘三件套
+
+agent-browser 已内置 axe-core 审计；标准无障碍验收不需要另写扫描脚本，但 axe 不能证明键盘顺序、焦点回收或视觉焦点是否可见，必须组合三类证据：
+
+1. **规则扫描**：在稳定页面执行 `a11y --json --tags wcag2a,wcag2aa --selector '[aria-label="GitHub TODO 浏览器"]'`，登记 `violations` 与 `incomplete`；`incomplete` 必须人工解释，不能直接当通过。
+2. **语义树**：重新执行 `snapshot -i`，核对 `role=search/listbox/option/status/alert/separator`、`aria-label`、`aria-expanded`、`aria-selected`、`aria-pressed`、`aria-busy` 是否出现在预期节点上。
+3. **真实键盘**：使用 `focus`、`press Tab/Enter/Space/ArrowUp/ArrowDown/Escape` 完成用户路径；不要用 `dispatchEvent` 冒充键盘操作。用短 `eval` 只读取 `document.activeElement`、`aria-*` 和 Portal 节点数量，记录焦点顺序与关闭后的回收目标。
+
+推荐的最小顺序：
+
+```powershell
+agent-browser --session $session a11y --json --tags wcag2a,wcag2aa --selector '[aria-label="GitHub TODO 浏览器"]'
+agent-browser --session $session snapshot -i
+agent-browser --session $session focus "input[aria-label='搜索 TODO']"
+agent-browser --session $session press Tab
+agent-browser --session $session press Space
+agent-browser --session $session press ArrowDown
+agent-browser --session $session press Escape
+agent-browser --session $session console --clear
+```
+
+页面专属断言只在通用 axe/语义树不足时添加；优先用一次性 `eval -b` 读取，不把临时脚本提交到仓库。若 axe 报告第三方/站点基线问题，记录选择器、是否影响 TODO 子树和处置结论，不能用“全站已有警告”掩盖新增问题。
+
+### 4.3 提交前证据落盘校验
 
 在勾选任务或提交验收工件前，逐行扫描 `evidence/manifest.md` 中登记的截图引用，并同时确认：
 
