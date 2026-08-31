@@ -28,7 +28,7 @@
 
 ## 4. 全量回归与部署
 
-- [ ] 4.1 逐条执行 `specs/todo-dashboard-explorer/spec.md` 全部 Scenario，按下方“回归记录”逐项填写通过/失败、命令、session、截图和断言；任何一项缺证据不得勾选
+- [ ] 4.1 逐条执行 `specs/todo-dashboard-explorer/spec.md` 全部 Scenario；每个环境开始前先读取并登记 `evidence/01~08-*.png` 中对应的既有视觉基线（路径、尺寸、SHA-256、可见视觉事实），再填写下方“回归记录”的命令、session、同视口截图和 DOM/网络/console 断言；任何一项缺少基线读取记录或 fresh 证据不得勾选
 - [ ] 4.2 亮/暗双主题下截图比对（对照 `evidence/01/08`），同时记录切换前后 viewport、滚动位置、控制台错误数和像素 diff 结论
 - [x] 4.3 `pnpm docs:build` 构建通过（串行 exit 0，55.71s）+ `pnpm exec prettier --experimental-cli --check` 通过（本轮变更文件，排除用户既有 `docs/prompts/index.md`）
 - [ ] 4.4 普通文档页像素回归门禁复验（对应 2.3）
