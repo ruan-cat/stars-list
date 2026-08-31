@@ -118,9 +118,10 @@
 
 > 冷启动 headed Chrome session：`shadcn-tw-mobile-e3381299a1aa`；agent-browser `0.35.0`；Chrome `152.0.0.0`；URL `http://127.0.0.1:8080/todos.html`。先执行 `agent-browser open --headed --args '--no-sandbox'`，再执行 `wait --load networkidle`、`set viewport`、`eval` 和 `screenshot`。CSSRules 复验确认 `.h-full`、`.overflow-auto`、`.bg-muted`、`.text-foreground` 均存在。
 
-| viewport | DOM/计算样式断言                                                                                                        | 截图                                                 | SHA-256                                                            | 结论 |
-| :------: | :---------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------- | :----------------------------------------------------------------- | :--: |
-| 1280×900 | `docScrollH=900`；group `display=flex`、`height=379`；TODO nav `overflowY=auto`、`clientHeight=377`、`scrollHeight=908` | `browser-2026-08-31/dev-todos-1280x900-20260831.png` | `876F0931D69B4953796DBDD5BADEC4E34AE82BBE95E723C4241FBB4869514542` | 通过 |
-| 720×900  | `docScrollH=1557`；group `display=block`、`height=932`；TODO nav `overflowY=visible`、`navScroll=764`，页面允许自然滚动 | `browser-2026-08-31/dev-todos-720x900-20260831.png`  | `43D9B981EF2688FC50B36647D0DB2FECF8C522CBDF9855D49E4C2BB16F765293` | 通过 |
+|          viewport          | DOM/计算样式断言                                                                                                        | 截图                                                                   | SHA-256                                                            | 结论 |
+| :------------------------: | :---------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------- | :----------------------------------------------------------------- | :--: |
+| 929×869（marker 修复截图） | `listStyle=none`、`paddingLeft=0`；TODO nav `overflowY=auto`；截图实际 PNG 尺寸 `929×869`                               | `browser-2026-08-31/dev-todos-1280x900-20260831.png`（保留既有文件名） | `22B90EC6285E1272D7955DB8A8CA86070CA80421F5CD19D5F3AA2888F9633DFA` | 通过 |
+|    1280×900（DOM only）    | `docScrollH=900`；group `display=flex`、`height=379`；TODO nav `overflowY=auto`、`clientHeight=377`、`scrollHeight=908` | 未生成（当前 Chrome 截图物理尺寸未随 emulation 改变）                  | —                                                                  | 参考 |
+|          720×900           | `docScrollH=1557`；group `display=block`、`height=932`；TODO nav `overflowY=visible`、`navScroll=764`，页面允许自然滚动 | `browser-2026-08-31/dev-todos-720x900-20260831.png`                    | `43D9B981EF2688FC50B36647D0DB2FECF8C522CBDF9855D49E4C2BB16F765293` | 通过 |
 
 以上只覆盖 Tailwind 运行时产出、桌面/窄屏滚动与响应式布局；未覆盖三环境完整交互矩阵、亮暗主题、刷新竞态和生产部署，因此不能单独勾选 3.5、3.7 或 4.5–4.7。

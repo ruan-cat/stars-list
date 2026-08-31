@@ -61,3 +61,7 @@ sourceType=github
 - 3.5 业务组件均改用 Tailwind 语义类；`ui/` 目录已无 `<style scoped>`，Select 只保留 Portal 必需的全局滚动规则，TreeToggle 已去除旧 VP 变量样式。
 - 组合筛选新增仓库+分支+类型交集测试；树/平铺行加入 focus-visible ring；刷新结束后恢复真实触发按钮焦点；详情区采用父面板隐藏溢出、子区唯一滚动的结构。
 - 独立 reviewer 仍将刷新竞态和三环境 headed Chrome 完整视觉矩阵列为未验证门禁；一次 Chrome 自动启动出现 `DevToolsActivePort` exit 3，清理旧 dev 进程后已在新 session 成功复验 900/720px，F21 作为间歇性风险保留，禁止伪造其余未完成门禁。
+
+## 9. 2026-08-31 基线视觉复核：TodoTree marker 回归
+
+用户指出当前截图左侧出现基线不存在的黑色圆点。直接读取 `evidence/01-tree-initial.png` 后确认基线确实无 marker；Chrome computed style 进一步证明是 VitePress `.vp-doc ul` 覆盖普通 Tailwind `list-none/p-0`。已使用 `!list-none !p-0 !m-0` 修复，冷启动 dev 复验 `listStyle=none`、`paddingLeft=0`，并将无点截图与实际 PNG 尺寸登记到 `evidence/manifest.md` §12。原 1600×1000 基线与当前 929×869 截图不做直接像素结论，2.3/4.4 仍待同 viewport before/after。
