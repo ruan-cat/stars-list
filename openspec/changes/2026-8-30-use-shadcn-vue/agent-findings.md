@@ -123,3 +123,19 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F31 [resolved] refresh 事件 currentTarget 在真实按钮包装层不可用
 
 真实 headed Chrome 中刷新 pending/恢复状态正常，但 `event.currentTarget` 未落到原生按钮，导致旧实现没有恢复焦点；组件测试的 attachTo mount 未暴露该差异。`restoreRefreshFocus` 已增加按 `aria-label=刷新快照` 查询原生 button 的兜底，fresh dev 复验完成后焦点回收且桌面页面无溢出。
+
+## F32 [active] dev 单 session 的 agent-browser daemon 在 reload 后失联
+
+2026-09-01 dev 验收 session `todo-dev-full-20260901` 在首屏 snapshot/截图成功后执行 `reload`，agent-browser 返回 `Invalid response: EOF while parsing a value`，随后 CLI 报 CDP 连接拒绝；同一时刻 Chrome PID `33236` 仍存活且 `127.0.0.1:9227/json/version` 返回 Chrome 151.0.7922.174，说明故障位于 agent-browser daemon/会话控制面，不足以判定 TODO 页面失败。已停止 dev server、关闭该 session 并精确结束 PID 33236；未新建第二个 session 拼接证据。后续动作：重新验收前先运行 agent-browser doctor/单 session 健康探针；若控制面再次 EOF，记录为环境阻塞并停止该环境，不得静默换 session。
+
+## F33 [active] agent-browser headed 启动在健康探针通过后仍无法建立 Chrome 控制面
+
+2026-09-01 `agent-browser doctor --offline --quick` 返回 7 pass/0 warn/0 fail、无活动 daemon；随后唯一 dev session `todo-dev-20260901-a` 启动 headed Chrome 返回 exit 3 且未生成 `DevToolsActivePort`。按技能仅在同一 session 追加一次 `--no-sandbox` 受控恢复，结果为连接 9227 被拒绝；未创建第三个 session。dev server 与 session 已停止，8080/9227 无监听。该证据只说明当前 agent-browser 启动/控制面阻塞，不说明 TODO 页面功能失败；4.5 保持未完成。后续若要改用手工 Chrome + CDP，需作为明确的替代执行方案重新记录完整生命周期，不能与本次失败 session 拼接。
+
+## F34 [active] 手工 CDP session 的截图与键盘证据仍有边界
+
+2026-09-01 手工隔离 Chrome PID `30252` + CDP `9229` 的唯一 session `todo-dev-cdp-20260901-c` 成功完成首屏、下拉、仓库选择、组合筛选、无匹配、树展开/详情和平铺 DOM；7 张截图已登记到 manifest §24。平铺 PNG capture 首次超时，按一次低负载 JPEG capture 后转换 PNG，保留原始 timeout，不把它写成原生 PNG 通过。该 session 的 `agent-browser press Escape` 没有形成可观察 keydown；合成 Escape 能卸载 Portal 但焦点落 BODY，故键盘焦点路径仍未证明，4.5 不勾选。源码已尝试 document capture listener 修复，但尚未在干净 preview/dev session 验证；不要在当前已停止 session 上继续 HMR 调试。
+
+## F35 [resolved] document capture listener 在干净 preview session 修复 Escape 焦点
+
+2026-09-01 串行 preview build 后，干净 session `todo-preview-fix-20260901-d` 在 Chrome `151.0.7922.174`/agent-browser `0.35.0` 中真实执行 `focus → Enter → ArrowDown → Escape`，确认 `aria-expanded=false`、Portal options=0、activeElement 回到仓库触发器；外点与选中关闭也复验通过。该结果验证 `Select.vue` 的 document capture listener 修复了 F34 的键盘焦点问题，但仍只能作为 4.6 局部证据，不能替代完整矩阵。
