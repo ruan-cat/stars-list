@@ -1,0 +1,126 @@
+# 浏览器验收证据清单
+
+> 状态：待实施阶段填写。本清单不是通过证明；每一行必须由 fresh agent-browser headed Chrome 操作、截图和断言输出共同支撑。
+
+## 1. 采集工具与会话
+
+- 工具：`agent-browser`（先执行 `agent-browser skills get core`）
+- 浏览器：Google Chrome headed，通过 CDP 连接；禁止使用 headless-only 截图作为视觉通过证据
+- 独立会话（PowerShell）：`$env:AGENT_BROWSER_SESSION = (agent-browser session id --scope worktree --prefix shadcn-vue-acceptance)`
+- 会话元数据：执行 `agent-browser session info --json`，记录 session、Chrome 版本、agent-browser 版本与 viewport
+- 交互规则：Portal/下拉使用真实坐标点击；合成 `dispatchEvent` 仅用于 DOM 机制断言
+
+## 2. 环境矩阵
+
+|    环境    |                                启动命令                                |                      验收 URL                      |                          必须记录                           |
+| :--------: | :--------------------------------------------------------------------: | :------------------------------------------------: | :---------------------------------------------------------: |
+|    dev     |            `pnpm docs:dev -- --host 127.0.0.1 --port 8080`             |         `http://127.0.0.1:8080/todos.html`         |            进程日志、session、截图、DOM/网络断言            |
+|  preview   | `pnpm docs:build`；`pnpm docs:preview -- --host 127.0.0.1 --port 4173` |         `http://127.0.0.1:4173/todos.html`         |   build 输出、进程日志、session、截图、资源/console 断言    |
+| production |                         当前 GitHub Pages 部署                         | `https://ruan-cat.github.io/stars-list/todos.html` | commit SHA、部署结果、session、截图、HTTP/网络/console 断言 |
+
+## 3. 证据文件命名与登记
+
+截图命名：`{environment}-{scenario}-{timestamp}.png`。每条记录必须填写以下字段；缺少任一字段只能标记为 `参考`，不能标记为 `通过`。
+
+|  环境  | Requirement / Scenario |  URL   | viewport | Chrome / agent-browser | session | 操作与命令 | 断言结果 | 截图文件 | SHA-256 |
+| :----: | :--------------------: | :----: | :------: | :--------------------: | :-----: | :--------: | :------: | :------: | :-----: |
+| 待执行 |         待执行         | 待执行 |  待执行  |         待执行         | 待执行  |   待执行   |  待执行  |  待执行  | 待执行  |
+
+## 4. 统一交互矩阵
+
+- 首屏 artifact 加载、状态栏扫描口径与仓库树
+- 刷新 pending、重复触发、失败恢复与错误可感知性
+- 仓库/分支/类型下拉：鼠标打开、真实坐标选中、外部关闭、Escape 关闭、DOM 卸载
+- 键盘：Tab、Enter/Space、ArrowUp/ArrowDown、Enter 提交、Escape 关闭、焦点回收
+- 搜索/仓库/分支/类型组合筛选、清空一个维度、无匹配空状态
+- 树形/平铺切换、选中态共享、详情 sticky 动作按钮
+- 亮色/暗色主题、桌面无页面级双滚动、窄视口自然滚动
+- 生产环境同样执行以上矩阵，不得用 dev/preview 结果替代
+
+## 5. 失败与回滚记录
+
+- 触发条件：关键 Scenario 失败、Portal 残留、页面级滚动、主题回归、普通文档像素变化、console/network 新错误
+- 处置：停止当前环境验收，记录失败截图/日志、部署 commit SHA 和回滚命令
+- 切流：通过现有 Flex 流量器切回上一个已知通过提交，登记切流前/后版本、操作者、时间、流量器返回状态和生产 URL；不得用本地 build 结果代替
+- 回滚后：用同一 agent-browser session 重新打开生产 URL，至少复验首屏、下拉关闭、键盘焦点、主题、页面滚动五项；五项及网络/console 均通过后才可将回滚标记为完成
+
+## 6. 2026-08-31 生产普通文档页基线采集（参考证据，不通过 2.3）
+
+> 本次使用 headed Chrome + `--args --no-sandbox` 启动参数；agent-browser session 为
+> `shadcn-vue-acceptance-e3381299a1aa`，agent-browser 版本 `0.35.0`，Chrome
+> `152.0.0.0`，viewport `929×869`。三张截图来自同一 session，但没有可核验的
+> 重构前 fresh baseline 哈希，因此不能宣称 2.3 通过，也未修改 tasks.md。
+
+|    环境    | Requirement / Scenario |                       URL                        | viewport  |         Chrome / agent-browser          |               session                |                                                 操作与命令                                                  |                                                     断言结果                                                      |                  截图文件                   |                              SHA-256                               |
+| :--------: | :--------------------: | :----------------------------------------------: | :-------: | :-------------------------------------: | :----------------------------------: | :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: | :-----------------------------------------: | :----------------------------------------------------------------: |
+| production |    2.3 普通文档首页    |     `https://ruan-cat.github.io/stars-list/`     | `929×869` | Chrome 152.0.0.0 / agent-browser 0.35.0 | `shadcn-vue-acceptance-e3381299a1aa` | `agent-browser open --headed --args '--no-sandbox'`；`wait --load networkidle`；`snapshot -i`；`screenshot` |                  HTTP/导航成功；DOM 快照成功；无法与重构前 fresh baseline 做像素 diff，**参考**                   |  `browser-2026-08-31/production-home.png`   | `048D6DBFC0DC2F4111B7B978E7CD95B369DA1FE400B64908A2FE766B3FF40B35` |
+| production |   2.3 topics 普通页    | `https://ruan-cat.github.io/stars-list/topics/`  | `929×869` | Chrome 152.0.0.0 / agent-browser 0.35.0 | `shadcn-vue-acceptance-e3381299a1aa` |                                   同上；页面含大量主题链接，snapshot 成功                                   |                          HTTP/导航成功；DOM 快照成功；无 fresh before baseline，**参考**                          | `browser-2026-08-31/production-topics.png`  | `2BA42306007B414FFA5C6F5AD6512C5FF9AFBA2BA9AC8FCAE777248153439B95` |
+| production |   2.3 prompts 普通页   | `https://ruan-cat.github.io/stars-list/prompts/` | `929×869` | Chrome 152.0.0.0 / agent-browser 0.35.0 | `shadcn-vue-acceptance-e3381299a1aa` |                                   同上；标题 `杂项提示词`，snapshot 成功                                    | HTTP/导航成功；DOM 快照成功；`scrollH=14496`、`scrollW=923`（长文档自然滚动）；无 fresh before baseline，**参考** | `browser-2026-08-31/production-prompts.png` | `4CE5DE4FCF423A52E496B1D73B2BB7EDADD32407A4D3624E6632088FA60EF1D1` |
+
+### 6.1 阻塞与后续动作
+
+- 2.3 仍阻塞：必须先取得重构前同 viewport、同 URL、同 Chrome/agent-browser 规范的 fresh baseline，再对 dev/preview/production 逐页执行像素 diff。
+- 本次生产页面仅证明可导航、DOM 可读和截图可归档；不证明重构前后一致，也不替代 4.4 的普通文档页像素回归门禁。
+- dev 启动尝试因当前执行器策略拒绝 `Start-Process` 重定向命令而未完成；没有伪造 dev/preview 通过证据。
+
+## 7. 2026-08-31 dev 环境采集（2.3 参考，不通过）
+
+> dev 服务由前台 `pnpm docs:dev -- --host 127.0.0.1 --port 8080` 串行启动。agent-browser session 为 `shadcn-vue-dev3-e3381299a1aa`，headed Chrome 连接因页面渲染和截图命令超时出现间歇性 EOF；首页与 topics 截图已生成，prompts 仅完成 DOM/滚动断言。由于没有同 viewport 的重构前 fresh baseline，以下证据只标记为 `参考`，不得勾选 2.3。
+
+| 环境 | Requirement / Scenario |               URL                | viewport  |         Chrome / agent-browser          |            session             |                  操作与命令                  |                                  断言结果                                  |              截图文件               |                              SHA-256                               |
+| :--: | :--------------------: | :------------------------------: | :-------: | :-------------------------------------: | :----------------------------: | :------------------------------------------: | :------------------------------------------------------------------------: | :---------------------------------: | :----------------------------------------------------------------: |
+| dev  |    2.3 普通文档首页    |     `http://127.0.0.1:8080/`     | `929×869` | Chrome 152.0.0.0 / agent-browser 0.35.0 | `shadcn-vue-dev3-e3381299a1aa` |     `open`；`snapshot -i`；`screenshot`      |                导航/DOM 成功；无 before baseline，**参考**                 |  `browser-2026-08-31/dev-home.png`  | `2599E537C8500DBC258ACD34C9AF302F15451866FB36498C14802BEC7693C95E` |
+| dev  |   2.3 topics 普通页    | `http://127.0.0.1:8080/topics/`  | `929×869` | Chrome 152.0.0.0 / agent-browser 0.35.0 | `shadcn-vue-dev3-e3381299a1aa` |     `open`；`snapshot -i`；`screenshot`      |                导航/DOM 成功；无 before baseline，**参考**                 | `browser-2026-08-31/dev-topics.png` | `CA9F09516D21C1C0BFEE6A1612B87D4FBAB4747093C95BDECF8BC25B5F9C263B` |
+| dev  |   2.3 prompts 普通页   | `http://127.0.0.1:8080/prompts/` | `929×869` | Chrome 152.0.0.0 / agent-browser 0.35.0 | `shadcn-vue-dev3-e3381299a1aa` | `open`；`eval scrollH/scrollW`；`screenshot` | title=`杂项提示词`、`scrollH=16194`、`scrollW=923`；截图命令超时，**参考** |          未生成（timeout）          |                                 —                                  |
+
+## 8. 2026-08-31 Select 交互 smoke（3.1/3.2，dev）
+
+> session：`select-smoke-e3381299a1aa`；headed Chrome 152.0.0.0；viewport `929×869`。以下断言使用真实 agent-browser 交互和 DOM eval，截图命令因 TODO 页面 CDP `Page.captureScreenshot` 超时而未生成。
+
+|    路径     |                 操作                  |                                DOM/状态断言                                |     结果     |
+| :---------: | :-----------------------------------: | :------------------------------------------------------------------------: | :----------: |
+|  选中关闭   |        仓库下拉 → 选择 `10wms`        |      `contentExists=false`、触发器文本 `10wms`、`aria-expanded=false`      |     通过     |
+| Escape 关闭 |         打开仓库下拉 → Escape         |  `contentExists=false`、`aria-expanded=false`、焦点回到 `aria-label=仓库`  |     通过     |
+|  外部关闭   |       打开仓库下拉 → 点击 `h1`        |       `contentExists=false`、`aria-expanded=false`、焦点回到 `BODY`        |     通过     |
+|  打开样式   |        打开仓库下拉 → DOM eval        | `data-state=open`、`animation=none`、`overflowY=scroll`、`maxHeight=320px` |     通过     |
+|  清空筛选   |  选择 `10wms` → 点击 `清空仓库筛选`   |              触发器文本恢复 `所有仓库`、`contentExists=false`              |     通过     |
+|    截图     | 打开下拉 → `agent-browser screenshot` |                     CDP `Page.captureScreenshot` 超时                      | 参考，待优化 |
+
+## 9. 2026-08-31 Resizable DOM smoke（3.4，dev）
+
+> session：`resize-smoke-e3381299a1aa`；headed Chrome 152.0.0.0；viewport `929×869`。DOM eval 验证 canonical Resizable wrapper 的 separator 与两侧面板约束。
+
+|                                         断言                                         | 结果 |
+| :----------------------------------------------------------------------------------: | :--: |
+| separator `aria-label=调整左右面板宽度`、`data-orientation=horizontal`、`tabindex=0` | 通过 |
+|                             tree panel `min-width=280px`                             | 通过 |
+|                           details panel `min-width=360px`                            | 通过 |
+|                   `pnpm exec tsc --noEmit`、串行 `pnpm docs:build`                   | 通过 |
+
+## 10. 2026-08-31 静态门禁摘要（不替代浏览器验收）
+
+|          门禁          | 命令/证据                                                                                                      |                 结果                  |
+| :--------------------: | :------------------------------------------------------------------------------------------------------------- | :-----------------------------------: |
+| 3.6 ui scoped CSS 清理 | `rg -n "<style scoped" docs/.vitepress/theme/components/ui`                                                    |             无匹配，通过              |
+|      4.3 类型检查      | `pnpm exec tsc --noEmit`                                                                                       |             exit 0，通过              |
+|        4.3 构建        | 串行 `pnpm docs:build`                                                                                         |         exit 0，57.96s，通过          |
+|        4.3 格式        | 本轮变更文件 `pnpm exec prettier --experimental-cli --check`（排除用户既有 `docs/prompts/index.md`）           |             exit 0，通过              |
+|        组合筛选        | `pnpm exec tsx --test docs/.vitepress/theme/todo-tree.test.ts docs/.vitepress/theme/todo-artifact.test.ts`     |              11/11，通过              |
+|     Tailwind 产物      | 对 `docs/.vitepress/dist/assets/*.css` 统计 `.h-full/.overflow-auto/.bg-muted/.text-foreground/.border-border` | 各 1 次，结合 §12 computed style 通过 |
+
+以上仅证明静态结构、类型、构建和纯函数行为；3.5/3.7 的 900/720px 布局、焦点竞态、主题与三环境视觉矩阵仍必须补 headed Chrome 截图和 DOM/网络/console 断言。
+
+## 11. 2026-08-31 headed Chrome 重试失败（参考，不通过）
+
+独立 reviewer 在最新工作区尝试启动 agent-browser headed Chrome，返回 exit 3 且未生成 `DevToolsActivePort`。此前同机 session 曾成功完成生产/dev 参考截图与局部 Select/Resizable DOM smoke；本次失败作为 F21 环境证据保留，不得将静态门禁升级为 3.5/3.7 或 4.5–4.7 的视觉通过。
+
+## 12. 2026-08-31 Tailwind 运行时与响应式滚动复验（dev，部分通过）
+
+> 冷启动 headed Chrome session：`shadcn-tw-mobile-e3381299a1aa`；agent-browser `0.35.0`；Chrome `152.0.0.0`；URL `http://127.0.0.1:8080/todos.html`。先执行 `agent-browser open --headed --args '--no-sandbox'`，再执行 `wait --load networkidle`、`set viewport`、`eval` 和 `screenshot`。CSSRules 复验确认 `.h-full`、`.overflow-auto`、`.bg-muted`、`.text-foreground` 均存在。
+
+| viewport | DOM/计算样式断言                                                                                                        | 截图                                                 | SHA-256                                                            | 结论 |
+| :------: | :---------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------- | :----------------------------------------------------------------- | :--: |
+| 1280×900 | `docScrollH=900`；group `display=flex`、`height=379`；TODO nav `overflowY=auto`、`clientHeight=377`、`scrollHeight=908` | `browser-2026-08-31/dev-todos-1280x900-20260831.png` | `876F0931D69B4953796DBDD5BADEC4E34AE82BBE95E723C4241FBB4869514542` | 通过 |
+| 720×900  | `docScrollH=1557`；group `display=block`、`height=932`；TODO nav `overflowY=visible`、`navScroll=764`，页面允许自然滚动 | `browser-2026-08-31/dev-todos-720x900-20260831.png`  | `43D9B981EF2688FC50B36647D0DB2FECF8C522CBDF9855D49E4C2BB16F765293` | 通过 |
+
+以上只覆盖 Tailwind 运行时产出、桌面/窄屏滚动与响应式布局；未覆盖三环境完整交互矩阵、亮暗主题、刷新竞态和生产部署，因此不能单独勾选 3.5、3.7 或 4.5–4.7。

@@ -23,7 +23,7 @@
 ### Decisions
 
 **D1. Tailwind CSS v4 + `@tailwindcss/vite` 接入 VitePress 构建。**
-Tailwind v4 以 Vite 插件方式接入（`docs/.vitepress/config.ts` 的 `vite.plugins`），不需要 `tailwind.config.js`（v4 使用 CSS-first 配置）。设计令牌在 `docs/.vitepress/theme/tw.css`（新文件，由 TodoDashboard 入口引入）中以 `@theme inline` 声明；为避免隐式 reset，样式文件拆分导入 `tailwindcss/theme.css` 与 `tailwindcss/utilities.css`，不使用聚合导入。
+Tailwind v4 以 Vite 插件方式接入（`docs/.vitepress/config.ts` 的 `vite.plugins`），不需要 `tailwind.config.js`（v4 使用 CSS-first 配置）。由于现有 artifact 服务插件直接导入 `vite` 类型，项目同时显式声明匹配 VitePress 的 `vite@5.4.21` 开发依赖，避免 pnpm 严格依赖布局下 tsc 无法解析。设计令牌在 `docs/.vitepress/theme/tw.css`（新文件，由 TodoDashboard 入口引入）中以 `@theme inline` 声明；为避免隐式 reset，样式文件拆分导入 `tailwindcss/theme.css` 与 `tailwindcss/utilities.css`，不使用聚合导入。
 
 **D2. Tailwind 作用域隔离，避免污染普通文档页。**
 Preflight（CSS reset）会破坏 VitePress 既有文档样式。策略：`tw.css` 只导入 `tailwindcss/theme.css` 与 `tailwindcss/utilities.css`，明确不导入 `tailwindcss/preflight`；Tailwind 类只出现在 TodoDashboard 组件树内，普通文档页不得新增 Tailwind reset。实施时使用固定 viewport、固定 artifact 和 before/after 像素 diff，动态时间区域必须单独标注，不得用“看起来没变”替代结果。
@@ -78,6 +78,15 @@ Select 必须验证 Enter/Space 打开、ArrowUp/ArrowDown 移动、Enter 提交
 **D9. 上游技能文件格式化按用户授权执行。**
 允许 Prettier 修改 `.agents/skills/shadcn-vue/**` 与 `skills-lock.json`，不新增 ignore 配置；本 change 不再把重新运行 skills 安装器或比较本地内容与远端 hash 作为验收前置条件，接受由格式化产生的锁定关系风险并在回归记录中注明。
 
+**D10. 三环境统一使用 agent-browser + Chrome 验收。**
+浏览器验收必须由 agent-browser 通过 CDP 驱动可见 Chrome headed session 完成，不使用 headless-only 结果冒充视觉证据。环境固定为：dev `pnpm docs:dev -- --host 127.0.0.1 --port 8080`、preview `pnpm docs:build` 后执行 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`、production `https://ruan-cat.github.io/stars-list/todos.html`。每个环境执行同一交互矩阵，记录 session/Chrome/viewport/URL/命令/断言，并将截图登记到 `evidence/manifest.md`。
+
+**D11. 浏览器证据必须可回放且可回滚。**
+真实坐标点击用于 Portal 和下拉交互，合成事件仅验证 DOM 机制；证据缺少元数据、哈希或 Scenario 映射时不得勾选任务。生产失败触发停止验收，经现有 Flex 流量器切回上一个已知通过提交，并记录切流前后版本、时间、返回状态和生产 URL；回滚后必须由同一 agent-browser 流程复验关键路径，五项未全通过不得结束回滚。
+
+**D12. Tailwind 插件必须在 preset 合并后挂载并显式声明业务 source。**
+`@ruan-cat/vitepress-preset-config` 的 `setUserConfig()` 会重建 `vite.plugins`，因此 `serveArtifacts()` 与 `tailwindcss()` 必须在其返回对象上追加；`tw.css` 通过 `@source "./components/**/*.vue"` 和显式 utilities 入口保证 VitePress 非标准 `theme/components` 路径被扫描。验收同时检查最终 CSSRules/产物中存在代表性工具类和浏览器 computed style，禁止只看 build exit 0。
+
 ### Risks / Trade-offs
 
 - **[Tailwind 影响既有文档页]** → D2 的作用域隔离 + "首页/topics 渲染像素不变"回归门禁。
@@ -85,6 +94,8 @@ Select 必须验证 Enter/Space 打开、ArrowUp/ArrowDown 移动、Enter 提交
 - **[验收细节遗漏]** → 以 spec 需求清单为唯一验收源；每完成一个组件即对照 `evidence/` 截图做像素级比对。
 - **[统计口径误导]** → 状态栏固定展示总数、已扫描数、跳过/分支不可用数；`complete` 不得替代扫描覆盖率。
 - **[部署回滚]** → 生产浏览器验证出现任一关键场景失败、页面级滚动、Portal 残留、主题回归或普通文档像素变化时，停止验收并按部署提交执行回滚。
+- **[浏览器环境漂移]** → 三个环境必须使用同一 agent-browser headed session 规范与交互矩阵，禁止以 headless 截图或单环境结果替代。
+- **[证据不可回放]** → `evidence/manifest.md` 缺失环境/URL/viewport/session/版本/命令/哈希任一字段时，截图只能作为参考不能作为通过证据。
 
 ### Migration Plan
 
@@ -99,3 +110,4 @@ Select 必须验证 Enter/Space 打开、ArrowUp/ArrowDown 移动、Enter 提交
 - shadcn-vue CLI 对 `docs/.vitepress` 这种非标准 srcDir 的兼容性待验证（见 Risks）。
 - Tailwind utilities 与 VitePress 默认样式的选择器冲突面，需在 D2 实施时用固定 viewport 像素 diff 确认。
 - Prettier 修改上游技能文件后不重跑 skills 安装器/hash 关系校验，属于已确认的流程风险。
+- agent-browser headed Chrome 流程依赖可用 CDP 与独立 session；服务启动/停止日志和端口必须纳入回归记录。

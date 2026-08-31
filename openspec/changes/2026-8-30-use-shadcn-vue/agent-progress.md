@@ -2,28 +2,38 @@
 
 ## 当前 checkpoint
 
-Phase 0（工件创建）完成。change `2026-8-30-use-shadcn-vue` 工件链就绪：proposal / design / specs/todo-dashboard-explorer / tasks / 本文件 / agent-findings。
+Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成 2.1、2.2、2.4、2.5、3.1、3.2、3.3、3.4、3.6、4.3；3.5/3.7 及普通文档页与三环境回归仍待真实浏览器门禁。
 
 ## 当前 task
 
-下一步：`tasks.md` 2.1（安装 tailwindcss + @tailwindcss/vite 接入 VitePress 构建）。
+当前任务：`tasks.md` 3.5（Todo\* 视觉层迁移）；2.3 普通文档页像素回归因缺同口径 before baseline 延后到最终回归阶段补齐。
 
 ## 状态
 
 - 验收基线已固化：`evidence/01~08-*.png`（8 张）+ 量化指标（下拉 overflow-y scroll / gutter 12 / 图标 20 / maxHeight 320px；选中后 content 卸载；筛选 147/699；aria 标注全集）。
-- specs 需求 8 组 Requirement 全部源自现状盘点，是重构验收唯一来源。
-- 尚未动任何组件代码；TodoDashboard 所需的 Tailwind/shadcn-vue UI 依赖仍未安装（仅已安装独立的官方 shadcn-vue agent skill）。
+- specs 需求 9 组 Requirement（含三环境浏览器验收与证据归档）全部源自现状盘点和本轮纠偏，是重构验收唯一来源。
+- 已安装 `tailwindcss@4.3.3`、`@tailwindcss/vite@4.3.3` 与显式 `vite@5.4.21` 类型依赖，并在 VitePress 配置接入插件；新增 `theme/tw.css`（仅 theme/utilities，无 preflight）并由 TodoDashboard 入口加载。shadcn-vue CLI 已生成 `components.json`，修正 schema 后 resolvedPaths.ui 指向目标目录；Select、Button、Input、Resizable 已迁移，Todo\* 视觉层已静态迁移，仍待 3.5/3.7 的真实视觉与交互验收。
 
 ## 最近验证摘要
 
-- dev（localhost:8080）真实鼠标 sweep：下拉打开→选 10wms→弹层卸载→计数 147→清空恢复 699，全链路通过。
-- 历史记录曾写“单测 17/17”（已过时）；2026-08-31 fresh 执行 `pnpm todo:test` 为 30/30 通过（数据层未动）。
+- 2026-08-31 串行 `pnpm docs:build`：exit 0，`build complete in 51.35s`；并行构建曾触发 `.vitepress/.temp` 缺失，已记录为环境竞争，不作为实现缺陷结论。
+- `pnpm install --frozen-lockfile --offline --ignore-scripts`：exit 0，锁文件解析一致；`pnpm exec tsc --noEmit` exit 0；`pnpm todo:test` fresh 为 30/30 通过（数据层未动）。
+- agent-browser headed Chrome 已采集 production 与 dev 首页/topics 参考截图（session、版本、viewport、URL、SHA-256 已登记）；dev prompts 截图超时但 DOM 可读，2.3 仍未通过。
+- `pnpm dlx shadcn-vue@latest info --json`：exit 0，resolvedPaths.ui 正确；同版本 `add --dry-run` 明确提示未支持，已记录 F15。
+- `pnpm dlx shadcn-vue@latest docs select`：exit 0；agent-browser headed Chrome Select smoke 验证选中关闭、Escape、外部关闭、清空、Portal 卸载和 `animation=none`/`overflowY=scroll`/`maxHeight=320px`。
+- `pnpm dlx shadcn-vue@latest docs button input` 与 `add button input --yes` 完成；`pnpm exec tsc --noEmit` exit 0；串行 `pnpm docs:build` exit 0（51.60s）。
+- `pnpm dlx shadcn-vue@latest docs resizable` 与 `add resizable --yes` 完成；Resizable separator/最小宽度 DOM smoke 通过；`pnpm exec tsc --noEmit` exit 0；串行 build exit 0（49.06s）。
+- Select/TreeToggle 旧 scoped CSS 已移除，官方 SelectTrigger 重复 Chevron 已修正；TodoTree/TodoFlatList 增加 focus-visible ring，TodoDetails 采用唯一 `overflow-auto`，TodoDashboard 在刷新 pending 结束后恢复触发按钮焦点；`todo-tree.test.ts` 新增仓库+分支+类型交集测试（11/11 通过）。
+- 2026-08-31 串行 `pnpm docs:build` exit 0（57.96s）；本轮变更文件 `pnpm exec prettier --experimental-cli --check` exit 0；3.6/4.3 的静态门禁已记录，未替代浏览器门禁。
+- 2026-08-31 冷启动 headed Chrome 复验 Tailwind utilities：1280×900 `docScrollH=900`、nav `overflowY=auto`；720×900 group `display=block`、nav `overflowY=visible`、页面自然滚动；CSSRules 含 `.h-full/.overflow-auto/.bg-muted/.text-foreground`，截图和 SHA-256 已登记在 manifest 第 12 节。
 
 ## 阻塞点
 
-- 无。
+- 2.3 普通文档页像素回归尚未执行；manifest 已建立但 dev/preview/production 正式验收证据尚未齐全。
+- 最新独立 reviewer 的 headed Chrome 自动启动曾返回 exit 3（DevToolsActivePort 未生成）；900/720px、页面滚动唯一性和刷新焦点仍不得以静态检查代替。
 
 ## 下一步
 
-1. 按 do-long-task 纪律从 tasks.md 2.1 开始小步推进。
-2. 2.4 若 shadcn-vue CLI 对 `docs/.vitepress` srcDir 适配失败，允许手工按官方模板落盘并记录 findings。
+1. 进入 3.5–3.7 Todo\* 视觉迁移与边界验证。
+2. 处理 2.3：补齐重构前 fresh baseline，并完成首页、topics、prompts 固定 viewport before/after 像素回归。
+3. 最终回归阶段执行 4.1–4.7 三环境 agent-browser 验收。
