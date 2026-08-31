@@ -88,13 +88,13 @@ Select 必须验证 Enter/Space 打开、ArrowUp/ArrowDown 移动、Enter 提交
 `@ruan-cat/vitepress-preset-config` 的 `setUserConfig()` 会重建 `vite.plugins`，因此 `serveArtifacts()` 与 `tailwindcss()` 必须在其返回对象上追加；`tw.css` 通过 `@source "./components/**/*.vue"` 和显式 utilities 入口保证 VitePress 非标准 `theme/components` 路径被扫描。验收同时检查最终 CSSRules/产物中存在代表性工具类和浏览器 computed style，禁止只看 build exit 0。
 
 **D13. 分层验收与状态机。**
-每个环境的验收运行固定为：A 能力探针、B 产品核心矩阵、C 故障/资源补证、D 独立复核。A 不产生业务通过结论；B 是用户路径硬门禁；C 允许使用不 reload 的 route/fetch 控制，reload 失败只影响 C；D 只读核验 manifest、截图、哈希和日志，不要求为了“独立”再次打开浏览器。状态统一为 `pass`、`partial`、`blocked`、`not-run`，只有所有适用硬门禁为 `pass` 才能勾选任务。
+每个环境的验收运行固定为：A 基础能力探针、B 产品核心矩阵、C 故障/资源补证、D 独立复核。A 不产生业务通过结论；B 是用户路径硬门禁；C 允许使用不 reload 的 route/fetch 控制。若 C 需要 reload，追加一次可选控制面探针（artifact abort → 单次 reload → 原 session 恢复）；该探针失败只阻塞 C 的 reload 子项，不抹除 B 证据。D 只读核验 manifest、截图、哈希和日志，不要求为了“独立”再次打开浏览器。状态统一为 `pass`、`partial`、`blocked`、`not-run`，只有所有适用硬门禁为 `pass` 才能勾选任务。
 
 **D14. 故障场景与实现不变量对齐。**
 刷新使用 single-flight 时，重复点击的预期不变量是“请求数保持 1、按钮 disabled/aria-busy、结算后焦点恢复”；不存在第二并发请求时，乱序响应场景记录为 `not-applicable`，由单元测试和 DOM 断言覆盖，不强行制造不符合实现的网络竞态。首载失败优先采用不 reload 的可控响应；只有控制面能力探针明确支持 reload 时才执行 reload 故障。
 
 **D15. 视觉与资源证据采用可解释等价物。**
-像素对比固定 viewport、滚动位置、主题、字体和 artifact 版本，对动态时间/光标/网络状态使用 mask 或独立断言；同时报告原始 diff、归一化 diff 和结构性视觉结果，不以单一百分比自动判定回归。资源证据优先保存 URL、资源类型、HTTP 状态、必要时响应 SHA-256 的规范化清单；原始 HAR 只存系统临时目录，清理后不影响复核。
+像素对比固定 viewport、滚动位置、主题、字体和 artifact 版本，对动态时间/光标/网络状态使用 mask 或独立断言；同时报告原始 diff、归一化 diff 和结构性视觉结果。原始 diff 只作诊断；mask 后归一化 diff `≤1%` 是可接受参考阈值，`>1%` 必须由独立复核解释，结构性视觉漂移始终失败。资源证据优先保存 URL、资源类型、HTTP 状态、必要时响应 SHA-256 的规范化清单；原始 HAR 只存系统临时目录，清理后不影响复核。
 
 ### Risks / Trade-offs
 
