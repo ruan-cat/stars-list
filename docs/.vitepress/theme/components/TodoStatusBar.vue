@@ -37,7 +37,11 @@ function count(nodes: TodoTreeNode[]): number {
 }
 </script>
 <template>
-	<div class="flex flex-wrap gap-4 py-2.5 text-[0.82rem] text-muted-foreground">
+	<div
+		class="flex flex-wrap gap-4 py-2.5 text-[0.82rem] text-muted-foreground"
+		:role="artifact ? 'status' : undefined"
+		:aria-live="artifact ? 'polite' : undefined"
+	>
 		<template v-if="artifact">
 			<span
 				><strong class="font-semibold text-primary">{{ visible }}</strong> 可见 TODO</span
