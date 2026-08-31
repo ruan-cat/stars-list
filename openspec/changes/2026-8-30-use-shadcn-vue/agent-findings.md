@@ -136,6 +136,10 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 
 2026-09-01 手工隔离 Chrome PID `30252` + CDP `9229` 的唯一 session `todo-dev-cdp-20260901-c` 成功完成首屏、下拉、仓库选择、组合筛选、无匹配、树展开/详情和平铺 DOM；7 张截图已登记到 manifest §24。平铺 PNG capture 首次超时，按一次低负载 JPEG capture 后转换 PNG，保留原始 timeout，不把它写成原生 PNG 通过。该 session 的 `agent-browser press Escape` 没有形成可观察 keydown；合成 Escape 能卸载 Portal 但焦点落 BODY，故键盘焦点路径仍未证明，4.5 不勾选。源码已尝试 document capture listener 修复，但尚未在干净 preview/dev session 验证；不要在当前已停止 session 上继续 HMR 调试。
 
-## F35 [resolved] document capture listener 在干净 preview session 修复 Escape 焦点
+## F35 [resolved] window capture listener 在干净 preview session 修复 Escape 焦点
 
-2026-09-01 串行 preview build 后，干净 session `todo-preview-fix-20260901-d` 在 Chrome `151.0.7922.174`/agent-browser `0.35.0` 中真实执行 `focus → Enter → ArrowDown → Escape`，确认 `aria-expanded=false`、Portal options=0、activeElement 回到仓库触发器；外点与选中关闭也复验通过。该结果验证 `Select.vue` 的 document capture listener 修复了 F34 的键盘焦点问题，但仍只能作为 4.6 局部证据，不能替代完整矩阵。
+2026-09-01 串行 preview build 后，干净 session `todo-preview-fix-20260901-d` 在 Chrome `151.0.7922.174`/agent-browser `0.35.0` 中真实执行 `focus → Enter → ArrowDown → Escape`，确认 `aria-expanded=false`、Portal options=0、activeElement 回到仓库触发器；外点与选中关闭也复验通过。该结果验证 `Select.vue` 的 window capture listener 修复了 F34 的键盘焦点问题，但仍只能作为 4.6 局部证据，不能替代完整矩阵。
+
+## F36 [resolved] dev headed session 需禁止后台遮挡才能执行焦点调度
+
+2026-09-01 最终 dev session 使用隔离 Chrome PID `6976`、CDP `9239` 与 `--disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-background-timer-throttling`，`document.visibilityState=visible`。同一 session 真实执行 Escape 后 `aria-expanded=false`、Portal=0、焦点回仓库触发器；此前 hidden tab 的 rAF 不执行导致 BODY 焦点，属于浏览器可见性环境问题。完整 dev 关键路径和首次失败/恢复证据登记在 manifest §26；仍缺重复点击竞态请求计数，4.5 不提前勾选。

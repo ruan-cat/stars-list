@@ -6,7 +6,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 
 ## 当前 task
 
-当前任务：`tasks.md` 4.6（TODO preview 单 headed session 全量矩阵）；dev 手工 CDP session `todo-dev-cdp-20260901-c` 已补部分截图但键盘/控制面不稳定，preview session `todo-preview-fix-20260901-d` 已确认 Escape 焦点修复、artifact 200、下拉滚动、主题、平铺和刷新失败恢复，仍缺完整矩阵，4.5/4.6 保持未勾选。2.3 普通文档页像素回归仍为后置旁路门禁。
+当前任务：`tasks.md` 4.5/4.6（TODO dev/preview 单 headed session 全量矩阵）；preview `todo-preview-fix-20260901-d` 与最终可见 dev `todo-dev-final-20260901-h` 已补齐大部分关键路径和截图，dev 仍缺真实重复点击竞态请求计数、全资源 HTTP 表与独立 verifier 复核，4.5/4.6 保持未勾选。2.3 普通文档页像素回归仍为后置旁路门禁。
 
 ## 状态
 
@@ -38,6 +38,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 2026-09-01 `agent-browser doctor --offline --quick` 为 7 pass/0 warn/0 fail；唯一 dev headed 启动 session `todo-dev-20260901-a` exit 3，单次 `--no-sandbox` 恢复连接拒绝，已停止服务/session，F33 记录为控制面阻塞，未再开浏览器。
 - 2026-09-01 手工 Chrome+CDP session `todo-dev-cdp-20260901-c`（Chrome 151.0.7922.174/9229）完成 7 张 TODO 部分截图和 DOM 断言；平铺 PNG 首次 timeout 后改一次 JPEG 低负载采集，Escape 键盘路径仍为 BODY/控制面不可观察，F34 记录，已停止服务/session。
 - 2026-09-01 preview session `todo-preview-fix-20260901-d`（Chrome 151.0.7922.174/9231）完成关键路径：Escape/外点/选中焦点回收、artifact 200、下拉 320px/scrollTop 368、平铺 699 行、暗色主题、刷新失败/恢复；截图哈希登记 manifest §25，仍缺完整 4.6 矩阵，已停止服务/session。
+- 2026-09-01 最终可见 dev session `todo-dev-final-20260901-h`（Chrome 151.0.7922.174/9239）完成首屏、首次失败/恢复、筛选/清空、下拉/滚动、树详情、平铺、Tab/Space/Arrow/Enter/Escape、刷新 pending/失败/成功、双主题、桌面/720px 滚动；artifact HTTP 200，console 清空后无新增错误，证据登记 manifest §26。仍缺重复点击竞态请求计数/资源全表，4.5 未勾选，已停止服务/session。
 
 ## 阻塞点
 
