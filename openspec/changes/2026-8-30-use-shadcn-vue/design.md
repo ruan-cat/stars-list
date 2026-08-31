@@ -23,10 +23,10 @@
 ### Decisions
 
 **D1. Tailwind CSS v4 + `@tailwindcss/vite` 接入 VitePress 构建。**
-Tailwind v4 以 Vite 插件方式接入（`docs/.vitepress/config.ts` 的 `vite.plugins`），不需要 `tailwind.config.js`（v4 使用 CSS-first 配置）。设计令牌在 `docs/.vitepress/theme/tw.css`（新文件，由 TodoDashboard 入口引入）中以 `@theme inline` 声明。
+Tailwind v4 以 Vite 插件方式接入（`docs/.vitepress/config.ts` 的 `vite.plugins`），不需要 `tailwind.config.js`（v4 使用 CSS-first 配置）。设计令牌在 `docs/.vitepress/theme/tw.css`（新文件，由 TodoDashboard 入口引入）中以 `@theme inline` 声明；为避免隐式 reset，样式文件拆分导入 `tailwindcss/theme.css` 与 `tailwindcss/utilities.css`，不使用聚合导入。
 
 **D2. Tailwind 作用域隔离，避免污染普通文档页。**
-Preflight（CSS reset）会破坏 VitePress 既有文档样式。策略：禁用全局 preflight 注入（v4 中通过不导入 `tailwindcss/preflight` 或以 `@layer` 限定），并仅在 TodoDashboard 组件树内启用 Tailwind 工具类；实施时以"普通文档页（如首页、topics）渲染像素不变化"为回归门禁。
+Preflight（CSS reset）会破坏 VitePress 既有文档样式。策略：`tw.css` 只导入 `tailwindcss/theme.css` 与 `tailwindcss/utilities.css`，明确不导入 `tailwindcss/preflight`；Tailwind 类只出现在 TodoDashboard 组件树内，普通文档页不得新增 Tailwind reset。实施时使用固定 viewport、固定 artifact 和 before/after 像素 diff，动态时间区域必须单独标注，不得用“看起来没变”替代结果。
 
 **D3. shadcn-vue CLI 初始化 + CSS 变量桥接 Teek。**
 以 `pnpm dlx shadcn-vue@latest init` 生成 `components.json` 与 CSS 变量骨架，随后将 shadcn 令牌映射到 Teek/VitePress 变量（`@theme inline` 方式，保证跟随主题切换）：
@@ -35,12 +35,23 @@ Preflight（CSS reset）会破坏 VitePress 既有文档样式。策略：禁用
 @theme inline {
 	--color-background: var(--vp-c-bg);
 	--color-foreground: var(--vp-c-text-1);
-	--color-muted: var(--vp-c-bg-soft);
-	--color-border: var(--vp-c-divider);
+	--color-card: var(--vp-c-bg-soft);
+	--color-popover: var(--vp-c-bg);
 	--color-primary: var(--vp-c-brand-1);
-	/* …其余令牌同理，暗色由 .dark 根类自动跟随 */
+	--color-primary-foreground: var(--vp-c-white);
+	--color-secondary: var(--vp-c-default-soft);
+	--color-muted: var(--vp-c-bg-soft);
+	--color-muted-foreground: var(--vp-c-text-2);
+	--color-accent: var(--vp-c-brand-soft);
+	--color-accent-foreground: var(--vp-c-brand-1);
+	--color-destructive: var(--vp-c-danger-1);
+	--color-border: var(--vp-c-divider);
+	--color-input: var(--vp-c-divider);
+	--color-ring: var(--vp-c-brand-1);
 }
 ```
+
+以上映射允许在存在 Teek 令牌时使用 `var(--tk-*, var(--vp-*));` 回退形式；不得在组件中写入硬编码颜色。暗色主题由站点根变量切换驱动。
 
 **D4. 组件替换清单与映射。**
 
@@ -61,11 +72,19 @@ Preflight（CSS reset）会破坏 VitePress 既有文档样式。策略：禁用
 **D7. Reka UI 依赖保留。**
 shadcn-vue 本身基于 reka-ui，`package.json` 中 `reka-ui` 依赖保留；移除的是我们手写的包装组件，不是 reka-ui 本身。
 
+**D8. 可访问性与边界场景是验收项。**
+Select 必须验证 Enter/Space 打开、ArrowUp/ArrowDown 移动、Enter 提交、Escape/外部关闭及焦点回收；刷新 pending、首次加载失败、无匹配结果和组合筛选必须验证 `disabled`/`aria-busy`/错误可感知性。
+
+**D9. 上游技能文件格式化按用户授权执行。**
+允许 Prettier 修改 `.agents/skills/shadcn-vue/**` 与 `skills-lock.json`，不新增 ignore 配置；本 change 不再把重新运行 skills 安装器或比较本地内容与远端 hash 作为验收前置条件，接受由格式化产生的锁定关系风险并在回归记录中注明。
+
 ### Risks / Trade-offs
 
 - **[Tailwind 影响既有文档页]** → D2 的作用域隔离 + "首页/topics 渲染像素不变"回归门禁。
 - **[shadcn-vue CLI 在 VitePress 站点的 srcDir 适配]** → CLI 交互答案需手工指定 components 路径到 `docs/.vitepress/theme/components`；若 CLI 对非标准工程适配失败，允许手工按官方模板落盘组件（内容与 CLI 产物一致），并在 `agent-findings.md` 记录。
 - **[验收细节遗漏]** → 以 spec 需求清单为唯一验收源；每完成一个组件即对照 `evidence/` 截图做像素级比对。
+- **[统计口径误导]** → 状态栏固定展示总数、已扫描数、跳过/分支不可用数；`complete` 不得替代扫描覆盖率。
+- **[部署回滚]** → 生产浏览器验证出现任一关键场景失败、页面级滚动、Portal 残留、主题回归或普通文档像素变化时，停止验收并按部署提交执行回滚。
 
 ### Migration Plan
 
@@ -78,4 +97,5 @@ shadcn-vue 本身基于 reka-ui，`package.json` 中 `reka-ui` 依赖保留；�
 ### Open Questions
 
 - shadcn-vue CLI 对 `docs/.vitepress` 这种非标准 srcDir 的兼容性待验证（见 Risks）。
-- Tailwind preflight 与 VitePress 默认样式的冲突面，需在 D2 实施时用像素对比确认。
+- Tailwind utilities 与 VitePress 默认样式的选择器冲突面，需在 D2 实施时用固定 viewport 像素 diff 确认。
+- Prettier 修改上游技能文件后不重跑 skills 安装器/hash 关系校验，属于已确认的流程风险。

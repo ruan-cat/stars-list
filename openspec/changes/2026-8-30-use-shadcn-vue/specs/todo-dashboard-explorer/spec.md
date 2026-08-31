@@ -15,6 +15,20 @@
 - **THEN** 状态栏展示"699 可见 TODO、78 个仓库、complete、生成于 <时间>"（数值随最新 artifact 浮动）
 - **AND** 左侧树按仓库分组展示，行内含仓库图标、仓库名与 TODO 计数
 
+#### Scenario: 扫描口径明确
+
+- **GIVEN** artifact 响应包含 `repositoryCount`、`scannedRepositoryCount`、仓库状态与 `scan.completeness`
+- **WHEN** 状态栏渲染完成
+- **THEN** 同时展示总仓库数、已扫描仓库数、跳过/分支不可用数量、可见 TODO 数与生成时间
+- **AND** `complete` 仅表示扫描流程的完整度，不得被解释为总仓库数全部已扫描
+
+#### Scenario: 首次加载失败与恢复
+
+- **GIVEN** 首次 artifact 请求返回非 2xx、超时或无效 JSON
+- **WHEN** 页面处理请求结果
+- **THEN** 展示可读错误与重试入口，不得伪造 TODO、仓库或 complete 数值
+- **AND** 用户重试成功后恢复状态栏与树/平铺视图
+
 #### Scenario: 手动刷新快照
 
 - **GIVEN** 页面已加载完成
@@ -22,6 +36,13 @@
 - **THEN** 按钮进入 pending 态并展示加载指示
 - **AND** 重新发起 artifact 请求（同源路径）
 - **AND** 成功后短暂展示"快照已更新"反馈，失败时展示错误信息
+
+#### Scenario: 刷新竞态与禁用态
+
+- **GIVEN** 快照刷新处于 pending 状态
+- **WHEN** 用户重复点击刷新或触发筛选
+- **THEN** 刷新按钮呈现 `disabled`/`aria-busy`，不会产生重复并发请求
+- **AND** 旧响应不得覆盖更新更晚的快照，结束后控件恢复可操作
 
 ### Requirement: 筛选能力
 
@@ -41,6 +62,13 @@
 - **WHEN** 用户点击清空按钮
 - **THEN** 该维度恢复占位文案（如"所有仓库"）
 - **AND** 计数与视图恢复全量（699）
+
+#### Scenario: 组合筛选边界
+
+- **GIVEN** 同时设置搜索文本、仓库、分支与类型筛选
+- **WHEN** 任一维度发生变化或清空
+- **THEN** 结果按四个维度交集实时更新，计数与树/平铺视图保持一致
+- **AND** 无匹配结果时展示空状态，不产生页面级滚动或错误计数
 
 ### Requirement: 仓库下拉交互契约
 
@@ -66,6 +94,13 @@
 - **GIVEN** 弹层处于打开状态
 - **WHEN** 用户点击弹层外部区域或按下 Escape
 - **THEN** 弹层关闭且不改变当前值
+
+#### Scenario: 键盘导航与焦点回收
+
+- **GIVEN** 下拉触发器获得焦点
+- **WHEN** 用户按 Enter/Space 打开、按 ArrowUp/ArrowDown 移动、按 Enter 提交或按 Escape 关闭
+- **THEN** 选中值、`aria-expanded`、`aria-selected` 与视觉高亮同步更新
+- **AND** Escape/外部关闭后焦点回到触发器，选中关闭后弹层从 DOM 卸载
 
 ### Requirement: 树形与平铺双视图
 
@@ -126,3 +161,10 @@
 - **GIVEN** 重构完成
 - **WHEN** 审查 DOM
 - **THEN** 保留 `role="search"`、`role="listbox"`、`role="option"`、`aria-label`（搜索/仓库/分支/类型/视图切换/TODO Explorer/平铺列表）与 `aria-selected`/`aria-expanded` 等既有标注
+
+#### Scenario: 键盘焦点与禁用控件
+
+- **GIVEN** 刷新、加载失败或无匹配结果等状态出现
+- **WHEN** 用户仅使用键盘遍历控件
+- **THEN** 当前焦点始终可见且顺序稳定，禁用控件具有 `disabled` 或等价 `aria-disabled` 语义
+- **AND** 错误提示可被辅助技术感知，恢复操作完成后焦点回到触发恢复的控件
