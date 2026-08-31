@@ -66,6 +66,16 @@ health probe → start one server → open one URL → baseline → full matrix 
 - 用 `network requests` 或 HAR 证明 artifact/静态资源状态；HAR 可能含响应体和敏感头，只保存在系统临时目录并按项目规则清理。
 - 视觉结论必须对照已读基线；“页面能打开”“构建 exit 0”“元素存在”都不能替代像素或可见交互证据。
 
+### 4.1 提交前证据落盘校验
+
+在勾选任务或提交验收工件前，逐行扫描 `evidence/manifest.md` 中登记的截图引用，并同时确认：
+
+1. 路径存在、文件仍位于当前 change 的 `evidence/` 目录，PNG 尺寸与登记的 viewport 一致。
+2. 现场 `Get-FileHash -Algorithm SHA256` 与 manifest 登记值完全相同；任一缺失或不匹配都标记为 `needs_check`，不得用旧图、同名图或早期 session 补齐。
+3. 每条截图能回指当前环境、当前 session 和具体 Scenario；如果只完成了 DOM/网络断言但截图没有落盘，必须记录为“部分”，不能写成“通过”。
+
+建议使用一次性只读脚本输出 `checked / missing / mismatched` 汇总，再进行人工抽查；不要在发现断链后重新开 session 只为制造一张孤立截图。
+
 ## 5. 失败边界与止损
 
 | 症状                             | 立即动作                                                                            | 禁止做法                         |
