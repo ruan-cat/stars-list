@@ -11,7 +11,7 @@
 ## 2. 基础设施：Tailwind v4 + shadcn-vue CLI
 
 - [ ] 2.1 安装 `tailwindcss`、`@tailwindcss/vite`，接入 `docs/.vitepress/config.ts` 的 `vite.plugins`
-- [ ] 2.2 新建 `docs/.vitepress/theme/tw.css`：`@import "tailwindcss"`（按 D2 隔离 preflight）+ `@theme inline` 桥接 Teek/VitePress 变量（design.md D3 映射表）
+- [ ] 2.2 新建 `docs/.vitepress/theme/tw.css`：仅导入 `tailwindcss/theme.css` 与 `tailwindcss/utilities.css`（不导入 preflight）+ `@theme inline` 完整桥接 Teek/VitePress 变量（design.md D3 映射表）
 - [ ] 2.3 回归门禁：普通文档页（首页、topics、prompts）渲染与重构前一致（截图对比）
 - [ ] 2.4 shadcn-vue CLI 初始化：生成 `components.json`（components 路径指向 `docs/.vitepress/theme/components`），按 design.md D7 保留 reka-ui 依赖；CLI 适配失败则按官方模板手工落盘并记录到 `agent-findings.md`
 
@@ -23,6 +23,7 @@
 - [ ] 3.4 `ui/Resizable*.vue` 替换为 shadcn-vue `Resizable`（保持 `auto-save-id` 与最小宽度约束）
 - [ ] 3.5 `Todo*.vue` 业务组件视觉层改写为 Tailwind 工具类（保留业务逻辑与 `aria-*` 标注）
 - [ ] 3.6 删除旧手写样式残留，确认无 `<style scoped>` 大块残留在 ui/ 组件中（D5）
+- [ ] 3.7 补齐键盘导航、焦点回收、禁用态、首次加载失败、刷新竞态与组合筛选边界的实现和测试（对应 spec）
 
 ## 4. 全量回归与部署
 
@@ -30,11 +31,11 @@
 - [ ] 4.2 亮/暗双主题下截图比对（对照 `evidence/01/08`）
 - [ ] 4.3 `pnpm docs:build` 构建通过 + `pnpm exec prettier --experimental-cli --check` 通过
 - [ ] 4.4 普通文档页像素回归门禁复验（对应 2.3）
-- [ ] 4.5 合并 main 推送部署，生产环境复验下拉交互与页面无滚动契约
+- [ ] 4.5 合并 main 推送部署，记录 commit SHA/生产 URL，使用真实浏览器完成下拉、键盘、主题、滚动与 Portal 卸载复验；任一关键场景失败立即停止并按提交执行回滚
 
 ## 5. 收尾
 
-- [ ] 5.1 按 init-ai-md 更新 AGENTS/CLAUDE/GEMINI 技能表（shadcn-vue 最佳实践 skill 条目）
+- [ ] 5.1 按 init-ai-md 更新 AGENTS/CLAUDE/GEMINI 技能表（shadcn-vue 最佳实践 skill 条目，来源与锁文件约束）
 - [ ] 5.2 归档本 change（`openspec archive`），沉淀 `openspec/specs/todo-dashboard-explorer/`
 
 ## 回归记录
