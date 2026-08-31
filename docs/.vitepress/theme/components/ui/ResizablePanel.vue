@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { SplitterPanel } from "reka-ui";
-withDefaults(defineProps<{ defaultSize?: number; minSize?: number; maxSize?: number; class?: string }>(), {
-	defaultSize: 50,
-	minSize: 10,
-	maxSize: 90,
-});
+import type { SplitterPanelProps } from "reka-ui";
+import type { HTMLAttributes } from "vue";
+import { reactiveOmit } from "@vueuse/core";
+import { ResizablePanel as ShadcnPanel } from "./resizable";
+
+const props = defineProps<SplitterPanelProps & { class?: HTMLAttributes["class"] }>();
+const delegatedProps = reactiveOmit(props, "class");
 </script>
+
 <template>
-	<SplitterPanel :default-size="defaultSize" :min-size="minSize" :max-size="maxSize" :class="class"
-		><slot
-	/></SplitterPanel>
+	<ShadcnPanel v-bind="delegatedProps" :class="props.class"><slot /></ShadcnPanel>
 </template>
