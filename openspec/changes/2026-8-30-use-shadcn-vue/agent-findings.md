@@ -103,3 +103,7 @@ preview headed Chrome 对 `/todos.html` reload 后记录 `Hydration completed bu
 ## F26 [active] production headed Chrome 直连/启动未形成可回放会话
 
 对 production URL 的第一次 headed Chrome 访问返回 `net::ERR_CONNECTION_CLOSED`；第二次独立 session 在 Chrome 启动阶段返回 exit 3，未生成 `DevToolsActivePort`。同一时段 PowerShell `Invoke-WebRequest` 可得 HTTP 200，说明脚本可达性不能证明真实浏览器可交互。4.7 必须保留这两次失败日志，待浏览器网络/进程环境恢复后重试，禁止以 HTTP 200 或本地 preview 证据代替 production Chrome。
+
+## F27 [resolved] Select 外点焦点已由新会话复验
+
+旧 session 的外点关闭证据显示焦点落在 BODY，与 spec 要求冲突；已在 `ui/Select.vue` 增加 `pointer-down-outside`/`interact-outside` 监听、`update:open` 关闭处理和 aria-label DOM fallback。修复后 headed Chrome session `shadcn-focus-fix4-e3381299a1aa` 证明外点/选中/Escape 均为 `aria-expanded=false`、Portal options=0、activeElement=`aria-label=仓库`；manifest §18 已记录，3.2 可重新勾选。
