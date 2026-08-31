@@ -22,7 +22,6 @@ const selectedIcon = computed(() => (props.modelValue ? props.optionIcons?.[prop
 const triggerRef = ref<{ $el?: HTMLElement } | null>(null);
 let focusRestoreTimer: ReturnType<typeof setTimeout> | undefined;
 let focusRestoreScheduled = false;
-let contentOpen = false;
 function update(value: string) {
 	emit("change", value === ALL_VALUE ? "" : value);
 }
@@ -39,7 +38,6 @@ function restoreTriggerFocus() {
 	if (element && typeof element.focus === "function") element.focus();
 }
 function handleOpenChange(open: boolean) {
-	contentOpen = open;
 	if (!open) scheduleTriggerFocus();
 }
 function scheduleTriggerFocus() {
@@ -67,11 +65,22 @@ function handleCloseAutoFocus(event: Event) {
 	scheduleTriggerFocus();
 }
 function handleDocumentKeydown(event: KeyboardEvent) {
-	if (contentOpen && event.key === "Escape") scheduleTriggerFocus();
+	if (event.key !== "Escape") return;
+	const trigger =
+		triggerRef.value?.$el ??
+		(typeof document !== "undefined"
+			? Array.from(document.querySelectorAll<HTMLElement>('[role="combobox"]')).find(
+					(item) => item.getAttribute("aria-label") === props.ariaLabel,
+				)
+			: undefined);
+	const contentId = trigger?.getAttribute("aria-controls");
+	if (!contentId || typeof document === "undefined") return;
+	const content = document.getElementById(contentId);
+	if (content?.getAttribute("data-state") === "open") scheduleTriggerFocus();
 }
-onMounted(() => document.addEventListener("keydown", handleDocumentKeydown, true));
+onMounted(() => window.addEventListener("keydown", handleDocumentKeydown, true));
 onBeforeUnmount(() => {
-	document.removeEventListener("keydown", handleDocumentKeydown, true);
+	window.removeEventListener("keydown", handleDocumentKeydown, true);
 	clearTimeout(focusRestoreTimer);
 });
 </script>
