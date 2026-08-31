@@ -91,9 +91,19 @@ test("builds repository, branch, directory, file and todo levels with stable ord
 
 test("filters matching leaves while retaining their ancestor chain", () => {
 	const tree = buildTodoTree(artifact);
-	const filtered = filterTodoTree(tree, { text: "auth", kind: "source-comment" });
+	const filtered = filterTodoTree(tree, {
+		search: "auth",
+		repository: "demo",
+		path: "src/",
+		branch: "main",
+		kind: "source-comment",
+	});
 	assert.equal(countVisibleTodos(filtered), 1);
 	assert.equal(filtered[0].children[0].count, 1);
+	assert.deepEqual(
+		filterTodoTree(tree, { search: "missing", repo: "demo", branch: "main", kind: "source-comment" }),
+		[],
+	);
 });
 
 test("applies repository, branch and kind filters as an intersection", () => {
