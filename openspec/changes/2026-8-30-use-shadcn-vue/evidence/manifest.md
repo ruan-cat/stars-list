@@ -254,3 +254,23 @@ agent-browser diff screenshot --baseline openspec/changes/2026-8-30-use-shadcn-v
 | 窄视口        | 设置 720×900；group `display=block`、文档自然滚动 `docScrollH=1525`、`docScrollW=714`                                       | `browser-2026-08-31/dev-focus-fix-mobile-720x900-20260831.png`   | `07AA15848D2A25E7B216B1DB549691E000B2A874EE892558906BD2B7BB5FFEFD` | 通过 |
 
 本节仍是 dev 的局部 fresh 证据；四维组合筛选、下拉滚动/清空、树/平铺/详情全量路径、主题双态和失败注入需按 4.5 完整矩阵继续登记。
+
+## 22. 4.5/4.6 完整矩阵缺口审计（未通过）
+
+独立 reviewer 对 §12–§21 按“同一环境 fresh headed session + 操作日志 + DOM/网络/console 断言 + 截图哈希”口径复核。以下表格是当前固定的补证矩阵；“部分”不能升级为“通过”，未登记的 `dev-full-*`/`preview-full-*` PNG 也不计入覆盖率。
+
+|             场景             |                              dev（4.5）                              |                         preview（4.6）                         | 最小补证要求                                                            |
+| :--------------------------: | :------------------------------------------------------------------: | :------------------------------------------------------------: | :---------------------------------------------------------------------- |
+|      首屏/artifact 成功      | 部分：有 699、滚动和 marker；缺状态栏全量计数与 artifact HTTP/schema | 部分：有 artifact HTTP 200；缺同 session 首屏全量计数/网络日志 | 同一 fresh session 记录状态栏、artifact 请求 200、响应 schema、截图哈希 |
+|         首次加载失败         |                                  缺                                  |               §16 已有受控失败，但未纳入统一矩阵               | 两环境注入失败并记录 alert/无假计数/重试恢复                            |
+|   搜索+仓库+分支+类型组合    |                                  缺                                  |                        缺（仅仓库单维）                        | 真实 UI 设置四维交集、清空一维、无匹配截图与计数                        |
+|        下拉滚动/清空         |               部分：旧 DOM 证据，缺当前 fresh 统一记录               |     部分：选中/清空有记录，缺真实滚动末端与 viewport 指标      | 坐标打开、滚动到末端、记录 `overflow-y=scroll`/`max-height=320px`/卸载  |
+|       树展开/选中/详情       |                                  缺                                  |                    部分：有树折叠和详情文本                    | 同 session 树展开、树行选中、详情链接可达/截图                          |
+|           平铺切换           |                                  缺                                  |                     部分：有 699 rows 记录                     | dev 与 preview 都记录平铺 rows、选中态共享和截图                        |
+| Tab/Enter/Space/Arrow/Escape |                                  缺                                  |     部分：缺完整 Tab 顺序、ArrowUp、Enter 提交和移动端焦点     | 逐键记录 activeElement、aria 状态、Portal 卸载和截图                    |
+|        刷新禁用/竞态         |                  部分：disabled/aria-busy/恢复焦点                   |                           部分：同上                           | 延迟响应下重复点击请求数、旧响应顺序保护、恢复截图                      |
+|          亮/暗主题           |                                  缺                                  |              部分：有稳定主题截图，未复跑完整矩阵              | 两环境各跑完整关键路径并记录 console/截图                               |
+|        页面/面板滚动         |                      部分：桌面/窄屏有 metrics                       |                               缺                               | 桌面 `docScrollH===innerH`、树/详情内部 scroll/client、720 堆叠         |
+|    artifact/资源/console     |                             缺统一请求表                             |     部分：artifact 200、hydration 为全站基线；缺资源全量表     | 记录 artifact 与 CSS/JS HTTP 状态、console 基线与新增错误数             |
+
+在上述矩阵全部补齐前，`tasks.md` 的 4.5、4.6、4.1 和 4.2 保持未勾选；生产 4.7 另需部署 SHA、Pages 成功、headed Chrome 和 Flex 切流/回滚回执。
