@@ -129,7 +129,7 @@
 
 ## 13. 2026-08-31 preview headed Chrome 交互与主题复验（部分通过）
 
-> 服务：串行 `pnpm docs:build`（exit 0，51.21s）后前台 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`；session `shadcn-preview-hydration2-e3381299a1aa`；Chrome `152.0.0.0`；agent-browser `0.35.0`；viewport `1280×900`。artifact `http://127.0.0.1:4173/artifacts/github-todos/ruan-cat.json` 由 PowerShell `Invoke-WebRequest` 返回 HTTP 200、616092 bytes、`application/json`。
+> 服务：串行 `pnpm docs:build`（exit 0，53.40s）后前台 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`；session `shadcn-preview-hydration2-e3381299a1aa`；Chrome `152.0.0.0`；agent-browser `0.35.0`；viewport `1280×900`。artifact `http://127.0.0.1:4173/artifacts/github-todos/ruan-cat.json` 由 PowerShell `Invoke-WebRequest` 返回 HTTP 200、616092 bytes、`application/json`。
 
 | Scenario              | 真实操作与断言                                                                                                                               | 截图/证据                                                                                                                                     |           结果           |
 | :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------: |
@@ -147,7 +147,7 @@ preview 已有可回放的局部通过证据，但未完成 spec 全部 Scenario
 
 ## 14. 2026-08-31 production 部署基线（阻塞 4.7，不通过）
 
-只读核验结果：本地 HEAD `fe960ab03111406c75394b21266fa9d3cf09f12a`（当前工作区另有未提交的 production/marker 证据记录），`origin/dev=d00fa4001f772136cdb4fd55f2add8d121a287a8`，`origin/main=1c468f491e145ca3dbd38a4e76f71c23457b38c2`；本地验收提交不在远端。最新 GitHub Pages workflow run `33366784039` / deployment `6176611081` 的 head SHA 为 `1c468f4`，不是本 change。
+只读核验结果：本地 HEAD `c90abb1a16cadfdd9eedcd6dfd36ac3c78e84966`（工作区仅保留用户既有 `docs/prompts/index.md`），`origin/dev=d00fa4001f772136cdb4fd55f2add8d121a287a8`，`origin/main=1c468f491e145ca3dbd38a4e76f71c23457b38c2`；本地验收提交不在远端。最新 GitHub Pages workflow run `33366784039` / deployment `6176611081` 的 head SHA 为 `1c468f4`，不是本 change。
 
 | 检查                | 结果                                                                                                                                                                                    |
 | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
