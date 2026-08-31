@@ -24,7 +24,7 @@
 - [x] 3.4 `ui/Resizable*.vue` 替换为 shadcn-vue `Resizable`（保持 `auto-save-id` 与最小宽度约束；证据：CLI 生成 `ui/resizable/` canonical 组件、keyboard-resize-by=4、agent-browser separator/最小宽度 DOM smoke、tsc/build 通过）
 - [ ] 3.5 `TodoDashboard.vue`、`TodoFilters.vue`、`TodoStatusBar.vue`、`TodoTree.vue`、`TodoFlatList.vue`、`TodoDetails.vue`、`TodoNodeIcon.vue` 视觉层改写为 Tailwind 语义工具类（保留业务逻辑与 `aria-*` 标注）；树连接线/折叠过渡仅允许少量 scoped 微调。已修复 VitePress `.vp-doc ul` marker 覆盖（`!list-none !p-0`），并在 `evidence/manifest.md` §12 留有无点截图与 DOM 证据；仍须补亮暗主题、完整交互矩阵和三环境截图
 - [x] 3.6 删除旧手写样式残留：`ui/` 目录无 `<style scoped>`，Portal 滚动仅保留必要的全局选择器；证据：`rg -n "<style scoped" docs/.vitepress/theme/components/ui` 无匹配，串行 `pnpm docs:build` exit 0
-- [ ] 3.7 补齐键盘导航、焦点回收、禁用态、首次加载失败、刷新竞态与组合筛选边界的实现和测试（对应 spec）；当前已补行级 focus-visible、刷新结束焦点恢复和仓库+分支+类型纯函数交集测试，仍缺组件层/浏览器证据
+- [ ] 3.7 补齐键盘导航、焦点回收、禁用态、首次加载失败、刷新竞态与组合筛选边界的实现和测试（对应 spec）；当前已补行级 focus-visible、刷新结束焦点恢复、single-flight 刷新守卫及仓库+分支+类型纯函数交集测试，仍缺组件层/浏览器证据
 
 ## 4. 全量回归与部署
 
@@ -32,8 +32,8 @@
 - [ ] 4.2 亮/暗双主题下截图比对（对照 `evidence/01/08`），同时记录切换前后 viewport、滚动位置、控制台错误数和像素 diff 结论
 - [x] 4.3 `pnpm docs:build` 构建通过（串行 exit 0，57.96s）+ `pnpm exec prettier --experimental-cli --check` 通过（本轮变更文件，排除用户既有 `docs/prompts/index.md`）
 - [ ] 4.4 普通文档页像素回归门禁复验（对应 2.3）
-- [ ] 4.5 dev 环境：`pnpm docs:dev -- --host 127.0.0.1 --port 8080` + agent-browser headed Chrome；逐项完成首屏/首载失败、仓库/分支/类型组合筛选、下拉滚动与清空、树展开/选中、平铺切换、详情链接、Tab/Enter/Escape 焦点、刷新禁用与竞态、亮暗主题、页面/面板滚动；每项归档截图、操作日志、DOM/网络/console 断言
-- [ ] 4.6 preview 环境：先执行 `pnpm docs:build` 再执行 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`，使用 headed Chrome 完全复跑 4.5 矩阵，并额外核对 artifact 同源 URL、静态资源 HTTP 状态、无新增 console 错误；证据必须能回指 `evidence/manifest.md`
+- [ ] 4.5 dev 环境：`pnpm docs:dev -- --host 127.0.0.1 --port 8080` + agent-browser headed Chrome；逐项完成首屏/首载失败、仓库/分支/类型组合筛选、下拉滚动与清空、树展开/选中、平铺切换、详情链接、Tab/Enter/Escape 焦点、刷新禁用与竞态、亮暗主题、页面/面板滚动；每项归档截图、操作日志、DOM/网络/console 断言（当前仅有 §12 CSS/滚动与 marker 局部证据）
+- [ ] 4.6 preview 环境：先执行 `pnpm docs:build` 再执行 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`，使用 headed Chrome 完全复跑 4.5 矩阵，并额外核对 artifact 同源 URL、静态资源 HTTP 状态、基线 hydration 警告与无新增 console 错误；当前局部证据见 `evidence/manifest.md` §13，不能代替完整矩阵
 - [ ] 4.7 合并 main 推送部署，记录部署 commit SHA、生产 URL、HTTP/资源状态；使用 headed Chrome 完全复跑 4.5 矩阵并验证 Portal 卸载。任一关键场景失败、页面级滚动、主题/像素回归或 console/network 回归立即停止验收，经 Flex 流量器切回上一个已知提交后，记录切流/回滚时间与结果，并用同一矩阵复验首屏、下拉关闭、键盘焦点、主题、页面滚动五项关键路径
 
 ## 5. 收尾

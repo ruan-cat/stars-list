@@ -65,3 +65,7 @@ sourceType=github
 ## 9. 2026-08-31 基线视觉复核：TodoTree marker 回归
 
 用户指出当前截图左侧出现基线不存在的黑色圆点。直接读取 `evidence/01-tree-initial.png` 后确认基线确实无 marker；Chrome computed style 进一步证明是 VitePress `.vp-doc ul` 覆盖普通 Tailwind `list-none/p-0`。已使用 `!list-none !p-0 !m-0` 修复，冷启动 dev 复验 `listStyle=none`、`paddingLeft=0`，并将无点截图与实际 PNG 尺寸登记到 `evidence/manifest.md` §12。原 1600×1000 基线与当前 929×869 截图不做直接像素结论，2.3/4.4 仍待同 viewport before/after。
+
+## 10. 2026-08-31 preview 局部矩阵与 hydration 警告边界
+
+preview 已用 headed Chrome 完成下拉选中/清空、Escape/外点关闭与焦点回收、树/平铺/详情、刷新 disabled/aria-busy/焦点恢复、亮暗主题截图和 artifact HTTP 200 验证；证据登记在 manifest §13。reload 后的 `Hydration completed but contains mismatches` 在普通首页同样出现，按全站基线警告记录；TODO 专属 `InvalidStateError` 未重现。完整 spec 矩阵、无新增 console 证明和 production 部署仍未完成，不能勾选 4.6 或最终验收任务。
