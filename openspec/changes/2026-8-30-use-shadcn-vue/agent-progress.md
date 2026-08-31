@@ -35,7 +35,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 ## 阻塞点
 
 - 2.3 普通文档页像素回归尚未执行；manifest 已建立但 dev/preview/production 正式验收证据尚未齐全。
-- production 当前仍为旧部署（线上 head `1c468f4`，本地 HEAD `fe960ab` 未 push）；4.7 需 main 合并、Pages 成功和 Flex 外部切流/回滚回执，不能用 HTTP 200 代替。生产基线与资源状态见 manifest §14。
+- production 当前仍为旧部署（线上 head `1c468f4`，本地 HEAD `c90abb1` 未 push）；4.7 需 main 合并、Pages 成功和 Flex 外部切流/回滚回执，不能用 HTTP 200 代替。生产基线与资源状态见 manifest §14。
 
 ## 下一步
 
