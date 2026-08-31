@@ -115,3 +115,11 @@ fresh preview headed Chrome 复验发现，旧的 `nextTick + 单帧` 调度在�
 ## F29 [resolved] 组件层回归缺少 SFC 测试底座
 
 项目原先只有 `node:test` 纯 TypeScript 测试，没有 Vue SFC mount 环境，导致 3.7 的键盘、焦点、首次失败和刷新竞态无法自动证明。已新增最小 Vitest + `@vue/test-utils` + happy-dom 基础设施与 `test:components` 脚本，组件测试 7/7 通过；happy-dom 无法可靠模拟 Reka 真实 `pointerdown-outside`，该边界由 manifest §20/§21 的 headed Chrome 真实坐标证据承担。
+
+## F30 [resolved] hydration 后布局锚点未重新测量导致桌面页面溢出
+
+fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、面板底部越过视口；根因是 `viewportReserve` 在 loading 状态测量一次，状态栏拿到 artifact 后高度增加却没有重测。已监听 `isHydrated`、`query.data` 与 `query.error`，在 post-flush nextTick 后重新测量；修复后同一 session `docScrollH=900`、group 高度 `calc(100dvh - 561px)`，窄视口仍切换为 block 并允许自然滚动。
+
+## F31 [resolved] refresh 事件 currentTarget 在真实按钮包装层不可用
+
+真实 headed Chrome 中刷新 pending/恢复状态正常，但 `event.currentTarget` 未落到原生按钮，导致旧实现没有恢复焦点；组件测试的 attachTo mount 未暴露该差异。`restoreRefreshFocus` 已增加按 `aria-label=刷新快照` 查询原生 button 的兜底，fresh dev 复验完成后焦点回收且桌面页面无溢出。

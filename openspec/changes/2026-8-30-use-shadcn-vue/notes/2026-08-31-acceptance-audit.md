@@ -77,3 +77,7 @@ preview 已用 headed Chrome 完成下拉选中/清空、Escape/外点关闭与�
 ## 12. init-ai-md 增量更新记录
 
 按 `init-ai-md` 的章节扫描结果，`AGENTS.md` 与 `CLAUDE.md` 原内容一致，均已存在项目技能表；本轮仅增量补充 `shadcn-vue` 的官方来源、skills 安装器锁文件边界、Prettier 授权边界，并确认 `GEMINI.md` 不存在且未创建。当前执行器未提供可用的 AskUserQuestion 交互工具，因此依据用户已明确授权的“按 init-ai-md 更新 AI 记忆文档”要求，对两份原本一致的文件应用相同精准补丁；未全量替换、未改全局 skills、未新增 ignore 配置。
+
+## 13. TODO 主链优先与新增真实缺陷
+
+本轮曾短暂进入普通文档 before baseline 采集，这是 2.3/4.4 的后置旁路门禁，不是本 change 的主目标；用户指出后已停止该实验，回到 TODO 页面核心矩阵。TODO fresh dev session 随后发现两个真实缺陷：hydration 后状态栏变高却未重测 viewportReserve，造成 1280×900 页面溢出 16px；刷新按钮事件包装层导致 currentTarget 不是原生按钮，焦点恢复失效。已分别通过 post-flush 重测和 aria-label 原生按钮 fallback 修复，当前核心证据登记在 manifest §23；4.5/4.6 仍保持未完成。

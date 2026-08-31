@@ -274,3 +274,21 @@ agent-browser diff screenshot --baseline openspec/changes/2026-8-30-use-shadcn-v
 |    artifact/资源/console     |                             缺统一请求表                             |     部分：artifact 200、hydration 为全站基线；缺资源全量表     | 记录 artifact 与 CSS/JS HTTP 状态、console 基线与新增错误数             |
 
 在上述矩阵全部补齐前，`tasks.md` 的 4.5、4.6、4.1 和 4.2 保持未勾选；生产 4.7 另需部署 SHA、Pages 成功、headed Chrome 和 Flex 切流/回滚回执。
+
+## 23. 2026-08-31 TODO 核心 dev fresh 矩阵（部分通过）
+
+> 这是针对本 change 主目标 TODO 页的单一 fresh headed Chrome session，不是普通文档页测试。服务：`pnpm docs:dev -- --host 127.0.0.1 --port 8080`；session `todo-core-dev-cdp-e3381299a1aa`，通过 CDP 连接 headed Chrome `152.0.0.0`；agent-browser `0.35.0`；viewport `1280×900`（窄屏行另设 `720×900`）。先读取既有 `evidence/01-tree-initial.png`，再执行真实坐标/键盘操作。
+
+|    TODO 核心路径     | 同一 session 的 DOM/视觉结果                                                                                                                       | 截图                                                                        | SHA-256                                                            | 结果 |
+| :------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- | :----------------------------------------------------------------- | :--: |
+|    首屏与 marker     | 状态栏 `699 可见 TODO`、`78 个仓库`、`扫描状态 complete`；`listStyleType=none`、`paddingLeft=0`；修复后 `docScrollH=900`、viewport 高度 900        | `browser-2026-08-31/core-dev-layout-fix-initial-1280x900-20260831.png`      | `F46332CFBAE3ACDBF5D9EFAE371ADA6D046A2363ED474B5F34C41D19A026D719` | 通过 |
+| 下拉滚动与常驻滚动条 | 真实坐标打开仓库下拉，真实滚轮后 `overflowY=scroll`、`maxHeight=320px`、`scrollTop=368`、`scrollHeight=688`、`clientHeight=320`；Portal options=21 | `browser-2026-08-31/core-dev-dropdown-scroll-1280x900-20260831.png`         | `790E17F5CF48A2A99AB46947386452B47FC7CB4099EBBB10B0E353F5CF2F9C94` | 通过 |
+|     四维组合筛选     | 真实选择仓库 `10wms`、分支 `dev`、类型 `source-comment`，输入 `validation`；状态栏 `2 可见 TODO`、非空树                                           | `browser-2026-08-31/core-dev-layout-fix-combo-1280x900-20260831.png`        | `4188EF77F64BB7AC4BEE14C0B75A3A003D7411E3AA6BAFFFE6E3F8128DFF89A9` | 通过 |
+|     清空/无匹配      | 清空类型后输入 `never-match-2026`；空状态文案出现、`0 可见 TODO`、页面仍无滚动溢出                                                                 | `browser-2026-08-31/core-dev-layout-fix-no-match-1280x900-20260831.png`     | `0E3715E5BECADA93B7E23B9486C7505C97326216565E5D2A46D283D74E0FBA45` | 通过 |
+|     树展开与详情     | 真实坐标展开仓库/分支/目录/文件，选中 TODO；详情显示仓库、路径、分支、行号、commit 与“在 GitHub 查看”                                              | `browser-2026-08-31/core-dev-layout-fix-tree-details-1280x900-20260831.png` | `D3DE446444C3D19ADA0FBEAFFA2F31E1BBF70C59CBE065C94760BBBB8A5B5C83` | 通过 |
+|       平铺视图       | 点击“平铺”，`aria-pressed` 同步，平铺列表展示 699 条 TODO，详情仍保留                                                                              | `browser-2026-08-31/core-dev-layout-fix-flat-1280x900-20260831.png`         | `B4E21876E904EF2BD1297C0867164183E5B5A9F24B8015871E5865282C8D0EBF` | 通过 |
+|       暗色主题       | 当前核心 dev session 主题切换动作未形成与最终布局修复一致的截图；preview §13/§20 已有暗色证据，dev 仍需补采                                        | —                                                                           | —                                                                  | 参考 |
+|  刷新禁用/恢复焦点   | 刷新期间 `disabled=true`、`aria-busy=true`；完成后恢复可用、焦点回到刷新按钮、桌面 `docScrollH=900`                                                | `browser-2026-08-31/core-dev-layout-fix-refresh-1280x900-20260831.png`      | `ABD3EBE473D3215BFCF58470CCD834C0FB2BE08CB96A3623EB82AD9FA9CA3C7A` | 通过 |
+|        窄视口        | 720×900 下 group `display=block`，文档自然滚动 `docScrollH=36649`、`docScrollW=714`                                                                | `browser-2026-08-31/core-dev-mobile-720x900-20260831.png`                   | `25366053A4AB02167B73C65E8DA719753462175D2BBF21CF43BB864297768A14` | 通过 |
+
+本节仍缺 dev 首次加载失败注入、刷新重复点击请求计数/乱序响应、完整 Tab/Arrow/Escape 顺序与 artifact/资源 HTTP 记录，因此 `tasks.md` 4.5/4.1 继续未勾选；它只证明 TODO 主页面已经有可回放的核心路径证据。
