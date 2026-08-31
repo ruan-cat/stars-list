@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, nextTick, ref } from "vue";
 import { X } from "lucide-vue-next";
 import { Icon, type IconifyIcon } from "@iconify/vue";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./select";
@@ -19,14 +19,37 @@ const ALL_VALUE = "__all__";
 const selectedValue = computed(() => props.modelValue || ALL_VALUE);
 const optionValues = computed(() => props.options.filter(Boolean));
 const selectedIcon = computed(() => (props.modelValue ? props.optionIcons?.[props.modelValue] : undefined));
+const triggerRef = ref<{ $el?: HTMLElement } | null>(null);
 function update(value: string) {
 	emit("change", value === ALL_VALUE ? "" : value);
+}
+function restoreTriggerFocus() {
+	const candidate = triggerRef.value?.$el;
+	const element =
+		candidate && typeof candidate.focus === "function"
+			? candidate
+			: typeof document !== "undefined"
+				? Array.from(document.querySelectorAll<HTMLElement>('[role="combobox"]')).find(
+						(item) => item.getAttribute("aria-label") === props.ariaLabel,
+					)
+				: undefined;
+	if (element && typeof element.focus === "function") element.focus();
+}
+function handleOpenChange(open: boolean) {
+	if (!open) handleCloseFocus();
+}
+function handleCloseFocus() {
+	nextTick(() => {
+		restoreTriggerFocus();
+		if (typeof window !== "undefined") window.requestAnimationFrame(restoreTriggerFocus);
+	});
 }
 </script>
 <template>
 	<div class="relative min-w-0 w-full">
-		<Select :model-value="selectedValue" @update:model-value="update"
+		<Select :model-value="selectedValue" @update:model-value="update" @update:open="handleOpenChange"
 			><SelectTrigger
+				ref="triggerRef"
 				class="relative flex w-full items-center gap-2 rounded-md border border-border bg-muted px-3 py-2.5 pr-14 text-left text-foreground data-[state=open]:text-primary"
 				:aria-label="ariaLabel"
 				><Icon
@@ -46,7 +69,13 @@ function update(value: string) {
 				@click.stop="update(ALL_VALUE)"
 			>
 				<X :size="13" aria-hidden="true" /></button
-			><SelectContent class="ui-select__content" position="popper" align="start" :side-offset="4"
+			><SelectContent
+				class="ui-select__content"
+				position="popper"
+				align="start"
+				:side-offset="4"
+				@pointer-down-outside="handleCloseFocus"
+				@interact-outside="handleCloseFocus"
 				><SelectGroup
 					><SelectItem :value="ALL_VALUE">{{ placeholder }}</SelectItem
 					><SelectItem v-for="option in optionValues" :key="option" :value="option"
