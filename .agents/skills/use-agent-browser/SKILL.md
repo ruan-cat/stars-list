@@ -22,12 +22,13 @@ description: Use when a development, QA, OpenSpec, or visual-acceptance task req
 
 一次环境验收使用一个具名 headed Chrome session，但内部拆成四层 checkpoint。层与层之间只保存结构化状态，不通过“再开一个 session”补洞。
 
-|      checkpoint       | 目标                                                          | 允许的动作                                                   |           失败状态            |
-| :-------------------: | :------------------------------------------------------------ | :----------------------------------------------------------- | :---------------------------: |
-| A 能力探针（≤5 分钟） | headed launch、前台 visibility、截图、network、close 是否可用 | 只访问目标 URL，禁止业务操作                                 |      `blocked`，不进入 B      |
-|    B 产品核心矩阵     | TODO 首屏、筛选、下拉、树/平铺、详情、键盘、主题、滚动        | 真实点击/键盘/滚动；稳定状态截图                             |    产品证据 `pass/partial`    |
-|    C 故障/资源补证    | 首载/刷新失败、single-flight、hydration、artifact/资源状态    | 优先不 reload 的 route/fetch 控制；必要时只做一次受控 reload | `pass/blocked/not-applicable` |
-|      D 独立复核       | 复核 tasks/spec、manifest、文件、尺寸、SHA、日志和状态映射    | 只读，不重新开浏览器                                         |      `pass/needs_check`       |
+|      checkpoint       | 目标                                                                   | 允许的动作                                                   |           失败状态            |
+| :-------------------: | :--------------------------------------------------------------------- | :----------------------------------------------------------- | :---------------------------: |
+| A 能力探针（≤5 分钟） | headed launch、前台 visibility、截图、network、close 是否可用          | 只访问目标 URL，禁止业务操作                                 |      `blocked`，不进入 B      |
+|    A2 reload 探针     | 仅在 C 需要 reload 时验证 artifact abort、单次 reload、原 session 恢复 | 同一 session 单次受控 route/reload                           |  失败只阻塞 C 的 reload 子项  |
+|    B 产品核心矩阵     | TODO 首屏、筛选、下拉、树/平铺、详情、键盘、主题、滚动                 | 真实点击/键盘/滚动；稳定状态截图                             |    产品证据 `pass/partial`    |
+|    C 故障/资源补证    | 首载/刷新失败、single-flight、hydration、artifact/资源状态             | 优先不 reload 的 route/fetch 控制；必要时只做一次受控 reload | `pass/blocked/not-applicable` |
+|      D 独立复核       | 复核 tasks/spec、manifest、文件、尺寸、SHA、日志和状态映射             | 只读，不重新开浏览器                                         |      `pass/needs_check`       |
 
 ### 0.1 会话命名与边界
 
@@ -35,7 +36,7 @@ description: Use when a development, QA, OpenSpec, or visual-acceptance task req
 - `dev`、`preview`、`production` 是三个独立环境；普通文档页是独立旁路 checkpoint，不得塞进 TODO session。
 - A 的 session 注册不等于 B 的业务通过；B 的截图不能替代 C 的失败恢复；D 的复核不能把缺失材料改写成通过。
 - 证据状态只允许 `pass`、`partial`、`blocked`、`not-run`。`blocked` 表示工具/外部权限事实，不表示产品成功，也不表示产品失败。
-- 每环境建议时间盒：A 5 分钟、B 20–30 分钟、C 10 分钟、D 5 分钟；超过时间盒先停下记录，而不是继续试错。
+- 每环境建议时间盒：A 5 分钟、B 20–30 分钟、C 10 分钟、D 5 分钟；A2 只允许一次且计入 C 时间盒。超过时间盒先停下记录，而不是继续试错。
 
 ## 1. 先锁定范围
 
@@ -89,14 +90,15 @@ health probe → start one server → open one URL → baseline → core matrix 
 - 用 `network requests` 或 HAR 证明 artifact/静态资源状态；HAR 可能含响应体和敏感头，只保存在系统临时目录并按项目规则清理。
 - 视觉结论必须对照已读基线；“页面能打开”“构建 exit 0”“元素存在”都不能替代像素或可见交互证据。
 
-### 4.2 规范化资源与像素证据
+### 4.1 规范化资源与像素证据
 
 - 资源复核优先输出规范化清单：`url`、`resourceType`、`method`、`status`、必要时 `contentLength`/响应 SHA-256；按 URL 去重并保留最新状态。
 - 原始 HAR 可能含响应体和敏感头，只放系统临时目录；清理 HAR 后，规范化清单必须仍能独立复核。没有 `todos.html`、artifact 或关键 CSS/JS 状态时，资源 checkpoint 只能 `partial`。
 - 像素 diff 先固定 viewport、滚动位置、主题、字体和 artifact 版本；动态时间、光标、网络状态区域必须 mask 或单独断言。
 - 同时登记原始 diff、归一化 diff 和结构性视觉结果；单一百分比不自动等于产品失败，也不自动等于通过。
+- 原始 diff 只作诊断；mask 后归一化 diff `≤1%` 作为可接受参考阈值，`>1%` 必须由独立复核解释，结构性视觉漂移始终失败。
 
-### 4.1 提交前证据落盘校验
+### 4.2 提交前证据落盘校验
 
 在勾选任务或提交验收工件前，逐行扫描 `evidence/manifest.md` 中登记的截图引用，并同时确认：
 
