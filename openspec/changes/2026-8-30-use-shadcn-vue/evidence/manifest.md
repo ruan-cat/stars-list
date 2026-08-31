@@ -170,3 +170,14 @@ agent-browser diff screenshot --baseline openspec/changes/2026-8-30-use-shadcn-v
 ```
 
 该 diff 证明当前图与原始基线并非像素一致，不能勾选 2.3/4.4；但人工/DOM 对照确认原始基线无列表 marker，当前修复图的 `listStyle=none`、`paddingLeft=0` 与视觉均无黑点。PNG 实际尺寸 `1600×1000`，SHA-256：`6EB3A5D807B2DDDCF066DA9BD620F94AD7B58F2D224174FAE7AF9272ADAAA773`。
+
+## 16. 2026-08-31 preview 刷新失败与恢复（受控故障注入）
+
+> session `shadcn-preview-recovery-e3381299a1aa`；viewport 实际 PNG `929×869`。先以 `window.fetch=()=>Promise.reject(new Error("forced preview failure"))` 注入故障，再恢复原 fetch 并解除 agent-browser route，均使用真实按钮点击。
+
+| 状态 | 断言                                                                                                                        | 截图                                                        | SHA-256                                                            | 结果 |
+| :--: | :-------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- | :--: |
+| 失败 | 点击“刷新快照”后显示 `刷新失败：Failed to fetch TODO artifact`；按钮恢复可操作并保持 `aria-busy=false`                      | `browser-2026-08-31/preview-refresh-failure-20260831.png`   | `778797F37F7B283DECAA7558169BF71B5DA33B126ED82ABA6DB194A7CB100CAE` | 通过 |
+| 恢复 | 恢复 fetch/解除 route 后真实点击刷新，显示“快照已更新”；`disabled=false`、`aria-busy=false`、焦点回到 `aria-label=刷新快照` | `browser-2026-08-31/preview-refresh-recovered-20260831.png` | `5089584C6AADDD3DF18997168CBF479EC6F3AFFEC4B050FC3016CD4A8D53BDFE` | 通过 |
+
+该证据覆盖失败可感知性与恢复焦点，不替代三环境完整矩阵；故 3.7/4.1/4.6 仍保持未勾选。

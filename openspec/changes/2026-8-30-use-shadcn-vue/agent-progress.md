@@ -28,12 +28,13 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 2026-08-31 冷启动 headed Chrome 复验 Tailwind utilities：1280×900 `docScrollH=900`、nav `overflowY=auto`；720×900 group `display=block`、nav `overflowY=visible`、页面自然滚动；CSSRules 含 `.h-full/.overflow-auto/.bg-muted/.text-foreground`，截图和 SHA-256 已登记在 manifest 第 12 节。
 - `use-todo-query.test.ts` 2/2 通过：single-flight 刷新守卫合并并发调用，结算后允许下一次请求；3.7 的刷新竞态实现已有单测，但完整组件键盘/失败恢复仍待 headed Chrome。
 - preview headed Chrome 已完成下拉/清空/Escape/外点/树平铺/详情/刷新禁用与焦点恢复、亮暗稳定截图和 artifact HTTP 200；hydration mismatch 与普通首页同为全站基线警告，详情见 manifest §13。
+- preview 受控故障注入已完成：fetch 拒绝时显示刷新失败 alert，恢复 fetch/解除 route 后真实刷新显示成功反馈，焦点回到刷新按钮；截图和 SHA-256 见 manifest §16。
 - 同 viewport 1600×1000 preview 树形截图与 `evidence/01-tree-initial.png` diff 为 4.60%（73642/1600000），标记参考，不能勾选 2.3/4.4；marker 本身已通过 `listStyle=none`/`paddingLeft=0` 验证。
 
 ## 阻塞点
 
 - 2.3 普通文档页像素回归尚未执行；manifest 已建立但 dev/preview/production 正式验收证据尚未齐全。
-- production 当前仍为旧部署（线上 head `1c468f4`，本地 HEAD `fe960ab` 未 push）；4.7 需 main 合并、Pages 成功和 Flex 外部切流/回滚回执，不能用 HTTP 200 代替。
+- production 当前仍为旧部署（线上 head `1c468f4`，本地 HEAD `fe960ab` 未 push）；4.7 需 main 合并、Pages 成功和 Flex 外部切流/回滚回执，不能用 HTTP 200 代替。生产基线与资源状态见 manifest §14。
 
 ## 下一步
 
