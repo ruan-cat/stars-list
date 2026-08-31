@@ -1,0 +1,25 @@
+/* TodoDashboard 专用 Tailwind v4 入口；刻意不引入 preflight，避免污染普通文档页。 */
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
+
+/* VitePress 将业务组件放在 theme 目录；显式声明扫描根，确保 utilities 进入生产 CSS。 */
+@source "./components/**/*.vue";
+@tailwind utilities;
+
+@theme inline {
+	--color-background: var(--vp-c-bg);
+	--color-foreground: var(--vp-c-text-1);
+	--color-card: var(--vp-c-bg-soft);
+	--color-popover: var(--vp-c-bg);
+	--color-primary: var(--vp-c-brand-1);
+	--color-primary-foreground: var(--vp-c-white);
+	--color-secondary: var(--vp-c-default-soft);
+	--color-muted: var(--vp-c-bg-soft);
+	--color-muted-foreground: var(--vp-c-text-2);
+	--color-accent: var(--vp-c-brand-soft);
+	--color-accent-foreground: var(--vp-c-brand-1);
+	--color-destructive: var(--vp-c-danger-1);
+	--color-border: var(--vp-c-divider);
+	--color-input: var(--vp-c-divider);
+	--color-ring: var(--vp-c-brand-1);
+}

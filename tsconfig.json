@@ -9,7 +9,9 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"skipLibCheck": true,
-		"types": ["node"]
+		"types": ["node"],
+		"baseUrl": ".",
+		"paths": { "@/*": ["docs/.vitepress/theme/*"] }
 	},
 	"include": ["docs/.vitepress/**/*.ts", "scripts/**/*.ts"],
 	"exclude": ["**/*.test.ts"]

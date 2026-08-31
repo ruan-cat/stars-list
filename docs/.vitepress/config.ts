@@ -11,6 +11,10 @@ import { adjustTitleFormat } from "../adjust-title-format";
 import { shouldGenerateDerivedDocs } from "../derived-docs";
 import { escapeVueInterpolations } from "../escape-vue-interpolations";
 import { serveArtifacts } from "./serve-artifacts-plugin";
+import tailwindcss from "@tailwindcss/vite";
+import { fileURLToPath } from "node:url";
+
+const themeRoot = fileURLToPath(new URL("./theme", import.meta.url));
 
 if (shouldGenerateDerivedDocs(process.env)) {
 	// 为文档添加自动生成的changelog
@@ -36,8 +40,7 @@ const userConfig = setUserConfig(
 			socialLinks: [{ icon: "github", link: "https://github.com/ruan-cat/stars-list" }],
 		},
 		vite: {
-			// 本地 dev/preview 下让 /artifacts/** 指向仓库根目录的 artifacts，TODO 页面刷新快照依赖它
-			plugins: [serveArtifacts()],
+			resolve: { alias: { "@": themeRoot } },
 		},
 	},
 	{
@@ -49,6 +52,10 @@ const userConfig = setUserConfig(
 		},
 	},
 );
+
+/** setUserConfig 的插件合并器会重建 vite.plugins；在其返回后追加本项目专用插件，避免被覆盖。 */
+userConfig.vite ??= {};
+userConfig.vite.plugins = [...(userConfig.vite.plugins ?? []), serveArtifacts(), tailwindcss()];
 
 // TODO Explorer 是应用型页面，不需要文档页的 Copy/Download 工具条。
 // preset 会在默认 markdown.config 中注入该组件；在保留其他 markdown 插件的前提下，
