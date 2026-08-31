@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { FolderTree, List, LoaderCircle } from "lucide-vue-next";
 import { useTodoArtifactQuery, useTodoArtifactRefresh } from "../use-todo-query";
 import {
@@ -58,7 +58,15 @@ function refreshSnapshot(event: MouseEvent) {
 }
 function restoreRefreshFocus() {
 	if (typeof window === "undefined") return;
-	window.requestAnimationFrame(() => refreshTrigger?.focus());
+	window.requestAnimationFrame(() => {
+		const trigger =
+			refreshTrigger ??
+			Array.from(document.querySelectorAll<HTMLButtonElement>("button")).find(
+				(button) => button.getAttribute("aria-label") === "刷新快照",
+			) ??
+			null;
+		trigger?.focus();
+	});
 }
 
 /** 刷新成功后的短暂成功提示 */
@@ -95,6 +103,7 @@ onMounted(() => {
 	isHydrated.value = true;
 	window.addEventListener("resize", measureViewportReserve);
 });
+watch([isHydrated, query.data, query.error], () => void nextTick(measureViewportReserve), { flush: "post" });
 onBeforeUnmount(() => window.removeEventListener("resize", measureViewportReserve));
 const layoutStyle = computed(() => ({ height: `calc(100dvh - ${viewportReserve.value}px)` }));
 </script>
