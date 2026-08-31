@@ -16,10 +16,10 @@
 
 - `shadcn-vue`
   - 路径：`.agents/skills/shadcn-vue/SKILL.md`
-  - 用途：TodoDashboard UI 组件的 shadcn-vue + tailwindcss 标准方案指导，含 Tailwind v4 接入 VitePress、Teek 令牌桥接、弹层动画红线。
-  - 触发时机：创建/修改 `docs/.vitepress/theme/components/ui/` 组件，或为 TodoDashboard 写样式、调整弹层动画、桥接主题变量时必须先读。
-  - 参考作用：沉淀 context7 拉取的 shadcn-vue 官方最佳实践与本仓库的落地决策（design.md D1~D7）。
-  - 约束：弹层动画必须成对（open/closed）或不用，禁止 enter-only；颜色一律走语义令牌，禁止硬编码色值；普通文档页渲染像素不得变化。
+  - 用途：管理 shadcn-vue 组件与项目，提供组件检索、调试、样式和组合指导。
+  - 触发时机：处理 shadcn-vue、components.json、组件注册表、CLI 初始化/添加/更新或预设时。
+  - 参考作用：来自 `unovue/shadcn-vue` 官方技能包，包含 Tailwind、表单、组合、图标规则及 CLI 工作流。
+  - 约束：遵循技能包内规则文件；优先使用现有组件和语义令牌，运行 CLI 前使用项目包管理器并先检查现有组件；项目级来源与哈希以根目录 `skills-lock.json` 为准。
 
 ## 主动问询实施细节
 
