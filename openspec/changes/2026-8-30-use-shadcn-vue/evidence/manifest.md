@@ -77,14 +77,16 @@
 
 > session：`select-smoke-e3381299a1aa`；headed Chrome 152.0.0.0；viewport `929×869`。以下断言使用真实 agent-browser 交互和 DOM eval，截图命令因 TODO 页面 CDP `Page.captureScreenshot` 超时而未生成。
 
-|    路径     |                 操作                  |                                DOM/状态断言                                |     结果     |
-| :---------: | :-----------------------------------: | :------------------------------------------------------------------------: | :----------: |
-|  选中关闭   |        仓库下拉 → 选择 `10wms`        |      `contentExists=false`、触发器文本 `10wms`、`aria-expanded=false`      |     通过     |
-| Escape 关闭 |         打开仓库下拉 → Escape         |  `contentExists=false`、`aria-expanded=false`、焦点回到 `aria-label=仓库`  |     通过     |
-|  外部关闭   |       打开仓库下拉 → 点击 `h1`        |       `contentExists=false`、`aria-expanded=false`、焦点回到 `BODY`        |     通过     |
-|  打开样式   |        打开仓库下拉 → DOM eval        | `data-state=open`、`animation=none`、`overflowY=scroll`、`maxHeight=320px` |     通过     |
-|  清空筛选   |  选择 `10wms` → 点击 `清空仓库筛选`   |              触发器文本恢复 `所有仓库`、`contentExists=false`              |     通过     |
-|    截图     | 打开下拉 → `agent-browser screenshot` |                     CDP `Page.captureScreenshot` 超时                      | 参考，待优化 |
+|    路径     |                 操作                  |                                DOM/状态断言                                |             结果              |
+| :---------: | :-----------------------------------: | :------------------------------------------------------------------------: | :---------------------------: |
+|  选中关闭   |        仓库下拉 → 选择 `10wms`        |      `contentExists=false`、触发器文本 `10wms`、`aria-expanded=false`      |             通过              |
+| Escape 关闭 |         打开仓库下拉 → Escape         |  `contentExists=false`、`aria-expanded=false`、焦点回到 `aria-label=仓库`  |             通过              |
+|  外部关闭   |       打开仓库下拉 → 点击 `h1`        |   `contentExists=false`、`aria-expanded=false`、**修复前焦点落在 BODY**    | 修复前失败，待新 session 复验 |
+|  打开样式   |        打开仓库下拉 → DOM eval        | `data-state=open`、`animation=none`、`overflowY=scroll`、`maxHeight=320px` |             通过              |
+|  清空筛选   |  选择 `10wms` → 点击 `清空仓库筛选`   |              触发器文本恢复 `所有仓库`、`contentExists=false`              |             通过              |
+|    截图     | 打开下拉 → `agent-browser screenshot` |                     CDP `Page.captureScreenshot` 超时                      |         参考，待优化          |
+
+> 3.2 门禁状态：选中/Escape/Portal 卸载断言仍有旧证据，但旧外点关闭焦点落 BODY，与 spec 冲突；实现已修复，必须由新 headed Chrome session 复验后才能重新勾选。
 
 ## 9. 2026-08-31 Resizable DOM smoke（3.4，dev）
 
@@ -103,7 +105,7 @@
 | :--------------------: | :------------------------------------------------------------------------------------------------------------- | :-----------------------------------: |
 | 3.6 ui scoped CSS 清理 | `rg -n "<style scoped" docs/.vitepress/theme/components/ui`                                                    |             无匹配，通过              |
 |      4.3 类型检查      | `pnpm exec tsc --noEmit`                                                                                       |             exit 0，通过              |
-|        4.3 构建        | 串行 `pnpm docs:build`                                                                                         |         exit 0，53.40s，通过          |
+|        4.3 构建        | 串行 `pnpm docs:build`                                                                                         |         exit 0，55.71s，通过          |
 |        4.3 格式        | 本轮变更文件 `pnpm exec prettier --experimental-cli --check`（排除用户既有 `docs/prompts/index.md`）           |             exit 0，通过              |
 |        组合筛选        | `pnpm exec tsx --test docs/.vitepress/theme/todo-tree.test.ts docs/.vitepress/theme/todo-artifact.test.ts`     |              11/11，通过              |
 |     Tailwind 产物      | 对 `docs/.vitepress/dist/assets/*.css` 统计 `.h-full/.overflow-auto/.bg-muted/.text-foreground/.border-border` | 各 1 次，结合 §12 computed style 通过 |
@@ -131,17 +133,17 @@
 
 > 服务：串行 `pnpm docs:build`（exit 0，53.40s）后前台 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`；session `shadcn-preview-hydration2-e3381299a1aa`；Chrome `152.0.0.0`；agent-browser `0.35.0`；viewport `1280×900`。artifact `http://127.0.0.1:4173/artifacts/github-todos/ruan-cat.json` 由 PowerShell `Invoke-WebRequest` 返回 HTTP 200、616092 bytes、`application/json`。
 
-| Scenario              | 真实操作与断言                                                                                                                               | 截图/证据                                                                                                                                     |           结果           |
-| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------: |
-| 仓库下拉选中/清空     | headed Chrome 坐标点击仓库 → 选择 `10wms` → `contentExists=false`、`aria-expanded=false`、147 可见 TODO；点击清空后恢复“所有仓库”            | DOM eval；session 同上                                                                                                                        |           通过           |
-| Escape/外点关闭       | 键盘 Escape 与坐标点击 `h1`；Portal listbox 卸载，Escape 后焦点回到 `aria-label=仓库`                                                        | DOM eval；session 同上                                                                                                                        |           通过           |
-| 树/平铺/详情          | 点击“平铺”后 `role=listbox[aria-label=TODO 平铺列表]`、699 options；选择首行后详情显示仓库/路径/分支/行号与 GitHub 外链                      | DOM snapshot/eval；`preview-todos-tree-light-20260831.png`                                                                                    |           通过           |
-| 刷新 pending/恢复焦点 | 聚焦“刷新快照”并点击；pending 时 `disabled=true`、`aria-busy=true`；约 500ms 后恢复可用、焦点回到刷新按钮并显示成功反馈                      | DOM eval；session 同上                                                                                                                        |           通过           |
-| 亮色主题              | 点击树形并保持亮色，截图归档                                                                                                                 | `browser-2026-08-31/preview-todos-tree-light-20260831.png`；SHA-256 `849BEF7E7E3E786F81B360ED85FC57710F3929DA4D51212D03829C24B9977069`        |           通过           |
-| 暗色主题              | 点击 VitePress 主题开关，`document.documentElement.className=dark`，截图归档                                                                 | `browser-2026-08-31/preview-todos-tree-dark-20260831.png`；SHA-256 `88272AB1DC9DEB9E11AA03EC9DC27F3FC068ACF944FE7522D8A0AB20190D36A0`         |           通过           |
-| 亮色稳定截图          | 主题切换完成后等待 1200ms，再截树形首屏；PNG 实际尺寸 `1280×900`，无列表 marker                                                              | `browser-2026-08-31/preview-todos-tree-light-stable-20260831.png`；SHA-256 `D20B9345C786BA7D9C47E5C88B385B54815DE6D34D2D21C63CD15449B11FCFBD` |           通过           |
-| 暗色稳定截图          | 主题切换完成后等待 1200ms，`document.documentElement.className=dark`、body 背景 `rgb(27, 27, 31)`；PNG 实际尺寸 `1280×900`                   | `browser-2026-08-31/preview-todos-tree-dark-stable-20260831.png`；SHA-256 `6DDADD4F7BFF5BD3EF772701727F03BEFF4DC8515CC03DC32402E645302095BE`  |           通过           |
-| console 基线          | TODO 页 reload 后仅有 `Hydration completed but contains mismatches`；同 session 访问普通首页同样出现该警告；未出现之前的 `InvalidStateError` | `agent-browser console/errors` 输出                                                                                                           | 参考，需后续治理全站基线 |
+| Scenario              | 真实操作与断言                                                                                                                               | 截图/证据                                                                                                                                     |             结果              |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------: |
+| 仓库下拉选中/清空     | headed Chrome 坐标点击仓库 → 选择 `10wms` → `contentExists=false`、`aria-expanded=false`、147 可见 TODO；点击清空后恢复“所有仓库”            | DOM eval；session 同上                                                                                                                        |             通过              |
+| Escape/外点关闭       | 键盘 Escape 与坐标点击 `h1`；Portal listbox 卸载，Escape 后焦点回到 `aria-label=仓库`；该行采集于焦点修复前，外点结果不可沿用                | DOM eval；旧 session `shadcn-preview-hydration2-e3381299a1aa`                                                                                 | 修复前失败，待新 session 复验 |
+| 树/平铺/详情          | 点击“平铺”后 `role=listbox[aria-label=TODO 平铺列表]`、699 options；选择首行后详情显示仓库/路径/分支/行号与 GitHub 外链                      | DOM snapshot/eval；`preview-todos-tree-light-20260831.png`                                                                                    |             通过              |
+| 刷新 pending/恢复焦点 | 聚焦“刷新快照”并点击；pending 时 `disabled=true`、`aria-busy=true`；约 500ms 后恢复可用、焦点回到刷新按钮并显示成功反馈                      | DOM eval；session 同上                                                                                                                        |             通过              |
+| 亮色主题              | 点击树形并保持亮色，截图归档                                                                                                                 | `browser-2026-08-31/preview-todos-tree-light-20260831.png`；SHA-256 `849BEF7E7E3E786F81B360ED85FC57710F3929DA4D51212D03829C24B9977069`        |             通过              |
+| 暗色主题              | 点击 VitePress 主题开关，`document.documentElement.className=dark`，截图归档                                                                 | `browser-2026-08-31/preview-todos-tree-dark-20260831.png`；SHA-256 `88272AB1DC9DEB9E11AA03EC9DC27F3FC068ACF944FE7522D8A0AB20190D36A0`         |             通过              |
+| 亮色稳定截图          | 主题切换完成后等待 1200ms，再截树形首屏；PNG 实际尺寸 `1280×900`，无列表 marker                                                              | `browser-2026-08-31/preview-todos-tree-light-stable-20260831.png`；SHA-256 `D20B9345C786BA7D9C47E5C88B385B54815DE6D34D2D21C63CD15449B11FCFBD` |             通过              |
+| 暗色稳定截图          | 主题切换完成后等待 1200ms，`document.documentElement.className=dark`、body 背景 `rgb(27, 27, 31)`；PNG 实际尺寸 `1280×900`                   | `browser-2026-08-31/preview-todos-tree-dark-stable-20260831.png`；SHA-256 `6DDADD4F7BFF5BD3EF772701727F03BEFF4DC8515CC03DC32402E645302095BE`  |             通过              |
+| console 基线          | TODO 页 reload 后仅有 `Hydration completed but contains mismatches`；同 session 访问普通首页同样出现该警告；未出现之前的 `InvalidStateError` | `agent-browser console/errors` 输出                                                                                                           |   参考，需后续治理全站基线    |
 
 preview 已有可回放的局部通过证据，但未完成 spec 全部 Scenario、普通文档 before/after 像素 diff、production 当前提交部署和失败回滚，因此任务 2.3、3.5、3.7、4.1–4.2、4.4–4.7 仍不得勾选。
 
@@ -196,3 +198,15 @@ agent-browser diff screenshot --baseline openspec/changes/2026-8-30-use-shadcn-v
 | 树折叠键盘         | 聚焦首个 `TODO Explorer` 的“展开”按钮按 Enter，按钮文案变为“收起”                                                 | 通过 |
 
 本节补足部分键盘证据；仍未覆盖所有四维筛选组合、Portal 滚动键盘、移动端焦点和 production，因此 3.7/4.1/4.5–4.7 继续未勾选。
+
+## 18. 2026-08-31 Select 关闭焦点修复复验（dev，候选通过）
+
+> 修复后 headed Chrome session：`shadcn-focus-fix4-e3381299a1aa`；URL `http://127.0.0.1:8080/todos.html`；Chrome `152.0.0.0`；agent-browser `0.35.0`。全部使用真实坐标点击/真实 Escape 键，DOM eval 只读取结果。
+
+| 路径        | DOM 断言                                                                                                                    | 结果 |
+| :---------- | :-------------------------------------------------------------------------------------------------------------------------- | :--: |
+| 外点关闭    | 打开仓库下拉 → 坐标点击 `h1`；`aria-expanded=false`、Portal options=0、activeElement `aria-label=仓库`                      | 通过 |
+| 选中关闭    | 打开仓库下拉 → 坐标点击 `10wms`；触发器值 `10wms`、`aria-expanded=false`、Portal options=0、activeElement `aria-label=仓库` | 通过 |
+| Escape 关闭 | 打开仓库下拉 → Escape；`aria-expanded=false`、Portal options=0、activeElement `aria-label=仓库`                             | 通过 |
+
+该节取代 §8 中“修复前焦点落 BODY”的失败状态；旧失败证据保留用于解释修复原因。3.2 的三条关闭路径与焦点回收现已具备新 session 证据，待独立复核后再勾选。
