@@ -146,6 +146,13 @@
 - **WHEN** 页面渲染
 - **THEN** 面板改为上下堆叠布局，高度约束解除，允许自然页面滚动
 
+#### Scenario: 响应式视觉验收
+
+- **GIVEN** 具有完整元数据的对应基线，或明确记录“参考”状态
+- **WHEN** 分别在 `1280×900` 桌面和 `720×900` 窄视口加载稳定页面
+- **THEN** 以结构性视觉结论验收：桌面无页面级双滚动，窄视口面板上下堆叠，树 marker/缩进与基线意图一致，详情 sticky 动作栏完整可见
+- **AND** pixel diff 只在同尺寸、同主题、同加载状态下作为诊断；不使用跨尺寸截图的百分比作为通过/失败门槛
+
 ### Requirement: 主题与可访问性
 
 系统 SHALL 同时支持亮色与暗色主题（跟随站点主题切换），并保持既有可访问性标注。
@@ -212,7 +219,8 @@
 - **AND** 只对稳定的验收状态截图；截图按 `{environment}-{scenario}-{timestamp}.png` 命名，并在 `evidence/manifest.md` 登记环境、URL、viewport、Chrome/agent-browser 版本、session、命令、断言结果和文件哈希
 - **AND** 每张截图必须能回指本 spec 的 Requirement/Scenario；缺少元数据或断言的图片只能标记 `partial`/`参考`
 - **AND** 提交前逐行检查截图路径存在、PNG 尺寸与 viewport 一致、SHA-256 匹配，并输出 `checked/missing/mismatched/unreferenced` 汇总
-- **AND** mask 后的归一化 diff `≤1%` 只作为可接受参考阈值，`>1%` 必须由独立复核解释；原始 diff 不单独决定通过/失败，结构性视觉漂移始终判定失败
+- **AND** 仅在同 viewport、同主题、同加载状态且基线元数据完整时执行 pixel diff；原始/归一化 diff 仅作诊断，不设跨 viewport 的统一百分比硬阈值；`1600×1000` 与 `1280×900` 的差异不得单独判定失败或通过
+- **AND** 响应式硬门禁由结构性结论判断：无 marker/异常缩进、桌面无页面级双滚动、窄视口面板正确堆叠、主题变量生效、详情 sticky 动作栏不裁切
 
 #### Scenario: 产品矩阵与故障/资源补证分层
 
