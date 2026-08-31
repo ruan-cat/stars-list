@@ -43,6 +43,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 2026-09-01 独立 reviewer 复核当前 HEAD `1068377` 与 manifest §26/§27，确认 4.5/4.6/4.1/4.2 不可勾选且标准不建议放宽；F38 固化剩余缺口与可接受的 request manifest+SHA 等价证据边界。
 - 2026-09-01 独立 reviewer 继续逐行核验 §26/§27 的 29 个 PNG 引用，发现 §26 原“无匹配”截图路径断链；已在 manifest §26 改为“部分”，明确最终 dev session 只保留 `never-match-20260901=0` 断言，早期 `dev-cdp-no-match` 不得替代同一 session 截图。该证据缺口继续阻塞 4.5/4.1，未新开浏览器 session 补图。
 - 2026-09-01 dev 补证 session `todo-dev-final-20260901-k-e3381299a1aa` 补齐亮/暗主题、无匹配、sticky 深滚动、键盘分支截图、外点焦点与 single-flight `calls=1`；artifact 200、tw.css 304、favicon.svg 200，console 无 error。受控 artifact abort 后 reload 触发 Chrome `DevToolsActivePort` exit 3，按止损规则不换 session；F40 与 manifest §28 记录，4.5/4.1/4.2 仍未勾选。
+- 2026-09-01 按 reviewer P2 建议补齐状态栏成功态 `role=status`/`aria-live=polite`；TDD 先红后绿，组件测试 7/7、tsc/build 通过，提交 `99bf185` + `416b7cf`，不改变验收门禁状态。
 
 ## 阻塞点
 
