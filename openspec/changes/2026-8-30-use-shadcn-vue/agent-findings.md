@@ -98,4 +98,8 @@ preview headed Chrome 对 `/todos.html` reload 后记录 `Hydration completed bu
 
 ## F25 [active] production 仍为旧部署，当前提交未进入 Pages
 
-只读核验显示本地 HEAD `bdd1a3d0d023ce94836317f48d4836160beca8b0`（后续还有本地提交），`origin/main=1c468f4`，最新 Pages deployment `6176611081` 的 head SHA 为 `1c468f4`；production URL HTTP 200、资源均可达，但线上 CSS/HTML hash 与本地构建不同。仓库内没有可自证的 Flex 流量器配置，4.7 必须在授权 push/main 合并后取得 Pages workflow 与外部切流/回滚回执，不能用 production 200 代替。
+只读核验显示本地 HEAD `fe960ab03111406c75394b21266fa9d3cf09f12a`（后续还有本地未提交的验收证据），`origin/main=1c468f4`，最新 Pages deployment `6176611081` 的 head SHA 为 `1c468f4`；production URL HTTP 200、资源均可达，但线上 CSS/HTML hash 与本地构建不同。仓库内没有可自证的 Flex 流量器配置，4.7 必须在授权 push/main 合并后取得 Pages workflow 与外部切流/回滚回执，不能用 production 200 代替。
+
+## F26 [active] production headed Chrome 直连/启动未形成可回放会话
+
+对 production URL 的第一次 headed Chrome 访问返回 `net::ERR_CONNECTION_CLOSED`；第二次独立 session 在 Chrome 启动阶段返回 exit 3，未生成 `DevToolsActivePort`。同一时段 PowerShell `Invoke-WebRequest` 可得 HTTP 200，说明脚本可达性不能证明真实浏览器可交互。4.7 必须保留这两次失败日志，待浏览器网络/进程环境恢复后重试，禁止以 HTTP 200 或本地 preview 证据代替 production Chrome。

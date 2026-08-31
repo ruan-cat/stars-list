@@ -157,6 +157,8 @@ preview 已有可回放的局部通过证据，但未完成 spec 全部 Scenario
 | 回滚基线            | 上一个成功 deployment `6164041902`，SHA `ad73188e9c33db59aa4b82d17884b4a882d43580`；仅作候选基线，不能替代 Flex 流量器回执                                                              |
 | Flex 流量器         | 仓库内无可自证的 Flex CLI/config；失败时必须取得外部切流回执，禁止用本地 build 代替                                                                                                     |
 
+headed Chrome 生产直连尝试：session `shadcn-production-old-e3381299a1aa` 返回 `net::ERR_CONNECTION_CLOSED`；第二 session `shadcn-production-old2-e3381299a1aa` 在 Chrome 启动阶段返回 exit 3（`DevToolsActivePort` 未生成）。PowerShell `Invoke-WebRequest` 的 200 只能作为 HTTP 基线，不能替代生产浏览器矩阵。
+
 因此 production GET 200 只能证明旧站点可达，不能支撑 4.7；必须在用户授权后合并/推送 main、等待 Pages workflow 成功，再用 headed Chrome 完整矩阵验收。
 
 ## 15. 2026-08-31 同 viewport 树形基线 diff（preview，参考）
