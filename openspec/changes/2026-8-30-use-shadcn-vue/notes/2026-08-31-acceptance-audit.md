@@ -4,13 +4,13 @@
 
 ## 1. 结论
 
-当前 change **不通过验收，不得归档**。规划工件结构有效，但实现任务尚未开始。初次审核时 CLI 报告总任务 20、完成 3、剩余 17；按用户确认补充可访问性任务后，当前总任务为 21、完成 3、剩余 18。
+当前 change **仍不通过最终验收，不得归档**。规划工件结构有效，实施已部分推进但浏览器与部署门禁尚未闭环。初次审核时 CLI 报告总任务 20、完成 3、剩余 17；按用户确认补充可访问性与三环境浏览器验收任务后，当前总任务为 24、完成 13、剩余 11。
 
 ## 2. 完整性与实现证据
 
 - 已完成：`tasks.md` 1.1–1.3（基线截图、量化指标、spec 固化）。
-- 未完成：2.1–5.2 全部未勾选；`agent-progress.md` 也明确写着尚未动组件代码、Tailwind/shadcn-vue 未安装。
-- 现状源码仍是 `reka-ui` 包装组件和 scoped CSS；没有 `components.json`，也没有 `tailwindcss` / `@tailwindcss/vite` 依赖或 Vite 插件接入。
+- 已完成：2.1、2.2、2.4、2.5、3.1–3.4、3.6、4.3，并有 CLI/tsc/test/build/Prettier 证据；3.5/3.7、2.3、4.1–4.2、4.4–4.7、5.1–5.2 仍未闭环。
+- 当前源码已接入 Tailwind v4、官方 shadcn-vue 生成子组件和业务视觉迁移；仍保留少量树连接线/过渡 scoped 微调，且缺少 900/720px 与三环境 headed Chrome 的真实证据，不能把构建通过当作视觉/交互完成。
 - `openspec validate ... --strict` 只证明工件格式有效，不能证明实现或场景通过。
 
 ## 3. 证据质量与口径问题
@@ -36,7 +36,28 @@ sourceType=github
 
 ## 5. 重新进入实施前的门槛
 
-1. 按 `tasks.md` 顺序完成 2.1–3.6，并用官方 CLI/模板证据记录非标准 `docs/.vitepress` 路径处理。
+1. 按 `tasks.md` 顺序完成 3.5、3.7，并用官方 CLI/模板证据记录非标准 `docs/.vitepress` 路径处理。
 2. 为普通文档页像素不变、双主题、三种关闭路径和无页面双滚动补 fresh 浏览器/CDP 证据。
 3. 修正 artifact 统计文案和 spec 边界场景，补齐失败/竞态/键盘可访问性验证。
 4. 只有任务逐项有命令或浏览器输出后，才可勾选 4.x/5.x 并运行归档流程。
+
+## 6. 本轮验收协议加固
+
+用户确认后，已将 agent-browser + Google Chrome headed 的三环境验收协议写入 proposal/spec/design/tasks，并新增 `evidence/manifest.md` 模板：
+
+- dev：`pnpm docs:dev -- --host 127.0.0.1 --port 8080` → `http://127.0.0.1:8080/todos.html`
+- preview：`pnpm docs:build` + `pnpm docs:preview -- --host 127.0.0.1 --port 4173` → `http://127.0.0.1:4173/todos.html`
+- production：`https://ruan-cat.github.io/stars-list/todos.html`
+
+统一要求记录 headed Chrome/agent-browser session、viewport、URL、命令、DOM/网络断言、截图哈希，并在生产失败时停止验收、回滚后复验。上述三环境正式矩阵尚未完成，相关任务仍保持未勾选；已有生产/dev 普通文档参考截图和局部 Select/Resizable DOM smoke 不能替代它们。
+
+## 7. 基础设施推进记录
+
+随后已完成 tasks 2.1–2.2、2.4–2.5、3.1–3.4、3.6、4.3：安装 `tailwindcss@4.3.3` 与 `@tailwindcss/vite@4.3.3`，在 VitePress 注册 Tailwind 插件，新增无 preflight 的 `theme/tw.css` 并由 TodoDashboard 入口加载；通过 CLI 生成并修正 `components.json`、Select、Button、Input、Resizable 官方子组件和 `evidence/manifest.md`。Todo\* 静态视觉迁移已完成，补上状态统计、连接线、焦点 ring、刷新焦点恢复和组合筛选测试；修复 preset 覆盖 `vite.plugins` 导致 Tailwind utilities 未生成的问题，并补充 `@source`/显式 utilities 入口；串行 fresh `pnpm docs:build` exit 0（57.96s），本轮变更文件 Prettier check exit 0。一次并行构建出现 `.vitepress/.temp` 临时文件竞争，已记录为 F14，后续构建验收必须串行。当前总任务 24 项，完成 13 项，剩余 11 项；2.3、3.5、3.7、4.1–4.2、4.4–4.7、5.1–5.2 仍不得提前勾选。
+
+## 8. 2026-08-31 工件加固与未验证门禁
+
+- 状态栏现在明确显示总仓库、已扫描、跳过、未授权、分支不可用、失败、错误和扫描完整度；无 artifact 时只显示加载/错误/暂无数据，不伪造零值。
+- 3.5 业务组件均改用 Tailwind 语义类；`ui/` 目录已无 `<style scoped>`，Select 只保留 Portal 必需的全局滚动规则，TreeToggle 已去除旧 VP 变量样式。
+- 组合筛选新增仓库+分支+类型交集测试；树/平铺行加入 focus-visible ring；刷新结束后恢复真实触发按钮焦点；详情区采用父面板隐藏溢出、子区唯一滚动的结构。
+- 独立 reviewer 仍将刷新竞态和三环境 headed Chrome 完整视觉矩阵列为未验证门禁；一次 Chrome 自动启动出现 `DevToolsActivePort` exit 3，清理旧 dev 进程后已在新 session 成功复验 900/720px，F21 作为间歇性风险保留，禁止伪造其余未完成门禁。

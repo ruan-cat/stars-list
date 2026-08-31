@@ -17,9 +17,9 @@
 
 #### Scenario: 扫描口径明确
 
-- **GIVEN** artifact 响应包含 `repositoryCount`、`scannedRepositoryCount`、仓库状态与 `scan.completeness`
+- **GIVEN** artifact 响应包含 `repositoryCount`、`scannedRepositoryCount`、`errorCount`、仓库状态与 `scan.completeness`
 - **WHEN** 状态栏渲染完成
-- **THEN** 同时展示总仓库数、已扫描仓库数、跳过/分支不可用数量、可见 TODO 数与生成时间
+- **THEN** 同时展示总仓库数、已扫描仓库数、跳过/未授权/分支不可用/失败/错误数量、可见 TODO 数与生成时间
 - **AND** `complete` 仅表示扫描流程的完整度，不得被解释为总仓库数全部已扫描
 
 #### Scenario: 首次加载失败与恢复
@@ -168,3 +168,45 @@
 - **WHEN** 用户仅使用键盘遍历控件
 - **THEN** 当前焦点始终可见且顺序稳定，禁用控件具有 `disabled` 或等价 `aria-disabled` 语义
 - **AND** 错误提示可被辅助技术感知，恢复操作完成后焦点回到触发恢复的控件
+
+### Requirement: 三环境浏览器验收与证据归档
+
+系统 SHALL 使用 `agent-browser` 通过 CDP 驱动可见的 Google Chrome，对 dev、preview、production 三个环境执行同一套视觉与交互验收矩阵；每个环境 SHALL 归档可复核的截图、操作日志、浏览器元数据与 DOM/网络断言。
+
+#### Scenario: dev 环境验收
+
+- **GIVEN** 使用 `pnpm docs:dev -- --host 127.0.0.1 --port 8080` 启动本地 dev 服务
+- **WHEN** agent-browser headed session 打开 `http://127.0.0.1:8080/todos.html`
+- **THEN** 记录 agent-browser session、Chrome 版本、viewport、URL 与服务进程日志
+- **AND** 完成首屏、下拉、筛选、树/平铺、详情、键盘、主题、滚动和失败恢复矩阵
+
+#### Scenario: preview 环境验收
+
+- **GIVEN** `pnpm docs:build` 成功且使用 `pnpm docs:preview -- --host 127.0.0.1 --port 4173` 启动预览服务
+- **WHEN** agent-browser headed session 打开 `http://127.0.0.1:4173/todos.html`
+- **THEN** 对 dev 环境重复同一交互矩阵与截图断言
+- **AND** 额外确认构建产物中的 artifact 同源路径、资源加载和 console 无新增错误
+
+#### Scenario: production 环境验收
+
+- **GIVEN** 当前生产目标为 `https://ruan-cat.github.io/stars-list/todos.html`
+- **WHEN** agent-browser headed session 打开生产 URL
+- **THEN** 记录部署 commit SHA、最终 URL、HTTP 状态、Chrome 元数据、网络请求和 console 输出
+- **AND** 对 dev/preview 已通过的交互矩阵逐项复验，禁止用本地结果替代生产证据
+
+#### Scenario: 统一交互矩阵与截图归档
+
+- **GIVEN** 任一环境开始验收
+- **WHEN** 执行每个 Scenario 的真实点击、键盘和滚动操作
+- **THEN** 使用真实坐标完成 Portal/下拉交互，合成 `dispatchEvent` 仅用于 DOM 机制断言
+- **AND** 截图按 `{environment}-{scenario}-{timestamp}.png` 命名，并在 `evidence/manifest.md` 登记环境、URL、viewport、Chrome/agent-browser 版本、session、命令、断言结果和文件哈希
+- **AND** 每张截图必须能回指本 spec 的 Requirement/Scenario，缺少元数据或断言的图片不得作为通过证据
+
+#### Scenario: 生产失败与回滚复验
+
+- **GIVEN** 生产验收出现关键 Scenario 失败、页面级滚动、Portal 残留、主题回归、普通文档像素变化或 console/network 回归
+- **WHEN** 触发回滚门禁
+- **THEN** 停止继续验收，记录失败证据、部署 SHA 与回滚操作
+- **AND** 通过现有 Flex 流量器将流量切回上一个已知通过的部署，记录切流前后版本、操作者/时间、流量器返回状态和生产 URL，不得以本地构建结果替代切流结果
+- **AND** 回滚完成后使用 agent-browser 重新打开生产 URL，至少复验首屏加载、下拉关闭、键盘焦点、主题和页面滚动五项
+- **AND** 五项复验及网络/console 均通过后，才允许结束回滚；否则保持失败状态并继续升级处置
