@@ -175,3 +175,7 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F45 [active] 撤销跨 viewport 像素 diff 硬门禁
 
 用户指出页面是响应式布局，不能把 `1600×1000` 基线与 `1280×900`/`720×900` fresh 截图的 `4.60%` 原始 diff 当成产品失败。复核确认该 diff 只能证明两张同尺寸图存在差异，不能证明跨尺寸响应式回归；现已在 tasks/spec/design/manifest/技能中撤销统一像素百分比硬门禁，改为同 viewport 条件下的诊断 diff + 桌面无页面级双滚动、窄视口上下堆叠、marker/缩进、主题变量与 sticky 动作栏等结构性硬门禁。历史 §15 保留为审计事实，不改写为通过。
+
+## F46 [active] 无障碍实现与 agent-browser 验收方式固化
+
+当前无障碍实现主要使用原生 HTML 语义、shadcn-vue/Reka UI 的 combobox/listbox/option 与焦点管理、`aria-*` 状态、`focus-visible` ring、状态/错误 live region，以及 Resizable 的 separator 键盘语义；没有自研无障碍框架。agent-browser 自带 `a11y` axe-core 命令，适合扫描 WCAG 规则，但不能替代键盘顺序、焦点回收和视觉 focus-visible，因此已将“axe `a11y --json` + `snapshot -i` 语义树 + 真实 focus/press + 短 eval 读数”写入 tasks/spec/manifest/use-agent-browser。标准验收不需要额外提交扫描脚本；仅在应用特有状态无法由通用工具观察时使用一次性 eval。用户要求的局部技能已同步更新。

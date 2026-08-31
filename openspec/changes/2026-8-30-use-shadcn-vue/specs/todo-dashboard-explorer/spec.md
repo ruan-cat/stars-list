@@ -168,6 +168,7 @@
 - **GIVEN** 重构完成
 - **WHEN** 审查 DOM
 - **THEN** 保留 `role="search"`、`role="listbox"`、`role="option"`、`aria-label`（搜索/仓库/分支/类型/视图切换/TODO Explorer/平铺列表）与 `aria-selected`/`aria-expanded` 等既有标注
+- **AND** 在 headed CDP session 中运行 `agent-browser a11y --json --tags wcag2a,wcag2aa`，记录 TODO 子树的 `violations`/`incomplete`；axe 结果与语义树、真实键盘/焦点断言合并判断，不以单一工具结果替代用户路径验收
 
 #### Scenario: 键盘焦点与禁用控件
 
