@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from "vue";
 import { X } from "lucide-vue-next";
 import { Icon, type IconifyIcon } from "@iconify/vue";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./select";
@@ -22,6 +22,7 @@ const selectedIcon = computed(() => (props.modelValue ? props.optionIcons?.[prop
 const triggerRef = ref<{ $el?: HTMLElement } | null>(null);
 let focusRestoreTimer: ReturnType<typeof setTimeout> | undefined;
 let focusRestoreScheduled = false;
+let contentOpen = false;
 function update(value: string) {
 	emit("change", value === ALL_VALUE ? "" : value);
 }
@@ -38,6 +39,7 @@ function restoreTriggerFocus() {
 	if (element && typeof element.focus === "function") element.focus();
 }
 function handleOpenChange(open: boolean) {
+	contentOpen = open;
 	if (!open) scheduleTriggerFocus();
 }
 function scheduleTriggerFocus() {
@@ -64,7 +66,14 @@ function handleCloseAutoFocus(event: Event) {
 	event.preventDefault();
 	scheduleTriggerFocus();
 }
-onBeforeUnmount(() => clearTimeout(focusRestoreTimer));
+function handleDocumentKeydown(event: KeyboardEvent) {
+	if (contentOpen && event.key === "Escape") scheduleTriggerFocus();
+}
+onMounted(() => document.addEventListener("keydown", handleDocumentKeydown, true));
+onBeforeUnmount(() => {
+	document.removeEventListener("keydown", handleDocumentKeydown, true);
+	clearTimeout(focusRestoreTimer);
+});
 </script>
 <template>
 	<div class="relative min-w-0 w-full">
