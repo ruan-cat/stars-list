@@ -230,6 +230,7 @@ describe("TodoDashboard loading and refresh contract", () => {
 		globalThis.fetch = fetchMock;
 		const wrapper = mountDashboard();
 		await vi.waitFor(() => expect(wrapper.text()).toContain("1 可见 TODO"));
+		expect(wrapper.get('[role="status"][aria-live="polite"]').text()).toContain("1 可见 TODO");
 
 		const refreshButton = wrapper.get('[aria-label="刷新快照"]');
 		refreshButton.element.focus();
