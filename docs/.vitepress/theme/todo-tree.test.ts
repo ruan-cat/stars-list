@@ -1,6 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildTodoTree, countVisibleTodos, filterTodoTree, flattenTodoTree, toggleTodoNode, type TodoTreeState } from "./todo-tree.ts";
+import {
+	buildTodoTree,
+	countVisibleTodos,
+	filterTodoTree,
+	flattenTodoTree,
+	toggleTodoNode,
+	type TodoTreeState,
+} from "./todo-tree.ts";
 import type { TodoScanArtifact } from "../../../scripts/get-todo/types.ts";
 
 const artifact: TodoScanArtifact = {
@@ -87,6 +94,32 @@ test("filters matching leaves while retaining their ancestor chain", () => {
 	const filtered = filterTodoTree(tree, { text: "auth", kind: "source-comment" });
 	assert.equal(countVisibleTodos(filtered), 1);
 	assert.equal(filtered[0].children[0].count, 1);
+});
+
+test("applies repository, branch and kind filters as an intersection", () => {
+	const multiBranchArtifact: TodoScanArtifact = {
+		...artifact,
+		summary: { ...artifact.summary, repositoryCount: 2, scannedRepositoryCount: 2, todoCount: 3 },
+		repositories: [
+			...artifact.repositories,
+			{
+				fullName: "ruan-cat/other",
+				visibility: "public",
+				selectedBranch: "dev",
+				status: "scanned",
+				todoCount: 1,
+				errors: [],
+			},
+		],
+		todos: [...artifact.todos, { ...artifact.todos[1], id: "c", repo: "other", branch: "dev", kind: "source-comment" }],
+	};
+	const filtered = filterTodoTree(buildTodoTree(multiBranchArtifact), {
+		repository: "other",
+		branch: "dev",
+		kind: "source-comment",
+	});
+	assert.equal(countVisibleTodos(filtered), 1);
+	assert.equal(filtered[0].repo, "ruan-cat/other");
 });
 
 test("toggleTodoNode returns immutable expanded state", () => {

@@ -1,26 +1,20 @@
 <script setup lang="ts">
-import { Primitive } from "reka-ui";
-withDefaults(defineProps<{ variant?: "default" | "ghost"; disabled?: boolean }>(), { variant: "default" });
-</script>
-<template>
-	<Primitive as="button" class="ui-button" :class="`ui-button--${variant}`" :disabled="disabled"><slot /></Primitive>
-</template>
+import type { HTMLAttributes } from "vue";
+import ShadcnButton from "./button/Button.vue";
 
-<style scoped>
-.ui-button {
-	background: var(--vp-c-brand-3);
-	color: var(--vp-c-white);
-	border: 0;
-	border-radius: 6px;
-	padding: 0.6rem 0.9rem;
-	cursor: pointer;
-}
-.ui-button--ghost {
-	background: transparent;
-	color: var(--vp-c-text-1);
-}
-.ui-button:disabled {
-	opacity: 0.6;
-	cursor: wait;
-}
-</style>
+/** 业务按钮兼容层：保留 TodoDashboard 的 variant/disabled API。 */
+withDefaults(
+	defineProps<{
+		variant?: "default" | "ghost";
+		disabled?: boolean;
+		class?: HTMLAttributes["class"];
+	}>(),
+	{ variant: "default", disabled: false },
+);
+</script>
+
+<template>
+	<ShadcnButton :variant="variant" :disabled="disabled" :class="['ui-button', $attrs.class]" v-bind="$attrs">
+		<slot />
+	</ShadcnButton>
+</template>

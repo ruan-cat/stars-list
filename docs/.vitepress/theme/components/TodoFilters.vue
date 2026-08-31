@@ -38,8 +38,13 @@ function update(key: keyof TodoFilters, value: string) {
 }
 </script>
 <template>
-	<div class="todo-filters" role="search" aria-label="筛选 TODO">
+	<div
+		class="my-4 grid min-w-0 grid-cols-[2fr_repeat(3,minmax(0,1fr))] gap-2.5 max-[720px]:grid-cols-2"
+		role="search"
+		aria-label="筛选 TODO"
+	>
 		<Input
+			class="max-[720px]:col-span-2"
 			:model-value="modelValue.search"
 			type="search"
 			placeholder="搜索 TODO 文本、路径…"
@@ -70,20 +75,3 @@ function update(key: keyof TodoFilters, value: string) {
 		/>
 	</div>
 </template>
-
-<style scoped>
-.todo-filters {
-	display: grid;
-	grid-template-columns: 2fr repeat(3, 1fr);
-	gap: 0.6rem;
-	margin: 1rem 0;
-}
-@media (max-width: 720px) {
-	.todo-filters {
-		grid-template-columns: 1fr 1fr;
-	}
-	.todo-filters :deep(.ui-input) {
-		grid-column: 1/-1;
-	}
-}
-</style>

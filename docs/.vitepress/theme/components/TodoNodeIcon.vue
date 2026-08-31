@@ -57,11 +57,4 @@ const icon = computed(() => {
 });
 </script>
 
-<template><Icon class="todo-node-icon" :icon="icon" width="16" height="16" aria-hidden="true" /></template>
-
-<style scoped>
-.todo-node-icon {
-	display: block;
-	flex: 0 0 16px;
-}
-</style>
+<template><Icon class="block size-4 shrink-0" :icon="icon" width="16" height="16" aria-hidden="true" /></template>
