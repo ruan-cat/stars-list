@@ -155,3 +155,7 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F39 [active] 修正 dev 无匹配截图断链
 
 独立 reviewer 逐行核验 manifest §26/§27 的 29 个 PNG 引用，发现 §26 原“无匹配”引用 `dev-final-no-match-1280x900-20260901.png` 不存在；其余 28 个文件存在且 SHA-256 匹配。现已将该行改为“部分”：保留最终 dev session 已执行的 `never-match-20260901=0` 断言，但明确最终截图未落盘；现存 `dev-cdp-no-match-1280x900-20260901.png` 属于早期 partial session，不得替代同一 headed session 证据。因此该缺口继续阻塞 4.5/4.1，不启动新 session 仅为补图。
+
+## F40 [active] dev 补证 session 完成但首载故障触发控制面止损
+
+2026-09-01 在单一 session `todo-dev-final-20260901-k-e3381299a1aa`（Chrome 152.0.7977.54、agent-browser 0.35.0、1280×900）中完成亮色/暗色、最终无匹配截图、详情 sticky 深滚动、外点关闭焦点、Space/Arrow/Enter/Escape 分支截图和真实刷新重复点击 `calls=1`。去重网络摘要显示本地核心请求无业务非 2xx（artifact 200、tw.css 304、favicon.svg 200；唯一 404 为浏览器自动 `favicon.ico`），console 无 error。设置 artifact abort 后 reload 时 Chrome 退出 `DevToolsActivePort` exit 3，session 失去 tab；依据 use-agent-browser 止损规则不重启、不换 session、不伪造失败截图，关闭服务并 cleanup dry-run（CandidateCount=0）。本节只作为补证，不能替代首载失败/恢复、乱序响应、完整 Document/CSS/JS 资源表和独立 verifier，4.5/4.1/4.2 保持未勾选。

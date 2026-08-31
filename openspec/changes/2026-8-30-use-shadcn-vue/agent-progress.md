@@ -6,7 +6,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 
 ## 当前 task
 
-当前任务：`tasks.md` 4.5/4.6（TODO dev/preview 单 headed session 全量矩阵）；最终可见 dev `todo-dev-final-20260901-h` 与当前源码 preview `todo-preview-final-20260901-j` 已补齐大部分关键路径、首次失败/恢复、race 计数和资源 HTTP 表。独立 reviewer 复核确认 4.5/4.6/4.1/4.2 不能勾选：仍缺 dev 乱序 race 与亮色同 session、preview 当前版本键盘/外点截图、hydration warning 单独清点、详情 sticky 深滚动、可复核资源/HAR 与独立 verifier。2.3 普通文档页像素回归仍为后置旁路门禁。
+当前任务：`tasks.md` 4.5/4.6（TODO dev/preview 单 headed session 全量矩阵）；dev 最终 session `todo-dev-final-20260901-h` 与补证 session `todo-dev-final-20260901-k-e3381299a1aa` 合计覆盖大部分路径，但不能跨 session 拼成“完整通过”。补证 session 已补亮/暗、无匹配、sticky、键盘分支、外点焦点与 single-flight `calls=1`，却在首载 abort reload 时触发 Chrome `DevToolsActivePort` exit 3；因此 dev 仍缺同一 session 的首载失败/恢复、乱序响应、完整资源表与独立 verifier。preview 仍缺当前版本键盘/外点截图、hydration warning 单独清点、sticky 深滚动、亮色主题、可复核资源与独立 verifier。4.5/4.6/4.1/4.2 保持未勾选，2.3 普通文档页像素回归为后置旁路门禁。
 
 ## 状态
 
@@ -42,6 +42,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 2026-09-01 当前源码 preview session `todo-preview-final-20260901-j`（Chrome 151.0.7922.174/9241）完成 §27 近完整矩阵：artifact/静态资源 200、首次失败/恢复、race 两次点击仅 1 fetch、筛选/下拉/树平铺/键盘/主题/720px/滚动；仍缺个别键盘截图与独立 verifier，4.6 未勾选，已停止服务/session。
 - 2026-09-01 独立 reviewer 复核当前 HEAD `1068377` 与 manifest §26/§27，确认 4.5/4.6/4.1/4.2 不可勾选且标准不建议放宽；F38 固化剩余缺口与可接受的 request manifest+SHA 等价证据边界。
 - 2026-09-01 独立 reviewer 继续逐行核验 §26/§27 的 29 个 PNG 引用，发现 §26 原“无匹配”截图路径断链；已在 manifest §26 改为“部分”，明确最终 dev session 只保留 `never-match-20260901=0` 断言，早期 `dev-cdp-no-match` 不得替代同一 session 截图。该证据缺口继续阻塞 4.5/4.1，未新开浏览器 session 补图。
+- 2026-09-01 dev 补证 session `todo-dev-final-20260901-k-e3381299a1aa` 补齐亮/暗主题、无匹配、sticky 深滚动、键盘分支截图、外点焦点与 single-flight `calls=1`；artifact 200、tw.css 304、favicon.svg 200，console 无 error。受控 artifact abort 后 reload 触发 Chrome `DevToolsActivePort` exit 3，按止损规则不换 session；F40 与 manifest §28 记录，4.5/4.1/4.2 仍未勾选。
 
 ## 阻塞点
 
