@@ -159,3 +159,7 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F40 [active] dev 补证 session 完成但首载故障触发控制面止损
 
 2026-09-01 在单一 session `todo-dev-final-20260901-k-e3381299a1aa`（Chrome 152.0.7977.54、agent-browser 0.35.0、1280×900）中完成亮色/暗色、最终无匹配截图、详情 sticky 深滚动、外点关闭焦点、Space/Arrow/Enter/Escape 分支截图和真实刷新重复点击 `calls=1`。去重网络摘要显示本地核心请求无业务非 2xx（artifact 200、tw.css 304、favicon.svg 200；唯一 404 为浏览器自动 `favicon.ico`），console 无 error。设置 artifact abort 后 reload 时 Chrome 退出 `DevToolsActivePort` exit 3，session 失去 tab；依据 use-agent-browser 止损规则不重启、不换 session、不伪造失败截图，关闭服务并 cleanup dry-run（CandidateCount=0）。本节只作为补证，不能替代首载失败/恢复、乱序响应、完整 Document/CSS/JS 资源表和独立 verifier，4.5/4.1/4.2 保持未勾选。
+
+## F41 [active] 状态栏成功态补齐可访问性播报
+
+独立 reviewer 静态审计指出 `TodoStatusBar` 成功分支没有 `role=status`/`aria-live`，筛选计数变化无法主动播报。按 TDD 先在 `todo-dashboard.component.test.ts` 增加成功态断言，首次运行 7 个测试中 1 个失败；随后仅给 artifact 成功态根节点增加 `role=status` 与 `aria-live=polite`，loading/error 分支继续使用各自的 status/alert 语义。修复后组件测试 7/7、`pnpm exec tsc --noEmit` 和串行 `pnpm docs:build`（66.78s）通过，提交为 `99bf185`（test）与 `416b7cf`（fix）。
