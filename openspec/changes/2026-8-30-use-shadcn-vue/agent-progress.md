@@ -48,6 +48,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 2026-09-01 用户确认重设计验收协议：tasks/spec/design/manifest 已改为“能力探针 → 产品核心矩阵 → 故障/资源补证 → 独立复核”四层；保留同环境唯一 session 与证据链底线，增加 `pass/partial/blocked/not-run` 状态、single-flight 结构性不适用规则、规范化资源清单 + SHA、像素 diff mask/归一化规则和二次同类控制面故障即止损。
 - 2026-09-01 对照事故报告逐项补齐剩余落差：能力探针增加可选 A2 reload 探针（失败只阻塞 C reload 子项）；曾暂设 mask 后归一化 diff `≤1%` 参考阈值，随后按用户 F45 响应式纠偏撤销统一百分比硬门禁，改为同 viewport 诊断 diff + 结构性结论。
 - 2026-09-01 用户指出响应式页面不应被跨 viewport 像素 diff 否决；已撤销统一百分比硬门禁，改为同 viewport 诊断 diff + 响应式结构性硬门禁（桌面双滚动、窄屏堆叠、marker/缩进、主题变量、sticky）。历史 §15 的 4.60% 仅保留为审计事实。
+- 2026-09-01 无障碍验收协议补齐：use-agent-browser 新增 axe `a11y --json`、语义树 snapshot、真实键盘与 focus DOM 读数的三件套；任务/spec/manifest 要求记录 violations/incomplete，并区分 axe 扫描与键盘顺序/焦点回收证据，不新增专用扫描脚本。
 
 ## 阻塞点
 

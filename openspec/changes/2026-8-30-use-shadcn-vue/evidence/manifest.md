@@ -38,6 +38,10 @@ agent-browser close
 
 若 C 阶段必须验证 reload，再在同一 session 追加一次 `network route "**/artifacts/**" --abort` → `reload` → 原 session 恢复；失败只将 C 的 reload 子项标记 `blocked`。探针的目标是尽早识别浏览器控制面能力，不访问普通文档页，不执行 TODO 业务矩阵，不为“探针通过”生成业务结论。
 
+### 1.3 无障碍证据记录
+
+每个稳定的 TODO session 至少记录一次：`agent-browser a11y --json --tags wcag2a,wcag2aa --selector '[aria-label="GitHub TODO 浏览器"]'` 的 `violations`/`incomplete`，一次 `snapshot -i` 的语义节点，以及真实 `focus/press` 键盘路径后的 `activeElement`、`aria-expanded`、`aria-selected`、`aria-busy` 与 Portal 数量。axe 只负责规则扫描；键盘顺序、焦点回收和视觉 focus-visible 必须由真实操作与 DOM 读数补足。第三方或全站基线告警必须说明是否影响 TODO 子树。
+
 ## 2. 环境矩阵
 
 |    环境    |                                启动命令                                |                      验收 URL                      |                          必须记录                           |
