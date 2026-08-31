@@ -96,7 +96,7 @@ health probe → start one server → open one URL → baseline → core matrix 
 - 原始 HAR 可能含响应体和敏感头，只放系统临时目录；清理 HAR 后，规范化清单必须仍能独立复核。没有 `todos.html`、artifact 或关键 CSS/JS 状态时，资源 checkpoint 只能 `partial`。
 - 像素 diff 先固定 viewport、滚动位置、主题、字体和 artifact 版本；动态时间、光标、网络状态区域必须 mask 或单独断言。
 - 同时登记原始 diff、归一化 diff 和结构性视觉结果；单一百分比不自动等于产品失败，也不自动等于通过。
-- 原始 diff 只作诊断；mask 后归一化 diff `≤1%` 作为可接受参考阈值，`>1%` 必须由独立复核解释，结构性视觉漂移始终失败。
+- 原始/归一化 diff 只作同视口诊断，不设跨 viewport 的统一百分比硬阈值；`1600×1000` 与 `1280×900` 等不同尺寸的差异不得单独判定通过或失败。响应式验收以结构性事实为硬门禁：桌面无页面级双滚动、窄视口面板上下堆叠、marker/缩进符合基线意图、主题变量生效、sticky 动作栏完整可见。
 
 ### 4.2 提交前证据落盘校验
 
