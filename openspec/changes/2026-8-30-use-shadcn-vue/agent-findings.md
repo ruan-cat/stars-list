@@ -87,3 +87,7 @@ Select smoke 的真实交互和 DOM 断言均通过（选中关闭、Escape、�
 ## F22 [resolved] preset 覆盖 vite.plugins 导致 Tailwind utilities 未生成
 
 运行时复核发现 `setUserConfig()` 内部 `handlePlugins()` 会重建并覆盖传入的 `userConfig.vite.plugins`，导致 `tailwindcss()` 与 `serveArtifacts()` 虽写在配置入参中却未执行；构建 exit 0 但 CSS 只含 `@theme`/`@tailwind utilities` 字面量，`.h-full` 等类缺失。已改为在 `setUserConfig()` 返回后追加本项目插件，并在 `tw.css` 显式声明 `@source "./components/**/*.vue"` 与 utilities 入口；冷构建后 CSSRules 与 headed Chrome computed style 均确认工具类生效。
+
+## F23 [resolved] VitePress 文档列表样式覆盖 TodoTree marker
+
+基线 `evidence/01-tree-initial.png` 的仓库树没有黑色圆点，但 Tailwind 迁移后的截图出现圆点。Chrome computed style 显示 `.todo-tree-root > ul` 的 `listStyle=disc`、`paddingLeft=20px`，原因是 VitePress `.vp-doc ul` 选择器 specificity 高于普通 `list-none/p-0`。已对 TodoTree 列表使用 `!list-none !p-0 !m-0`，冷启动 dev DOM 复验为 `listStyle=none`、`paddingLeft=0`，并更新 marker 修复截图与 manifest；不得用这张截图替代 1600×1000 的普通文档像素基线。

@@ -22,7 +22,7 @@
 - [x] 3.2 弹层交互回归：选中关闭 / 外点关闭 / Escape 关闭，三者均验证 content 从 DOM 卸载（D6 动画策略；证据：agent-browser headed Chrome DOM eval 三路径 `contentExists=false`，焦点回收通过）
 - [x] 3.3 `ui/Button.vue`、`ui/Input.vue` 替换为 shadcn-vue 对应组件（变体：default/ghost；证据：CLI 生成 `ui/button/`、`ui/input/` 组合组件，attrs/modelValue/disabled 透传，`pnpm exec tsc --noEmit` 与串行 `pnpm docs:build` 通过）
 - [x] 3.4 `ui/Resizable*.vue` 替换为 shadcn-vue `Resizable`（保持 `auto-save-id` 与最小宽度约束；证据：CLI 生成 `ui/resizable/` canonical 组件、keyboard-resize-by=4、agent-browser separator/最小宽度 DOM smoke、tsc/build 通过）
-- [ ] 3.5 `TodoDashboard.vue`、`TodoFilters.vue`、`TodoStatusBar.vue`、`TodoTree.vue`、`TodoFlatList.vue`、`TodoDetails.vue`、`TodoNodeIcon.vue` 视觉层改写为 Tailwind 语义工具类（保留业务逻辑与 `aria-*` 标注）；树连接线/折叠过渡仅允许少量 scoped 微调。静态迁移与 1280/720px 滚动证据已在 `evidence/manifest.md` §12，仍须补亮暗主题、完整交互矩阵和三环境截图
+- [ ] 3.5 `TodoDashboard.vue`、`TodoFilters.vue`、`TodoStatusBar.vue`、`TodoTree.vue`、`TodoFlatList.vue`、`TodoDetails.vue`、`TodoNodeIcon.vue` 视觉层改写为 Tailwind 语义工具类（保留业务逻辑与 `aria-*` 标注）；树连接线/折叠过渡仅允许少量 scoped 微调。已修复 VitePress `.vp-doc ul` marker 覆盖（`!list-none !p-0`），并在 `evidence/manifest.md` §12 留有无点截图与 DOM 证据；仍须补亮暗主题、完整交互矩阵和三环境截图
 - [x] 3.6 删除旧手写样式残留：`ui/` 目录无 `<style scoped>`，Portal 滚动仅保留必要的全局选择器；证据：`rg -n "<style scoped" docs/.vitepress/theme/components/ui` 无匹配，串行 `pnpm docs:build` exit 0
 - [ ] 3.7 补齐键盘导航、焦点回收、禁用态、首次加载失败、刷新竞态与组合筛选边界的实现和测试（对应 spec）；当前已补行级 focus-visible、刷新结束焦点恢复和仓库+分支+类型纯函数交集测试，仍缺组件层/浏览器证据
 
