@@ -69,3 +69,7 @@ sourceType=github
 ## 10. 2026-08-31 preview 局部矩阵与 hydration 警告边界
 
 preview 已用 headed Chrome 完成下拉选中/清空、Escape/外点关闭与焦点回收、树/平铺/详情、刷新 disabled/aria-busy/焦点恢复、亮暗主题截图和 artifact HTTP 200 验证；证据登记在 manifest §13。reload 后的 `Hydration completed but contains mismatches` 在普通首页同样出现，按全站基线警告记录；TODO 专属 `InvalidStateError` 未重现。完整 spec 矩阵、无新增 console 证明和 production 部署仍未完成，不能勾选 4.6 或最终验收任务。
+
+## 11. 既有截图未先读取的流程纠偏
+
+用户复核指出，验收时若只看 fresh 截图而不先打开 `evidence/01-tree-initial.png` 等既有图片，就可能漏掉“项目不应出现的黑色列表圆点”。该流程缺口已写入 `evidence/manifest.md` §3.1 与 `tasks.md` 4.1：每个环境开始前先读取对应 PNG，登记绝对路径、尺寸、SHA-256 和可见事实；同视口对照前不得把 DOM、构建或截图存在本身当作视觉通过。`01-tree-initial.png` 明确记录为无 marker 基线，出现额外圆点、缩进、滚动条或布局漂移时必须停止验收并留存失败证据。
