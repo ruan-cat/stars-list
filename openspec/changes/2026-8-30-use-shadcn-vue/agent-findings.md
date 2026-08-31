@@ -147,3 +147,11 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F37 [active] preview 当前源码版本矩阵已近完整，仍缺独立 verifier 与个别截图
 
 2026-09-01 preview session `todo-preview-final-20260901-j` 在可见 headed Chrome 中完成首屏、artifact 首次失败/恢复、四维筛选/无匹配、下拉 21 项与 320px 滚动、树/详情、平铺、Tab/Space/Arrow/Enter/Escape、暗色、720px、刷新 pending/失败/恢复与重复点击 race（两次点击仅 1 个 fetch）。HAR 记录了 HTML/CSS/JS/font/favicon/artifact 的 200 状态（abort 请求状态 0，临时 HAR 已删除）；证据见 manifest §27。仍缺各键盘分支独立截图、初始 hydration warning 的 session 内单独清点和独立 verifier，故 4.6/4.1/4.2 不勾选。
+
+## F38 [active] 独立 reviewer 复核确认 4.5/4.6 不能勾选
+
+独立 reviewer 于 2026-09-01 只读审查当前 HEAD `1068377`、manifest §26/§27 与 `tasks.md:31-36`，结论为 4.5、4.6、4.1、4.2 均不可勾选，且不建议放宽标准。dev 仍缺真实重复点击/乱序响应、同 session 亮色主题、artifact/静态资源全表和独立 verifier；preview 当前源码仍缺各键盘分支独立截图、session 内 hydration warning 单独清点、当前版本外点截图、详情 sticky 深滚动、亮色主题和可复核 HAR（临时 HAR 已删除）。若需调整，只允许用可审计的 request manifest+SHA 替代原始 HAR，并明确记录全站 hydration baseline；不能放宽双主题、当前源码键盘/外点、race、sticky 和每场景截图/DOM/console 要求。
+
+## F39 [active] 修正 dev 无匹配截图断链
+
+独立 reviewer 逐行核验 manifest §26/§27 的 29 个 PNG 引用，发现 §26 原“无匹配”引用 `dev-final-no-match-1280x900-20260901.png` 不存在；其余 28 个文件存在且 SHA-256 匹配。现已将该行改为“部分”：保留最终 dev session 已执行的 `never-match-20260901=0` 断言，但明确最终截图未落盘；现存 `dev-cdp-no-match-1280x900-20260901.png` 属于早期 partial session，不得替代同一 headed session 证据。因此该缺口继续阻塞 4.5/4.1，不启动新 session 仅为补图。
