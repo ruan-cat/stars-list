@@ -6,7 +6,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 
 ## 当前 task
 
-当前任务：`tasks.md` 4.5/4.6（TODO dev/preview 单 headed session 全量矩阵）；dev 最终 session `todo-dev-final-20260901-h` 与补证 session `todo-dev-final-20260901-k-e3381299a1aa` 合计覆盖大部分路径，但不能跨 session 拼成“完整通过”。补证 session 已补亮/暗、无匹配、sticky、键盘分支、外点焦点与 single-flight `calls=1`，却在首载 abort reload 时触发 Chrome `DevToolsActivePort` exit 3；因此 dev 仍缺同一 session 的首载失败/恢复、乱序响应、完整资源表与独立 verifier。preview 仍缺当前版本键盘/外点截图、hydration warning 单独清点、sticky 深滚动、亮色主题、可复核资源与独立 verifier。4.5/4.6/4.1/4.2 保持未勾选，2.3 普通文档页像素回归为后置旁路门禁。
+当前任务：用户已授权重设计验收协议；`tasks.md`、spec、design、manifest 和 `use-agent-browser` 已统一采用“能力探针 → 产品核心矩阵 → 故障/资源补证 → 独立复核”四层模型。每环境先做 ≤5 分钟能力探针，再只创建一个 headed session；核心 TODO 路径仍是硬门禁，故障/资源允许结构化 `partial/blocked/not-applicable`，控制面失败不得换 session 拼接。4.5/4.6/4.1/4.2 仍保持未勾选，2.3/4.4 为独立旁路门禁，4.7 受 production/Flex 外部回执约束。
 
 ## 状态
 
@@ -45,6 +45,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 2026-09-01 dev 补证 session `todo-dev-final-20260901-k-e3381299a1aa` 补齐亮/暗主题、无匹配、sticky 深滚动、键盘分支截图、外点焦点与 single-flight `calls=1`；artifact 200、tw.css 304、favicon.svg 200，console 无 error。受控 artifact abort 后 reload 触发 Chrome `DevToolsActivePort` exit 3，按止损规则不换 session；F40 与 manifest §28 记录，4.5/4.1/4.2 仍未勾选。
 - 2026-09-01 按 reviewer P2 建议补齐状态栏成功态 `role=status`/`aria-live=polite`；TDD 先红后绿，组件测试 7/7、tsc/build 通过，提交 `99bf185` + `416b7cf`，不改变验收门禁状态。
 - 2026-09-01 产出并提交事故/门槛设计审计报告 `docs/reports/2026-09-01-shadcn-vue-agent-browser-acceptance-incident.md`（`01d19b9`），明确 agent-browser 能力边界、验收打法过度点、延误责任与 5 分钟能力探针/分层矩阵/时间盒改进方案；未擅自放宽 tasks 或归档。
+- 2026-09-01 用户确认重设计验收协议：tasks/spec/design/manifest 已改为“能力探针 → 产品核心矩阵 → 故障/资源补证 → 独立复核”四层；保留同环境唯一 session 与证据链底线，增加 `pass/partial/blocked/not-run` 状态、single-flight 结构性不适用规则、规范化资源清单 + SHA、像素 diff mask/归一化规则和二次同类控制面故障即止损。
 
 ## 阻塞点
 
@@ -53,6 +54,6 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 
 ## 下一步
 
-1. 保持 3.5/4.1/4.2/4.5/4.6 未勾选，除非按 tasks 明文补齐同一 headed session、双主题、竞态、sticky、逐场景截图/DOM/console 与独立复核证据。
-2. 处理 2.3：补齐重构前 fresh baseline，并完成首页、topics、prompts 固定 viewport before/after 像素回归。
-3. 最终回归阶段执行 4.1–4.7 三环境 agent-browser 验收。
+1. 按新协议先为目标环境执行 ≤5 分钟能力探针；探针失败即记录 `blocked`，不进入长矩阵。
+2. 在单一 headed session 内先完成 TODO 产品核心矩阵，再执行不 reload 优先的故障/资源补证和提交前 `checked/missing/mismatched/unreferenced` 校验。
+3. 只有用户明确授权生产部署/Flex 操作后，才执行 4.7；全部适用硬门禁通过后再考虑归档。

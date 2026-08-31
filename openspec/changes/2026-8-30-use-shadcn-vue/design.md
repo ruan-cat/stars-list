@@ -79,30 +79,39 @@ Select 必须验证 Enter/Space 打开、ArrowUp/ArrowDown 移动、Enter 提交
 允许 Prettier 修改 `.agents/skills/shadcn-vue/**` 与 `skills-lock.json`，不新增 ignore 配置；本 change 不再把重新运行 skills 安装器或比较本地内容与远端 hash 作为验收前置条件，接受由格式化产生的锁定关系风险并在回归记录中注明。
 
 **D10. 三环境统一使用 agent-browser + Chrome 验收。**
-浏览器验收必须由 agent-browser 通过 CDP 驱动可见 Chrome headed session 完成，不使用 headless-only 结果冒充视觉证据。环境固定为：dev `pnpm docs:dev -- --host 127.0.0.1 --port 8080`、preview `pnpm docs:build` 后执行 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`、production `https://ruan-cat.github.io/stars-list/todos.html`。每个环境执行同一交互矩阵，记录 session/Chrome/viewport/URL/命令/断言，并将截图登记到 `evidence/manifest.md`。
+浏览器验收必须由 agent-browser 通过 CDP 驱动可见 Chrome headed session 完成，不使用 headless-only 结果冒充视觉证据。环境固定为：dev `pnpm docs:dev -- --host 127.0.0.1 --port 8080`、preview `pnpm docs:build` 后执行 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`、production `https://ruan-cat.github.io/stars-list/todos.html`。每个环境先执行一次不超过 5 分钟的能力探针，再只注册一个具名 session；能力探针只验证控制面，不替代产品验收。产品核心矩阵、故障/资源补证和独立复核分层记录，并将截图登记到 `evidence/manifest.md`。
 
 **D11. 浏览器证据必须可回放且可回滚。**
-真实坐标点击用于 Portal 和下拉交互，合成事件仅验证 DOM 机制；证据缺少元数据、哈希或 Scenario 映射时不得勾选任务。生产失败触发停止验收，经现有 Flex 流量器切回上一个已知通过提交，并记录切流前后版本、时间、返回状态和生产 URL；回滚后必须由同一 agent-browser 流程复验关键路径，五项未全通过不得结束回滚。
+真实坐标点击用于 Portal 和下拉交互，合成事件仅验证 DOM 机制；证据缺少元数据、哈希或 Scenario 映射时不得勾选任务。每个环境的核心矩阵只使用一个 headed session；EOF、`tab_gone`、`DevToolsActivePort` 或截图超时最多做一次有界恢复，恢复失败即标记 `blocked`，不换 session 拼接。生产失败触发停止验收，经现有 Flex 流量器切回上一个已知通过提交，并记录切流前后版本、时间、返回状态和生产 URL；回滚后必须由同一生产 session 流程复验关键路径，五项未全通过不得结束回滚。
 
 **D12. Tailwind 插件必须在 preset 合并后挂载并显式声明业务 source。**
 `@ruan-cat/vitepress-preset-config` 的 `setUserConfig()` 会重建 `vite.plugins`，因此 `serveArtifacts()` 与 `tailwindcss()` 必须在其返回对象上追加；`tw.css` 通过 `@source "./components/**/*.vue"` 和显式 utilities 入口保证 VitePress 非标准 `theme/components` 路径被扫描。验收同时检查最终 CSSRules/产物中存在代表性工具类和浏览器 computed style，禁止只看 build exit 0。
+
+**D13. 分层验收与状态机。**
+每个环境的验收运行固定为：A 能力探针、B 产品核心矩阵、C 故障/资源补证、D 独立复核。A 不产生业务通过结论；B 是用户路径硬门禁；C 允许使用不 reload 的 route/fetch 控制，reload 失败只影响 C；D 只读核验 manifest、截图、哈希和日志，不要求为了“独立”再次打开浏览器。状态统一为 `pass`、`partial`、`blocked`、`not-run`，只有所有适用硬门禁为 `pass` 才能勾选任务。
+
+**D14. 故障场景与实现不变量对齐。**
+刷新使用 single-flight 时，重复点击的预期不变量是“请求数保持 1、按钮 disabled/aria-busy、结算后焦点恢复”；不存在第二并发请求时，乱序响应场景记录为 `not-applicable`，由单元测试和 DOM 断言覆盖，不强行制造不符合实现的网络竞态。首载失败优先采用不 reload 的可控响应；只有控制面能力探针明确支持 reload 时才执行 reload 故障。
+
+**D15. 视觉与资源证据采用可解释等价物。**
+像素对比固定 viewport、滚动位置、主题、字体和 artifact 版本，对动态时间/光标/网络状态使用 mask 或独立断言；同时报告原始 diff、归一化 diff 和结构性视觉结果，不以单一百分比自动判定回归。资源证据优先保存 URL、资源类型、HTTP 状态、必要时响应 SHA-256 的规范化清单；原始 HAR 只存系统临时目录，清理后不影响复核。
 
 ### Risks / Trade-offs
 
 - **[Tailwind 影响既有文档页]** → D2 的作用域隔离 + "首页/topics 渲染像素不变"回归门禁。
 - **[shadcn-vue CLI 在 VitePress 站点的 srcDir 适配]** → CLI 交互答案需手工指定 components 路径到 `docs/.vitepress/theme/components`；若 CLI 对非标准工程适配失败，允许手工按官方模板落盘组件（内容与 CLI 产物一致），并在 `agent-findings.md` 记录。
-- **[验收细节遗漏]** → 以 spec 需求清单为唯一验收源；每完成一个组件即对照 `evidence/` 截图做像素级比对。
+- **[验收细节遗漏]** → 以 spec 需求清单为唯一验收源；先能力探针，再按产品/故障/资源分层执行，每完成一个组件对照 `evidence/` 基线做可解释视觉比对。
 - **[统计口径误导]** → 状态栏固定展示总数、已扫描数、跳过/分支不可用数；`complete` 不得替代扫描覆盖率。
 - **[部署回滚]** → 生产浏览器验证出现任一关键场景失败、页面级滚动、Portal 残留、主题回归或普通文档像素变化时，停止验收并按部署提交执行回滚。
-- **[浏览器环境漂移]** → 三个环境必须使用同一 agent-browser headed session 规范与交互矩阵，禁止以 headless 截图或单环境结果替代。
-- **[证据不可回放]** → `evidence/manifest.md` 缺失环境/URL/viewport/session/版本/命令/哈希任一字段时，截图只能作为参考不能作为通过证据。
+- **[浏览器环境漂移]** → 三个环境必须使用同一 agent-browser headed session 规范与交互矩阵；每环境仅一个 session，能力探针失败立即停止，禁止以 headless 截图或单环境结果替代。
+- **[证据不可回放]** → `evidence/manifest.md` 缺失环境/URL/viewport/session/版本/命令/哈希任一字段，或路径/SHA 校验失败时，截图只能作为参考；提交前必须输出 `checked/missing/mismatched/unreferenced` 汇总。
 
 ### Migration Plan
 
 1. 基线固化（已完成，见 evidence/）。
 2. 基础设施：Tailwind v4 + 令牌桥接 + CLI 初始化（不动任何现有组件）。
 3. 逐组件替换：Select → Button/Input → Resizable → Todo\* 视觉层；每替换一个跑一次 spec 冒烟。
-4. 全量回归：spec 全部 Scenario + `pnpm docs:build` + 生产部署后复验。
+4. 全量回归：能力探针 → 产品核心矩阵 → 故障/资源补证 → 独立复核；再执行 `pnpm docs:build` 与生产部署后复验。
 5. 清理：删除旧手写样式残留，更新 AI 记忆文档。
 
 ### Open Questions
@@ -110,4 +119,4 @@ Select 必须验证 Enter/Space 打开、ArrowUp/ArrowDown 移动、Enter 提交
 - shadcn-vue CLI 对 `docs/.vitepress` 这种非标准 srcDir 的兼容性待验证（见 Risks）。
 - Tailwind utilities 与 VitePress 默认样式的选择器冲突面，需在 D2 实施时用固定 viewport 像素 diff 确认。
 - Prettier 修改上游技能文件后不重跑 skills 安装器/hash 关系校验，属于已确认的流程风险。
-- agent-browser headed Chrome 流程依赖可用 CDP 与独立 session；服务启动/停止日志和端口必须纳入回归记录。
+- agent-browser headed Chrome 流程采用 D13 分层协议：能力探针失败即 `blocked`，每环境只保留一个具名 session；服务启动/停止日志、端口、visibility 和收据必须纳入回归记录。

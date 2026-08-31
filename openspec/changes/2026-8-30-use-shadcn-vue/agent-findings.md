@@ -163,3 +163,7 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F41 [active] 状态栏成功态补齐可访问性播报
 
 独立 reviewer 静态审计指出 `TodoStatusBar` 成功分支没有 `role=status`/`aria-live`，筛选计数变化无法主动播报。按 TDD 先在 `todo-dashboard.component.test.ts` 增加成功态断言，首次运行 7 个测试中 1 个失败；随后仅给 artifact 成功态根节点增加 `role=status` 与 `aria-live=polite`，loading/error 分支继续使用各自的 status/alert 语义。修复后组件测试 7/7、`pnpm exec tsc --noEmit` 和串行 `pnpm docs:build`（66.78s）通过，提交为 `99bf185`（test）与 `416b7cf`（fix）。
+
+## F43 [active] 用户授权重设计验收门槛与 session 方案
+
+用户确认重新设计更合理的验收门槛和 agent-browser session 会话设计。任务源、spec、design、manifest 已统一采用“能力探针 → 产品核心矩阵 → 故障/资源补证 → 独立复核”四层协议：每环境一次能力探针和一个 headed session，控制面故障标记 `blocked`，single-flight 乱序场景可标记 `not-applicable`，原始 HAR 可用规范化请求清单 + SHA-256 等价复核，像素 diff 使用固定条件与 mask/归一化结论。当前不修改任何任务勾选，不归档 change。

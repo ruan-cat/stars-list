@@ -1,15 +1,41 @@
 # 浏览器验收证据清单
 
-> 状态：待实施阶段填写。本清单不是通过证明；每一行必须由 fresh agent-browser headed Chrome 操作、截图和断言输出共同支撑。
+> 状态：验收协议已于 2026-09-01 重设计，后续 fresh 记录按“能力探针 → 产品核心矩阵 → 故障/资源补证 → 独立复核”分层填写。本清单不是通过证明；每一行必须由对应 checkpoint 的 agent-browser headed Chrome 操作、截图和断言输出共同支撑。历史 §1–§28 记录保持原样，仅作为审计事实，不得跨 session 拼接。
 
 ## 1. 采集工具与会话
 
 - 工具：`agent-browser`（先执行 `agent-browser skills get core`）
 - 浏览器：Google Chrome headed，通过 CDP 连接；禁止使用 headless-only 截图作为视觉通过证据
-- 独立会话（PowerShell）：`$env:AGENT_BROWSER_SESSION = (agent-browser session id --scope worktree --prefix shadcn-vue-acceptance)`
-- 会话元数据：执行 `agent-browser session info --json`，记录 session、Chrome 版本、agent-browser 版本与 viewport
+- 独立会话（PowerShell）：`$env:AGENT_BROWSER_SESSION = (agent-browser session id --scope worktree --prefix todo-<environment>-<date>)`
+- 会话元数据：执行 `agent-browser session info --json`，记录 session、Chrome 版本、agent-browser 版本、viewport、URL、visibility、服务 PID/端口和 launch/recovery 结果
 - 交互规则：Portal/下拉使用真实坐标点击；合成 `dispatchEvent` 仅用于 DOM 机制断言
-- 会话生命周期：每个环境只创建一个具名 headed Chrome session；先完成该环境的基线读取、全量 TODO 矩阵、截图和网络/console 记录，最后才执行 `agent-browser close`。禁止为单个 Scenario 反复创建/关闭 session；若 session 或环境进程异常，先记录阻塞原因，不得静默换 session 拼接为“完整通过”。
+- 会话生命周期：每个环境先执行一次不超过 5 分钟的能力探针，再创建一个具名 headed Chrome session；该 session 依次承载产品核心矩阵、稳定阶段的故障/资源补证和证据审查，最后只关闭一次。能力探针失败、EOF、`tab_gone`、`DevToolsActivePort` 或截图超时最多做一次同 session 有界恢复；恢复失败标记 `blocked`，禁止静默换 session 拼接为“完整通过”。
+
+### 1.1 分层 checkpoint 与证据状态
+
+|   checkpoint    | 目的                                                                  | 是否产生业务通过结论 | 控制面失败处置                                    |
+| :-------------: | :-------------------------------------------------------------------- | :------------------: | :------------------------------------------------ |
+|   A 能力探针    | 验证 headed launch、前台 visibility、截图、network、close 能力        |          否          | `blocked`，不进入产品矩阵                         |
+| B 产品核心矩阵  | 验证 TODO 用户路径：首屏、筛选、下拉、树/平铺、详情、键盘、主题、滚动 |          是          | 保留已采证据；不换 session                        |
+| C 故障/资源补证 | 验证失败恢复、single-flight、hydration、artifact/资源状态             | 仅对对应 checkpoint  | reload/控制面失败记 `blocked` 或 `not-applicable` |
+|   D 独立复核    | 只读核对任务源、manifest、文件、尺寸、SHA、日志和状态映射             |   否，负责评分建议   | 不重新开浏览器，缺证据退回 `needs_check`          |
+
+证据状态：`pass` = 断言和必需材料齐全；`partial` = 有效但缺少必需材料；`blocked` = 工具/外部权限阻塞且已保留原始事实；`not-run` = 未执行或结构性不适用。`partial/blocked/not-run` 不得勾选对应硬门禁。
+
+### 1.2 能力探针最小命令集
+
+```log
+agent-browser skills get core
+agent-browser doctor --offline --quick
+agent-browser session list
+agent-browser session id --scope worktree --prefix todo-<environment>-<date>
+headed launch → tab foreground → visibilityState=visible
+screenshot <probe.png> → Get-FileHash -Algorithm SHA256
+network requests --json
+agent-browser close
+```
+
+探针的目标是尽早识别浏览器控制面能力，不访问普通文档页，不执行 TODO 业务矩阵，不为“探针通过”生成业务结论。
 
 ## 2. 环境矩阵
 
@@ -33,7 +59,16 @@
 
 `01-tree-initial.png` 是树形首屏的视觉基线：仓库行左侧使用折叠箭头/仓库图标，**不存在浏览器默认列表圆点、额外列表缩进或 marker**。fresh 截图必须在相同 URL、viewport、滚动位置和主题下与该基线对照；若出现基线没有的圆点、缩进、滚动条或布局漂移，先记录失败证据并停止该环境验收，不得以“页面可打开”“DOM 结构正确”或构建通过替代视觉核验。
 
-像素 diff 只能在同一 viewport、同一滚动位置、同一主题和可比的加载状态下执行。若历史基线缺少这些元数据，截图只能标记为“参考”，同时必须明确写出缺失字段和后续补采动作，不能将不同比例或不同尺寸的图片宣称为通过。
+像素 diff 只能在同一 viewport、同一滚动位置、同一主题、同一字体/artifact 版本和可比的加载状态下执行。动态时间、光标、网络状态等区域必须 mask 或单独断言；同时登记原始 diff、归一化 diff 和结构性视觉结论。若历史基线缺少元数据，截图只能标记为“参考”，不能将不同比例或不同尺寸的图片宣称为通过。
+
+### 3.2 提交前证据索引门禁
+
+在勾选任务或提交工件前，逐行扫描当前 change 的 `manifest.md`：
+
+1. 每个截图路径必须存在于 `evidence/`，PNG 尺寸必须与登记 viewport 一致。
+2. 现场 `Get-FileHash -Algorithm SHA256` 必须与登记值一致；缺失或不匹配即为 `needs_check`。
+3. 每张图必须回指当前环境、当前 session 和具体 Scenario；早期 partial session、同名旧图和未登记文件不得替代 fresh 证据。
+4. 输出 `checked / missing / mismatched / unreferenced` 汇总；`missing` 或 `mismatched` 大于 0 时禁止勾选/归档。
 
 ## 4. 统一交互矩阵
 

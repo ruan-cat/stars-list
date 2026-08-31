@@ -171,36 +171,61 @@
 
 ### Requirement: 三环境浏览器验收与证据归档
 
-系统 SHALL 使用 `agent-browser` 通过 CDP 驱动可见的 Google Chrome，对 dev、preview、production 三个环境执行同一套视觉与交互验收矩阵；每个环境 SHALL 归档可复核的截图、操作日志、浏览器元数据与 DOM/网络断言。
+系统 SHALL 使用 `agent-browser` 通过 CDP 驱动可见的 Google Chrome，对 dev、preview、production 三个环境执行同一套 TODO 产品核心矩阵；每个环境 SHALL 先完成一次不超过 5 分钟的能力探针，再为该环境注册一个 headed session。能力探针只证明控制面可用，不替代业务验收；产品核心矩阵、故障/资源补证和独立复核 SHALL 分层记录，证据状态统一为 `pass`、`partial`、`blocked`、`not-run`。任何控制面或外部权限故障都必须保留原始事实，不得静默换 session、跨环境拼接或把 `blocked` 改写为 `pass`。
+
+#### Scenario: 能力探针与 session 注册
+
+- **GIVEN** 任一环境准备开始验收
+- **WHEN** 执行 `skills get core`、`doctor --offline --quick`、具名 session 注册、headed 前台切换、`visibilityState=visible`、一次截图和一次 network requests 检查
+- **THEN** 记录探针命令、session、Chrome/agent-browser 版本、viewport、URL、服务 PID/端口与结果
+- **AND** 探针失败时标记该环境 `blocked` 并停止，不启动第二个 session；探针通过后才进入产品核心矩阵
 
 #### Scenario: dev 环境验收
 
 - **GIVEN** 使用 `pnpm docs:dev -- --host 127.0.0.1 --port 8080` 启动本地 dev 服务
-- **WHEN** agent-browser headed session 打开 `http://127.0.0.1:8080/todos.html`
+- **WHEN** 能力探针通过后，唯一 agent-browser headed session 打开 `http://127.0.0.1:8080/todos.html`
 - **THEN** 记录 agent-browser session、Chrome 版本、viewport、URL 与服务进程日志
-- **AND** 完成首屏、下拉、筛选、树/平铺、详情、键盘、主题、滚动和失败恢复矩阵
+- **AND** 在该 session 内完成首屏、下拉、筛选、树/平铺、详情、键盘、主题和滚动等产品核心矩阵
+- **AND** 故障补证优先使用不 reload 的 route/fetch 控制；若 reload 导致 EOF、`DevToolsActivePort` 或 tab 丢失，只记录 `blocked` 并结束该环境，不换 session
 
 #### Scenario: preview 环境验收
 
 - **GIVEN** `pnpm docs:build` 成功且使用 `pnpm docs:preview -- --host 127.0.0.1 --port 4173` 启动预览服务
-- **WHEN** agent-browser headed session 打开 `http://127.0.0.1:4173/todos.html`
-- **THEN** 对 dev 环境重复同一交互矩阵与截图断言
-- **AND** 额外确认构建产物中的 artifact 同源路径、资源加载和 console 无新增错误
+- **WHEN** 能力探针通过后，唯一 agent-browser headed session 打开 `http://127.0.0.1:4173/todos.html`
+- **THEN** 对 dev 环境重复同一产品核心矩阵与截图断言
+- **AND** 额外确认 artifact 同源 URL、规范化资源请求清单（URL/资源类型/状态/必要时 SHA-256）、session 初始 hydration 基线和新增 console 错误
+- **AND** 原始 HAR 仅作可选临时材料，清理后规范化资源清单仍可独立复核
 
 #### Scenario: production 环境验收
 
-- **GIVEN** 当前生产目标为 `https://ruan-cat.github.io/stars-list/todos.html`
-- **WHEN** agent-browser headed session 打开生产 URL
-- **THEN** 记录部署 commit SHA、最终 URL、HTTP 状态、Chrome 元数据、网络请求和 console 输出
-- **AND** 对 dev/preview 已通过的交互矩阵逐项复验，禁止用本地结果替代生产证据
+- **GIVEN** 当前生产目标为 `https://ruan-cat.github.io/stars-list/todos.html`，且已取得部署 commit SHA、生产 URL 和 Flex 操作授权
+- **WHEN** 能力探针通过后，唯一 agent-browser headed session 打开生产 URL
+- **THEN** 记录部署 commit SHA、最终 URL、HTTP 状态、Chrome 元数据、规范化网络请求清单和 console 输出
+- **AND** 对 dev/preview 已通过的产品核心矩阵逐项复验，禁止用本地结果替代生产证据
+- **AND** 未取得部署或 Flex 外部回执时标记 `blocked`，不启动生产浏览器
 
 #### Scenario: 统一交互矩阵与截图归档
 
 - **GIVEN** 任一环境开始验收
 - **WHEN** 执行每个 Scenario 的真实点击、键盘和滚动操作
 - **THEN** 使用真实坐标完成 Portal/下拉交互，合成 `dispatchEvent` 仅用于 DOM 机制断言
-- **AND** 截图按 `{environment}-{scenario}-{timestamp}.png` 命名，并在 `evidence/manifest.md` 登记环境、URL、viewport、Chrome/agent-browser 版本、session、命令、断言结果和文件哈希
-- **AND** 每张截图必须能回指本 spec 的 Requirement/Scenario，缺少元数据或断言的图片不得作为通过证据
+- **AND** 只对稳定的验收状态截图；截图按 `{environment}-{scenario}-{timestamp}.png` 命名，并在 `evidence/manifest.md` 登记环境、URL、viewport、Chrome/agent-browser 版本、session、命令、断言结果和文件哈希
+- **AND** 每张截图必须能回指本 spec 的 Requirement/Scenario；缺少元数据或断言的图片只能标记 `partial`/`参考`
+- **AND** 提交前逐行检查截图路径存在、PNG 尺寸与 viewport 一致、SHA-256 匹配，并输出 `checked/missing/mismatched/unreferenced` 汇总
+
+#### Scenario: 产品矩阵与故障/资源补证分层
+
+- **GIVEN** 产品核心矩阵已在该环境唯一 session 内稳定完成
+- **WHEN** 执行首载失败、刷新失败、single-flight、hydration 或资源状态补证
+- **THEN** 优先选择不 reload 的可控注入；single-flight 若结构上阻止第二并发请求，记录请求计数并标记乱序场景 `not-applicable`，由单元测试/DOM 断言覆盖不变量
+- **AND** 控制面故障只影响对应补证 checkpoint，不得抹除已经完成的产品证据；该环境整体仍保持 `partial` 或 `blocked`，直到所有适用硬门禁满足
+
+#### Scenario: 能力故障止损
+
+- **GIVEN** agent-browser 出现 EOF、`connection refused`、`tab_gone`、截图超时或 `DevToolsActivePort` exit 3
+- **WHEN** 完成一次同 session 有界恢复（仅适用于原 Chrome/原 tab 仍可核验）
+- **THEN** 记录原始错误、PID/端口、恢复命令和结果
+- **AND** 恢复失败时立即停止该环境，不创建替代 session，不把旧截图拼接成完整通过
 
 #### Scenario: 生产失败与回滚复验
 
