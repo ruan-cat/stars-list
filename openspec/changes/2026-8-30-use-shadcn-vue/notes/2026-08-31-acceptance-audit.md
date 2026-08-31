@@ -83,3 +83,13 @@ preview 已用 headed Chrome 完成下拉选中/清空、Escape/外点关闭与�
 本轮曾短暂进入普通文档 before baseline 采集，这是 2.3/4.4 的后置旁路门禁，不是本 change 的主目标；用户指出后已停止该实验，回到 TODO 页面核心矩阵。TODO fresh dev session 随后发现两个真实缺陷：hydration 后状态栏变高却未重测 viewportReserve，造成 1280×900 页面溢出 16px；刷新按钮事件包装层导致 currentTarget 不是原生按钮，焦点恢复失效。已分别通过 post-flush 重测和 aria-label 原生按钮 fallback 修复，当前核心证据登记在 manifest §23；4.5/4.6 仍保持未完成。
 
 本轮还确认验收执行本身出现了重复开关浏览器的问题。已将“一环境一具名 session，完整矩阵跑完后才关闭，异常先记录、禁止跨 session 拼接”写入 manifest §1 与 tasks.md 4.5/4.6；这条是流程硬门禁，不是功能通过证明。
+
+## 14. 2026-09-01 dev 单 session 控制面故障
+
+按 manifest §1 的单 session 门禁启动 dev：headed Chrome PID `33236`、CDP `9227`、agent-browser session `todo-dev-full-20260901`，viewport `1280×900`。先读取 `evidence/01-tree-initial.png`、`02-tree-expanded.png`、`03-select-dropdown.png`、`08-dark-theme.png`，并完成首屏 snapshot、`listStyle=none`/`paddingLeft=0`、`docScroll=1280×900`、artifact 状态栏与初始截图；截图未注册为通过证据。
+
+执行同一 session 的 `reload` 后，agent-browser 返回 `Invalid response: EOF while parsing a value`，随后连接 9227 被拒绝；复核显示 Chrome PID `33236` 仍在监听 9227，`/json/version` 返回 Chrome 151.0.7922.174，dev server 仍监听 8080。故障归类为 agent-browser daemon/控制面失联，不能归因于 TODO 页面；随后停止 dev server、关闭 agent-browser session、精确结束 Chrome PID，并执行 cleanup dry-run（`ListenerObservation=known`、`CandidateCount=0`、`WorkBuddyPoolCandidateCount=0`）。本次不勾选 4.5，不重新开浏览器覆盖失败。
+
+## 15. 2026-09-01 agent-browser headed 启动阻塞
+
+恢复验收前先执行 `agent-browser skills get core` 与 `agent-browser doctor --offline --quick`，doctor 返回 `7 pass, 0 warn, 0 fail` 且无活动 daemon。启动 dev 服务后，仅创建 session `todo-dev-20260901-a`；headed Chrome 首次启动返回 exit 3、未生成 `DevToolsActivePort`。按 `use-agent-browser` 技能仅在同一 session 追加一次 `--no-sandbox`，随后连接 9227 被拒绝。已停止 dev 服务和 session，复核 8080/9227 无监听，未创建第三个浏览器 session。该问题属于 agent-browser/Chrome 启动控制面，4.5 仍未完成；手工 Chrome + CDP 若作为替代方案，必须重新定义一套可回放生命周期并取得用户确认，不能和本次失败 session 拼接。

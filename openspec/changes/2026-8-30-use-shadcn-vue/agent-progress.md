@@ -6,7 +6,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 
 ## 当前 task
 
-当前任务：`tasks.md` 3.5（Todo\* 视觉层迁移）；2.3 普通文档页像素回归因缺同口径 before baseline 延后到最终回归阶段补齐。
+当前任务：`tasks.md` 4.6（TODO preview 单 headed session 全量矩阵）；dev 手工 CDP session `todo-dev-cdp-20260901-c` 已补部分截图但键盘/控制面不稳定，preview session `todo-preview-fix-20260901-d` 已确认 Escape 焦点修复、artifact 200、下拉滚动、主题、平铺和刷新失败恢复，仍缺完整矩阵，4.5/4.6 保持未勾选。2.3 普通文档页像素回归仍为后置旁路门禁。
 
 ## 状态
 
@@ -34,6 +34,10 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - Select 外点关闭在 fresh preview headed Chrome 中首次复现焦点落 BODY；随后以 Reka `close-auto-focus` + 双 RAF + 延迟 fallback 修复，新的 `shadcn-preview-fix-e3381299a1aa` session 三路径均 `aria-expanded=false`、Portal options=0、activeElement 为仓库触发器，截图与哈希登记在 manifest §20。
 - 组件测试基础设施已分组提交：`bd63e6f`（依赖）与 `87b96ac`（测试）；Select 焦点修复提交 `23166cf`；验收证据提交 `002dd20`。按 init-ai-md 增量规则同步更新 AGENTS/CLAUDE，确认 GEMINI 不存在且未创建。
 - TODO 核心 dev fresh session `todo-core-dev-cdp-e3381299a1aa` 已补首屏、下拉滚动、四维组合筛选/无匹配、树详情、平铺、暗色、刷新焦点和 720px 截图；发现并修复 hydration 后 viewportReserve 未重测与 refresh currentTarget 包装层兜底问题，证据见 manifest §23。4.5 仍因首次失败注入、网络/竞态和完整键盘矩阵缺口未勾选。
+- 2026-09-01 `todo-dev-full-20260901` 在 1280×900 首屏 snapshot/截图成功；reload 后 agent-browser daemon 返回 EOF，但 Chrome PID 33236 与 CDP 9227 仍可达。已关闭 dev server/session，未换 session 拼接；F32 记录该控制面故障，4.5 不勾选。
+- 2026-09-01 `agent-browser doctor --offline --quick` 为 7 pass/0 warn/0 fail；唯一 dev headed 启动 session `todo-dev-20260901-a` exit 3，单次 `--no-sandbox` 恢复连接拒绝，已停止服务/session，F33 记录为控制面阻塞，未再开浏览器。
+- 2026-09-01 手工 Chrome+CDP session `todo-dev-cdp-20260901-c`（Chrome 151.0.7922.174/9229）完成 7 张 TODO 部分截图和 DOM 断言；平铺 PNG 首次 timeout 后改一次 JPEG 低负载采集，Escape 键盘路径仍为 BODY/控制面不可观察，F34 记录，已停止服务/session。
+- 2026-09-01 preview session `todo-preview-fix-20260901-d`（Chrome 151.0.7922.174/9231）完成关键路径：Escape/外点/选中焦点回收、artifact 200、下拉 320px/scrollTop 368、平铺 699 行、暗色主题、刷新失败/恢复；截图哈希登记 manifest §25，仍缺完整 4.6 矩阵，已停止服务/session。
 
 ## 阻塞点
 
