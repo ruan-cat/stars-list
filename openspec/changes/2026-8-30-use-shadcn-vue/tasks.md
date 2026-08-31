@@ -38,7 +38,7 @@
 
 ## 5. 收尾
 
-- [ ] 5.1 按 init-ai-md 的交互与增量规则更新 AGENTS/CLAUDE 技能表（补齐官方 `unovue/shadcn-vue` 来源、`skills-lock.json` 哈希、Prettier/skills 安装器边界）；若项目不存在 `GEMINI.md`，记录“未创建”的检查证据，不得为满足清单擅自新建或覆盖用户记忆文件
+- [x] 5.1 按 init-ai-md 的交互与增量规则更新 AGENTS/CLAUDE 技能表（补齐官方 `unovue/shadcn-vue` 来源、`skills-lock.json` 哈希、Prettier/skills 安装器边界）；已确认 `AGENTS.md` 与 `CLAUDE.md` 内容一致，项目不存在 `GEMINI.md` 且未创建；不得为满足清单擅自新建或覆盖用户记忆文件
 - [ ] 5.2 归档本 change（`openspec archive`），沉淀 `openspec/specs/todo-dashboard-explorer/`
 
 ## 回归记录
