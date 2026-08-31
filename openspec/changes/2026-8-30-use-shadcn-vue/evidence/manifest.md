@@ -9,6 +9,7 @@
 - 独立会话（PowerShell）：`$env:AGENT_BROWSER_SESSION = (agent-browser session id --scope worktree --prefix shadcn-vue-acceptance)`
 - 会话元数据：执行 `agent-browser session info --json`，记录 session、Chrome 版本、agent-browser 版本与 viewport
 - 交互规则：Portal/下拉使用真实坐标点击；合成 `dispatchEvent` 仅用于 DOM 机制断言
+- 会话生命周期：每个环境只创建一个具名 headed Chrome session；先完成该环境的基线读取、全量 TODO 矩阵、截图和网络/console 记录，最后才执行 `agent-browser close`。禁止为单个 Scenario 反复创建/关闭 session；若 session 或环境进程异常，先记录阻塞原因，不得静默换 session 拼接为“完整通过”。
 
 ## 2. 环境矩阵
 

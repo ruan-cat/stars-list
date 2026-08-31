@@ -81,3 +81,5 @@ preview 已用 headed Chrome 完成下拉选中/清空、Escape/外点关闭与�
 ## 13. TODO 主链优先与新增真实缺陷
 
 本轮曾短暂进入普通文档 before baseline 采集，这是 2.3/4.4 的后置旁路门禁，不是本 change 的主目标；用户指出后已停止该实验，回到 TODO 页面核心矩阵。TODO fresh dev session 随后发现两个真实缺陷：hydration 后状态栏变高却未重测 viewportReserve，造成 1280×900 页面溢出 16px；刷新按钮事件包装层导致 currentTarget 不是原生按钮，焦点恢复失效。已分别通过 post-flush 重测和 aria-label 原生按钮 fallback 修复，当前核心证据登记在 manifest §23；4.5/4.6 仍保持未完成。
+
+本轮还确认验收执行本身出现了重复开关浏览器的问题。已将“一环境一具名 session，完整矩阵跑完后才关闭，异常先记录、禁止跨 session 拼接”写入 manifest §1 与 tasks.md 4.5/4.6；这条是流程硬门禁，不是功能通过证明。

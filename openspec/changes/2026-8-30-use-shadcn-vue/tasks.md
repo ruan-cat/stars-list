@@ -32,8 +32,8 @@
 - [ ] 4.2 亮/暗双主题下截图比对（对照 `evidence/01/08`），同时记录切换前后 viewport、滚动位置、控制台错误数和像素 diff 结论
 - [x] 4.3 `pnpm docs:build` 构建通过（串行 exit 0，55.71s）+ `pnpm exec prettier --experimental-cli --check` 通过（本轮变更文件，排除用户既有 `docs/prompts/index.md`）
 - [ ] 4.4 普通文档页像素回归门禁复验（对应 2.3）
-- [ ] 4.5 dev 环境：`pnpm docs:dev -- --host 127.0.0.1 --port 8080` + agent-browser headed Chrome；逐项完成首屏/首载失败、仓库/分支/类型组合筛选、下拉滚动与清空、树展开/选中、平铺切换、详情链接、Tab/Enter/Escape 焦点、刷新禁用与竞态、亮暗主题、页面/面板滚动；每项归档截图、操作日志、DOM/网络/console 断言（当前仅有 §12 CSS/滚动与 marker 局部证据）
-- [ ] 4.6 preview 环境：先执行 `pnpm docs:build` 再执行 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`，使用 headed Chrome 完全复跑 4.5 矩阵，并额外核对 artifact 同源 URL、静态资源 HTTP 状态、基线 hydration 警告与无新增 console 错误；当前局部证据见 `evidence/manifest.md` §13，不能代替完整矩阵
+- [ ] 4.5 dev 环境：`pnpm docs:dev -- --host 127.0.0.1 --port 8080` + **一个** agent-browser headed Chrome session；在同一 session 内逐项完成首屏/首载失败、仓库/分支/类型组合筛选、下拉滚动与清空、树展开/选中、平铺切换、详情链接、Tab/Enter/Escape 焦点、刷新禁用与竞态、亮暗主题、页面/面板滚动；每项归档截图、操作日志、DOM/网络/console 断言，禁止跨 session 拼接（当前仅有 §12/§23 局部证据）
+- [ ] 4.6 preview 环境：先执行 `pnpm docs:build` 再执行 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`，使用**一个** headed Chrome session 完全复跑 4.5 矩阵，并额外核对 artifact 同源 URL、静态资源 HTTP 状态、基线 hydration 警告与无新增 console 错误；当前局部证据见 `evidence/manifest.md` §13/§20，不能代替完整矩阵
 - [ ] 4.7 合并 main 推送部署，记录部署 commit SHA、生产 URL、HTTP/资源状态；使用 headed Chrome 完全复跑 4.5 矩阵并验证 Portal 卸载。任一关键场景失败、页面级滚动、主题/像素回归或 console/network 回归立即停止验收，经 Flex 流量器切回上一个已知提交后，记录切流/回滚时间与结果，并用同一矩阵复验首屏、下拉关闭、键盘焦点、主题、页面滚动五项关键路径
 
 ## 5. 收尾
