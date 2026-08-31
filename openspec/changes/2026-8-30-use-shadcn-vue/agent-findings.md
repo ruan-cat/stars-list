@@ -91,3 +91,7 @@ Select smoke 的真实交互和 DOM 断言均通过（选中关闭、Escape、�
 ## F23 [resolved] VitePress 文档列表样式覆盖 TodoTree marker
 
 基线 `evidence/01-tree-initial.png` 的仓库树没有黑色圆点，但 Tailwind 迁移后的截图出现圆点。Chrome computed style 显示 `.todo-tree-root > ul` 的 `listStyle=disc`、`paddingLeft=20px`，原因是 VitePress `.vp-doc ul` 选择器 specificity 高于普通 `list-none/p-0`。已对 TodoTree 列表使用 `!list-none !p-0 !m-0`，冷启动 dev DOM 复验为 `listStyle=none`、`paddingLeft=0`，并更新 marker 修复截图与 manifest；不得用这张截图替代 1600×1000 的普通文档像素基线。
+
+## F24 [active] preview 存在全站 hydration mismatch 基线警告
+
+preview headed Chrome 对 `/todos.html` reload 后记录 `Hydration completed but contains mismatches`；同一 session 访问普通首页并清空 console 后出现相同警告，说明目前更像 VitePress 全站既有基线而非 TodoDashboard 专属新增。TODO 页此前出现的 `InvalidStateError: Transition was aborted because of invalid state` 在 hydration 闸门和最新交互复验中未重现。4.6 仍需把该基线警告与 TODO 新增 console 错误分开登记，不能简单宣称 console=0。

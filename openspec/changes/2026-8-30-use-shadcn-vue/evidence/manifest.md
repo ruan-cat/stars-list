@@ -107,6 +107,7 @@
 |        4.3 格式        | 本轮变更文件 `pnpm exec prettier --experimental-cli --check`（排除用户既有 `docs/prompts/index.md`）           |             exit 0，通过              |
 |        组合筛选        | `pnpm exec tsx --test docs/.vitepress/theme/todo-tree.test.ts docs/.vitepress/theme/todo-artifact.test.ts`     |              11/11，通过              |
 |     Tailwind 产物      | 对 `docs/.vitepress/dist/assets/*.css` 统计 `.h-full/.overflow-auto/.bg-muted/.text-foreground/.border-border` | 各 1 次，结合 §12 computed style 通过 |
+|      刷新并发守卫      | `pnpm exec tsx --test docs/.vitepress/theme/use-todo-query.test.ts`                                            |  2/2，通过；并发调用复用同一 Promise  |
 
 以上仅证明静态结构、类型、构建和纯函数行为；3.5/3.7 的 900/720px 布局、焦点竞态、主题与三环境视觉矩阵仍必须补 headed Chrome 截图和 DOM/网络/console 断言。
 
@@ -125,3 +126,35 @@
 |          720×900           | `docScrollH=1557`；group `display=block`、`height=932`；TODO nav `overflowY=visible`、`navScroll=764`，页面允许自然滚动 | `browser-2026-08-31/dev-todos-720x900-20260831.png`                    | `43D9B981EF2688FC50B36647D0DB2FECF8C522CBDF9855D49E4C2BB16F765293` | 通过 |
 
 以上只覆盖 Tailwind 运行时产出、桌面/窄屏滚动与响应式布局；未覆盖三环境完整交互矩阵、亮暗主题、刷新竞态和生产部署，因此不能单独勾选 3.5、3.7 或 4.5–4.7。
+
+## 13. 2026-08-31 preview headed Chrome 交互与主题复验（部分通过）
+
+> 服务：串行 `pnpm docs:build`（exit 0，51.21s）后前台 `pnpm docs:preview -- --host 127.0.0.1 --port 4173`；session `shadcn-preview-hydration2-e3381299a1aa`；Chrome `152.0.0.0`；agent-browser `0.35.0`；viewport `1280×900`。artifact `http://127.0.0.1:4173/artifacts/github-todos/ruan-cat.json` 由 PowerShell `Invoke-WebRequest` 返回 HTTP 200、616092 bytes、`application/json`。
+
+| Scenario              | 真实操作与断言                                                                                                                               | 截图/证据                                                                                                                                     |           结果           |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------: |
+| 仓库下拉选中/清空     | headed Chrome 坐标点击仓库 → 选择 `10wms` → `contentExists=false`、`aria-expanded=false`、147 可见 TODO；点击清空后恢复“所有仓库”            | DOM eval；session 同上                                                                                                                        |           通过           |
+| Escape/外点关闭       | 键盘 Escape 与坐标点击 `h1`；Portal listbox 卸载，Escape 后焦点回到 `aria-label=仓库`                                                        | DOM eval；session 同上                                                                                                                        |           通过           |
+| 树/平铺/详情          | 点击“平铺”后 `role=listbox[aria-label=TODO 平铺列表]`、699 options；选择首行后详情显示仓库/路径/分支/行号与 GitHub 外链                      | DOM snapshot/eval；`preview-todos-tree-light-20260831.png`                                                                                    |           通过           |
+| 刷新 pending/恢复焦点 | 聚焦“刷新快照”并点击；pending 时 `disabled=true`、`aria-busy=true`；约 500ms 后恢复可用、焦点回到刷新按钮并显示成功反馈                      | DOM eval；session 同上                                                                                                                        |           通过           |
+| 亮色主题              | 点击树形并保持亮色，截图归档                                                                                                                 | `browser-2026-08-31/preview-todos-tree-light-20260831.png`；SHA-256 `849BEF7E7E3E786F81B360ED85FC57710F3929DA4D51212D03829C24B9977069`        |           通过           |
+| 暗色主题              | 点击 VitePress 主题开关，`document.documentElement.className=dark`，截图归档                                                                 | `browser-2026-08-31/preview-todos-tree-dark-20260831.png`；SHA-256 `88272AB1DC9DEB9E11AA03EC9DC27F3FC068ACF944FE7522D8A0AB20190D36A0`         |           通过           |
+| 亮色稳定截图          | 主题切换完成后等待 1200ms，再截树形首屏；PNG 实际尺寸 `1280×900`，无列表 marker                                                              | `browser-2026-08-31/preview-todos-tree-light-stable-20260831.png`；SHA-256 `D20B9345C786BA7D9C47E5C88B385B54815DE6D34D2D21C63CD15449B11FCFBD` |           通过           |
+| 暗色稳定截图          | 主题切换完成后等待 1200ms，`document.documentElement.className=dark`、body 背景 `rgb(27, 27, 31)`；PNG 实际尺寸 `1280×900`                   | `browser-2026-08-31/preview-todos-tree-dark-stable-20260831.png`；SHA-256 `6DDADD4F7BFF5BD3EF772701727F03BEFF4DC8515CC03DC32402E645302095BE`  |           通过           |
+| console 基线          | TODO 页 reload 后仅有 `Hydration completed but contains mismatches`；同 session 访问普通首页同样出现该警告；未出现之前的 `InvalidStateError` | `agent-browser console/errors` 输出                                                                                                           | 参考，需后续治理全站基线 |
+
+preview 已有可回放的局部通过证据，但未完成 spec 全部 Scenario、普通文档 before/after 像素 diff、production 当前提交部署和失败回滚，因此任务 2.3、3.5、3.7、4.1–4.2、4.4–4.7 仍不得勾选。
+
+## 14. 2026-08-31 production 部署基线（阻塞 4.7，不通过）
+
+只读核验结果：本地 HEAD `bdd1a3d0d023ce94836317f48d4836160beca8b0`（当前工作区另有未提交的 hydration/preview 记录），`origin/dev=d00fa4001f772136cdb4fd55f2add8d121a287a8`，`origin/main=1c468f491e145ca3dbd38a4e76f71c23457b38c2`；本地验收提交不在远端。最新 GitHub Pages workflow run `33366784039` / deployment `6176611081` 的 head SHA 为 `1c468f4`，不是本 change。
+
+| 检查                | 结果                                                                                                                                                                                    |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| production URL      | `https://ruan-cat.github.io/stars-list/todos.html` HTTP 200；当前线上 CSS/JS 资源 8 个均 HTTP 200                                                                                       |
+| production artifact | `https://ruan-cat.github.io/stars-list/artifacts/github-todos/ruan-cat.json` HTTP 200，616092 bytes；`repositoryCount=78`、`scannedRepositoryCount=51`、`todoCount=700`、`errorCount=0` |
+| 本地/线上产物       | 本地 CSS 含 `bg-muted`，线上 `style.mmjW0rRs.css` 不含；HTML/asset hash 不同，证明线上仍是旧部署                                                                                        |
+| 回滚基线            | 上一个成功 deployment `6164041902`，SHA `ad73188e9c33db59aa4b82d17884b4a882d43580`；仅作候选基线，不能替代 Flex 流量器回执                                                              |
+| Flex 流量器         | 仓库内无可自证的 Flex CLI/config；失败时必须取得外部切流回执，禁止用本地 build 代替                                                                                                     |
+
+因此 production GET 200 只能证明旧站点可达，不能支撑 4.7；必须在用户授权后合并/推送 main、等待 Pages workflow 成功，再用 headed Chrome 完整矩阵验收。
