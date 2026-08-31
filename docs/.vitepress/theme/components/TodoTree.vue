@@ -10,7 +10,7 @@ const emit = defineEmits<{ select: [string]; toggle: [string] }>();
 		class="todo-tree-root h-full min-w-0 overflow-auto bg-muted p-2.5 max-[900px]:h-auto max-[900px]:overflow-visible"
 		aria-label="TODO Explorer"
 	>
-		<ul class="m-0 w-full list-none p-0">
+		<ul class="!m-0 !w-full !list-none !p-0">
 			<li v-for="node in nodes" :key="node.id">
 				<div
 					:class="[
