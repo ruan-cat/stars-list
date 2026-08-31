@@ -103,7 +103,7 @@
 | :--------------------: | :------------------------------------------------------------------------------------------------------------- | :-----------------------------------: |
 | 3.6 ui scoped CSS 清理 | `rg -n "<style scoped" docs/.vitepress/theme/components/ui`                                                    |             无匹配，通过              |
 |      4.3 类型检查      | `pnpm exec tsc --noEmit`                                                                                       |             exit 0，通过              |
-|        4.3 构建        | 串行 `pnpm docs:build`                                                                                         |         exit 0，51.21s，通过          |
+|        4.3 构建        | 串行 `pnpm docs:build`                                                                                         |         exit 0，53.40s，通过          |
 |        4.3 格式        | 本轮变更文件 `pnpm exec prettier --experimental-cli --check`（排除用户既有 `docs/prompts/index.md`）           |             exit 0，通过              |
 |        组合筛选        | `pnpm exec tsx --test docs/.vitepress/theme/todo-tree.test.ts docs/.vitepress/theme/todo-artifact.test.ts`     |              11/11，通过              |
 |     Tailwind 产物      | 对 `docs/.vitepress/dist/assets/*.css` 统计 `.h-full/.overflow-auto/.bg-muted/.text-foreground/.border-border` | 各 1 次，结合 §12 computed style 通过 |
@@ -177,9 +177,22 @@ agent-browser diff screenshot --baseline openspec/changes/2026-8-30-use-shadcn-v
 
 > session `shadcn-preview-recovery-e3381299a1aa`；viewport 实际 PNG `929×869`。先以 `window.fetch=()=>Promise.reject(new Error("forced preview failure"))` 注入故障，再恢复原 fetch 并解除 agent-browser route，均使用真实按钮点击。
 
-| 状态 | 断言                                                                                                                        | 截图                                                        | SHA-256                                                            | 结果 |
-| :--: | :-------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- | :--: |
-| 失败 | 点击“刷新快照”后显示 `刷新失败：Failed to fetch TODO artifact`；按钮恢复可操作并保持 `aria-busy=false`                      | `browser-2026-08-31/preview-refresh-failure-20260831.png`   | `778797F37F7B283DECAA7558169BF71B5DA33B126ED82ABA6DB194A7CB100CAE` | 通过 |
-| 恢复 | 恢复 fetch/解除 route 后真实点击刷新，显示“快照已更新”；`disabled=false`、`aria-busy=false`、焦点回到 `aria-label=刷新快照` | `browser-2026-08-31/preview-refresh-recovered-20260831.png` | `5089584C6AADDD3DF18997168CBF479EC6F3AFFEC4B050FC3016CD4A8D53BDFE` | 通过 |
+|   状态   | 断言                                                                                                                                                     | 截图                                                                 | SHA-256                                                            | 结果 |
+| :------: | :------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------- | :----------------------------------------------------------------- | :--: |
+|   失败   | 点击“刷新快照”后显示 `刷新失败：Failed to fetch TODO artifact`；按钮恢复可操作并保持 `aria-busy=false`                                                   | `browser-2026-08-31/preview-refresh-failure-20260831.png`            | `778797F37F7B283DECAA7558169BF71B5DA33B126ED82ABA6DB194A7CB100CAE` | 通过 |
+| 首次失败 | 清理 local/session storage，route 在 reload 前 abort artifact；状态栏 role=status/alert 与页面错误态显示 `Failed to fetch TODO artifact`，无伪造统计数字 | `browser-2026-08-31/preview-initial-failure-20260831.png`（929×869） | `7F5113EBB7B1DF88B6F571FF11E74EF2A01EEA9C2DE63E28AE2A624084B2FE4F` | 通过 |
+|   恢复   | 恢复 fetch/解除 route 后真实点击刷新，显示“快照已更新”；`disabled=false`、`aria-busy=false`、焦点回到 `aria-label=刷新快照`                              | `browser-2026-08-31/preview-refresh-recovered-20260831.png`          | `5089584C6AADDD3DF18997168CBF479EC6F3AFFEC4B050FC3016CD4A8D53BDFE` | 通过 |
 
 该证据覆盖失败可感知性与恢复焦点，不替代三环境完整矩阵；故 3.7/4.1/4.6 仍保持未勾选。
+
+## 17. 2026-08-31 preview 键盘路径复验（部分通过）
+
+> session `shadcn-first-failure-e3381299a1aa`；headed Chrome；preview URL；使用 `focus`、`press`、DOM eval，未使用合成事件。
+
+| 路径               | 断言                                                                                                              | 结果 |
+| :----------------- | :---------------------------------------------------------------------------------------------------------------- | :--: |
+| Tab 顺序           | 聚焦 `aria-label=搜索 TODO` 后按 Tab，焦点进入 `aria-label=仓库`                                                  | 通过 |
+| Space/Arrow/Escape | 在仓库触发器按 Space，`aria-expanded=true`；ArrowDown 移动后按 Escape，`aria-expanded=false` 且焦点回到仓库触发器 | 通过 |
+| 树折叠键盘         | 聚焦首个 `TODO Explorer` 的“展开”按钮按 Enter，按钮文案变为“收起”                                                 | 通过 |
+
+本节补足部分键盘证据；仍未覆盖所有四维筛选组合、Portal 滚动键盘、移动端焦点和 production，因此 3.7/4.1/4.5–4.7 继续未勾选。
