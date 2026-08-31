@@ -27,6 +27,7 @@ const viewMode = ref<"tree" | "flat">("tree");
 const query = useTodoArtifactQuery();
 const refresh = useTodoArtifactRefresh();
 let refreshTrigger: HTMLButtonElement | null = null;
+const isHydrated = ref(false);
 const tree = computed(() => (query.data.value ? buildTodoTree(query.data.value) : []));
 const visibleTree = computed(() => filterTodoTree(tree.value, filters.value));
 const flatRows = computed(() => flattenTodoTree(visibleTree.value));
@@ -91,6 +92,7 @@ function measureViewportReserve() {
 }
 onMounted(() => {
 	measureViewportReserve();
+	isHydrated.value = true;
 	window.addEventListener("resize", measureViewportReserve);
 });
 onBeforeUnmount(() => window.removeEventListener("resize", measureViewportReserve));
@@ -168,20 +170,20 @@ const layoutStyle = computed(() => ({ height: `calc(100dvh - ${viewportReserve.v
 		<TodoFilters v-model="filters" :artifact="query.data.value" />
 		<div ref="layoutAnchorRef" class="todo-layout-anchor">
 			<TodoStatusBar
-				:artifact="query.data.value"
+				:artifact="isHydrated ? query.data.value : undefined"
 				:visible-tree="visibleTree"
-				:is-loading="query.isLoading.value"
-				:error="query.error.value"
+				:is-loading="!isHydrated || query.isLoading.value"
+				:error="isHydrated ? query.error.value : null"
 			/>
 		</div>
 		<div
-			v-if="query.isLoading.value"
+			v-if="!isHydrated || query.isLoading.value"
 			class="rounded-md border border-dashed border-border p-8 text-center text-muted-foreground"
 		>
 			正在读取公开 TODO 快照…
 		</div>
 		<div
-			v-else-if="query.error.value && !query.data.value"
+			v-else-if="isHydrated && query.error.value && !query.data.value"
 			class="rounded-md border border-dashed border-border p-8 text-center text-destructive"
 		>
 			无法读取快照：{{ query.error.value.message }}
