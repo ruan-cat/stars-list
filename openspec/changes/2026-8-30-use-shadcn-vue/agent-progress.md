@@ -24,14 +24,16 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - `pnpm dlx shadcn-vue@latest docs button input` 与 `add button input --yes` 完成；`pnpm exec tsc --noEmit` exit 0；串行 `pnpm docs:build` exit 0（51.60s）。
 - `pnpm dlx shadcn-vue@latest docs resizable` 与 `add resizable --yes` 完成；Resizable separator/最小宽度 DOM smoke 通过；`pnpm exec tsc --noEmit` exit 0；串行 build exit 0（49.06s）。
 - Select/TreeToggle 旧 scoped CSS 已移除，官方 SelectTrigger 重复 Chevron 已修正；TodoTree/TodoFlatList 增加 focus-visible ring，TodoDetails 采用唯一 `overflow-auto`，TodoDashboard 在刷新 pending 结束后恢复触发按钮焦点；`todo-tree.test.ts` 新增仓库+分支+类型交集测试（11/11 通过）。
-- 2026-08-31 串行 `pnpm docs:build` exit 0（57.96s）；本轮变更文件 `pnpm exec prettier --experimental-cli --check` exit 0；3.6/4.3 的静态门禁已记录，未替代浏览器门禁。
+- 2026-08-31 串行 `pnpm docs:build` exit 0（51.21s）；本轮变更文件 `pnpm exec prettier --experimental-cli --check` exit 0；3.6/4.3 的静态门禁已记录，未替代浏览器门禁。
 - 2026-08-31 冷启动 headed Chrome 复验 Tailwind utilities：1280×900 `docScrollH=900`、nav `overflowY=auto`；720×900 group `display=block`、nav `overflowY=visible`、页面自然滚动；CSSRules 含 `.h-full/.overflow-auto/.bg-muted/.text-foreground`，截图和 SHA-256 已登记在 manifest 第 12 节。
 - `use-todo-query.test.ts` 2/2 通过：single-flight 刷新守卫合并并发调用，结算后允许下一次请求；3.7 的刷新竞态实现已有单测，但完整组件键盘/失败恢复仍待 headed Chrome。
+- preview headed Chrome 已完成下拉/清空/Escape/外点/树平铺/详情/刷新禁用与焦点恢复、亮暗稳定截图和 artifact HTTP 200；hydration mismatch 与普通首页同为全站基线警告，详情见 manifest §13。
+- 同 viewport 1600×1000 preview 树形截图与 `evidence/01-tree-initial.png` diff 为 4.60%（73642/1600000），标记参考，不能勾选 2.3/4.4；marker 本身已通过 `listStyle=none`/`paddingLeft=0` 验证。
 
 ## 阻塞点
 
 - 2.3 普通文档页像素回归尚未执行；manifest 已建立但 dev/preview/production 正式验收证据尚未齐全。
-- 最新独立 reviewer 的 headed Chrome 自动启动曾返回 exit 3（DevToolsActivePort 未生成）；900/720px、页面滚动唯一性和刷新焦点仍不得以静态检查代替。
+- production 当前仍为旧部署（线上 head `1c468f4`，本地 HEAD `fe960ab` 未 push）；4.7 需 main 合并、Pages 成功和 Flex 外部切流/回滚回执，不能用 HTTP 200 代替。
 
 ## 下一步
 

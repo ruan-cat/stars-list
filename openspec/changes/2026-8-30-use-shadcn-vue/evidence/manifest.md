@@ -103,7 +103,7 @@
 | :--------------------: | :------------------------------------------------------------------------------------------------------------- | :-----------------------------------: |
 | 3.6 ui scoped CSS 清理 | `rg -n "<style scoped" docs/.vitepress/theme/components/ui`                                                    |             无匹配，通过              |
 |      4.3 类型检查      | `pnpm exec tsc --noEmit`                                                                                       |             exit 0，通过              |
-|        4.3 构建        | 串行 `pnpm docs:build`                                                                                         |         exit 0，57.96s，通过          |
+|        4.3 构建        | 串行 `pnpm docs:build`                                                                                         |         exit 0，51.21s，通过          |
 |        4.3 格式        | 本轮变更文件 `pnpm exec prettier --experimental-cli --check`（排除用户既有 `docs/prompts/index.md`）           |             exit 0，通过              |
 |        组合筛选        | `pnpm exec tsx --test docs/.vitepress/theme/todo-tree.test.ts docs/.vitepress/theme/todo-artifact.test.ts`     |              11/11，通过              |
 |     Tailwind 产物      | 对 `docs/.vitepress/dist/assets/*.css` 统计 `.h-full/.overflow-auto/.bg-muted/.text-foreground/.border-border` | 各 1 次，结合 §12 computed style 通过 |
@@ -147,7 +147,7 @@ preview 已有可回放的局部通过证据，但未完成 spec 全部 Scenario
 
 ## 14. 2026-08-31 production 部署基线（阻塞 4.7，不通过）
 
-只读核验结果：本地 HEAD `bdd1a3d0d023ce94836317f48d4836160beca8b0`（当前工作区另有未提交的 hydration/preview 记录），`origin/dev=d00fa4001f772136cdb4fd55f2add8d121a287a8`，`origin/main=1c468f491e145ca3dbd38a4e76f71c23457b38c2`；本地验收提交不在远端。最新 GitHub Pages workflow run `33366784039` / deployment `6176611081` 的 head SHA 为 `1c468f4`，不是本 change。
+只读核验结果：本地 HEAD `fe960ab03111406c75394b21266fa9d3cf09f12a`（当前工作区另有未提交的 production/marker 证据记录），`origin/dev=d00fa4001f772136cdb4fd55f2add8d121a287a8`，`origin/main=1c468f491e145ca3dbd38a4e76f71c23457b38c2`；本地验收提交不在远端。最新 GitHub Pages workflow run `33366784039` / deployment `6176611081` 的 head SHA 为 `1c468f4`，不是本 change。
 
 | 检查                | 结果                                                                                                                                                                                    |
 | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -158,3 +158,15 @@ preview 已有可回放的局部通过证据，但未完成 spec 全部 Scenario
 | Flex 流量器         | 仓库内无可自证的 Flex CLI/config；失败时必须取得外部切流回执，禁止用本地 build 代替                                                                                                     |
 
 因此 production GET 200 只能证明旧站点可达，不能支撑 4.7；必须在用户授权后合并/推送 main、等待 Pages workflow 成功，再用 headed Chrome 完整矩阵验收。
+
+## 15. 2026-08-31 同 viewport 树形基线 diff（preview，参考）
+
+headed Chrome session `shadcn-pixel-1600-e3381299a1aa` 在 `http://127.0.0.1:4173/todos.html` 使用 `1600×1000` 采集 `preview-todos-1600x1000-20260831.png`，并执行：
+
+```log
+agent-browser diff screenshot --baseline openspec/changes/2026-8-30-use-shadcn-vue/evidence/01-tree-initial.png
+✗ 4.60% pixels differ
+  73642 different / 1600000 total pixels
+```
+
+该 diff 证明当前图与原始基线并非像素一致，不能勾选 2.3/4.4；但人工/DOM 对照确认原始基线无列表 marker，当前修复图的 `listStyle=none`、`paddingLeft=0` 与视觉均无黑点。PNG 实际尺寸 `1600×1000`，SHA-256：`6EB3A5D807B2DDDCF066DA9BD620F94AD7B58F2D224174FAE7AF9272ADAAA773`。

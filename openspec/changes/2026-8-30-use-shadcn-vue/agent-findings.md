@@ -95,3 +95,7 @@ Select smoke 的真实交互和 DOM 断言均通过（选中关闭、Escape、�
 ## F24 [active] preview 存在全站 hydration mismatch 基线警告
 
 preview headed Chrome 对 `/todos.html` reload 后记录 `Hydration completed but contains mismatches`；同一 session 访问普通首页并清空 console 后出现相同警告，说明目前更像 VitePress 全站既有基线而非 TodoDashboard 专属新增。TODO 页此前出现的 `InvalidStateError: Transition was aborted because of invalid state` 在 hydration 闸门和最新交互复验中未重现。4.6 仍需把该基线警告与 TODO 新增 console 错误分开登记，不能简单宣称 console=0。
+
+## F25 [active] production 仍为旧部署，当前提交未进入 Pages
+
+只读核验显示本地 HEAD `bdd1a3d0d023ce94836317f48d4836160beca8b0`（后续还有本地提交），`origin/main=1c468f4`，最新 Pages deployment `6176611081` 的 head SHA 为 `1c468f4`；production URL HTTP 200、资源均可达，但线上 CSS/HTML hash 与本地构建不同。仓库内没有可自证的 Flex 流量器配置，4.7 必须在授权 push/main 合并后取得 Pages workflow 与外部切流/回滚回执，不能用 production 200 代替。
