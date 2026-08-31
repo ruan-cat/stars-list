@@ -24,7 +24,7 @@
 - [x] 3.4 `ui/Resizable*.vue` 替换为 shadcn-vue `Resizable`（保持 `auto-save-id` 与最小宽度约束；证据：CLI 生成 `ui/resizable/` canonical 组件、keyboard-resize-by=4、agent-browser separator/最小宽度 DOM smoke、tsc/build 通过）
 - [ ] 3.5 `TodoDashboard.vue`、`TodoFilters.vue`、`TodoStatusBar.vue`、`TodoTree.vue`、`TodoFlatList.vue`、`TodoDetails.vue`、`TodoNodeIcon.vue` 视觉层改写为 Tailwind 语义工具类（保留业务逻辑与 `aria-*` 标注）；树连接线/折叠过渡仅允许少量 scoped 微调。已修复 VitePress `.vp-doc ul` marker 覆盖（`!list-none !p-0`），并在 `evidence/manifest.md` §12 留有无点截图与 DOM 证据；仍须补亮暗主题、完整交互矩阵和三环境截图
 - [x] 3.6 删除旧手写样式残留：`ui/` 目录无 `<style scoped>`，Portal 滚动仅保留必要的全局选择器；证据：`rg -n "<style scoped" docs/.vitepress/theme/components/ui` 无匹配，串行 `pnpm docs:build` exit 0
-- [ ] 3.7 补齐键盘导航、焦点回收、禁用态、首次加载失败、刷新竞态与组合筛选边界的实现和测试（对应 spec）；当前已补行级 focus-visible、刷新结束焦点恢复、single-flight 刷新守卫及搜索+仓库+路径+分支+类型交集/无匹配纯函数测试，preview 首次失败/刷新失败/恢复/键盘证据见 manifest §16–17，仍缺完整组件层键盘矩阵
+- [x] 3.7 补齐键盘导航、焦点回收、禁用态、首次加载失败、刷新竞态与组合筛选边界的实现和测试（对应 spec）：`test:components` 7/7 覆盖 Enter/Space/ArrowUp/ArrowDown/Escape、选中提交、close-auto-focus 焦点回收、刷新 disabled/aria-busy、首次失败/重试和 single-flight；既有纯函数测试覆盖四维交集/无匹配，真实 outside 关闭焦点由 manifest §20 headed Chrome 复验
 
 ## 4. 全量回归与部署
 

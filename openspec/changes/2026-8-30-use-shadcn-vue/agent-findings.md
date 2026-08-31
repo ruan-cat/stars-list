@@ -107,3 +107,11 @@ preview headed Chrome 对 `/todos.html` reload 后记录 `Hydration completed bu
 ## F27 [resolved] Select 外点焦点已由新会话复验
 
 旧 session 的外点关闭证据显示焦点落在 BODY，与 spec 要求冲突；已在 `ui/Select.vue` 增加 `pointer-down-outside`/`interact-outside` 监听、`update:open` 关闭处理和 aria-label DOM fallback。修复后 headed Chrome session `shadcn-focus-fix4-e3381299a1aa` 证明外点/选中/Escape 均为 `aria-expanded=false`、Portal options=0、activeElement=`aria-label=仓库`；manifest §18 已记录，3.2 可重新勾选。
+
+## F28 [resolved] Reka close-auto-focus 在真实外点默认行为后覆盖触发器焦点
+
+fresh preview headed Chrome 复验发现，旧的 `nextTick + 单帧` 调度在真实坐标点击外部后仍会把焦点留在 BODY；这是可复现的真实浏览器缺陷，不是 happy-dom 假阳性。修复改为监听 `close-auto-focus` 并 `preventDefault()`，统一用 `nextTick → 双 requestAnimationFrame → focus → 0ms fallback` 单次调度，清理卸载 timer。session `shadcn-preview-fix-e3381299a1aa` 在外点、选中、Escape 三路径均确认 Portal 卸载且焦点回仓库触发器；初始 console 仅有全站既有 hydration mismatch，未出现新 InvalidStateError。后续以 manifest §20 为准。
+
+## F29 [resolved] 组件层回归缺少 SFC 测试底座
+
+项目原先只有 `node:test` 纯 TypeScript 测试，没有 Vue SFC mount 环境，导致 3.7 的键盘、焦点、首次失败和刷新竞态无法自动证明。已新增最小 Vitest + `@vue/test-utils` + happy-dom 基础设施与 `test:components` 脚本，组件测试 7/7 通过；happy-dom 无法可靠模拟 Reka 真实 `pointerdown-outside`，该边界由 manifest §20/§21 的 headed Chrome 真实坐标证据承担。
