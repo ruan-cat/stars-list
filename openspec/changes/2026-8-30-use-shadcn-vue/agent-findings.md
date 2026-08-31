@@ -143,3 +143,7 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F36 [resolved] dev headed session 需禁止后台遮挡才能执行焦点调度
 
 2026-09-01 最终 dev session 使用隔离 Chrome PID `6976`、CDP `9239` 与 `--disable-backgrounding-occluded-windows --disable-renderer-backgrounding --disable-background-timer-throttling`，`document.visibilityState=visible`。同一 session 真实执行 Escape 后 `aria-expanded=false`、Portal=0、焦点回仓库触发器；此前 hidden tab 的 rAF 不执行导致 BODY 焦点，属于浏览器可见性环境问题。完整 dev 关键路径和首次失败/恢复证据登记在 manifest §26；仍缺重复点击竞态请求计数，4.5 不提前勾选。
+
+## F37 [active] preview 当前源码版本矩阵已近完整，仍缺独立 verifier 与个别截图
+
+2026-09-01 preview session `todo-preview-final-20260901-j` 在可见 headed Chrome 中完成首屏、artifact 首次失败/恢复、四维筛选/无匹配、下拉 21 项与 320px 滚动、树/详情、平铺、Tab/Space/Arrow/Enter/Escape、暗色、720px、刷新 pending/失败/恢复与重复点击 race（两次点击仅 1 个 fetch）。HAR 记录了 HTML/CSS/JS/font/favicon/artifact 的 200 状态（abort 请求状态 0，临时 HAR 已删除）；证据见 manifest §27。仍缺各键盘分支独立截图、初始 hydration warning 的 session 内单独清点和独立 verifier，故 4.6/4.1/4.2 不勾选。
