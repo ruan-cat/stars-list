@@ -33,10 +33,11 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 同 viewport 1600×1000 preview 树形截图与 `evidence/01-tree-initial.png` diff 为 4.60%（73642/1600000），标记参考，不能勾选 2.3/4.4；marker 本身已通过 `listStyle=none`/`paddingLeft=0` 验证。
 - Select 外点关闭在 fresh preview headed Chrome 中首次复现焦点落 BODY；随后以 Reka `close-auto-focus` + 双 RAF + 延迟 fallback 修复，新的 `shadcn-preview-fix-e3381299a1aa` session 三路径均 `aria-expanded=false`、Portal options=0、activeElement 为仓库触发器，截图与哈希登记在 manifest §20。
 - 组件测试基础设施已分组提交：`bd63e6f`（依赖）与 `87b96ac`（测试）；Select 焦点修复提交 `23166cf`；验收证据提交 `002dd20`。按 init-ai-md 增量规则同步更新 AGENTS/CLAUDE，确认 GEMINI 不存在且未创建。
+- TODO 核心 dev fresh session `todo-core-dev-cdp-e3381299a1aa` 已补首屏、下拉滚动、四维组合筛选/无匹配、树详情、平铺、暗色、刷新焦点和 720px 截图；发现并修复 hydration 后 viewportReserve 未重测与 refresh currentTarget 包装层兜底问题，证据见 manifest §23。4.5 仍因首次失败注入、网络/竞态和完整键盘矩阵缺口未勾选。
 
 ## 阻塞点
 
-- 2.3 普通文档页像素回归尚未执行；manifest 已建立但 dev/preview/production 正式验收证据尚未齐全。
+- 2.3 普通文档页像素回归尚未执行；它是后置的旁路回归门禁，不改变本 change 的 TODO 主目标；manifest 已建立但 dev/preview/production 正式验收证据尚未齐全。
 - production 当前仍为旧部署（线上 head `1c468f4`，本地 HEAD `c90abb1` 未 push）；4.7 需 main 合并、Pages 成功和 Flex 外部切流/回滚回执，不能用 HTTP 200 代替。生产基线与资源状态见 manifest §14。
 
 ## 下一步
