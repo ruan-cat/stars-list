@@ -2,7 +2,7 @@
 
 ## 当前 checkpoint
 
-Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成 2.1、2.2、2.4、2.5、3.1–3.4、3.6–3.7、4.3；3.5 及普通文档页与三环境完整回归仍待真实浏览器门禁。
+Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成 2.1、2.2、2.4、2.5、3.1–3.4、3.6–3.7、4.3、5.1；3.5 及普通文档页与三环境完整回归仍待真实浏览器门禁。
 
 ## 当前 task
 
@@ -32,6 +32,7 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - preview 首次加载失败也已受控验证：清空 local/session storage 后在 reload 前 abort artifact，状态栏和页面错误态均显示失败且无伪造统计；解除 route 后刷新恢复，证据见 manifest §16。
 - 同 viewport 1600×1000 preview 树形截图与 `evidence/01-tree-initial.png` diff 为 4.60%（73642/1600000），标记参考，不能勾选 2.3/4.4；marker 本身已通过 `listStyle=none`/`paddingLeft=0` 验证。
 - Select 外点关闭在 fresh preview headed Chrome 中首次复现焦点落 BODY；随后以 Reka `close-auto-focus` + 双 RAF + 延迟 fallback 修复，新的 `shadcn-preview-fix-e3381299a1aa` session 三路径均 `aria-expanded=false`、Portal options=0、activeElement 为仓库触发器，截图与哈希登记在 manifest §20。
+- 组件测试基础设施已分组提交：`bd63e6f`（依赖）与 `87b96ac`（测试）；Select 焦点修复提交 `23166cf`；验收证据提交 `002dd20`。按 init-ai-md 增量规则同步更新 AGENTS/CLAUDE，确认 GEMINI 不存在且未创建。
 
 ## 阻塞点
 

@@ -20,6 +20,8 @@
   - 触发时机：处理 shadcn-vue、components.json、组件注册表、CLI 初始化/添加/更新或预设时。
   - 参考作用：来自 `unovue/shadcn-vue` 官方技能包，包含 Tailwind、表单、组合、图标规则及 CLI 工作流。
   - 约束：遵循技能包内规则文件；优先使用现有组件和语义令牌，运行 CLI 前使用项目包管理器并先检查现有组件；项目级来源与哈希以根目录 `skills-lock.json` 为准。
+  - 安装边界：项目级技能只能通过 skills 安装器从 `unovue/shadcn-vue` 官方来源安装/升级并留下锁文件；禁止手写或用临时文档冒充官方技能，也不要在未获授权时改写全局 skills 目录。
+  - 格式化边界：仅在用户明确授权时对 `.agents/skills/shadcn-vue/**` 与 `skills-lock.json` 运行 Prettier；不得为掩盖格式差异新增 ignore 配置，也不得把格式化结果混入无关提交。
 
 ## 主动问询实施细节
 

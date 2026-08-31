@@ -53,7 +53,7 @@ sourceType=github
 
 ## 7. 基础设施推进记录
 
-随后已完成 tasks 2.1–2.2、2.4–2.5、3.1–3.4、3.6–3.7、4.3：安装 `tailwindcss@4.3.3` 与 `@tailwindcss/vite@4.3.3`，在 VitePress 注册 Tailwind 插件，新增无 preflight 的 `theme/tw.css` 并由 TodoDashboard 入口加载；通过 CLI 生成并修正 `components.json`、Select、Button、Input、Resizable 官方子组件和 `evidence/manifest.md`。Todo\* 静态视觉迁移已完成，补上状态统计、连接线、焦点 ring、刷新焦点恢复和组合筛选测试；修复 preset 覆盖 `vite.plugins` 导致 Tailwind utilities 未生成的问题，并补充 `@source`/显式 utilities 入口；新增 Vitest + Vue Test Utils + happy-dom 组件测试，`pnpm test:components` 7/7 通过；Select 外点关闭改为监听 close-auto-focus 并以双 RAF/延迟兜底恢复焦点，fresh preview headed Chrome 三路径通过；串行 fresh `pnpm docs:build` exit 0（61.29s），本轮变更文件 Prettier check exit 0。一次并行构建出现 `.vitepress/.temp` 临时文件竞争，已记录为 F14，后续构建验收必须串行。当前总任务 24 项，完成 14 项，剩余 10 项；2.3、3.5、4.1–4.2、4.4–4.7、5.1–5.2 仍不得提前勾选。
+随后已完成 tasks 2.1–2.2、2.4–2.5、3.1–3.4、3.6–3.7、4.3、5.1：安装 `tailwindcss@4.3.3` 与 `@tailwindcss/vite@4.3.3`，在 VitePress 注册 Tailwind 插件，新增无 preflight 的 `theme/tw.css` 并由 TodoDashboard 入口加载；通过 CLI 生成并修正 `components.json`、Select、Button、Input、Resizable 官方子组件和 `evidence/manifest.md`。Todo\* 静态视觉迁移已完成，补上状态统计、连接线、焦点 ring、刷新焦点恢复和组合筛选测试；修复 preset 覆盖 `vite.plugins` 导致 Tailwind utilities 未生成的问题，并补充 `@source`/显式 utilities 入口；新增 Vitest + Vue Test Utils + happy-dom 组件测试，`pnpm test:components` 7/7 通过；Select 外点关闭改为监听 close-auto-focus 并以双 RAF/延迟兜底恢复焦点，fresh preview headed Chrome 三路径通过；串行 fresh `pnpm docs:build` exit 0（61.29s），本轮变更文件 Prettier check exit 0。一次并行构建出现 `.vitepress/.temp` 临时文件竞争，已记录为 F14，后续构建验收必须串行。当前总任务 24 项，完成 15 项，剩余 9 项；2.3、3.5、4.1–4.2、4.4–4.7、5.2 仍不得提前勾选。
 
 ## 8. 2026-08-31 工件加固与未验证门禁
 
@@ -73,3 +73,7 @@ preview 已用 headed Chrome 完成下拉选中/清空、Escape/外点关闭与�
 ## 11. 既有截图未先读取的流程纠偏
 
 用户复核指出，验收时若只看 fresh 截图而不先打开 `evidence/01-tree-initial.png` 等既有图片，就可能漏掉“项目不应出现的黑色列表圆点”。该流程缺口已写入 `evidence/manifest.md` §3.1 与 `tasks.md` 4.1：每个环境开始前先读取对应 PNG，登记绝对路径、尺寸、SHA-256 和可见事实；同视口对照前不得把 DOM、构建或截图存在本身当作视觉通过。`01-tree-initial.png` 明确记录为无 marker 基线，出现额外圆点、缩进、滚动条或布局漂移时必须停止验收并留存失败证据。
+
+## 12. init-ai-md 增量更新记录
+
+按 `init-ai-md` 的章节扫描结果，`AGENTS.md` 与 `CLAUDE.md` 原内容一致，均已存在项目技能表；本轮仅增量补充 `shadcn-vue` 的官方来源、skills 安装器锁文件边界、Prettier 授权边界，并确认 `GEMINI.md` 不存在且未创建。当前执行器未提供可用的 AskUserQuestion 交互工具，因此依据用户已明确授权的“按 init-ai-md 更新 AI 记忆文档”要求，对两份原本一致的文件应用相同精准补丁；未全量替换、未改全局 skills、未新增 ignore 配置。
