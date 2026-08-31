@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, ref } from "vue";
+import { computed, nextTick, onBeforeUnmount, ref } from "vue";
 import { X } from "lucide-vue-next";
 import { Icon, type IconifyIcon } from "@iconify/vue";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./select";
@@ -20,6 +20,8 @@ const selectedValue = computed(() => props.modelValue || ALL_VALUE);
 const optionValues = computed(() => props.options.filter(Boolean));
 const selectedIcon = computed(() => (props.modelValue ? props.optionIcons?.[props.modelValue] : undefined));
 const triggerRef = ref<{ $el?: HTMLElement } | null>(null);
+let focusRestoreTimer: ReturnType<typeof setTimeout> | undefined;
+let focusRestoreScheduled = false;
 function update(value: string) {
 	emit("change", value === ALL_VALUE ? "" : value);
 }
@@ -36,14 +38,33 @@ function restoreTriggerFocus() {
 	if (element && typeof element.focus === "function") element.focus();
 }
 function handleOpenChange(open: boolean) {
-	if (!open) handleCloseFocus();
+	if (!open) scheduleTriggerFocus();
 }
-function handleCloseFocus() {
+function scheduleTriggerFocus() {
+	if (focusRestoreScheduled) return;
+	focusRestoreScheduled = true;
+	clearTimeout(focusRestoreTimer);
 	nextTick(() => {
-		restoreTriggerFocus();
-		if (typeof window !== "undefined") window.requestAnimationFrame(restoreTriggerFocus);
+		const restore = () => {
+			focusRestoreScheduled = false;
+			restoreTriggerFocus();
+			focusRestoreTimer = setTimeout(restoreTriggerFocus, 0);
+		};
+		if (typeof window === "undefined" || typeof window.requestAnimationFrame !== "function") {
+			restore();
+			return;
+		}
+		window.requestAnimationFrame(() => window.requestAnimationFrame(restore));
 	});
 }
+function handleCloseFocus() {
+	scheduleTriggerFocus();
+}
+function handleCloseAutoFocus(event: Event) {
+	event.preventDefault();
+	scheduleTriggerFocus();
+}
+onBeforeUnmount(() => clearTimeout(focusRestoreTimer));
 </script>
 <template>
 	<div class="relative min-w-0 w-full">
@@ -74,6 +95,7 @@ function handleCloseFocus() {
 				position="popper"
 				align="start"
 				:side-offset="4"
+				@close-auto-focus="handleCloseAutoFocus"
 				@pointer-down-outside="handleCloseFocus"
 				@interact-outside="handleCloseFocus"
 				><SelectGroup
