@@ -32,3 +32,6 @@ Thumbs.db
 
 # website_deploy 工具的源码快照（原路径在工作区外时复制进来的中间产物）
 .deploy-snapshot/
+
+# TypeScript 增量构建缓存
+*.tsbuildinfo
