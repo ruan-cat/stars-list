@@ -1887,7 +1887,7 @@
 - [lukehaas/css-loaders](https://github.com/lukehaas/css-loaders) - A collection of loading spinners animated with CSS
 - [wgwang/awesome-LLMs-In-China](https://github.com/wgwang/awesome-LLMs-In-China) - 中国大模型
 - [zh-lx/vitepress-demo-plugin](https://github.com/zh-lx/vitepress-demo-plugin) - 🎨 A vitepress plugin to display and render code, support React/Vue/Svelte/Solid/Preact/Html.
-- [olegdon/nuxt3-pnpm-monorepo](https://github.com/olegdon/nuxt3-pnpm-monorepo) - Nuxt 3 PNPM Monorepo boilerplate including Tailwind, Storybook and Pinia
+- [olegdon/nuxt3-pnpm-monorepo](https://github.com/olegdon/nuxt3-pnpm-monorepo) - Nuxt 4 PNPM Monorepo boilerplate including Tailwind, Storybook and Pinia
 - [l1veIn/lol-wom-electron](https://github.com/l1veIn/lol-wom-electron) - LOL互动助手electron-part
 - [6owen/starter-vue-lib](https://github.com/6owen/starter-vue-lib) - 
 - [6owen/v3-bento](https://github.com/6owen/v3-bento) - 拖拽方块布局
