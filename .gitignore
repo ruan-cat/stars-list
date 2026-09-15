@@ -39,3 +39,7 @@ Thumbs.db
 # VitePress 配置编译临时产物（构建时反复再生）
 docs/.vitepress/*.timestamp-*.mjs
 docs/.vitepress/cache/
+
+# VitePress 配置编译临时产物（构建时反复再生）
+docs/.vitepress/*.timestamp-*.mjs
+docs/.vitepress/cache/
