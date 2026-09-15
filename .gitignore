@@ -35,3 +35,7 @@ Thumbs.db
 
 # TypeScript 增量构建缓存
 *.tsbuildinfo
+
+# VitePress 配置编译临时产物（构建时反复再生）
+docs/.vitepress/*.timestamp-*.mjs
+docs/.vitepress/cache/
