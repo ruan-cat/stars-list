@@ -408,7 +408,7 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 
 你进入 dev 分支，自己本地启动 dev 开发服务，自己用 agent browser 启动谷歌浏览器，自己完成测试。
 
-## 010 <!-- TODO: 2026-8-30 ZCode正在做 --> 继续优化 TodoDashboard 的视觉效果
+## 010 <!-- 取消，任务纠偏重做该任务，换模型； 2026-8-30 ZCode正在做 --> 继续优化 TodoDashboard 的视觉效果
 
 ### 2026-8-30 reka-ui 是不是走弯路了？
 
@@ -433,4 +433,65 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
    - 用 init-ai-md 技能的指导，及时在 AI 记忆文档内更新你增加的项目级别技能，
    - 重构替换现在的组件，从 `Reka UI` 方案换成正规的 `shadcn-vue` 和 `tailwindcss` 方案。
 
-## 011 <!-- TODO: -->
+## 011 <!-- 已完成审核 ZCode ；claude模型太慢了； codex pro20正在做 --> 验收审核 `openspec\changes\2026-8-30-use-shadcn-vue` 任务工件
+
+`openspec\changes\2026-8-30-use-shadcn-vue` 长任务的截图做的很好，但是我不信任里面的内容是否做的很有深度，很有细节。所以我不放心，需要你来完成审核核验。
+
+另外，上一次任务内，要求的是用 content7 和 find-skills 技能，去找正式的 `shadcn-vue` 组件库对应的最佳实践的指导 skills，安装成项目级别的本地 skills，未来开发将要按照这个要求来完成。但是上次任务竟然是手写了一个 `.agents\skills\shadcn-vue` 技能，根本不是去外部找的，也没有触发 skills 包的本地安装，也没有本地的 skills 技能锁文件。这个官方技能需要你去找，找到然后删掉刚才胡乱增加的 `.agents\skills\shadcn-vue` 技能，然后按照 init-ai-md 技能的指导，更新 AI 记忆文档的要求。
+
+---
+
+`openspec\changes\2026-8-30-use-shadcn-vue` 长任务工件，是否说清楚了使用 agent browser 的 Chrome 浏览器完成本地 dev、preview、和生产环境的浏览器实际视觉验收，浏览器交互测试，以及证据截图归档的 spec 规范？
+
+### <!-- 任务接力；任务工件的验收标准和agent browser执行出现大问题，导致出现大幅度的时间和token浪费； codex pro20 goal 正在做 --> 执行推进 `openspec\changes\2026-8-30-use-shadcn-vue` 长任务
+
+你的测试范围是不是不对啊？你怎么在测试别的页面？按照 openspec\changes\2026-8-30-use-shadcn-vue 最初的任务，不是要测试 todo 页面的迁移改造情况么？你是不是丢失核心任务了？
+
+---
+
+你怎么反反复复在打开 agent browser 浏览器啊？你是在 goal 任务内丢失了上下文么？还是说你一直在 agent browser 的使用上面绕弯路？重复犯错？
+
+---
+
+我们暂停一下，你是不是在验证和验收上面遇到问题了？你的自动化验收手段很糟糕么？是不是你的任务工件写的有误导啊？
+我不相信你 6 个小时都还没搞好这个任务，你是不是过渡实验，过度验收了？还是说你的验收标准过于严苛了？你在截图上面遇到很多故障么？
+
+---
+
+真正浪费时间的部分是你在使用 agent browser 时没有及时止损：
+
+1. 把单个场景拆成多个浏览器 session；
+2. 短暂跑偏到普通文档页；
+3. 在控制面不稳定时反复尝试，而不是先固定健康探针和失败边界；
+4. 产生了不少“局部有效、整体不能验收”的截图。
+
+你现在临时给我去 .agents\skills\use-agent-browser 目录内写一个技能，指导你到底要如何高效的使用 agent browser 。避免你出现在 goal 长任务内出现滥用，误用，低效使用 agent browser 的情况。
+
+---
+
+你现在继续在 `.agents\skills\use-agent-browser\SKILL.md` 的合理指导下，继续完成验证吧。别过度处理了。如果任务清单内的验收条件过于苛刻，你停下来和我讨论一下都行。别硬着头皮死脑筋。
+
+---
+
+你的清单门槛是不是太高了？超出 agent browser 的能力了？还是超出什么能力了？你有能力实现，结果你在测试和满足门槛上面耗费了接近 8 小时和大量的 token。你真的很离谱啊。你是不是设计了超出我们现有工具复核能力的标准了？是不是你一开始的指标和测试方式就烂了？
+你给我写一个报告，给我一个交代。
+
+---
+
+1. 我现在确认要重新设计更加合理的验收门槛，以及合理的 agent browser 的 session 浏览器会话设计。更新任务工件。
+2. 更新 `.agents\skills\use-agent-browser\SKILL.md` 技能，做到很好的 session 指导。
+
+---
+
+你为什么过度扣 4.2 的像素 diff 是 4.60%，明确未通过。的事情呢？我们页面是响应式的，你都不考虑响应式就做验收么？你怎么钻牛角尖啊？扣像素？
+我们 `openspec\changes\2026-8-30-use-shadcn-vue\evidence` 里面确实有很多截图，你是不是过于迷信截图的离谱严苛标准了？所以你才没办法认为功能完成验收了？而在视觉上面陷入完美主义，过度拘泥无意义的细节了？只要不太偏离离谱就行了，你是不是过于死磕完整复原了？
+
+---
+
+我注意到你在 `openspec\changes\2026-8-30-use-shadcn-vue` 内设计了很多无障碍相关的功能，这些功能你是怎么实现的？你使用那些现成的方案实现的？你在用 agent browser 做测试时，agent browser 有合适的办法实现对前端项目无障碍功能的测试么？是不是测试的时候遇到困难了？你需要额外写脚本来实现无障碍功能的测试么？你要更新局部技能 `.agents\skills\use-agent-browser` 么？
+
+### <!-- TODO: 2026-9-30 TRAE Work 正在做 --> 执行 `openspec\changes\2026-8-30-use-shadcn-vue` 长任务
+
+继续执行 `openspec\changes\2026-8-30-use-shadcn-vue` 长任务
+
+## 012 <!-- TODO: -->
