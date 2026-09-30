@@ -179,3 +179,32 @@ fresh TODO dev session 在 1280×900 首次稳定后发现 `docScrollH=916`、�
 ## F46 [active] 无障碍实现与 agent-browser 验收方式固化
 
 当前无障碍实现主要使用原生 HTML 语义、shadcn-vue/Reka UI 的 combobox/listbox/option 与焦点管理、`aria-*` 状态、`focus-visible` ring、状态/错误 live region，以及 Resizable 的 separator 键盘语义；没有自研无障碍框架。agent-browser 自带 `a11y` axe-core 命令，适合扫描 WCAG 规则，但不能替代键盘顺序、焦点回收和视觉 focus-visible，因此已将“axe `a11y --json` + `snapshot -i` 语义树 + 真实 focus/press + 短 eval 读数”写入 tasks/spec/manifest/use-agent-browser。标准验收不需要额外提交扫描脚本；仅在应用特有状态无法由通用工具观察时使用一次性 eval。用户要求的局部技能已同步更新。
+
+## F47 [active] 2026-09-30 preview B-stage 结构性硬门禁全部通过
+
+session `todo-preview-20260930-e3381299a1aa`（Chrome 152.0.7977.54 / agent-browser 0.35.2 / preview server 4173）在 720×900 与 1280×900 双 viewport 下完成 B-stage 产品核心矩阵的结构性断言：
+
+1. **窄视口面板上下堆叠**：`max-[900px]` 断点触发，PanelGroup `display=block`（非 flex），Panel1 top=530、Panel2 top=1262 同 left=41（垂直排列），Handle `display=none`，截图 `720x900-panel-stacking.png` SHA256=`C1C224A2...F62F6`。
+2. **桌面无页面级双滚动**：1280×900 下 `docScrollH=900=clientHeight`，PanelGroup `flex-direction=row`，Tree NAV `scrollH=828>clientH=377` 内部滚动，Details ASIDE `overflow=auto` 内部滚动，截图 `1280x900-desktop-horizontal-layout.png` SHA256=`7470D84E...12A8F80E`。
+3. **详情 sticky action bar**：origin 分支下钻至 `src/views/index.vue` 内 `[TEST_CODE]:测试代码后期发布需要删除` 节点，sticky div `position=sticky bottom=0 height=54 hasLink=true`（"在 GitHub 查看"），截图 `details-panel-sticky-action-bar.png` SHA256=`1174BF13...4E85F0`。
+4. **视图选择状态共享**：tree→flat→tree 双向切换后 selectedId 与 detailHeading 保持 `[TEST_CODE]...`，flat 列表 699 项中同一 TODO 仍 `aria-selected=true`，证明 viewMode 切换不丢失选中。
+5. **Tab 顺序**：搜索 input → 仓库 combobox → 分支 combobox → 类型 combobox → 树首项 展开 button，符合预期焦点顺序。
+6. **a11y 扫描基线**：见 F48。
+
+剩余 B-stage 缺口：完整 keyboard 矩阵（ArrowUp/ArrowDown/Enter/Space 树内导航与分支截图）；C-stage 故障/资源补证（首载失败、race `calls=1`、资源清单+SHA-256、hydration baseline 分离）；D-stage 独立复核（manifest checked/missing/mismatched/unreferenced）。本轮证据已固化，不勾选 4.5/4.6/4.1/4.2。
+
+## F48 [active] 2026-09-30 TodoDashboard a11y 基线扫描结果
+
+preview session 执行 `agent-browser a11y`（axe-core 4.12.1）全站扫描结果：**5 violations / 2 incomplete / 43 passes**。TodoDashboard 相关 violations：
+
+1. **[critical] aria-allowed-attr**（42 nodes）：树行 `> .flex-1.grid-cols-[minmax(0,1fr)_2.25rem].px-1\.5` 上有不被支持的 ARIA 属性，全部位于 `.todo-tree-root[aria-label="TODO Explorer"]` 子树。
+2. **[moderate] landmark-unique**（1 node）：递归树多层使用相同 `aria-label="TODO Explorer"` 的 `<nav>` 元素，违反 landmark 唯一性。
+3. **[serious] color-contrast**（部分 incomplete，19 nodes）：树内 `small` 文本与 `span` 在某些状态下对比度不足，需人工复核。
+
+Teek/VitePress 主题既有 violations（非 TodoDashboard 回归）：
+
+4. **[serious] nested-interactive**（2 nodes）：VPSidebar `.group[data-v-fe4dafa2=""] > .level-0.collapsible > .item[role="button"]`。
+5. **[moderate] region**（1 node）：`.tk-article-analyze` 未在 landmark 内。
+6. **[serious] aria-prohibited-attr**（4 nodes incomplete）：`.tk-article-analyze`、`a[title="创建时间"]` 等。
+
+TodoDashboard 相关 1-3 是 TodoTree 组件实现层的既有问题（递归 nav 标签与树行 ARIA 属性），并非本次 shadcn-vue 迁移引入的回归；可作为后续 a11y 改进项，不阻塞当前迁移验收门禁。键盘顺序/焦点回收/视觉 focus-visible 仍以真实键盘测试为准（见 F47 第 5 项 Tab 顺序已通过）。
