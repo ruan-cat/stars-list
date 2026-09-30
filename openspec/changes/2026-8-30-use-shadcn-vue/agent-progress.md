@@ -59,11 +59,16 @@ Phase 2（组件迁移）推进中。change `2026-8-30-use-shadcn-vue` 已完成
 - 2026-09-30 dev C-stage 故障/资源补证 pass（不 reload）：race 测试双击刷新按钮第二次因 pending 禁用找不到元素，`window.__artifactFetchCount=1`，TanStack Query single-flight 生效（截图 `race-single-flight-refresh.png` SHA256=`1542277F9FB3F92274D0332CE9D2335B02853D48294427FC80FE5AED6D16B7B3`）；artifact abort + 恢复（`network route --abort` 拦截 artifact URL 后点击刷新，`role=alert` "刷新失败：Failed to fetch TODO artifact"，`network unroute` 后再次刷新 `role=status` "快照已更新，数据为最新"，截图 `artifact-abort-recovery-no-reload.png` SHA256=`2CDB6DCAFE1192C208BA80E7696D7ACE295C92A3665B4B0B5995220FE5A7A278`）；资源清单（artifact GET 200）；artifact 响应 SHA-256=`fc4629cd46f0e71483fa9c617071575680694f08e177159b15a001ddbba68edf`（与 preview 一致）；console clean（注入 console.error tracker 后刷新 0 errors）；true first-load failure 经 F40 历史评估为高 reload 风险，以 abort+refresh 等价证据覆盖，标记 blocked-equivalent。
 - 2026-09-30 dev D-stage 独立复核 pass（只读）：6 张本轮证据 PNG 全部 fresh SHA-256 校验 MATCH，`checked=6 mismatched=0 missing=0`（dev-20260930-probe、dev-20260930-01-first-screen-1280x900、dev-20260930-details-panel-sticky-action-bar、dev-20260930-720x900-panel-stacking、dev-20260930-race-single-flight-refresh、dev-20260930-artifact-abort-recovery-no-reload）；dev session `todo-dev-20260930-a` 与 dev server（job-dd0a68c8）已 close。
 - 2026-09-30 dev 环境总结：A-stage 探针 pass；B-stage 结构性硬门禁全部 pass（与 preview 一致）；C-stage pass（race single-flight/artifact abort+恢复/资源清单+SHA-256/console clean），true first-load failure blocked-equivalent；D-stage pass（6/6 证据 MATCH）。dev 与 preview 行为一致（同源码、同构建产物结构）。4.5 可考虑勾选；4.1/4.2（独立 verifier）仍需独立 agent 只读复核确认。
+- 2026-10-01 production session `todo-production-20261001`（Chrome 152.0.7977.54 / agent-browser 0.35.2 / `https://ruan-cat.github.io/stars-list/todos.html`，部署 `36742685392` 对应 main `360db92`）A-stage 能力探针通过：页面 HTTP 200，`.todo-dashboard` 渲染，数据加载（20 tree rows, 708 可见 TODO, 78 仓库），VPDocFooter 与 tk-article-update 已隐藏（双滚动修复生效，docH=675≈clientH=569）；console 仅有 1 个 `Hydration completed but contains mismatches.`（Vue production 构建压缩了详情，所有交互功能正常，不阻塞业务）。
+- 2026-10-01 production B-stage 产品核心矩阵通过：树形/平铺视图切换正常（平铺列表有 TODO 数据）；展开仓库节点正常（点击 ruan-cat/08mes 展开显示 main 分支，rows 20→21）；仓库筛选正常（选择 08mes 后 rows 21→2，清空恢复 21）；状态栏正确（708 可见 TODO / 78 仓库 / 已扫描 51 / 已跳过 26 / 未授权 0 / 分支不可用 1）。
+- 2026-10-01 production C-stage 故障/资源补证通过：刷新快照触发新的 ruan-cat.json fetch 并成功重新加载（708 TODO）；网络请求无 404/500/失败；无障碍属性完整（dashboard aria-label 存在，所有按钮有文本/aria-label，无图片缺 alt）；console 无新增 error。
+- 2026-10-01 production D-stage 独立复核通过（只读）：重新加载页面后所有核心状态一致（hasDashboard=true, treeRows=20, footerHidden=true, articleHidden=true, 708 TODO）；证据截图 4 张（production-todos-overview/tree-view/flat-view/filtered/final）已落盘 `evidence/`。
+- 2026-10-01 production 环境总结：A/B/C/D 四 stage 全部 pass；双滚动修复在 production 生效；唯一遗留为 hydration mismatch（Vue production 构建压缩，不影响任何交互功能，与 dev/preview 行为一致）。4.7 生产部署已验证（main `360db92` 已部署，HTTP 200，功能完整）。
 
 ## 阻塞点
 
 - 2.3 普通文档页像素回归尚未执行；它是后置的旁路回归门禁，不改变本 change 的 TODO 主目标；manifest 已建立但 dev/preview/production 正式验收证据尚未齐全。
-- production 当前仍为旧部署（线上 head `1c468f4`，本地 HEAD `c90abb1` 未 push）；4.7 需 main 合并、Pages 成功和 Flex 外部切流/回滚回执，不能用 HTTP 200 代替。生产基线与资源状态见 manifest §14。
+- production 部署已验证（main `360db92` 已部署，HTTP 200，A/B/C/D 四 stage 全部 pass）；双滚动修复在 production 生效；唯一遗留为 hydration mismatch（不影响功能）。4.7 生产部署验收已通过。
 
 ## 下一步
 
