@@ -320,7 +320,7 @@
 - [n8n-io/n8n](https://github.com/n8n-io/n8n) - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
 - [bytedance/flowgram.ai](https://github.com/bytedance/flowgram.ai) - FlowGram is an extensible workflow development framework with built-in canvas, form, variable, and materials that helps developers build AI workflow platforms faster and simpler.
 - [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - A collection of MCP servers.
-- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Free, simple, fast interactive diagrams and videos for any GitHub repository
+- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Visualize any GitHub codebase: free interactive architecture diagrams and one-minute explainer videos. Replace 'hub' with 'diagram' in any GitHub URL.
 - [ageerle/ruoyi-admin](https://github.com/ageerle/ruoyi-admin) - RuoYi-AI admin panel for system management, model configuration, knowledge-base management, and workflow orchestration.
 - [xx025/carrot](https://github.com/xx025/carrot) - AI 工具导航大全，帮你快速筛选免费、实用、高效的网站资源
 - [Dokploy/dokploy](https://github.com/Dokploy/dokploy) - Open Source Alternative to Vercel, Netlify and Heroku.
@@ -340,7 +340,7 @@
 - [Derpyu520/qq-bridge](https://github.com/Derpyu520/qq-bridge) - Bridge between QQ (SnowLuma OneBot v11) and DeepSeek Harness agents: social simulation, safe MCP tools, slang learning and more.
 - [helloagentai/helloagent-sdk-typescript](https://github.com/helloagentai/helloagent-sdk-typescript) - HelloAgent SDK — talk to the HelloAgent relay from Node or the browser. Pair, send, receive, and stream agent messages over a single WebSocket.
 - [agentenatalie/get-job.skill](https://github.com/agentenatalie/get-job.skill) - 实习.skill — 双非也能拿大厂 offer。帮你改简历、抠面经、准备面试，把真实背景翻译成面试官想要的样子。
-- [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops) - Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Cod
+- [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops) - Open-source AI job search agent: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Clau
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix) - DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.
 - [vuejs-ai/vue-tui](https://github.com/vuejs-ai/vue-tui) - The Vue framework for terminal UIs. SFC & JSX, Yoga flexbox, HMR, and testing out of the box.
 - [CopilotKit/CopilotKit](https://github.com/CopilotKit/CopilotKit) - The Frontend Stack for Agents & Generative UI. React, Angular, Mobile, Slack, and more.  Makers of the AG-UI Protocol
@@ -618,7 +618,7 @@
 - [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) - Never stop coding. Free MIT AI gateway: one endpoint, 359 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline 
 - [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) - Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
 - [larashero3-dotcom/lieflat-charts](https://github.com/larashero3-dotcom/lieflat-charts) - Data visualization Skill for AI Agents, turning data into polished, interactive HTML charts. 面向 AI Agents 的数据可视化 Skill，将数据快速生成精致、可交互的 HTML 图表。
-- [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops) - Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Cod
+- [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops) - Open-source AI job search agent: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Clau
 - [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) - Production-grade engineering skills for AI coding agents.
 - [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) - 🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.
 - [Agents365-ai/video-podcast-maker](https://github.com/Agents365-ai/video-podcast-maker) - Topic → 4K narrated video for coding agents. v5.3.0: local TTS (edge free + azure, no external engine), manifest-based Asset Engine, Remotion composition, cost-gated AI generation, Bilibili/YouTube/Xi
@@ -669,7 +669,7 @@
 
 ## cli 
 
-- [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops) - Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Cod
+- [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops) - Open-source AI job search agent: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Clau
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix) - DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.
 - [vuejs-ai/vue-tui](https://github.com/vuejs-ai/vue-tui) - The Vue framework for terminal UIs. SFC & JSX, Yoga flexbox, HMR, and testing out of the box.
 - [superset-sh/superset](https://github.com/superset-sh/superset) - Superset is an agentic IDE to orchestrate 100+ coding agents in parallel. Run any agent with your own subscription.
@@ -700,7 +700,7 @@
 ## code 
 
 - [zh-lx/code-inspector](https://github.com/zh-lx/code-inspector) - 🚀 Click the dom to open your IDE and position the cursor at dom's source code location! 点击页面 dom 来打开 IDE 并将光标自动定位到源代码位置!
-- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Free, simple, fast interactive diagrams and videos for any GitHub repository
+- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Visualize any GitHub codebase: free interactive architecture diagrams and one-minute explainer videos. Replace 'hub' with 'diagram' in any GitHub URL.
 
 ## coding 
 
@@ -825,6 +825,7 @@
 - [golutra/golutra](https://github.com/golutra/golutra) - Multi-agent AI orchestration platform for automation, workflows, and developer tools. Golutra transforms Codex, Claude Code, and OpenClaw into a unified agent system with parallel execution, task orch
 - [superset-sh/superset](https://github.com/superset-sh/superset) - Superset is an agentic IDE to orchestrate 100+ coding agents in parallel. Run any agent with your own subscription.
 - [affaan-m/ECC](https://github.com/affaan-m/ECC) - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
+- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Visualize any GitHub codebase: free interactive architecture diagrams and one-minute explainer videos. Replace 'hub' with 'diagram' in any GitHub URL.
 
 ## development 
 
@@ -1011,7 +1012,7 @@
 - [tw93/Weekly](https://github.com/tw93/Weekly) - 🩴 Trendy Weekly records my non-boring life.
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) - Local, open-source AI app builder for power users ✨ v0 / Lovable / Replit / Bolt alternative 🌟 Star if you like it!
 - [refined-github/refined-github](https://github.com/refined-github/refined-github) - :octocat: Browser extension that simplifies the GitHub interface and adds useful features
-- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Free, simple, fast interactive diagrams and videos for any GitHub repository
+- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Visualize any GitHub codebase: free interactive architecture diagrams and one-minute explainer videos. Replace 'hub' with 'diagram' in any GitHub URL.
 - [storm-software/storm-ops](https://github.com/storm-software/storm-ops) - ⚙️ The Storm-Ops monorepo contains various configurations and tools used to manage the Storm Software repositories
 - [lowlighter/metrics](https://github.com/lowlighter/metrics) - 📊 An infographics generator with 30+ plugins and 300+ options to display stats about your GitHub account and render them as SVG, Markdown, PDF or JSON!
 - [sallar/github-contributions-chart](https://github.com/sallar/github-contributions-chart) - :octocat: Generate an image of all your Github contributions
@@ -1305,6 +1306,7 @@
 - [bytedance/trae-agent](https://github.com/bytedance/trae-agent) - Trae Agent is an LLM-based agent for general purpose software engineering tasks.
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) - Local, open-source AI app builder for power users ✨ v0 / Lovable / Replit / Bolt alternative 🌟 Star if you like it!
 - [winfunc/opcode](https://github.com/winfunc/opcode) - A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.
+- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Visualize any GitHub codebase: free interactive architecture diagrams and one-minute explainer videos. Replace 'hub' with 'diagram' in any GitHub URL.
 - [mastra-ai/mastra](https://github.com/mastra-ai/mastra) - Mastra is the modern TypeScript framework for AI-powered applications and agents.
 - [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) - 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
 - [ChatLunaLab/chatluna](https://github.com/ChatLunaLab/chatluna) - 多平台模型接入，可扩展，多种输出格式，提供大语言模型聊天服务的插件 | A bot plugin for LLM chat with multi-model integration, extensibility, and various output formats
@@ -1471,6 +1473,7 @@
 - [alovajs/alova](https://github.com/alovajs/alova) - The request strategy layer for JavaScript. 20+ ready-made strategies cut your request code by up to 70%
 - [dyad-sh/dyad](https://github.com/dyad-sh/dyad) - Local, open-source AI app builder for power users ✨ v0 / Lovable / Replit / Bolt alternative 🌟 Star if you like it!
 - [Y80/bmm](https://github.com/Y80/bmm) - 🤵 BMM - Your Personal Bookmark Manager | 你的专属书签管家
+- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Visualize any GitHub codebase: free interactive architecture diagrams and one-minute explainer videos. Replace 'hub' with 'diagram' in any GitHub URL.
 - [thedaviddias/llms-txt-hub](https://github.com/thedaviddias/llms-txt-hub) - 🤖 The largest directory for AI-ready documentation and tools implementing the proposed llms.txt standard
 - [jsdocs-io/web](https://github.com/jsdocs-io/web) - jsDocs.io is an open source documentation host for Javascript and Typescript packages.
 - [trpc/trpc](https://github.com/trpc/trpc) - 🧙‍♀️  Move Fast and Break Nothing. End-to-end typesafe APIs made easy.
@@ -1568,7 +1571,7 @@
 ## open-source 
 
 - [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) - AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework
-- [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops) - Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Cod
+- [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops) - Open-source AI job search agent: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Clau
 - [HBAI-Ltd/Toonflow-app](https://github.com/HBAI-Ltd/Toonflow-app) - Toonflow 是开源 AI 创作平台，融合无限画布、AI Agent 与可视化工作流，支持图像生成、视频生成、智能分镜及短剧创作。支持本地部署、自由接入模型，提供跨平台桌面端，并可通过 MCP 与插件扩展创作能力。Open-source AI creative platform with an infinite canvas, AI agents and visual workflows fo
 - [farion1231/cc-switch](https://github.com/farion1231/cc-switch) - A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build & Hermes Agent. Only official website: ccswitch.io
 - [usememos/memos](https://github.com/usememos/memos) - A personal timeline for quick notes. Write short memos, find them later by search, tag, or date. Open source and self-hosted.
@@ -2586,7 +2589,7 @@
 ## video 
 
 - [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) - Write HTML. Render video. Built for agents.
-- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Free, simple, fast interactive diagrams and videos for any GitHub repository
+- [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram) - Visualize any GitHub codebase: free interactive architecture diagrams and one-minute explainer videos. Replace 'hub' with 'diagram' in any GitHub URL.
 
 ## visualization 
 
