@@ -23,6 +23,15 @@
   - 安装边界：项目级技能只能通过 skills 安装器从 `unovue/shadcn-vue` 官方来源安装/升级并留下锁文件；禁止手写或用临时文档冒充官方技能，也不要在未获授权时改写全局 skills 目录。
   - 格式化边界：仅在用户明确授权时对 `.agents/skills/shadcn-vue/**` 与 `skills-lock.json` 运行 Prettier；不得为掩盖格式差异新增 ignore 配置，也不得把格式化结果混入无关提交。
 
+- `use-agent-browser`
+  - 路径：`.agents/skills/use-agent-browser/SKILL.md`
+  - 用途：本项目所有浏览器验收、视觉验证、E2E 冒烟与前端页面调试的统一入口。
+  - 触发时机：任务涉及打开网页、浏览器自我验收、视觉/像素验证、前端页面交互调试、登录态操作、截图取证，或提到 agent-browser、agent browser、snapshot、`@eN`、CDP、`/todos.html` 时，**先加载本技能再动手**，不要凭记忆直接敲浏览器命令。
+  - 技能性质：**本技能是全局技能 `use-agent-browser` 的本地派生，不是独立技能**。先读全局技能（`~/.agents/skills/use-agent-browser/SKILL.md`，来源 `ruan-cat/monorepo` 的 `ai-plugins/dev-skills`）取得命令手册、Windows 启动降级链、启动失败分流、验收纪律（四层 checkpoint / 止损表 / Red Flags）与证据模板，再读本地 SKILL.md 叠加项目约定。
+  - 本地增量（仅此四件事，全局技能不重复）：验收范围锁定 `/todos.html`，普通文档页只能作为独立旁路 checkpoint；会话命名 `todo-<environment>-<YYYYMMDD>-<run>`；证据归档到 `openspec/changes/<change>/evidence/` 并登记 manifest 与 SHA-256；axe 扫描限定 `--selector '[aria-label="GitHub TODO 浏览器"]'`。
+  - 来源与锁文件：本技能为仓库内手工维护的派生技能，不来自外部技能包，因此**不写入 `skills-lock.json`**；不要用 skills 安装器覆盖它。
+  - 约束：不得把全局技能的命令手册、案例集、验收纪律复制回本地技能；本地只做项目适配，通用规则变更一律回写 `ruan-cat/monorepo`，避免两份文档漂移。
+
 ## 主动问询实施细节
 
 实施更改前主动识别遗漏点、缺漏点和冲突点。信息不足或存在多种解释时，使用 AskUserQuestion 与用户协作补充实施清单；信息充分且低风险的小改动可说明假设后直接执行。
