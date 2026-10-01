@@ -490,8 +490,35 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 
 我注意到你在 `openspec\changes\2026-8-30-use-shadcn-vue` 内设计了很多无障碍相关的功能，这些功能你是怎么实现的？你使用那些现成的方案实现的？你在用 agent browser 做测试时，agent browser 有合适的办法实现对前端项目无障碍功能的测试么？是不是测试的时候遇到困难了？你需要额外写脚本来实现无障碍功能的测试么？你要更新局部技能 `.agents\skills\use-agent-browser` 么？
 
-### <!-- TODO: 2026-9-30 TRAE Work 正在做 --> 执行 `openspec\changes\2026-8-30-use-shadcn-vue` 长任务
+### <!-- 已完成； 2026-9-30 TRAE Work 正在做 --> 执行 `openspec\changes\2026-8-30-use-shadcn-vue` 长任务
 
 继续执行 `openspec\changes\2026-8-30-use-shadcn-vue` 长任务
 
-## 012 <!-- TODO: -->
+## 012 <!-- TODO: WorkBuddy ai 正在做 --> 迁移局部技能到 monorepo 项目内
+
+我准备将 `.agents\skills\use-agent-browser` 这个技能，目前是局部技能，完整剪切，迁移到 `D:\code\ruan-cat\monorepo` 项目内。
+
+1. 你在 `D:\code\ruan-cat\monorepo\ai-plugins` 目录做一下探索，看看我们的局部技能应该定位定性成什么形式的技能，划分到那个子目录内比较合适。
+2. `D:\code\ruan-cat\monorepo\ai-plugins` 目录相当于新增了技能，那么你看看 monorepo 项目内那些 markdown 文档要做及时更新，及时说明增加了新的技能。
+3. 我们肯定要在 monorepo 项目内执行全局技能 release-ai-plugins 的。你看看 json 插件商城的版本号应该要如何变更？
+4. monorepo 项目增加技能后，你用全局技能 git-commit 在 monorepo 项目内做分门别类编写提交信息。
+   - 分门别类编写提交信息。
+   - 然后 git push。
+   - 然后用 gh cli 监听 github action 的执行情况，确保执行正常可用。确保 skill-router-mcp 的 github action 正常工作；
+   - 我们算是完成了 monorepo 一侧的修改了；
+5. 将 `D:\code\ruan-cat\stars-list\.agents\skills\use-agent-browser` 迁移出去后，本项目那些地方的 markdown 文档需要做更改？那些已经硬编码的地方需要做及时的代码更改呢？
+   - 由你去做探索，并做出及时的更改修改，避免还在使用本地的局部技能。转换成全局技能。
+6. 为了确保我们项目未来也要高效率的，自主识别执行 use-agent-browser 技能，我们的 `AGENTS.md` 等 AI 记忆文档要如何做出合理的变更呢？才能确保低 token 消耗技能稳定触发呢？
+
+### 2026-10-1 沟通
+
+那我们对本地的 .agents\skills\use-agent-browser 做出合理的删改，要求这个技能主要去阅读全局技能 `use-agent-browser` ，并且保留少部分的独有内容。并且及时说明清楚，该本地技能本质上属于全局技能的一个特殊的本地派生。
+全局 monorepo 项目的配置，你看看要不要做合理的更改；
+你跟我说说有哪些值得被其他项目参考的，能够被认定为适合作为全局的独特内容。
+
+---
+
+1. 建议并入 monorepo 的 skill-hardening-from-incidents。我授权你的 monorepo 项目的这个专项局部技能内，做出更新。然后你在 monorepo 项目内及时的做出 git-commit。
+2. 在本 stars-list 项目内，对 git 工作区全部内容，做分门别类编写提交信息。然后 git push
+
+## 013 <!-- TODO: -->
