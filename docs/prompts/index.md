@@ -494,7 +494,7 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 
 继续执行 `openspec\changes\2026-8-30-use-shadcn-vue` 长任务
 
-## 012 <!-- TODO: WorkBuddy ai 正在做 --> 迁移局部技能到 monorepo 项目内
+## 012 <!-- 已完成 WorkBuddy ai 正在做 --> 迁移局部技能到 monorepo 项目内
 
 我准备将 `.agents\skills\use-agent-browser` 这个技能，目前是局部技能，完整剪切，迁移到 `D:\code\ruan-cat\monorepo` 项目内。
 
