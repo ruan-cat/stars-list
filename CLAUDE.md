@@ -374,5 +374,7 @@ pnpm git:main-2-dev
 - `docs/topics/index.md` 与 `docs/topics/*.md` 是自动生成的 - 请勿手动编辑这些文件
 - `docs/index.md` 在构建时从根目录 README.md 复制生成（已在 .gitignore 中忽略）；修改站点首页请直接编辑根目录 README.md
 - 项目使用 `@ruan-cat/*` 包的自定义预设系统
-- 任何分支推送都会自动触发 GitHub Pages 部署
+- GitHub Pages 部署只在**推送到 `main` 分支**（或手动 `workflow_dispatch`）时触发；推送到 `dev` 等非默认分支**不会**触发任何 workflow（`deploy-github-page.yml` 的 `on.push.branches` 仅含 `main`）。
+- `main` 上的日常更新由定时任务自动提交，再由这些提交触发部署：`update awesome-stars` 每天 UTC 00:30、`Scan GitHub TODOs` 每天 UTC 01:15。
+- 只有 PR（`opened`/`synchronize`/`reopened`/`ready_for_review`）会触发 `prettier.yml` 与 `cloud-pr-prettier.yml` 的格式化检查。
 - 站点配置了 `/stars-list/` 作为 GitHub Pages 的 base 路径以确保兼容性
