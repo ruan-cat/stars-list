@@ -521,4 +521,9 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 1. 建议并入 monorepo 的 skill-hardening-from-incidents。我授权你的 monorepo 项目的这个专项局部技能内，做出更新。然后你在 monorepo 项目内及时的做出 git-commit。
 2. 在本 stars-list 项目内，对 git 工作区全部内容，做分门别类编写提交信息。然后 git push
 
+---
+
+1. stars-list 的 AGENTS.md 里写着「任何分支推送都会自动触发 GitHub Pages 部署」。你做出及时更改。并在 stars-list 内及时对这个 AGENTS.md 修改做 git-commit，和 git push
+2. 我说的是你在 monorepo 项目内做 git push，并且监听 gh cli，确定云端 github action 构建成功无误；
+
 ## 013 <!-- TODO: -->
