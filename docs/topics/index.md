@@ -1035,7 +1035,7 @@
 
 ## github-api 
 
-- [XPoet/picx](https://github.com/XPoet/picx) - 🏞️ 一款基于 GitHub API 开发的图床工具，提供图片上传托管和生成图片链接。
+- [XPoet/picx](https://github.com/XPoet/picx) - 🏞️ PicX，免费、安全的一站式在线图片处理平台。
 - [lowlighter/metrics](https://github.com/lowlighter/metrics) - 📊 An infographics generator with 30+ plugins and 300+ options to display stats about your GitHub account and render them as SVG, Markdown, PDF or JSON!
 
 ## go 
