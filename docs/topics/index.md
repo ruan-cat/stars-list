@@ -172,6 +172,7 @@
 - [self-hosted](#self-hosted)
 - [server](#server)
 - [serverless](#serverless)
+- [skills](#skills)
 - [spring](#spring)
 - [spring-boot](#spring-boot)
 - [springboot](#springboot)
@@ -1716,7 +1717,6 @@
 - [neondatabase/ai-rules](https://github.com/neondatabase/ai-rules) - 
 - [onmax/nuxt-skills](https://github.com/onmax/nuxt-skills) - Vue, Nuxt, and NuxtHub skills for AI coding assistants.
 - [andrelandgraf/fullstackrecipes](https://github.com/andrelandgraf/fullstackrecipes) - A Shadcn registry and collection of production-ready patterns and step-by-step guides (recipes) for full stack web AI apps
-- [ibelick/ui-skills](https://github.com/ibelick/ui-skills) - Skills for Design Engineers
 - [uni-ku/bundle-optimizer](https://github.com/uni-ku/bundle-optimizer) - 🦾 Uniapp Vue3 版本的分包优化实现
 - [YunYouJun/starter-monorepo](https://github.com/YunYouJun/starter-monorepo) - Custom monorepo starter by pnpm.
 - [GuDaStudio/geminimcp](https://github.com/GuDaStudio/geminimcp) - Gemini-MCP is an MCP server that encapsulates Google's Gemini CLI tool into a standard MCP protocol interface, enabling Claude Code to invoke Gemini for AI-assisted programming tasks.
@@ -2308,6 +2308,28 @@
 - [timothymiller/t4-app](https://github.com/timothymiller/t4-app) - Full stack meta-framework for building iOS, Android, and Progressive Web Apps with Tamagui and deploying to Cloudflare.
 - [Esposter/Esposter](https://github.com/Esposter/Esposter) - A nice and casual place for posting random things.
 - [aircodelabs/aircode](https://github.com/aircodelabs/aircode) - Build and ship Node.js serverless functions in a coffee break.
+
+## skills 
+
+- [HWYD/ai-mind](https://github.com/HWYD/ai-mind) - 一个按版本持续演进的 AI Native Runtime Skeleton。  它从本地聊天闭环起步，逐步演进到：  结构化流式协议 Tool Calling Multi-Tool Runtime Skill Runtime MCP / Agent / 数据层
+- [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) - README design skill for Claude Code & Codex. 帮你把 GitHub README 做得好看又好懂。
+- [Aspirin0000/zhouli-translator](https://github.com/Aspirin0000/zhouli-translator) - 合乎周礼：DeepSeek-powered Zhouli-style Chinese translator, web app, and distributable Skill package.
+- [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) - Production-grade engineering skills for AI coding agents.
+- [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) - ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.
+- [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) - A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.
+- [rohitg00/skillkit](https://github.com/rohitg00/skillkit) - Supercharge AI coding agents with portable skills. Install, translate & share skills across Claude Code, Cursor, Codex, Copilot & 40 more
+- [antfu/skills](https://github.com/antfu/skills) - Anthony Fu's curated collection of agent skills.
+- [farion1231/cc-switch](https://github.com/farion1231/cc-switch) - A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build & Hermes Agent. Only official website: ccswitch.io
+- [ibelick/ui-skills](https://github.com/ibelick/ui-skills) - Skills for Design Engineers
+- [limecloud/lime](https://github.com/limecloud/lime) - Full-stack AI agent for coding, files, terminals, tools, research, content, multimodal work, and multi-agent workflows.
+- [legeling/PromptHub](https://github.com/legeling/PromptHub) - 一款包含了 Prompt管理，Skill管理，Agent管理的一站式AI工具箱，助你高效管理提示词，一键分发skills ，一站式管理Agent资产，并实现云同步，备份，版本管理 | An all-in-one AI toolbox for prompt, agent, and skills management. Reuse prompts, distribute skills with one
+- [obra/superpowers](https://github.com/obra/superpowers) - An agentic skills framework & software development methodology that works.
+- [Sylinko/Everywhere](https://github.com/Sylinko/Everywhere) - On-screen aware AI assistant for your desktop. Uses current app context, multiple LLMs, and MCP tools to help you act across apps.
+- [fantastic-admin/basic](https://github.com/fantastic-admin/basic) - ⭐⭐⭐⭐⭐ 面向 AI 编程的管理系统框架，兼容PC、移动端。AI-oriented management system framework, compatible with PC and mobile device.
+- [formkit/formkit](https://github.com/formkit/formkit) - The form framework for coding agents
+- [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) - AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs
+- [langgenius/dify](https://github.com/langgenius/dify) - Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without reb
+- [lobehub/lobehub](https://github.com/lobehub/lobehub) - 🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.
 
 ## spring 
 
