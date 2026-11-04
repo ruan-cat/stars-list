@@ -169,6 +169,7 @@
 - [ruby](#ruby)
 - [rust](#rust)
 - [sass](#sass)
+- [security](#security)
 - [self-hosted](#self-hosted)
 - [server](#server)
 - [serverless](#serverless)
@@ -244,6 +245,7 @@
 
 ## agent-skills 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [blader/humanizer](https://github.com/blader/humanizer) - Agent skill that removes signs of AI-generated writing from text
 - [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) - Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
 - [tt-a1i/archify](https://github.com/tt-a1i/archify) - Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.
@@ -280,6 +282,7 @@
 
 ## ai 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [inkeep/agents](https://github.com/inkeep/agents) - Create AI Agents in a No-Code Visual Builder or TypeScript SDK with full 2-way sync. For shipping AI assistants and multi-agent AI workflows.
 - [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) - AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework
 - [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) - Write HTML. Render video. Built for agents.
@@ -416,6 +419,7 @@
 
 ## android 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [nativescript-vue/nativescript-vue](https://github.com/nativescript-vue/nativescript-vue) - Native mobile applications using Vue and NativeScript.
 - [EvanBacon/Expo-Crossy-Road](https://github.com/EvanBacon/Expo-Crossy-Road) - 🐥🚙 Crossy Road game clone made in Expo (iOS, Android, web), THREE.js, Tween, React Native. 🐔
 - [NativeScript/NativeScript](https://github.com/NativeScript/NativeScript) - ⚡ Write Native with TypeScript ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (V
@@ -641,6 +645,7 @@
 
 ## claude-code 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [fumingyang2004/Tulpa](https://github.com/fumingyang2004/Tulpa) - 使用MCP，让你几乎所有的Agent访问QQ/微信/B站，甚至亲自下场水群和发消息！
 - [blader/humanizer](https://github.com/blader/humanizer) - Agent skill that removes signs of AI-generated writing from text
 - [cheaper-inference/OmniRoute](https://github.com/cheaper-inference/OmniRoute) - Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline
@@ -703,6 +708,7 @@
 
 ## cli 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix) - A reliable coding agent for complex software engineering tasks.
 - [vuejs-ai/vue-tui](https://github.com/vuejs-ai/vue-tui) - The Vue framework for terminal UIs. SFC & JSX, Yoga flexbox, HMR, and testing out of the box.
 - [ParadevAI/Paradev](https://github.com/ParadevAI/Paradev) - Paradev (formerly Superset) is an agentic IDE to orchestrate 100+ coding agents in parallel. Run any agent with your own subscription.
@@ -765,6 +771,7 @@
 
 ## cpp 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [xiaolincoder/CS-Base](https://github.com/xiaolincoder/CS-Base) - 图解计算机网络、操作系统、计算机组成、数据库，共 1000 张图 + 50 万字，破除晦涩难懂的计算机基础知识，让天下没有难懂的八股文！🚀 在线阅读：https://xiaolincoding.com
 - [youngyangyang04/leetcode-master](https://github.com/youngyangyang04/leetcode-master) - 《代码随想录》LeetCode 刷题攻略：200道经典题目刷题顺序，共60w字的详细图解，视频难点剖析，50余张思维导图，支持C++，Java，Python，Go，JavaScript等多语言版本，从此算法学习不再迷茫！🔥🔥 来看看，你会发现相见恨晚！🚀
 - [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) - Curated list of project-based tutorials
@@ -902,6 +909,7 @@
 
 ## dsh-plugin 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) - 在 dsh 里装上这个插件即可，无需登录、注册或填 API Key，就能使用包括 DeepSeek V4.1 Flash、Kimi K3 在内的前沿模型——完全免费，不限量。 All you do is install this plugin in dsh: no login, no sign-up, no API key — the frontier models are just there,
 - [Awesome-AI-Pedia/Awesome-AI-Pedia](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia) - AI skills大全 mcp ai知识库 Agent 全维度 AI 资源百科，DSH插件 收录大模型、智能 Agent、RAG 检索增强、多模态、MLOps、AI 应用工具、AI面试集、Vibe coding 大全、零基础学习路线，持续更新前沿 AI 开源项目，开发者一站式 AI 导航库
 - [tt-a1i/archify](https://github.com/tt-a1i/archify) - Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.
@@ -1115,6 +1123,7 @@
 
 ## html 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) - Write HTML. Render video. Built for agents.
 - [larashero3-dotcom/lieflat-charts](https://github.com/larashero3-dotcom/lieflat-charts) - Data visualization Skill for AI Agents, turning data into polished, interactive HTML charts. 面向 AI Agents 的数据可视化 Skill，将数据快速生成精致、可交互的 HTML 图表。
 - [jagracar/webgl-shader-examples](https://github.com/jagracar/webgl-shader-examples) - Some simple examples of WebGL shaders
@@ -1163,6 +1172,7 @@
 
 ## java 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [NativeScript/NativeScript](https://github.com/NativeScript/NativeScript) - ⚡ Write Native with TypeScript ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (V
 - [xiaolincoder/CS-Base](https://github.com/xiaolincoder/CS-Base) - 图解计算机网络、操作系统、计算机组成、数据库，共 1000 张图 + 50 万字，破除晦涩难懂的计算机基础知识，让天下没有难懂的八股文！🚀 在线阅读：https://xiaolincoding.com
 - [youngyangyang04/leetcode-master](https://github.com/youngyangyang04/leetcode-master) - 《代码随想录》LeetCode 刷题攻略：200道经典题目刷题顺序，共60w字的详细图解，视频难点剖析，50余张思维导图，支持C++，Java，Python，Go，JavaScript等多语言版本，从此算法学习不再迷茫！🔥🔥 来看看，你会发现相见恨晚！🚀
@@ -1172,6 +1182,7 @@
 
 ## javascript 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [web-infra-dev/midscene](https://github.com/web-infra-dev/midscene) - See interfaces like a human. E2E testing in natural language.
 - [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) - AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework
 - [helloagentai/helloagent-sdk-typescript](https://github.com/helloagentai/helloagent-sdk-typescript) - HelloAgent SDK — talk to the HelloAgent relay from Node or the browser. Pair, send, receive, and stream agent messages over a single WebSocket.
@@ -1306,6 +1317,7 @@
 
 ## linux 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [MoeKoeMusic/MoeKoeMusic](https://github.com/MoeKoeMusic/MoeKoeMusic) - 一款开源简洁高颜值的酷狗第三方客户端 An open-source, concise, and aesthetically pleasing third-party client for KuGou that supports  Windows / macOS / Linux / Web :electron:
 - [WindRunnerMax/EveryDay](https://github.com/WindRunnerMax/EveryDay) - 前端基础 个人博客 学习笔记
 - [xiaolincoder/CS-Base](https://github.com/xiaolincoder/CS-Base) - 图解计算机网络、操作系统、计算机组成、数据库，共 1000 张图 + 50 万字，破除晦涩难懂的计算机基础知识，让天下没有难懂的八股文！🚀 在线阅读：https://xiaolincoding.com
@@ -1423,6 +1435,7 @@
 
 ## mcp 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [browser-use/browser-use](https://github.com/browser-use/browser-use) - Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.
 - [fumingyang2004/Tulpa](https://github.com/fumingyang2004/Tulpa) - 使用MCP，让你几乎所有的Agent访问QQ/微信/B站，甚至亲自下场水群和发消息！
 - [inkeep/agents](https://github.com/inkeep/agents) - Create AI Agents in a No-Code Visual Builder or TypeScript SDK with full 2-way sync. For shipping AI assistants and multi-agent AI workflows.
@@ -1567,6 +1580,7 @@
 
 ## nodejs 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) - AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework
 - [Dailin521/codex-provider-sync](https://github.com/Dailin521/codex-provider-sync) - Synchronize Codex session provider metadata across rollout files and SQLite state.
 - [colyseus/colyseus](https://github.com/colyseus/colyseus) - ⚔ Multiplayer Framework for Node.js
@@ -1668,6 +1682,8 @@
 
 ## others 
 
+- [elvarofficial/teardown](https://github.com/elvarofficial/teardown) - A Claude Code skill that turns any machine into a 3D simulator you can take apart
+- [storytold/craft-anything](https://github.com/storytold/craft-anything) - Craft Anything: understand how any software works, and craft your own.
 - [limboinf/know-as-ui](https://github.com/limboinf/know-as-ui) - 
 - [Tencent/teamai-cli](https://github.com/Tencent/teamai-cli) - Make Every Team AI Native
 - [evotai/evot](https://github.com/evotai/evot) - The lightest harness for agentic work.
@@ -1852,7 +1868,6 @@
 - [jackchen0120/vueDataV](https://github.com/jackchen0120/vueDataV) - 基于Vue + Echarts 构建的数据可视化平台，酷炫大屏展示模板和组件库，持续更新各行各业实用模板和炫酷小组件。
 - [Easy-Editor/EasyEditor](https://github.com/Easy-Editor/EasyEditor) - Plugin-based cross-framework low-code engine for building visual application platforms  |  用于构建可视化应用平台的插件化跨框架低代码引擎
 - [BluePointLilac/ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager) - 🖱️ 纯粹的Windows右键菜单管理程序
-- [CHTK001/vue-support-parent-starter](https://github.com/CHTK001/vue-support-parent-starter) - 
 - [vue-zone/nuxt-vant-mobile](https://github.com/vue-zone/nuxt-vant-mobile) - An mobile web apps template based on the Nuxt ⁴ ecosystem。 一个基于 Nuxt ⁴  生态系统的移动 web 应用模板，帮助你快速完成业务开发。
 - [plus-pro-components/plus-pro-components](https://github.com/plus-pro-components/plus-pro-components) - 🔥Page level components developed based on Element Plus.  ProComponents in vue.
 - [imsyy/DailyHot](https://github.com/imsyy/DailyHot) - DailyHot 今日热榜前端页面 | API：https://github.com/imsyy/DailyHotApi
@@ -2151,6 +2166,7 @@
 
 ## python 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [browser-use/browser-use](https://github.com/browser-use/browser-use) - Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.
 - [JUk1-GH/gpt-promo-scanner](https://github.com/JUk1-GH/gpt-promo-scanner) - ChatGPT Team(Business) 促销码自动扫描工具 — 批量发现/验证/价格收集，支持 17 国 34 个码，最高折扣 71% | ChatGPT Business promo code scanner — batch discovery, validation, price collection, 34 codes across 17 countries, up to 71% of
 - [openakita/openakita](https://github.com/openakita/openakita) - An open-source AI assistant framework with skills and agent architecture
@@ -2179,6 +2195,7 @@
 
 ## react 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [lucide-icons/lucide](https://github.com/lucide-icons/lucide) - Beautiful & consistent icon toolkit made by the community. Lucide is an open-source icon library that provides 2000+ vector (svg) files for displaying icons and symbols in digital and non-digital proj
 - [vercel/ai](https://github.com/vercel/ai) - The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents
 - [barvian/number-flow](https://github.com/barvian/number-flow) - An animated number component for React, Vue, Svelte, and TS/JS.
@@ -2279,6 +2296,7 @@
 
 ## rust 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [game1024/OpenSpeedy](https://github.com/game1024/OpenSpeedy) - 🎮 An open-source game speed modifier.
 - [farion1231/cc-switch](https://github.com/farion1231/cc-switch) - A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io
 - [emosheeep/circular-dependency-scanner](https://github.com/emosheeep/circular-dependency-scanner) - Out-of-box circular dependencies detector, support js, jsx, ts, tsx, mjs, cjs, vue.
@@ -2298,6 +2316,10 @@
 - [pdsuwwz/vite-ts-starter](https://github.com/pdsuwwz/vite-ts-starter) - 🐬 一个轻量级、开箱即用、快速开发 Vue3 (setup)  全家桶 + Vite7 + i18n 路由级国际化 + Element-Plus + UnoCSS + TypeScript + Vuex + Unplugin + ESLint (v9) + Vitest + Scss + StyleLint + Husky + lint-staged 中小型 B 端中后台管理系统的现代开发基础模板
 - [sunniejs/vue-h5-template](https://github.com/sunniejs/vue-h5-template) - :tada:vue搭建移动端开发,基于vue-cli4.0+webpack 4+vant ui + sass+ rem适配方案+axios封装，构建手机端模板脚手架
 - [FightingDesign/fighting-design](https://github.com/FightingDesign/fighting-design) - 🌈 Fighting Design 可在 vue3 应用程序中快速构建交互界面，看起来还不错。(🌈 Fighting design can quickly build interactive interfaces in vue3 applications, which looks good.)
+
+## security 
+
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 
 ## self-hosted 
 
@@ -2502,6 +2524,7 @@
 
 ## typescript 
 
+- [morluto/rea](https://github.com/morluto/rea) - Reverse engineer anything with agents, from app behavior down to native binaries.
 - [inkeep/agents](https://github.com/inkeep/agents) - Create AI Agents in a No-Code Visual Builder or TypeScript SDK with full 2-way sync. For shipping AI assistants and multi-agent AI workflows.
 - [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) - AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework
 - [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) - Write HTML. Render video. Built for agents.
