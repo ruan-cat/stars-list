@@ -5,7 +5,7 @@
 ## 本项目的技能表
 
 - `record-bug-fix-memory`
-  - 路径：`.agents/skills/fix-bug/record-bug-fix-memory/SKILL.md`
+  - 路径：`.agents/skills/record-bug-fix-memory/SKILL.md`
   - 用途：在 bug 已经定位并修复后，记录事故结论、排错经验、AI 记忆更新、复盘摘要和本地 MCP 记忆。
   - 触发时机：用户要求记录经验教训、补充 AI 记忆、写事故记录或同步本地 MCP 记忆时；bug 修复完成后也应主动参考。
   - 参考作用：提供仓库特有事故模式、验证证据和可复用修复结论的沉淀入口。

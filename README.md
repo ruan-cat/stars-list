@@ -92,7 +92,7 @@ workflow 的 checkout 必须设置 `persist-credentials: false`，否则 checkou
 ## 6. 相关文档
 
 - 开发提示词与任务记录：`docs/prompts/index.md`
-- 事故与排错经验沉淀：`.agents/skills/fix-bug/record-bug-fix-memory/SKILL.md`
+- 事故与排错经验沉淀：`.agents/skills/record-bug-fix-memory/SKILL.md`
 
 ## 7. 许可证
 

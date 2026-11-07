@@ -4,7 +4,7 @@
 
 ### Context
 
-现状组件（`docs/.vitepress/theme/components/ui/**`）是手写的 reka-ui 包装层 + scoped CSS（Teek/VitePress 变量）。该路径缺少 shadcn-vue 官方组件的实战检验样式，已连续引发两起生产事故（详见 `.agents/skills/fix-bug/record-bug-fix-memory/2026-08-28-*.md` 与 `2026-08-29-*.md`）。验收基线见 `evidence/01~08-*.png`。
+现状组件（`docs/.vitepress/theme/components/ui/**`）是手写的 reka-ui 包装层 + scoped CSS（Teek/VitePress 变量）。该路径缺少 shadcn-vue 官方组件的实战检验样式，已连续引发两起生产事故（详见 `.agents/skills/record-bug-fix-memory/2026-08-28-*.md` 与 `2026-08-29-*.md`）。验收基线见 `evidence/01~08-*.png`。
 
 ### Goals / Non-Goals
 

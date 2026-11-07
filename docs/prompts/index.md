@@ -360,7 +360,7 @@ VitePress 已正常完成 client bundle、SSR bundle 和页面渲染，但 SSR �
 ---
 
 真正让进程长期不退出的不是 Teek 的 100ms timer，而是 TanStack Query 创建的一个 7 天 GC 定时器。
-你按照本仓库 `.agents\skills\fix-bug\record-bug-fix-memory\SKILL.md` 技能的要求，在 `.agents\skills\fix-bug\record-bug-fix-memory` 写经验教训。
+你按照本仓库 `.agents\skills\record-bug-fix-memory\SKILL.md` 技能的要求，在 `.agents\skills\record-bug-fix-memory` 写经验教训。
 你在 `docs\reports` 内为本次事故编写一个完整的事故链路，问题追踪，排查手段，以及故障解决的说明报告。
 重点说明为什么 `TanStack Query 创建的一个 7 天 GC 定时器` 会导致如此严重的故障，以及该情况是否很容易的导致其他项目也出现类似的问题？
 
