@@ -1705,6 +1705,7 @@
 
 ## others 
 
+- [showheyohtaki/motion-prompt](https://github.com/showheyohtaki/motion-prompt) - 
 - [elvarofficial/teardown](https://github.com/elvarofficial/teardown) - A Claude Code skill that turns any machine into a 3D simulator you can take apart
 - [storytold/craft-anything](https://github.com/storytold/craft-anything) - Craft Anything: understand how any software works, and craft your own.
 - [limboinf/know-as-ui](https://github.com/limboinf/know-as-ui) - 
@@ -2002,7 +2003,6 @@
 - [moonyoulove/rpgmaker-plugin-conflict-finder](https://github.com/moonyoulove/rpgmaker-plugin-conflict-finder) - Find conflicts between RPG Maker MV/MZ plugins.
 - [nuxt-content/docus](https://github.com/nuxt-content/docus) - Write beautiful documentations with Nuxt and Markdown.
 - [o2oa/o2oa](https://github.com/o2oa/o2oa) - 开源OA系统 - 码云GVP|Java开源oa|企业OA办公平台|企业OA|协同办公OA|流程平台OA|O2OA|OA，支持国产麒麟操作系统和国产数据库（达梦、人大金仓），政务OA，军工信息化OA
-- [imba97/eslint-config](https://github.com/imba97/eslint-config) - ESLint Config
 - [qddidi/easyest](https://github.com/qddidi/easyest) - 基于Vite6+TypeScript的Vue3组件库开发框架
 - [popo-fishes/umy-ui](https://github.com/popo-fishes/umy-ui) - A desktop component library based on Vue 2.0 prepared for developers
 - [CavsZhouyou/Front-End-Interview-Notebook](https://github.com/CavsZhouyou/Front-End-Interview-Notebook) - :ant:前端面试复习笔记
