@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"owner": "ruan-cat",
-	"generatedAt": "2026-11-11T07:45:17.603Z",
+	"generatedAt": "2026-11-12T08:20:31.218Z",
 	"source": "github-api",
 	"manifestStale": false,
 	"repositories": [
@@ -396,6 +396,15 @@
 			"fullName": "ruan-cat/mall-nuxt",
 			"visibility": "public",
 			"fork": false,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/memorix",
+			"visibility": "public",
+			"fork": true,
 			"archived": false,
 			"selectedBranch": null,
 			"lastKnownCommitSha": null,
