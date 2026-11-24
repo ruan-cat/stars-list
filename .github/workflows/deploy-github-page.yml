@@ -1,37 +1,34 @@
-# 将静态内容部署到 GitHub Pages 的简易工作流程
+# 将静态内容部署到 GitHub Pages。
 # https://cn.vitejs.dev/guide/static-deploy#github-pages
-# https://blog.meta-code.top/2024/08/15/2024-13/#03-补充-Vite-官方工作流程样本
+#
+# 不要把 actions/deploy-pages 放回上传产物的同一个 job。
+# deploy-pages 按名称调用 ListArtifacts；产物刚刚 finalized 时，这个列举会间歇性返回 0 条。
+# run 45379616856 在 finalized 后 408ms 读到 0 条，但 artifact id 14912073506 一直存在。
+# upload-pages-artifact 已经返回 artifact id。部署脚本直接把这个 id 交给 Pages API。
+# 重跑失败的 deploy job 不会再次上传，因此也不会撞上“同名产物有两份”。
 
 name: Deploy static content to Pages
 
 on:
-  # 仅在推送到默认分支 main 时运行。
   push:
     branches: ["main"]
-
-  # 这个选项可以使你手动在 Action tab 页面触发工作流
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 允许一个并发的部署
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # 单次部署的工作描述
-  deploy:
+  build:
     if: github.event_name != 'push' || github.event.deleted == false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
+    outputs:
+      artifact_id: ${{ steps.pages-artifact.outputs.artifact_id }}
     steps:
       - name: 检出分支
         uses: actions/checkout@v6
@@ -57,10 +54,38 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: 上传打包产物
+        id: pages-artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: "./docs/.vitepress/dist"
 
-      - name: 部署到github pages
+      - name: 确认 Pages artifact id
+        env:
+          ARTIFACT_ID: ${{ steps.pages-artifact.outputs.artifact_id }}
+        run: |
+          if [ -z "$ARTIFACT_ID" ]; then
+            echo "::error::upload-pages-artifact 没有返回 artifact_id，拒绝继续部署"
+            exit 1
+          fi
+          echo "artifact_id=$ARTIFACT_ID"
+
+  deploy:
+    needs: build
+    if: needs.build.result == 'success' && (github.event_name != 'push' || github.event.deleted == false)
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出部署脚本
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: 按 artifact id 部署到 GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        shell: bash
+        env:
+          ARTIFACT_ID: ${{ needs.build.outputs.artifact_id }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node .github/scripts/deploy-pages-by-artifact-id.mjs
