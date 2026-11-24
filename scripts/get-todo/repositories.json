@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"owner": "ruan-cat",
-	"generatedAt": "2026-11-23T09:07:00.976Z",
+	"generatedAt": "2026-11-24T10:55:33.833Z",
 	"source": "github-api",
 	"manifestStale": false,
 	"repositories": [
@@ -88,6 +88,15 @@
 		},
 		{
 			"fullName": "ruan-cat/apps.apple.com",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/astrbot_plugin_group_chat_plus",
 			"visibility": "public",
 			"fork": true,
 			"archived": false,
