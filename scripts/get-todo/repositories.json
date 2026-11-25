@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"owner": "ruan-cat",
-	"generatedAt": "2026-11-24T10:55:33.833Z",
+	"generatedAt": "2026-11-25T09:51:49.922Z",
 	"source": "github-api",
 	"manifestStale": false,
 	"repositories": [
@@ -97,6 +97,15 @@
 		},
 		{
 			"fullName": "ruan-cat/astrbot_plugin_group_chat_plus",
+			"visibility": "public",
+			"fork": true,
+			"archived": false,
+			"selectedBranch": null,
+			"lastKnownCommitSha": null,
+			"lastFetchedAt": null
+		},
+		{
+			"fullName": "ruan-cat/astrbot_plugin_link_resolver",
 			"visibility": "public",
 			"fork": true,
 			"archived": false,
