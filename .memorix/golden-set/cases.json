@@ -1,0 +1,26 @@
+{
+	"schemaVersion": "memorix-golden-set-case/v1",
+	"project": {
+		"repository": "ruan-cat/stars-list"
+	},
+	"cases": [
+		{
+			"id": "pages-deploy-by-artifact-id",
+			"query": "Pages 部署按 artifact id 创建",
+			"capturedAt": "2026-11-28T14:33:40.000Z",
+			"failureKinds": ["zero-candidate"],
+			"expected": {
+				"mustMatch": [
+					{
+						"entity": "github-pages",
+						"type": "problem-solution",
+						"titleIncludes": ["Pages 部署按 artifact id 创建"]
+					}
+				]
+			},
+			"localHints": {
+				"observationIds": [6509]
+			}
+		}
+	]
+}
