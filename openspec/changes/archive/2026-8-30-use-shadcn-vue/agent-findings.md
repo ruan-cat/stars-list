@@ -2,7 +2,7 @@
 
 ## F1 [active] Reka Portal 弹层禁止 enter-only 动画
 
-Reka Presence 关闭时按计算样式 `animationName` 决定是否等待 `animationend`；enter-only 动画（只在 `[data-state=open]` 声明）在关闭时可能残留弹层并附带 `disableOutsidePointerEvents` 拦截全页。证据：`.agents/skills/fix-bug/record-bug-fix-memory/2026-08-29-select-presence-animation-leftover.md`。动作：重构中弹层动画成对（open+closed）或不用（design.md D6），回归必测三种关闭路径的 DOM 卸载。
+Reka Presence 关闭时按计算样式 `animationName` 决定是否等待 `animationend`；enter-only 动画（只在 `[data-state=open]` 声明）在关闭时可能残留弹层并附带 `disableOutsidePointerEvents` 拦截全页。证据：`.agents/skills/record-bug-fix-memory/2026-08-29-select-presence-animation-leftover.md`。动作：重构中弹层动画成对（open+closed）或不用（design.md D6），回归必测三种关闭路径的 DOM 卸载。
 
 ## F2 [active] scoped CSS 无法命中 Reka Portal 内容
 
